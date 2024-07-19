@@ -3,26 +3,81 @@ title: "Scope"
 bibliography: ../quarto_site/references.bib
 ---
 
-<!-- TODO: Remove this warning once filled out page -->
-**Please note: This is a template page and has not yet been completed**
-
-<!-- TODO: Use skeleton to create page describing scope -->
-
-<!-- NOTE: If you do not have a license allowing you to upload and reuse images from the article, then you should describe them below, and direct the reader to a link to the article -->
-
 This page outlines the parts of the journal article which we will attempt to reproduce.
 
-All images and quotes on this page are sourced from <!-- TODO: Add citation to original study -->
+All images and quotes on this page are sourced from @lim_staff_2020
 
 ## Within scope
 
 ::: {.callout-note appearance="minimal" collapse=true}
 
-## Figure X
+## Figure 2
 
-[Figure with full legend from paper]
-<!-- e.g.
-![Figure 2. "Patient state over time by unit. The patient population progresses through infection over three months (with 80% infected). The bold line shows the median results of 30 trials, and the fainter lines show the minimum and maximum from the 30 trials." @allen_simulation_2020](../original_study/article_fig2.png){width=80%}-->
+![Figure 2. "Panels a, b and c show impact of different roster arrangements (number of shifts, number of staff per shift, total staff pool) on the proportion of staff infected by workplace transmission. The secondary attack rate is set at 15% with the stimulated staff working non-consecutive days. Panel d shows the effect of different secondary attack rates on proportion of staff infected." @lim_staff_2020](../original_study/fig2.jpg){width=80% .lightbox}
+
+:::
+
+::: {.callout-note appearance="minimal" collapse=true}
+
+## Figure 3
+
+![Figure 3. "Effect of number of staff per shift and of the number of shifts per day on the proportion of staff infected by workplace transmission. The secondary attack rate is set at 15% with the stimulated staff working non-consecutive days." @lim_staff_2020](../original_study/fig3.jpg){width=80% .lightbox}
+
+:::
+
+::: {.callout-note appearance="minimal" collapse=true}
+
+## Figure 4
+
+![Figure 4. "Effect of frequency of shift change (i.e. number of consecutive days worked) on the proportion of staff infected by workplace transmission. The secondary attack rate is set at 15% with 20 staff per shift." @lim_staff_2020](../original_study/fig4.jpg){width=80% .lightbox}
+
+:::
+
+::: {.callout-note appearance="minimal" collapse=true}
+
+## Figure 5
+
+![Figure 5. "Effect of a) split team arrangement, social distancing and b) personal protective equipment on the proportion of staff infected by workplace trans- mission. The data represents the impact of the individual interventions." @lim_staff_2020](../original_study/fig5.jpg){width=80% .lightbox}
+
+:::
+
+::: {.callout-note appearance="minimal" collapse=true}
+
+## Supplemental Table 2 
+
+Supplemental Table 2. "Proportion of simulated laboratory staff infected by COVID-19 in base scenario with 15% probability of secondary infection at the end of day 7, day 14 and day 21 of the simulation. In this base scenario, the simulated staff worked fixed alternating workdays (i.e. fixed consecutive days on, and fixed minimum consecutive days off). The results shown are the median of 100 cycles of simulation. NA = not available as the number of staff per shift is too low to simulate under the required conditions." @lim_staff_2020
+
+:::
+
+::: {.callout-note appearance="minimal" collapse=true}
+
+## Supplemental Table 3
+
+Supplemental Table 3. "Proportion of simulated laboratory staff infected by COVID-19 in base scenario with 5% probability of secondary infection at the end of day 7, day 14 and day 21 of the simulation. In this scenario, the simulated staff worked fixed alternating workdays (i.e. fixed consecutive days on, and fixed minimum consecutive days off).  The results shown are the median of 100 cycles of simulation. NA = not available as the number of staff per shift was too low to simulate under the required conditions." @lim_staff_2020
+
+:::
+
+::: {.callout-note appearance="minimal" collapse=true}
+
+## Supplemental Table 4
+
+Supplemental Table 4. "Proportion of simulated laboratory staff infected by COVID-19 in base scenario with 30% probability of secondary infection at the end of day 7, day 14 and day 21 of the simulation. In this scenario, the simulated staff worked fixed alternating workdays (i.e. fixed consecutive days on, and fixed minimum consecutive days off). The results shown are the median of 100 cycles of simulation. NA = not available as the number of staff per shift was too low to simulate under the required conditions. " @lim_staff_2020
+
+:::
+
+::: {.callout-note appearance="minimal" collapse=true}
+
+## Supplemental Table 5
+
+Supplemental Table 5. "Proportion of simulated laboratory staff working in a single shift infected by COVID-19 in a scenario with 15% probability of secondary infection at the end of day 7, day 14 and day 21 of the simulation without predefined minimum rest day (i.e. random shift assignment after each shift). The results shown are the median of 100 cycles of simulation." @lim_staff_2020
+
+:::
+
+::: {.callout-note appearance="minimal" collapse=true}
+
+## Supplemental Table 6
+
+Supplemental Table 6. "Proportion of simulated laboratory staff infected by COVID-19 in base scenario with 15% probability of secondary infection at the end of day 14 of the simulation with the staff observing workplace social distancing (by reducing the contact rate by half) and using various personal protective equipment. In this scenario, the simulated staff worked fixed alternating workdays (i.e. fixed consecutive days on, and fixed minimum consecutive days off). The results shown are the median of 100 cycles of simulation. NA = not available as the number of staff per shift is too low to simulate under the required conditions." @lim_staff_2020
 
 :::
 
@@ -30,10 +85,16 @@ All images and quotes on this page are sourced from <!-- TODO: Add citation to o
 
 ::: {.callout-note appearance="minimal" collapse=true}
 
-## Table X
+## Figure 1
 
-[Explanation of why it is outside scope]
+![Figure 1. "Visual representation of the simulation model. Panel a shows the two states a simulated staff can be in, namely staying at home or working in the laboratory with 4 colleagues (5-staff shift). Panel b shows the Poisson distribution from which the susceptible colleagues are drawn from". @lim_staff_2020](../original_study/fig1.jpg){width=80% .lightbox}
 
-[Display table, including full legend from paper]
+:::
+
+::: {.callout-note appearance="minimal" collapse=true}
+
+## Supplemental Table 1
+
+![Supplemental Table 1. "Key simulation parameters used in this study." @lim_staff_2020](../original_study/supp_tab1.png){width=80% .lightbox}
 
 :::
