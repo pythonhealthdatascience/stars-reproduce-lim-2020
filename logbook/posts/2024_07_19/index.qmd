@@ -12,8 +12,40 @@ Set-up. Total time used: Xh Xm (X%)
 
 :::
 
-## 14.05-14.09: Create repository
+## 14.05-14.34: Create repository
 
 * Set up repository using template
 * Modified files to refer to Lim et al. 2020
 * Built Python environment to create the book.
+* Previously sent a detailed email to the authors on Thursday 11th and Friday 12th July to inform about the study and ask if they would be happy to add an open license. Looking over that email, I don't think it is necessary to email again, but will double-check with someone else on STARS.
+
+## 14.36-14.38: Upload code to the repository
+
+The study code is available at <https://github.com/chaose5/COVID-roster-simulation> and shared with an open MIT license, which was kindly added following our email. As it is MIT, we do not need to update our license.
+
+## 14.39-15.00: Upload journal article to the repository
+
+The journal article is free to view online as it is included with PubMed Central (PMC) - <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7486214/>. The copyright statement provided is:
+
+> "Copyright © 2020 The Canadian Society of Clinical Chemists. Published by Elsevier Inc. All rights reserved. Since January 2020 Elsevier has created a COVID-19 resource centre with free information in English and Mandarin on the novel coronavirus COVID-19. The COVID-19 resource centre is hosted on Elsevier Connect, the company's public news and information website. Elsevier hereby grants permission to make all its COVID-19-related research that is available on the COVID-19 resource centre - including this research content - immediately available in PubMed Central and other publicly funded repositories, such as the WHO COVID database **with rights for unrestricted research re-use and analyses in any form or by any means with acknowledgement of the original source**. These permissions are granted for free by Elsevier for as long as the COVID-19 resource centre remains active."
+
+Since the COVID-19 resource centre remains active, I understand that this means we are free to upload this article and its supplementary materials to this repository, and to use images from this article with attribution.
+
+I uploaded the article, figures and supplementary materials, and then completed `study_publication.qmd`, converting the `docx` files to `pdf` for easy display via e.g. `libreoffice --headless --convert-to pdf original_study/supp1.docx`.
+
+## Timings
+
+```{python}
+import sys
+sys.path.append('../')
+from timings import calculate_times
+
+# Minutes used prior to today
+used_to_date = 0
+
+# Times from today
+times = [
+    ('14.05', '14.34')]
+
+calculate_times(used_to_date, times)
+```
