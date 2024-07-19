@@ -202,6 +202,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <h1 class="title">Day 1</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">setup</div>
+                <div class="quarto-category">read</div>
+                <div class="quarto-category">scope</div>
               </div>
                   </div>
   </div>
@@ -238,6 +240,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#create-repository" id="toc-create-repository" class="nav-link active" data-scroll-target="#create-repository">14.05-14.34: Create repository</a></li>
   <li><a href="#upload-code-to-the-repository" id="toc-upload-code-to-the-repository" class="nav-link" data-scroll-target="#upload-code-to-the-repository">14.36-14.38: Upload code to the repository</a></li>
   <li><a href="#upload-journal-article-to-the-repository" id="toc-upload-journal-article-to-the-repository" class="nav-link" data-scroll-target="#upload-journal-article-to-the-repository">14.39-15.00: Upload journal article to the repository</a></li>
+  <li><a href="#read-journal-article" id="toc-read-journal-article" class="nav-link" data-scroll-target="#read-journal-article">15.16-15.34: Read journal article</a></li>
+  <li><a href="#plan-scope-of-reproduction" id="toc-plan-scope-of-reproduction" class="nav-link" data-scroll-target="#plan-scope-of-reproduction">15.35-15.47: Plan scope of reproduction</a></li>
   <li><a href="#timings" id="toc-timings" class="nav-link" data-scroll-target="#timings">Timings</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars_reproduction_template/edit/main/logbook/posts/2024_07_19/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars_reproduction_template/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -259,7 +263,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Set-up. Total time used: Xh Xm (X%)</p>
+<p>Set-up, read article and define scope. Total time used: 1h 22m (3.4%)</p>
 </div>
 </div>
 <section id="create-repository" class="level2">
@@ -284,9 +288,16 @@ Note
 <p>Since the COVID-19 resource centre remains active, I understand that this means we are free to upload this article and its supplementary materials to this repository, and to use images from this article with attribution.</p>
 <p>I uploaded the article, figures and supplementary materials, and then completed <code>study_publication.qmd</code>, converting the <code>docx</code> files to <code>pdf</code> for easy display via e.g.&nbsp;<code>libreoffice --headless --convert-to pdf original_study/supp1.docx</code>.</p>
 </section>
+<section id="read-journal-article" class="level2">
+<h2 class="anchored" data-anchor-id="read-journal-article">15.16-15.34: Read journal article</h2>
+</section>
+<section id="plan-scope-of-reproduction" class="level2">
+<h2 class="anchored" data-anchor-id="plan-scope-of-reproduction">15.35-15.47: Plan scope of reproduction</h2>
+<p>Following the read through, I filled out <code>scope.qmd</code> with my thoughts on scope of the reproduction.</p>
+</section>
 <section id="timings" class="level2">
 <h2 class="anchored" data-anchor-id="timings">Timings</h2>
-<div id="5c1affa8" class="cell" data-execution_count="1">
+<div id="f3ae7da7" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
@@ -296,14 +307,18 @@ Note
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Times from today</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> [</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'14.05'</span>, <span class="st">'14.34'</span>)]</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'14.05'</span>, <span class="st">'14.34'</span>),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'14.36'</span>, <span class="st">'14.38'</span>),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'14.39'</span>, <span class="st">'15.00'</span>),</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'15.16'</span>, <span class="st">'15.34'</span>),</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'15.35'</span>, <span class="st">'15.47'</span>)]</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time spent today: 29m, or 0h 29m
-Total used to date: 29m, or 0h 29m
-Time remaining: 2371m, or 39h 31m
-Used 1.2% of 40 hours max</code></pre>
+<pre><code>Time spent today: 82m, or 1h 22m
+Total used to date: 82m, or 1h 22m
+Time remaining: 2318m, or 38h 38m
+Used 3.4% of 40 hours max</code></pre>
 </div>
 </div>
 

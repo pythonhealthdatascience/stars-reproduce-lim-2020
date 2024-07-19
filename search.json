@@ -46,7 +46,7 @@
     "href": "logbook/logbook.html",
     "title": "Logbook",
     "section": "",
-    "text": "These diary entries record daily progress in reproduction of the study, providing a transparent and detailed record of work.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDay 1\n\n\n\n\n\n\nsetup\n\n\n\n\n\n\n\n\n\nJul 19, 2024\n\n\nAmy Heather\n\n\n\n\n\n\nNo matching items"
+    "text": "These diary entries record daily progress in reproduction of the study, providing a transparent and detailed record of work.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDay 1\n\n\n\n\n\n\nsetup\n\n\nread\n\n\nscope\n\n\n\n\n\n\n\n\n\nJul 19, 2024\n\n\nAmy Heather\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "evaluation/reporting.html",
@@ -284,28 +284,28 @@
     "href": "evaluation/scope.html",
     "title": "Scope",
     "section": "",
-    "text": "Please note: This is a template page and has not yet been completed\nThis page outlines the parts of the journal article which we will attempt to reproduce.\nAll images and quotes on this page are sourced from"
+    "text": "This page outlines the parts of the journal article which we will attempt to reproduce.\nAll images and quotes on this page are sourced from Lim et al. (2020)"
   },
   {
     "objectID": "evaluation/scope.html#within-scope",
     "href": "evaluation/scope.html#within-scope",
     "title": "Scope",
     "section": "Within scope",
-    "text": "Within scope\n\n\n\n\n\n\nFigure X\n\n\n\n\n\n[Figure with full legend from paper]"
+    "text": "Within scope\n\n\n\n\n\n\nFigure 2\n\n\n\n\n\n\n\n\nFigure 2. “Panels a, b and c show impact of different roster arrangements (number of shifts, number of staff per shift, total staff pool) on the proportion of staff infected by workplace transmission. The secondary attack rate is set at 15% with the stimulated staff working non-consecutive days. Panel d shows the effect of different secondary attack rates on proportion of staff infected.” Lim et al. (2020)\n\n\n\n\n\n\n\n\n\n\n\nFigure 3\n\n\n\n\n\n\n\n\nFigure 3. “Effect of number of staff per shift and of the number of shifts per day on the proportion of staff infected by workplace transmission. The secondary attack rate is set at 15% with the stimulated staff working non-consecutive days.” Lim et al. (2020)\n\n\n\n\n\n\n\n\n\n\n\nFigure 4\n\n\n\n\n\n\n\n\nFigure 4. “Effect of frequency of shift change (i.e. number of consecutive days worked) on the proportion of staff infected by workplace transmission. The secondary attack rate is set at 15% with 20 staff per shift.” Lim et al. (2020)\n\n\n\n\n\n\n\n\n\n\n\nFigure 5\n\n\n\n\n\n\n\n\nFigure 5. “Effect of a) split team arrangement, social distancing and b) personal protective equipment on the proportion of staff infected by workplace trans- mission. The data represents the impact of the individual interventions.” Lim et al. (2020)\n\n\n\n\n\n\n\n\n\n\n\nSupplemental Table 2\n\n\n\n\n\nSupplemental Table 2. “Proportion of simulated laboratory staff infected by COVID-19 in base scenario with 15% probability of secondary infection at the end of day 7, day 14 and day 21 of the simulation. In this base scenario, the simulated staff worked fixed alternating workdays (i.e. fixed consecutive days on, and fixed minimum consecutive days off). The results shown are the median of 100 cycles of simulation. NA = not available as the number of staff per shift is too low to simulate under the required conditions.” Lim et al. (2020)\n\n\n\n\n\n\n\n\n\nSupplemental Table 3\n\n\n\n\n\nSupplemental Table 3. “Proportion of simulated laboratory staff infected by COVID-19 in base scenario with 5% probability of secondary infection at the end of day 7, day 14 and day 21 of the simulation. In this scenario, the simulated staff worked fixed alternating workdays (i.e. fixed consecutive days on, and fixed minimum consecutive days off). The results shown are the median of 100 cycles of simulation. NA = not available as the number of staff per shift was too low to simulate under the required conditions.” Lim et al. (2020)\n\n\n\n\n\n\n\n\n\nSupplemental Table 4\n\n\n\n\n\nSupplemental Table 4. “Proportion of simulated laboratory staff infected by COVID-19 in base scenario with 30% probability of secondary infection at the end of day 7, day 14 and day 21 of the simulation. In this scenario, the simulated staff worked fixed alternating workdays (i.e. fixed consecutive days on, and fixed minimum consecutive days off). The results shown are the median of 100 cycles of simulation. NA = not available as the number of staff per shift was too low to simulate under the required conditions.” Lim et al. (2020)\n\n\n\n\n\n\n\n\n\nSupplemental Table 5\n\n\n\n\n\nSupplemental Table 5. “Proportion of simulated laboratory staff working in a single shift infected by COVID-19 in a scenario with 15% probability of secondary infection at the end of day 7, day 14 and day 21 of the simulation without predefined minimum rest day (i.e. random shift assignment after each shift). The results shown are the median of 100 cycles of simulation.” Lim et al. (2020)\n\n\n\n\n\n\n\n\n\nSupplemental Table 6\n\n\n\n\n\nSupplemental Table 6. “Proportion of simulated laboratory staff infected by COVID-19 in base scenario with 15% probability of secondary infection at the end of day 14 of the simulation with the staff observing workplace social distancing (by reducing the contact rate by half) and using various personal protective equipment. In this scenario, the simulated staff worked fixed alternating workdays (i.e. fixed consecutive days on, and fixed minimum consecutive days off). The results shown are the median of 100 cycles of simulation. NA = not available as the number of staff per shift is too low to simulate under the required conditions.” Lim et al. (2020)"
   },
   {
     "objectID": "evaluation/scope.html#outside-scope",
     "href": "evaluation/scope.html#outside-scope",
     "title": "Scope",
     "section": "Outside scope",
-    "text": "Outside scope\n\n\n\n\n\n\nTable X\n\n\n\n\n\n[Explanation of why it is outside scope]\n[Display table, including full legend from paper]"
+    "text": "Outside scope\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\n\n\nFigure 1. “Visual representation of the simulation model. Panel a shows the two states a simulated staff can be in, namely staying at home or working in the laboratory with 4 colleagues (5-staff shift). Panel b shows the Poisson distribution from which the susceptible colleagues are drawn from”. Lim et al. (2020)\n\n\n\n\n\n\n\n\n\n\n\nSupplemental Table 1\n\n\n\n\n\n\n\n\nSupplemental Table 1. “Key simulation parameters used in this study.” Lim et al. (2020)"
   },
   {
     "objectID": "logbook/posts/2024_07_19/index.html",
     "href": "logbook/posts/2024_07_19/index.html",
     "title": "Day 1",
     "section": "",
-    "text": "Note\n\n\n\nSet-up. Total time used: Xh Xm (X%)"
+    "text": "Note\n\n\n\nSet-up, read article and define scope. Total time used: 1h 22m (3.4%)"
   },
   {
     "objectID": "logbook/posts/2024_07_19/index.html#create-repository",
@@ -329,11 +329,25 @@
     "text": "14.39-15.00: Upload journal article to the repository\nThe journal article is free to view online as it is included with PubMed Central (PMC) - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7486214/. The copyright statement provided is:\n\n“Copyright © 2020 The Canadian Society of Clinical Chemists. Published by Elsevier Inc. All rights reserved. Since January 2020 Elsevier has created a COVID-19 resource centre with free information in English and Mandarin on the novel coronavirus COVID-19. The COVID-19 resource centre is hosted on Elsevier Connect, the company’s public news and information website. Elsevier hereby grants permission to make all its COVID-19-related research that is available on the COVID-19 resource centre - including this research content - immediately available in PubMed Central and other publicly funded repositories, such as the WHO COVID database with rights for unrestricted research re-use and analyses in any form or by any means with acknowledgement of the original source. These permissions are granted for free by Elsevier for as long as the COVID-19 resource centre remains active.”\n\nSince the COVID-19 resource centre remains active, I understand that this means we are free to upload this article and its supplementary materials to this repository, and to use images from this article with attribution.\nI uploaded the article, figures and supplementary materials, and then completed study_publication.qmd, converting the docx files to pdf for easy display via e.g. libreoffice --headless --convert-to pdf original_study/supp1.docx."
   },
   {
+    "objectID": "logbook/posts/2024_07_19/index.html#read-journal-article",
+    "href": "logbook/posts/2024_07_19/index.html#read-journal-article",
+    "title": "Day 1",
+    "section": "15.16-15.34: Read journal article",
+    "text": "15.16-15.34: Read journal article"
+  },
+  {
+    "objectID": "logbook/posts/2024_07_19/index.html#plan-scope-of-reproduction",
+    "href": "logbook/posts/2024_07_19/index.html#plan-scope-of-reproduction",
+    "title": "Day 1",
+    "section": "15.35-15.47: Plan scope of reproduction",
+    "text": "15.35-15.47: Plan scope of reproduction\nFollowing the read through, I filled out scope.qmd with my thoughts on scope of the reproduction."
+  },
+  {
     "objectID": "logbook/posts/2024_07_19/index.html#timings",
     "href": "logbook/posts/2024_07_19/index.html#timings",
     "title": "Day 1",
     "section": "Timings",
-    "text": "Timings\n\nimport sys\nsys.path.append('../')\nfrom timings import calculate_times\n\n# Minutes used prior to today\nused_to_date = 0\n\n# Times from today\ntimes = [\n    ('14.05', '14.34')]\n\ncalculate_times(used_to_date, times)\n\nTime spent today: 29m, or 0h 29m\nTotal used to date: 29m, or 0h 29m\nTime remaining: 2371m, or 39h 31m\nUsed 1.2% of 40 hours max"
+    "text": "Timings\n\nimport sys\nsys.path.append('../')\nfrom timings import calculate_times\n\n# Minutes used prior to today\nused_to_date = 0\n\n# Times from today\ntimes = [\n    ('14.05', '14.34'),\n    ('14.36', '14.38'),\n    ('14.39', '15.00'),\n    ('15.16', '15.34'),\n    ('15.35', '15.47')]\n\ncalculate_times(used_to_date, times)\n\nTime spent today: 82m, or 1h 22m\nTotal used to date: 82m, or 1h 22m\nTime remaining: 2318m, or 38h 38m\nUsed 3.4% of 40 hours max"
   },
   {
     "objectID": "CHANGELOG.html",

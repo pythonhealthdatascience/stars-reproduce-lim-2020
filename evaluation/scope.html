@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -40,6 +60,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -195,12 +218,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- TODO: Remove this warning once filled out page -->
-<p><strong>Please note: This is a template page and has not yet been completed</strong></p>
-<!-- TODO: Use skeleton to create page describing scope -->
-<!-- NOTE: If you do not have a license allowing you to upload and reuse images from the article, then you should describe them below, and direct the reader to a link to the article -->
 <p>This page outlines the parts of the journal article which we will attempt to reproduce.</p>
-<p>All images and quotes on this page are sourced from <!-- TODO: Add citation to original study --></p>
+<p>All images and quotes on this page are sourced from <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></p>
 <section id="within-scope" class="level2">
 <h2 class="anchored" data-anchor-id="within-scope">Within scope</h2>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
@@ -209,14 +228,161 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Figure X
+Figure 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>[Figure with full legend from paper] <!-- e.g.
-![Figure 2. "Patient state over time by unit. The patient population progresses through infection over three months (with 80% infected). The bold line shows the median results of 30 trials, and the fainter lines show the minimum and maximum from the 30 trials." @allen_simulation_2020](../original_study/article_fig2.png){width=80%}--></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../original_study/fig2.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure 2. “Panels a, b and c show impact of different roster arrangements (number of shifts, number of staff per shift, total staff pool) on the proportion of staff infected by workplace transmission. The secondary attack rate is set at 15% with the stimulated staff working non-consecutive days. Panel d shows the effect of different secondary attack rates on proportion of staff infected.” @lim_staff_2020"><img src="../original_study/fig2.jpg" class="img-fluid figure-img" style="width:80.0%" alt="Figure 2. “Panels a, b and c show impact of different roster arrangements (number of shifts, number of staff per shift, total staff pool) on the proportion of staff infected by workplace transmission. The secondary attack rate is set at 15% with the stimulated staff working non-consecutive days. Panel d shows the effect of different secondary attack rates on proportion of staff infected.” Lim et al. (2020)"></a></p>
+<figcaption>Figure 2. “Panels a, b and c show impact of different roster arrangements (number of shifts, number of staff per shift, total staff pool) on the proportion of staff infected by workplace transmission. The secondary attack rate is set at 15% with the stimulated staff working non-consecutive days. Panel d shows the effect of different secondary attack rates on proportion of staff infected.” <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Figure 3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../original_study/fig3.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure 3. “Effect of number of staff per shift and of the number of shifts per day on the proportion of staff infected by workplace transmission. The secondary attack rate is set at 15% with the stimulated staff working non-consecutive days.” @lim_staff_2020"><img src="../original_study/fig3.jpg" class="img-fluid figure-img" style="width:80.0%" alt="Figure 3. “Effect of number of staff per shift and of the number of shifts per day on the proportion of staff infected by workplace transmission. The secondary attack rate is set at 15% with the stimulated staff working non-consecutive days.” Lim et al. (2020)"></a></p>
+<figcaption>Figure 3. “Effect of number of staff per shift and of the number of shifts per day on the proportion of staff infected by workplace transmission. The secondary attack rate is set at 15% with the stimulated staff working non-consecutive days.” <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Figure 4
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../original_study/fig4.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure 4. “Effect of frequency of shift change (i.e.&nbsp;number of consecutive days worked) on the proportion of staff infected by workplace transmission. The secondary attack rate is set at 15% with 20 staff per shift.” @lim_staff_2020"><img src="../original_study/fig4.jpg" class="img-fluid figure-img" style="width:80.0%" alt="Figure 4. “Effect of frequency of shift change (i.e.&nbsp;number of consecutive days worked) on the proportion of staff infected by workplace transmission. The secondary attack rate is set at 15% with 20 staff per shift.” Lim et al. (2020)"></a></p>
+<figcaption>Figure 4. “Effect of frequency of shift change (i.e.&nbsp;number of consecutive days worked) on the proportion of staff infected by workplace transmission. The secondary attack rate is set at 15% with 20 staff per shift.” <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Figure 5
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../original_study/fig5.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure 5. “Effect of a) split team arrangement, social distancing and b) personal protective equipment on the proportion of staff infected by workplace trans- mission. The data represents the impact of the individual interventions.” @lim_staff_2020"><img src="../original_study/fig5.jpg" class="img-fluid figure-img" style="width:80.0%" alt="Figure 5. “Effect of a) split team arrangement, social distancing and b) personal protective equipment on the proportion of staff infected by workplace trans- mission. The data represents the impact of the individual interventions.” Lim et al. (2020)"></a></p>
+<figcaption>Figure 5. “Effect of a) split team arrangement, social distancing and b) personal protective equipment on the proportion of staff infected by workplace trans- mission. The data represents the impact of the individual interventions.” <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Supplemental Table 2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Supplemental Table 2. “Proportion of simulated laboratory staff infected by COVID-19 in base scenario with 15% probability of secondary infection at the end of day 7, day 14 and day 21 of the simulation. In this base scenario, the simulated staff worked fixed alternating workdays (i.e.&nbsp;fixed consecutive days on, and fixed minimum consecutive days off). The results shown are the median of 100 cycles of simulation. NA = not available as the number of staff per shift is too low to simulate under the required conditions.” <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Supplemental Table 3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Supplemental Table 3. “Proportion of simulated laboratory staff infected by COVID-19 in base scenario with 5% probability of secondary infection at the end of day 7, day 14 and day 21 of the simulation. In this scenario, the simulated staff worked fixed alternating workdays (i.e.&nbsp;fixed consecutive days on, and fixed minimum consecutive days off). The results shown are the median of 100 cycles of simulation. NA = not available as the number of staff per shift was too low to simulate under the required conditions.” <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Supplemental Table 4
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Supplemental Table 4. “Proportion of simulated laboratory staff infected by COVID-19 in base scenario with 30% probability of secondary infection at the end of day 7, day 14 and day 21 of the simulation. In this scenario, the simulated staff worked fixed alternating workdays (i.e.&nbsp;fixed consecutive days on, and fixed minimum consecutive days off). The results shown are the median of 100 cycles of simulation. NA = not available as the number of staff per shift was too low to simulate under the required conditions.” <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Supplemental Table 5
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Supplemental Table 5. “Proportion of simulated laboratory staff working in a single shift infected by COVID-19 in a scenario with 15% probability of secondary infection at the end of day 7, day 14 and day 21 of the simulation without predefined minimum rest day (i.e.&nbsp;random shift assignment after each shift). The results shown are the median of 100 cycles of simulation.” <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Supplemental Table 6
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Supplemental Table 6. “Proportion of simulated laboratory staff infected by COVID-19 in base scenario with 15% probability of secondary infection at the end of day 14 of the simulation with the staff observing workplace social distancing (by reducing the contact rate by half) and using various personal protective equipment. In this scenario, the simulated staff worked fixed alternating workdays (i.e.&nbsp;fixed consecutive days on, and fixed minimum consecutive days off). The results shown are the median of 100 cycles of simulation. NA = not available as the number of staff per shift is too low to simulate under the required conditions.” <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></p>
 </div>
 </div>
 </div>
@@ -224,27 +390,57 @@ Figure X
 <section id="outside-scope" class="level2">
 <h2 class="anchored" data-anchor-id="outside-scope">Outside scope</h2>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Table X
+Figure 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>[Explanation of why it is outside scope]</p>
-<p>[Display table, including full legend from paper]</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../original_study/fig1.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure 1. “Visual representation of the simulation model. Panel a shows the two states a simulated staff can be in, namely staying at home or working in the laboratory with 4 colleagues (5-staff shift). Panel b shows the Poisson distribution from which the susceptible colleagues are drawn from”. @lim_staff_2020"><img src="../original_study/fig1.jpg" class="img-fluid figure-img" style="width:80.0%" alt="Figure 1. “Visual representation of the simulation model. Panel a shows the two states a simulated staff can be in, namely staying at home or working in the laboratory with 4 colleagues (5-staff shift). Panel b shows the Poisson distribution from which the susceptible colleagues are drawn from”. Lim et al. (2020)"></a></p>
+<figcaption>Figure 1. “Visual representation of the simulation model. Panel a shows the two states a simulated staff can be in, namely staying at home or working in the laboratory with 4 colleagues (5-staff shift). Panel b shows the Poisson distribution from which the susceptible colleagues are drawn from”. <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></figcaption>
+</figure>
 </div>
 </div>
 </div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Supplemental Table 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../original_study/supp_tab1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Supplemental Table 1. “Key simulation parameters used in this study.” @lim_staff_2020"><img src="../original_study/supp_tab1.png" class="img-fluid figure-img" style="width:80.0%" alt="Supplemental Table 1. “Key simulation parameters used in this study.” Lim et al. (2020)"></a></p>
+<figcaption>Supplemental Table 1. “Key simulation parameters used in this study.” <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-lim_staff_2020" class="csl-entry" role="listitem">
+Lim, Chun Yee, Mary Kathryn Bohn, Giuseppe Lippi, Maurizio Ferrari, Tze Ping Loh, Kwok-Yung Yuen, Khosrow Adeli, and Andrea Rita Horvath. 2020. <span>“Staff Rostering, Split Team Arrangement, Social Distancing (Physical Distancing) and Use of Personal Protective Equipment to Minimize Risk of Workplace Transmission During the <span>COVID</span>-19 Pandemic: <span>A</span> Simulation Study.”</span> <em>Clinical Biochemistry</em> 86 (December): 15–22. <a href="https://doi.org/10.1016/j.clinbiochem.2020.09.003">https://doi.org/10.1016/j.clinbiochem.2020.09.003</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -702,6 +898,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","loop":false,"selector":".lightbox","openEffect":"zoom"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
