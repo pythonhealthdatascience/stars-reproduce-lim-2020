@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -201,7 +235,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#create-repository" id="toc-create-repository" class="nav-link active" data-scroll-target="#create-repository">14.05-14.09: Create repository</a></li>
+  <li><a href="#create-repository" id="toc-create-repository" class="nav-link active" data-scroll-target="#create-repository">14.05-14.34: Create repository</a></li>
+  <li><a href="#upload-code-to-the-repository" id="toc-upload-code-to-the-repository" class="nav-link" data-scroll-target="#upload-code-to-the-repository">14.36-14.38: Upload code to the repository</a></li>
+  <li><a href="#upload-journal-article-to-the-repository" id="toc-upload-journal-article-to-the-repository" class="nav-link" data-scroll-target="#upload-journal-article-to-the-repository">14.39-15.00: Upload journal article to the repository</a></li>
+  <li><a href="#timings" id="toc-timings" class="nav-link" data-scroll-target="#timings">Timings</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars_reproduction_template/edit/main/logbook/posts/2024_07_19/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars_reproduction_template/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -226,12 +263,49 @@ Note
 </div>
 </div>
 <section id="create-repository" class="level2">
-<h2 class="anchored" data-anchor-id="create-repository">14.05-14.09: Create repository</h2>
+<h2 class="anchored" data-anchor-id="create-repository">14.05-14.34: Create repository</h2>
 <ul>
 <li>Set up repository using template</li>
 <li>Modified files to refer to Lim et al.&nbsp;2020</li>
 <li>Built Python environment to create the book.</li>
+<li>Previously sent a detailed email to the authors on Thursday 11th and Friday 12th July to inform about the study and ask if they would be happy to add an open license. Looking over that email, I don’t think it is necessary to email again, but will double-check with someone else on STARS.</li>
 </ul>
+</section>
+<section id="upload-code-to-the-repository" class="level2">
+<h2 class="anchored" data-anchor-id="upload-code-to-the-repository">14.36-14.38: Upload code to the repository</h2>
+<p>The study code is available at <a href="https://github.com/chaose5/COVID-roster-simulation" class="uri">https://github.com/chaose5/COVID-roster-simulation</a> and shared with an open MIT license, which was kindly added following our email. As it is MIT, we do not need to update our license.</p>
+</section>
+<section id="upload-journal-article-to-the-repository" class="level2">
+<h2 class="anchored" data-anchor-id="upload-journal-article-to-the-repository">14.39-15.00: Upload journal article to the repository</h2>
+<p>The journal article is free to view online as it is included with PubMed Central (PMC) - <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7486214/" class="uri">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7486214/</a>. The copyright statement provided is:</p>
+<blockquote class="blockquote">
+<p>“Copyright © 2020 The Canadian Society of Clinical Chemists. Published by Elsevier Inc.&nbsp;All rights reserved. Since January 2020 Elsevier has created a COVID-19 resource centre with free information in English and Mandarin on the novel coronavirus COVID-19. The COVID-19 resource centre is hosted on Elsevier Connect, the company’s public news and information website. Elsevier hereby grants permission to make all its COVID-19-related research that is available on the COVID-19 resource centre - including this research content - immediately available in PubMed Central and other publicly funded repositories, such as the WHO COVID database <strong>with rights for unrestricted research re-use and analyses in any form or by any means with acknowledgement of the original source</strong>. These permissions are granted for free by Elsevier for as long as the COVID-19 resource centre remains active.”</p>
+</blockquote>
+<p>Since the COVID-19 resource centre remains active, I understand that this means we are free to upload this article and its supplementary materials to this repository, and to use images from this article with attribution.</p>
+<p>I uploaded the article, figures and supplementary materials, and then completed <code>study_publication.qmd</code>, converting the <code>docx</code> files to <code>pdf</code> for easy display via e.g.&nbsp;<code>libreoffice --headless --convert-to pdf original_study/supp1.docx</code>.</p>
+</section>
+<section id="timings" class="level2">
+<h2 class="anchored" data-anchor-id="timings">Timings</h2>
+<div id="5c1affa8" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Minutes used prior to today</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>used_to_date <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Times from today</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> [</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'14.05'</span>, <span class="st">'14.34'</span>)]</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Time spent today: 29m, or 0h 29m
+Total used to date: 29m, or 0h 29m
+Time remaining: 2371m, or 39h 31m
+Used 1.2% of 40 hours max</code></pre>
+</div>
+</div>
 
 
 </section>

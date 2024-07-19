@@ -137,35 +137,28 @@
     "href": "quarto_site/study_publication.html",
     "title": "Publication",
     "section": "",
-    "text": "Please note: This is a template page and has not yet been completed"
+    "text": "Lim et al. (2020)"
   },
   {
-    "objectID": "quarto_site/study_publication.html#code-and-data",
-    "href": "quarto_site/study_publication.html#code-and-data",
+    "objectID": "quarto_site/study_publication.html#code",
+    "href": "quarto_site/study_publication.html#code",
     "title": "Publication",
-    "section": "Code and data",
-    "text": "Code and data\n\nView at: &lt;[Link]&gt;"
+    "section": "Code",
+    "text": "Code\nView at: https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/tree/main/original_study/COVID-roster-simulation\nCode from: https://github.com/chaose5/COVID-roster-simulation"
   },
   {
     "objectID": "quarto_site/study_publication.html#journal-article",
     "href": "quarto_site/study_publication.html#journal-article",
     "title": "Publication",
     "section": "Journal article",
-    "text": "Journal article"
+    "text": "Journal article\nArticle with publisher: https://doi.org/10.1016/j.clinbiochem.2020.09.003\nArticle on PMC: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7486214/"
   },
   {
     "objectID": "quarto_site/study_publication.html#supplementary-materials",
     "href": "quarto_site/study_publication.html#supplementary-materials",
     "title": "Publication",
     "section": "Supplementary materials",
-    "text": "Supplementary materials"
-  },
-  {
-    "objectID": "quarto_site/study_publication.html#sources",
-    "href": "quarto_site/study_publication.html#sources",
-    "title": "Publication",
-    "section": "Sources",
-    "text": "Sources"
+    "text": "Supplementary materials\nSupplementary materials 1:\n\n\nSupplementary materials 2:"
   },
   {
     "objectID": "quarto_site/reproduction_readme.html",
@@ -318,8 +311,29 @@
     "objectID": "logbook/posts/2024_07_19/index.html#create-repository",
     "href": "logbook/posts/2024_07_19/index.html#create-repository",
     "title": "Day 1",
-    "section": "14.05-14.09: Create repository",
-    "text": "14.05-14.09: Create repository\n\nSet up repository using template\nModified files to refer to Lim et al. 2020\nBuilt Python environment to create the book."
+    "section": "14.05-14.34: Create repository",
+    "text": "14.05-14.34: Create repository\n\nSet up repository using template\nModified files to refer to Lim et al. 2020\nBuilt Python environment to create the book.\nPreviously sent a detailed email to the authors on Thursday 11th and Friday 12th July to inform about the study and ask if they would be happy to add an open license. Looking over that email, I don’t think it is necessary to email again, but will double-check with someone else on STARS."
+  },
+  {
+    "objectID": "logbook/posts/2024_07_19/index.html#upload-code-to-the-repository",
+    "href": "logbook/posts/2024_07_19/index.html#upload-code-to-the-repository",
+    "title": "Day 1",
+    "section": "14.36-14.38: Upload code to the repository",
+    "text": "14.36-14.38: Upload code to the repository\nThe study code is available at https://github.com/chaose5/COVID-roster-simulation and shared with an open MIT license, which was kindly added following our email. As it is MIT, we do not need to update our license."
+  },
+  {
+    "objectID": "logbook/posts/2024_07_19/index.html#upload-journal-article-to-the-repository",
+    "href": "logbook/posts/2024_07_19/index.html#upload-journal-article-to-the-repository",
+    "title": "Day 1",
+    "section": "14.39-15.00: Upload journal article to the repository",
+    "text": "14.39-15.00: Upload journal article to the repository\nThe journal article is free to view online as it is included with PubMed Central (PMC) - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7486214/. The copyright statement provided is:\n\n“Copyright © 2020 The Canadian Society of Clinical Chemists. Published by Elsevier Inc. All rights reserved. Since January 2020 Elsevier has created a COVID-19 resource centre with free information in English and Mandarin on the novel coronavirus COVID-19. The COVID-19 resource centre is hosted on Elsevier Connect, the company’s public news and information website. Elsevier hereby grants permission to make all its COVID-19-related research that is available on the COVID-19 resource centre - including this research content - immediately available in PubMed Central and other publicly funded repositories, such as the WHO COVID database with rights for unrestricted research re-use and analyses in any form or by any means with acknowledgement of the original source. These permissions are granted for free by Elsevier for as long as the COVID-19 resource centre remains active.”\n\nSince the COVID-19 resource centre remains active, I understand that this means we are free to upload this article and its supplementary materials to this repository, and to use images from this article with attribution.\nI uploaded the article, figures and supplementary materials, and then completed study_publication.qmd, converting the docx files to pdf for easy display via e.g. libreoffice --headless --convert-to pdf original_study/supp1.docx."
+  },
+  {
+    "objectID": "logbook/posts/2024_07_19/index.html#timings",
+    "href": "logbook/posts/2024_07_19/index.html#timings",
+    "title": "Day 1",
+    "section": "Timings",
+    "text": "Timings\n\nimport sys\nsys.path.append('../')\nfrom timings import calculate_times\n\n# Minutes used prior to today\nused_to_date = 0\n\n# Times from today\ntimes = [\n    ('14.05', '14.34')]\n\ncalculate_times(used_to_date, times)\n\nTime spent today: 29m, or 0h 29m\nTotal used to date: 29m, or 0h 29m\nTime remaining: 2371m, or 39h 31m\nUsed 1.2% of 40 hours max"
   },
   {
     "objectID": "CHANGELOG.html",
