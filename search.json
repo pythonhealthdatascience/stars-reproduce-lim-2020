@@ -98,6 +98,20 @@
     "text": "11.48-11.55: Checking scope\nHad another look over the paper to double check if I could spot anything that I think could be in scope.\nAppears likely that the supplementary tables might actually often contain the data used to produce the figures, which is handy, as if I weren’t able to reproduce the results themselves, I would still be able to use that data to produce the figures (potentially (?) unless we would want to do it from scratch).\nDid spot another result - “The strongest protective effect is seen with the N95 masks (nearly equivalent to a FFP2 mask), which has the effect of reducing the odds of transmission by 0.09.” - which, on reflection, might be an additional item for the scope, as the odds of transmission are not calculated/provided within the tables or figures.\nAll other text though seems to be interpreting the figures and tables presented, and not providing new results."
   },
   {
+    "objectID": "logbook/posts/2024_07_22/index.html#x-consensus-on-scope-and-archive-repository",
+    "href": "logbook/posts/2024_07_22/index.html#x-consensus-on-scope-and-archive-repository",
+    "title": "Day 2",
+    "section": "15.23-X: Consensus on scope and archive repository",
+    "text": "15.23-X: Consensus on scope and archive repository\nMessaged with Tom who had a look over the scope and agreed he was happy with it. Also, happy with not emailing authors again re: starting reproduction.\nUpdate CHANGELOG.md and CITATION.cff before then creating a release to archive the repository on Zenodo."
+  },
+  {
+    "objectID": "logbook/posts/2024_07_22/index.html#timings",
+    "href": "logbook/posts/2024_07_22/index.html#timings",
+    "title": "Day 2",
+    "section": "Timings",
+    "text": "Timings\n\nimport sys\nsys.path.append('../')\nfrom timings import calculate_times\n\n# Minutes used prior to today\nused_to_date = 82\n\n# Times from today\ntimes = [\n    ('9.18', '10.08'),\n    ('10.18', '11.38'),\n    ('11.40', '11.42'),\n    ('11.48', '11.55')]\n# TODO: Add remaining times\n\ncalculate_times(used_to_date, times)\n\nTime spent today: 139m, or 2h 19m\nTotal used to date: 221m, or 3h 41m\nTime remaining: 2179m, or 36h 19m\nUsed 9.2% of 40 hours max"
+  },
+  {
     "objectID": "evaluation/reporting.html",
     "href": "evaluation/reporting.html",
     "title": "Reporting guidelines",
@@ -410,6 +424,13 @@
     "href": "CHANGELOG.html",
     "title": "Changelog",
     "section": "",
-    "text": "Changelog\nAll notable changes to this project will be documented in this file.\nThe format is based on Keep a Changelog, and this project adheres to Semantic Versioning. Dates formatted as YYYY-MM-DD as per ISO standard."
+    "text": "All notable changes to this project will be documented in this file.\nThe format is based on Keep a Changelog, and this project adheres to Semantic Versioning. Dates formatted as YYYY-MM-DD as per ISO standard.\n\n\nSet up repository and defined scope of reproduction.\n\n\n\nCode from original study\nArticle and supplementary materials\nReformatted csv tables from the supplementary materials\nPlanned scope for reproduction\n\n\n\n\n\nModified template to be about Lim et al. 2020"
+  },
+  {
+    "objectID": "CHANGELOG.html#v0.1.0---2024-07-22",
+    "href": "CHANGELOG.html#v0.1.0---2024-07-22",
+    "title": "Changelog",
+    "section": "",
+    "text": "Set up repository and defined scope of reproduction.\n\n\n\nCode from original study\nArticle and supplementary materials\nReformatted csv tables from the supplementary materials\nPlanned scope for reproduction\n\n\n\n\n\nModified template to be about Lim et al. 2020"
   }
 ]

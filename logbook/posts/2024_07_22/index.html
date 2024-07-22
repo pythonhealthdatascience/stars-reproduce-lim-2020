@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -209,6 +243,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#converting-supplementary-tables-to-csv" id="toc-converting-supplementary-tables-to-csv" class="nav-link active" data-scroll-target="#converting-supplementary-tables-to-csv">09.18-10.08, 10.18-11.38: Converting supplementary tables to CSV</a></li>
   <li><a href="#updating-readme" id="toc-updating-readme" class="nav-link" data-scroll-target="#updating-readme">11.40-11.42: Updating README</a></li>
   <li><a href="#checking-scope" id="toc-checking-scope" class="nav-link" data-scroll-target="#checking-scope">11.48-11.55: Checking scope</a></li>
+  <li><a href="#x-consensus-on-scope-and-archive-repository" id="toc-x-consensus-on-scope-and-archive-repository" class="nav-link" data-scroll-target="#x-consensus-on-scope-and-archive-repository">15.23-X: Consensus on scope and archive repository</a></li>
+  <li><a href="#timings" id="toc-timings" class="nav-link" data-scroll-target="#timings">Timings</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/edit/main/logbook/posts/2024_07_22/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -261,6 +297,38 @@ Reflection
 <p>Appears likely that the supplementary tables might actually often contain the data used to produce the figures, which is handy, as if I weren’t able to reproduce the results themselves, I would still be able to use that data to produce the figures (potentially (?) unless we would want to do it from scratch).</p>
 <p>Did spot another result - “<em>The strongest protective effect is seen with the N95 masks (nearly equivalent to a FFP2 mask), which has the effect of reducing the odds of transmission by 0.09.</em>” - which, on reflection, might be an additional item for the scope, as the odds of transmission are not calculated/provided within the tables or figures.</p>
 <p>All other text though seems to be interpreting the figures and tables presented, and not providing new results.</p>
+</section>
+<section id="x-consensus-on-scope-and-archive-repository" class="level2">
+<h2 class="anchored" data-anchor-id="x-consensus-on-scope-and-archive-repository">15.23-X: Consensus on scope and archive repository</h2>
+<p>Messaged with Tom who had a look over the scope and agreed he was happy with it. Also, happy with not emailing authors again re: starting reproduction.</p>
+<p>Update CHANGELOG.md and CITATION.cff before then creating a release to archive the repository on Zenodo.</p>
+</section>
+<section id="timings" class="level2">
+<h2 class="anchored" data-anchor-id="timings">Timings</h2>
+<div id="0afe54f1" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Minutes used prior to today</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>used_to_date <span class="op">=</span> <span class="dv">82</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Times from today</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> [</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'9.18'</span>, <span class="st">'10.08'</span>),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'10.18'</span>, <span class="st">'11.38'</span>),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.40'</span>, <span class="st">'11.42'</span>),</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.48'</span>, <span class="st">'11.55'</span>)]</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Add remaining times</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Time spent today: 139m, or 2h 19m
+Total used to date: 221m, or 3h 41m
+Time remaining: 2179m, or 36h 19m
+Used 9.2% of 40 hours max</code></pre>
+</div>
+</div>
 
 
 </section>
