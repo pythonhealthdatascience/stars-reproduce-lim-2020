@@ -243,7 +243,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#converting-supplementary-tables-to-csv" id="toc-converting-supplementary-tables-to-csv" class="nav-link active" data-scroll-target="#converting-supplementary-tables-to-csv">09.18-10.08, 10.18-11.38: Converting supplementary tables to CSV</a></li>
   <li><a href="#updating-readme" id="toc-updating-readme" class="nav-link" data-scroll-target="#updating-readme">11.40-11.42: Updating README</a></li>
   <li><a href="#checking-scope" id="toc-checking-scope" class="nav-link" data-scroll-target="#checking-scope">11.48-11.55: Checking scope</a></li>
-  <li><a href="#x-consensus-on-scope-and-archive-repository" id="toc-x-consensus-on-scope-and-archive-repository" class="nav-link" data-scroll-target="#x-consensus-on-scope-and-archive-repository">15.23-X: Consensus on scope and archive repository</a></li>
+  <li><a href="#consensus-on-scope-and-archive-repository" id="toc-consensus-on-scope-and-archive-repository" class="nav-link" data-scroll-target="#consensus-on-scope-and-archive-repository">15.23-15.30, 15.38-15.40: Consensus on scope and archive repository</a></li>
+  <li><a href="#look-over-code" id="toc-look-over-code" class="nav-link" data-scroll-target="#look-over-code">15.41-15.42: Look over code</a></li>
+  <li><a href="#set-up-environment" id="toc-set-up-environment" class="nav-link" data-scroll-target="#set-up-environment">15.44-15.56: Set-up environment</a></li>
+  <li><a href="#run-model" id="toc-run-model" class="nav-link" data-scroll-target="#run-model">15.57-15.58, 16.01-16.05, 16.15-16.33, 16.36-16.45: Run model</a></li>
   <li><a href="#timings" id="toc-timings" class="nav-link" data-scroll-target="#timings">Timings</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/edit/main/logbook/posts/2024_07_22/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -298,14 +301,45 @@ Reflection
 <p>Did spot another result - “<em>The strongest protective effect is seen with the N95 masks (nearly equivalent to a FFP2 mask), which has the effect of reducing the odds of transmission by 0.09.</em>” - which, on reflection, might be an additional item for the scope, as the odds of transmission are not calculated/provided within the tables or figures.</p>
 <p>All other text though seems to be interpreting the figures and tables presented, and not providing new results.</p>
 </section>
-<section id="x-consensus-on-scope-and-archive-repository" class="level2">
-<h2 class="anchored" data-anchor-id="x-consensus-on-scope-and-archive-repository">15.23-X: Consensus on scope and archive repository</h2>
+<section id="consensus-on-scope-and-archive-repository" class="level2">
+<h2 class="anchored" data-anchor-id="consensus-on-scope-and-archive-repository">15.23-15.30, 15.38-15.40: Consensus on scope and archive repository</h2>
 <p>Messaged with Tom who had a look over the scope and agreed he was happy with it. Also, happy with not emailing authors again re: starting reproduction.</p>
 <p>Update CHANGELOG.md and CITATION.cff before then creating a release to archive the repository on Zenodo.</p>
 </section>
+<section id="look-over-code" class="level2">
+<h2 class="anchored" data-anchor-id="look-over-code">15.41-15.42: Look over code</h2>
+<p>Concise / short model code, looks like it will run the model but will need to save results to csv and generate figures and tables with own code.</p>
+</section>
+<section id="set-up-environment" class="level2">
+<h2 class="anchored" data-anchor-id="set-up-environment">15.44-15.56: Set-up environment</h2>
+<p>The article mentions that code was in <code>Python 3</code> and uses <code>numpy</code> and <code>pandas</code>. Looking at code, those do appear to be the only packages required that are not base (only other is <code>random</code> which is base). Looking at dates:</p>
+<ul>
+<li>Article published online: 12 Sep 2020</li>
+<li>Code put on GitHub: 29 Aug 2020</li>
+</ul>
+<p>Hence, will base specific python version and package versions on being on or prior to <strong>29 August 2020</strong>.</p>
+<ul>
+<li>Python - 3.8 (first release 14 Oct 2019, then 3.9 came in Oct 2020)</li>
+<li>Numpy - 1.19.1 (21 July 2020, <a href="https://pypi.org/project/numpy/#history" class="uri">https://pypi.org/project/numpy/#history</a>)</li>
+<li>Pandas - 1.1.1 (28 July 2020, <a href="https://pypi.org/project/pandas/#history" class="uri">https://pypi.org/project/pandas/#history</a>)</li>
+</ul>
+<p>Created an environment file and installed with mamba - <code>mamba env create -f environment.yaml</code>. Once activated enviroment, once activated with <code>mamba activate lim2020</code>, can see with <code>conda list python</code> that we have python 3.8.19. Checking online, can see should switch to 3.8.5, which is version from 20 July 2020.</p>
+</section>
+<section id="run-model" class="level2">
+<h2 class="anchored" data-anchor-id="run-model">15.57-15.58, 16.01-16.05, 16.15-16.33, 16.36-16.45: Run model</h2>
+<p>Copied <code>Roster Schedule COVID Simulation-final.py</code> and renamed to <code>model.py</code>. Created <code>reproduction.ipynb</code> to run model and then produce outputs, and add <code>ipykernel</code> to environment (required for <code>.ipynb</code>).</p>
+<p>Then ran the model. Whilst it ran, it printed lots of <code>SettingWithCopyWarning</code> errors for <code>stafflist['infected'][staff_infected[i]]=1</code> and <code>stafflist['infected'][roster.iloc[0][0]]=1</code>. (<code>SettingWithCopyWarning: A value is trying to be set on a copy of a slice from a DataFrame.</code>) I anticipate these could be resolved with the following changes (which I’ll implement once it’s finished running):</p>
+<ul>
+<li><code>stafflist.loc[staff_infected[i], 'infected'] = 1</code></li>
+<li><code>stafflist.loc[roster.iloc[0][0], 'infected'] = 1</code></li>
+</ul>
+<p>Wasn’t certain how long model should take, but paused record of time whilst it ran. After 10 minutes though, I decided to cancel that, and instead just run one version of the input parameters for the model (i.e.&nbsp;one choice from staff per shift, shifts per day, strength, staff change).</p>
+<p>I copied over the functions into the <code>.ipynb</code> and ran one version of model. Can see this outputs a table where columns are the strength and staff change. I tried running a few to understand how the results table was being produced. I then add code to save the results to <code>.csv</code>.</p>
+<p>Presently, I think this might only be for one shift per day, although I might be wrong.</p>
+</section>
 <section id="timings" class="level2">
 <h2 class="anchored" data-anchor-id="timings">Timings</h2>
-<div id="97cc0e9c" class="cell" data-execution_count="1">
+<div id="009b7dc6" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
@@ -318,15 +352,17 @@ Reflection
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'9.18'</span>, <span class="st">'10.08'</span>),</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'10.18'</span>, <span class="st">'11.38'</span>),</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.40'</span>, <span class="st">'11.42'</span>),</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.48'</span>, <span class="st">'11.55'</span>)]</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Add remaining times</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.48'</span>, <span class="st">'11.55'</span>),</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'15.23'</span>, <span class="st">'15.30'</span>),</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'15.38'</span>, <span class="st">'15.40'</span>)]</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Add remaining times</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time spent today: 139m, or 2h 19m
-Total used to date: 221m, or 3h 41m
-Time remaining: 2179m, or 36h 19m
-Used 9.2% of 40 hours max</code></pre>
+<pre><code>Time spent today: 148m, or 2h 28m
+Total used to date: 230m, or 3h 50m
+Time remaining: 2170m, or 36h 10m
+Used 9.6% of 40 hours max</code></pre>
 </div>
 </div>
 
