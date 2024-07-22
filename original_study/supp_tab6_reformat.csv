@@ -1,0 +1,901 @@
+workplace_measure,shifts_per_day,staff_per_shift,strength,staff_change,prop_infected
+Gloves,1.0,5.0,2,1,0.2
+Gloves,1.0,5.0,2,3,0.2
+Gloves,1.0,5.0,2,7,0.2
+Gloves,1.0,5.0,2,14,0.3
+Gloves,1.0,5.0,2,21,0.3
+Gloves,1.0,5.0,4,1,0.05
+Gloves,1.0,5.0,4,3,0.05
+Gloves,1.0,5.0,4,7,0.1
+Gloves,1.0,5.0,4,14,0.15
+Gloves,1.0,5.0,4,21,0.15
+Gloves,1.0,5.0,6,1,0.03
+Gloves,1.0,5.0,6,3,0.03
+Gloves,1.0,5.0,6,7,0.07
+Gloves,1.0,5.0,6,14,0.1
+Gloves,1.0,5.0,6,21,0.1
+Gloves,1.0,10.0,2,1,0.15
+Gloves,1.0,10.0,2,3,0.25
+Gloves,1.0,10.0,2,7,0.2
+Gloves,1.0,10.0,2,14,0.4
+Gloves,1.0,10.0,2,21,0.4
+Gloves,1.0,10.0,4,1,0.05
+Gloves,1.0,10.0,4,3,0.06
+Gloves,1.0,10.0,4,7,0.07
+Gloves,1.0,10.0,4,14,0.2
+Gloves,1.0,10.0,4,21,0.2
+Gloves,1.0,10.0,6,1,0.02
+Gloves,1.0,10.0,6,3,0.03
+Gloves,1.0,10.0,6,7,0.05
+Gloves,1.0,10.0,6,14,0.13
+Gloves,1.0,10.0,6,21,0.15
+Gloves,1.0,20.0,2,1,0.29
+Gloves,1.0,20.0,2,3,0.35
+Gloves,1.0,20.0,2,7,0.28
+Gloves,1.0,20.0,2,14,0.5
+Gloves,1.0,20.0,2,21,0.5
+Gloves,1.0,20.0,4,1,0.06
+Gloves,1.0,20.0,4,3,0.09
+Gloves,1.0,20.0,4,7,0.13
+Gloves,1.0,20.0,4,14,0.25
+Gloves,1.0,20.0,4,21,0.25
+Gloves,1.0,20.0,6,1,0.03
+Gloves,1.0,20.0,6,3,0.05
+Gloves,1.0,20.0,6,7,0.1
+Gloves,1.0,20.0,6,14,0.17
+Gloves,1.0,20.0,6,21,0.17
+Gloves,1.0,30.0,2,1,0.37
+Gloves,1.0,30.0,2,3,0.43
+Gloves,1.0,30.0,2,7,0.38
+Gloves,1.0,30.0,2,14,0.5
+Gloves,1.0,30.0,2,21,0.5
+Gloves,1.0,30.0,4,1,0.08
+Gloves,1.0,30.0,4,3,0.17
+Gloves,1.0,30.0,4,7,0.18
+Gloves,1.0,30.0,4,14,0.25
+Gloves,1.0,30.0,4,21,0.25
+Gloves,1.0,30.0,6,1,0.03
+Gloves,1.0,30.0,6,3,0.09
+Gloves,1.0,30.0,6,7,0.12
+Gloves,1.0,30.0,6,14,0.17
+Gloves,1.0,30.0,6,21,0.17
+Gloves,2.0,5.0,2,1,
+Gloves,2.0,5.0,2,3,
+Gloves,2.0,5.0,2,7,
+Gloves,2.0,5.0,2,14,
+Gloves,2.0,5.0,2,21,
+Gloves,2.0,5.0,4,1,0.05
+Gloves,2.0,5.0,4,3,0.1
+Gloves,2.0,5.0,4,7,0.1
+Gloves,2.0,5.0,4,14,0.15
+Gloves,2.0,5.0,4,21,0.15
+Gloves,2.0,5.0,6,1,0.03
+Gloves,2.0,5.0,6,3,0.05
+Gloves,2.0,5.0,6,7,0.07
+Gloves,2.0,5.0,6,14,0.12
+Gloves,2.0,5.0,6,21,0.1
+Gloves,2.0,10.0,2,1,
+Gloves,2.0,10.0,2,3,
+Gloves,2.0,10.0,2,7,
+Gloves,2.0,10.0,2,14,
+Gloves,2.0,10.0,2,21,
+Gloves,2.0,10.0,4,1,0.05
+Gloves,2.0,10.0,4,3,0.07
+Gloves,2.0,10.0,4,7,0.1
+Gloves,2.0,10.0,4,14,0.2
+Gloves,2.0,10.0,4,21,0.2
+Gloves,2.0,10.0,6,1,0.03
+Gloves,2.0,10.0,6,3,0.05
+Gloves,2.0,10.0,6,7,0.07
+Gloves,2.0,10.0,6,14,0.13
+Gloves,2.0,10.0,6,21,0.13
+Gloves,2.0,20.0,2,1,
+Gloves,2.0,20.0,2,3,
+Gloves,2.0,20.0,2,7,
+Gloves,2.0,20.0,2,14,
+Gloves,2.0,20.0,2,21,
+Gloves,2.0,20.0,4,1,0.07
+Gloves,2.0,20.0,4,3,0.12
+Gloves,2.0,20.0,4,7,0.12
+Gloves,2.0,20.0,4,14,0.25
+Gloves,2.0,20.0,4,21,0.25
+Gloves,2.0,20.0,6,1,0.03
+Gloves,2.0,20.0,6,3,0.05
+Gloves,2.0,20.0,6,7,0.09
+Gloves,2.0,20.0,6,14,0.17
+Gloves,2.0,20.0,6,21,0.17
+Gloves,2.0,30.0,2,1,
+Gloves,2.0,30.0,2,3,
+Gloves,2.0,30.0,2,7,
+Gloves,2.0,30.0,2,14,
+Gloves,2.0,30.0,2,21,
+Gloves,2.0,30.0,4,1,0.11
+Gloves,2.0,30.0,4,3,0.2
+Gloves,2.0,30.0,4,7,0.18
+Gloves,2.0,30.0,4,14,0.25
+Gloves,2.0,30.0,4,21,0.25
+Gloves,2.0,30.0,6,1,0.03
+Gloves,2.0,30.0,6,3,0.09
+Gloves,2.0,30.0,6,7,0.13
+Gloves,2.0,30.0,6,14,0.17
+Gloves,2.0,30.0,6,21,0.17
+Gloves,3.0,5.0,2,1,
+Gloves,3.0,5.0,2,3,
+Gloves,3.0,5.0,2,7,
+Gloves,3.0,5.0,2,14,
+Gloves,3.0,5.0,2,21,
+Gloves,3.0,5.0,4,1,0.05
+Gloves,3.0,5.0,4,3,0.1
+Gloves,3.0,5.0,4,7,0.1
+Gloves,3.0,5.0,4,14,0.15
+Gloves,3.0,5.0,4,21,0.15
+Gloves,3.0,5.0,6,1,0.03
+Gloves,3.0,5.0,6,3,0.03
+Gloves,3.0,5.0,6,7,0.07
+Gloves,3.0,5.0,6,14,0.1
+Gloves,3.0,5.0,6,21,0.12
+Gloves,3.0,10.0,2,1,
+Gloves,3.0,10.0,2,3,
+Gloves,3.0,10.0,2,7,
+Gloves,3.0,10.0,2,14,
+Gloves,3.0,10.0,2,21,
+Gloves,3.0,10.0,4,1,0.05
+Gloves,3.0,10.0,4,3,0.07
+Gloves,3.0,10.0,4,7,0.1
+Gloves,3.0,10.0,4,14,0.23
+Gloves,3.0,10.0,4,21,0.2
+Gloves,3.0,10.0,6,1,0.03
+Gloves,3.0,10.0,6,3,0.05
+Gloves,3.0,10.0,6,7,0.05
+Gloves,3.0,10.0,6,14,0.13
+Gloves,3.0,10.0,6,21,0.13
+Gloves,3.0,20.0,2,1,
+Gloves,3.0,20.0,2,3,
+Gloves,3.0,20.0,2,7,
+Gloves,3.0,20.0,2,14,
+Gloves,3.0,20.0,2,21,
+Gloves,3.0,20.0,4,1,0.12
+Gloves,3.0,20.0,4,3,0.13
+Gloves,3.0,20.0,4,7,0.11
+Gloves,3.0,20.0,4,14,0.25
+Gloves,3.0,20.0,4,21,0.25
+Gloves,3.0,20.0,6,1,0.03
+Gloves,3.0,20.0,6,3,0.05
+Gloves,3.0,20.0,6,7,0.08
+Gloves,3.0,20.0,6,14,0.17
+Gloves,3.0,20.0,6,21,0.17
+Gloves,3.0,30.0,2,1,
+Gloves,3.0,30.0,2,3,
+Gloves,3.0,30.0,2,7,
+Gloves,3.0,30.0,2,14,
+Gloves,3.0,30.0,2,21,
+Gloves,3.0,30.0,4,1,0.12
+Gloves,3.0,30.0,4,3,0.22
+Gloves,3.0,30.0,4,7,0.18
+Gloves,3.0,30.0,4,14,0.25
+Gloves,3.0,30.0,4,21,0.25
+Gloves,3.0,30.0,6,1,0.06
+Gloves,3.0,30.0,6,3,0.11
+Gloves,3.0,30.0,6,7,0.13
+Gloves,3.0,30.0,6,14,0.17
+Gloves,3.0,30.0,6,21,0.17
+Gown,1.0,5.0,2,1,0.1
+Gown,1.0,5.0,2,3,0.1
+Gown,1.0,5.0,2,7,0.1
+Gown,1.0,5.0,2,14,0.2
+Gown,1.0,5.0,2,21,0.2
+Gown,1.0,5.0,4,1,0.05
+Gown,1.0,5.0,4,3,0.05
+Gown,1.0,5.0,4,7,0.05
+Gown,1.0,5.0,4,14,0.1
+Gown,1.0,5.0,4,21,0.1
+Gown,1.0,5.0,6,1,0.03
+Gown,1.0,5.0,6,3,0.03
+Gown,1.0,5.0,6,7,0.03
+Gown,1.0,5.0,6,14,0.07
+Gown,1.0,5.0,6,21,0.07
+Gown,1.0,10.0,2,1,0.1
+Gown,1.0,10.0,2,3,0.1
+Gown,1.0,10.0,2,7,0.1
+Gown,1.0,10.0,2,14,0.2
+Gown,1.0,10.0,2,21,0.2
+Gown,1.0,10.0,4,1,0.03
+Gown,1.0,10.0,4,3,0.05
+Gown,1.0,10.0,4,7,0.05
+Gown,1.0,10.0,4,14,0.1
+Gown,1.0,10.0,4,21,0.1
+Gown,1.0,10.0,6,1,0.02
+Gown,1.0,10.0,6,3,0.02
+Gown,1.0,10.0,6,7,0.03
+Gown,1.0,10.0,6,14,0.07
+Gown,1.0,10.0,6,21,0.07
+Gown,1.0,20.0,2,1,0.1
+Gown,1.0,20.0,2,3,0.1
+Gown,1.0,20.0,2,7,0.1
+Gown,1.0,20.0,2,14,0.3
+Gown,1.0,20.0,2,21,0.31
+Gown,1.0,20.0,4,1,0.03
+Gown,1.0,20.0,4,3,0.04
+Gown,1.0,20.0,4,7,0.06
+Gown,1.0,20.0,4,14,0.14
+Gown,1.0,20.0,4,21,0.15
+Gown,1.0,20.0,6,1,0.02
+Gown,1.0,20.0,6,3,0.02
+Gown,1.0,20.0,6,7,0.03
+Gown,1.0,20.0,6,14,0.1
+Gown,1.0,20.0,6,21,0.1
+Gown,1.0,30.0,2,1,0.13
+Gown,1.0,30.0,2,3,0.18
+Gown,1.0,30.0,2,7,0.12
+Gown,1.0,30.0,2,14,0.42
+Gown,1.0,30.0,2,21,0.42
+Gown,1.0,30.0,4,1,0.03
+Gown,1.0,30.0,4,3,0.04
+Gown,1.0,30.0,4,7,0.06
+Gown,1.0,30.0,4,14,0.21
+Gown,1.0,30.0,4,21,0.23
+Gown,1.0,30.0,6,1,0.01
+Gown,1.0,30.0,6,3,0.02
+Gown,1.0,30.0,6,7,0.04
+Gown,1.0,30.0,6,14,0.14
+Gown,1.0,30.0,6,21,0.14
+Gown,2.0,5.0,2,1,
+Gown,2.0,5.0,2,3,
+Gown,2.0,5.0,2,7,
+Gown,2.0,5.0,2,14,
+Gown,2.0,5.0,2,21,
+Gown,2.0,5.0,4,1,0.05
+Gown,2.0,5.0,4,3,0.05
+Gown,2.0,5.0,4,7,0.05
+Gown,2.0,5.0,4,14,0.1
+Gown,2.0,5.0,4,21,0.1
+Gown,2.0,5.0,6,1,0.03
+Gown,2.0,5.0,6,3,0.03
+Gown,2.0,5.0,6,7,0.03
+Gown,2.0,5.0,6,14,0.07
+Gown,2.0,5.0,6,21,0.07
+Gown,2.0,10.0,2,1,
+Gown,2.0,10.0,2,3,
+Gown,2.0,10.0,2,7,
+Gown,2.0,10.0,2,14,
+Gown,2.0,10.0,2,21,
+Gown,2.0,10.0,4,1,0.05
+Gown,2.0,10.0,4,3,0.05
+Gown,2.0,10.0,4,7,0.05
+Gown,2.0,10.0,4,14,0.1
+Gown,2.0,10.0,4,21,0.1
+Gown,2.0,10.0,6,1,0.02
+Gown,2.0,10.0,6,3,0.02
+Gown,2.0,10.0,6,7,0.03
+Gown,2.0,10.0,6,14,0.07
+Gown,2.0,10.0,6,21,0.07
+Gown,2.0,20.0,2,1,
+Gown,2.0,20.0,2,3,
+Gown,2.0,20.0,2,7,
+Gown,2.0,20.0,2,14,
+Gown,2.0,20.0,2,21,
+Gown,2.0,20.0,4,1,0.04
+Gown,2.0,20.0,4,3,0.04
+Gown,2.0,20.0,4,7,0.06
+Gown,2.0,20.0,4,14,0.16
+Gown,2.0,20.0,4,21,0.16
+Gown,2.0,20.0,6,1,0.02
+Gown,2.0,20.0,6,3,0.02
+Gown,2.0,20.0,6,7,0.03
+Gown,2.0,20.0,6,14,0.1
+Gown,2.0,20.0,6,21,0.1
+Gown,2.0,30.0,2,1,
+Gown,2.0,30.0,2,3,
+Gown,2.0,30.0,2,7,
+Gown,2.0,30.0,2,14,
+Gown,2.0,30.0,2,21,
+Gown,2.0,30.0,4,1,0.03
+Gown,2.0,30.0,4,3,0.04
+Gown,2.0,30.0,4,7,0.07
+Gown,2.0,30.0,4,14,0.2
+Gown,2.0,30.0,4,21,0.22
+Gown,2.0,30.0,6,1,0.02
+Gown,2.0,30.0,6,3,0.02
+Gown,2.0,30.0,6,7,0.04
+Gown,2.0,30.0,6,14,0.14
+Gown,2.0,30.0,6,21,0.14
+Gown,3.0,5.0,2,1,
+Gown,3.0,5.0,2,3,
+Gown,3.0,5.0,2,7,
+Gown,3.0,5.0,2,14,
+Gown,3.0,5.0,2,21,
+Gown,3.0,5.0,4,1,0.05
+Gown,3.0,5.0,4,3,0.05
+Gown,3.0,5.0,4,7,0.05
+Gown,3.0,5.0,4,14,0.1
+Gown,3.0,5.0,4,21,0.1
+Gown,3.0,5.0,6,1,0.03
+Gown,3.0,5.0,6,3,0.03
+Gown,3.0,5.0,6,7,0.03
+Gown,3.0,5.0,6,14,0.07
+Gown,3.0,5.0,6,21,0.07
+Gown,3.0,10.0,2,1,
+Gown,3.0,10.0,2,3,
+Gown,3.0,10.0,2,7,
+Gown,3.0,10.0,2,14,
+Gown,3.0,10.0,2,21,
+Gown,3.0,10.0,4,1,0.05
+Gown,3.0,10.0,4,3,0.05
+Gown,3.0,10.0,4,7,0.05
+Gown,3.0,10.0,4,14,0.1
+Gown,3.0,10.0,4,21,0.07
+Gown,3.0,10.0,6,1,0.02
+Gown,3.0,10.0,6,3,0.02
+Gown,3.0,10.0,6,7,0.03
+Gown,3.0,10.0,6,14,0.07
+Gown,3.0,10.0,6,21,0.07
+Gown,3.0,20.0,2,1,
+Gown,3.0,20.0,2,3,
+Gown,3.0,20.0,2,7,
+Gown,3.0,20.0,2,14,
+Gown,3.0,20.0,2,21,
+Gown,3.0,20.0,4,1,0.04
+Gown,3.0,20.0,4,3,0.05
+Gown,3.0,20.0,4,7,0.05
+Gown,3.0,20.0,4,14,0.16
+Gown,3.0,20.0,4,21,0.16
+Gown,3.0,20.0,6,1,0.02
+Gown,3.0,20.0,6,3,0.02
+Gown,3.0,20.0,6,7,0.03
+Gown,3.0,20.0,6,14,0.1
+Gown,3.0,20.0,6,21,0.1
+Gown,3.0,30.0,2,1,
+Gown,3.0,30.0,2,3,
+Gown,3.0,30.0,2,7,
+Gown,3.0,30.0,2,14,
+Gown,3.0,30.0,2,21,
+Gown,3.0,30.0,4,1,0.04
+Gown,3.0,30.0,4,3,0.07
+Gown,3.0,30.0,4,7,0.05
+Gown,3.0,30.0,4,14,0.22
+Gown,3.0,30.0,4,21,0.21
+Gown,3.0,30.0,6,1,0.02
+Gown,3.0,30.0,6,3,0.03
+Gown,3.0,30.0,6,7,0.04
+Gown,3.0,30.0,6,14,0.14
+Gown,3.0,30.0,6,21,0.14
+N95 mask,1.0,5.0,2,1,0.1
+N95 mask,1.0,5.0,2,3,0.1
+N95 mask,1.0,5.0,2,7,0.1
+N95 mask,1.0,5.0,2,14,0.1
+N95 mask,1.0,5.0,2,21,0.1
+N95 mask,1.0,5.0,4,1,0.05
+N95 mask,1.0,5.0,4,3,0.05
+N95 mask,1.0,5.0,4,7,0.05
+N95 mask,1.0,5.0,4,14,0.05
+N95 mask,1.0,5.0,4,21,0.05
+N95 mask,1.0,5.0,6,1,0.03
+N95 mask,1.0,5.0,6,3,0.03
+N95 mask,1.0,5.0,6,7,0.03
+N95 mask,1.0,5.0,6,14,0.03
+N95 mask,1.0,5.0,6,21,0.03
+N95 mask,1.0,10.0,2,1,0.05
+N95 mask,1.0,10.0,2,3,0.05
+N95 mask,1.0,10.0,2,7,0.05
+N95 mask,1.0,10.0,2,14,0.1
+N95 mask,1.0,10.0,2,21,0.1
+N95 mask,1.0,10.0,4,1,0.03
+N95 mask,1.0,10.0,4,3,0.03
+N95 mask,1.0,10.0,4,7,0.03
+N95 mask,1.0,10.0,4,14,0.05
+N95 mask,1.0,10.0,4,21,0.05
+N95 mask,1.0,10.0,6,1,0.02
+N95 mask,1.0,10.0,6,3,0.02
+N95 mask,1.0,10.0,6,7,0.02
+N95 mask,1.0,10.0,6,14,0.03
+N95 mask,1.0,10.0,6,21,0.03
+N95 mask,1.0,20.0,2,1,0.03
+N95 mask,1.0,20.0,2,3,0.05
+N95 mask,1.0,20.0,2,7,0.05
+N95 mask,1.0,20.0,2,14,0.07
+N95 mask,1.0,20.0,2,21,0.07
+N95 mask,1.0,20.0,4,1,0.01
+N95 mask,1.0,20.0,4,3,0.01
+N95 mask,1.0,20.0,4,7,0.01
+N95 mask,1.0,20.0,4,14,0.04
+N95 mask,1.0,20.0,4,21,0.04
+N95 mask,1.0,20.0,6,1,0.01
+N95 mask,1.0,20.0,6,3,0.01
+N95 mask,1.0,20.0,6,7,0.01
+N95 mask,1.0,20.0,6,14,0.03
+N95 mask,1.0,20.0,6,21,0.03
+N95 mask,1.0,30.0,2,1,0.03
+N95 mask,1.0,30.0,2,3,0.05
+N95 mask,1.0,30.0,2,7,0.03
+N95 mask,1.0,30.0,2,14,0.08
+N95 mask,1.0,30.0,2,21,0.12
+N95 mask,1.0,30.0,4,1,0.01
+N95 mask,1.0,30.0,4,3,0.01
+N95 mask,1.0,30.0,4,7,0.03
+N95 mask,1.0,30.0,4,14,0.05
+N95 mask,1.0,30.0,4,21,0.05
+N95 mask,1.0,30.0,6,1,0.01
+N95 mask,1.0,30.0,6,3,0.01
+N95 mask,1.0,30.0,6,7,0.01
+N95 mask,1.0,30.0,6,14,0.03
+N95 mask,1.0,30.0,6,21,0.03
+N95 mask,2.0,5.0,2,1,
+N95 mask,2.0,5.0,2,3,
+N95 mask,2.0,5.0,2,7,
+N95 mask,2.0,5.0,2,14,
+N95 mask,2.0,5.0,2,21,
+N95 mask,2.0,5.0,4,1,0.05
+N95 mask,2.0,5.0,4,3,0.05
+N95 mask,2.0,5.0,4,7,0.05
+N95 mask,2.0,5.0,4,14,0.05
+N95 mask,2.0,5.0,4,21,0.05
+N95 mask,2.0,5.0,6,1,0.03
+N95 mask,2.0,5.0,6,3,0.03
+N95 mask,2.0,5.0,6,7,0.03
+N95 mask,2.0,5.0,6,14,0.03
+N95 mask,2.0,5.0,6,21,0.03
+N95 mask,2.0,10.0,2,1,
+N95 mask,2.0,10.0,2,3,
+N95 mask,2.0,10.0,2,7,
+N95 mask,2.0,10.0,2,14,
+N95 mask,2.0,10.0,2,21,
+N95 mask,2.0,10.0,4,1,0.03
+N95 mask,2.0,10.0,4,3,0.03
+N95 mask,2.0,10.0,4,7,0.03
+N95 mask,2.0,10.0,4,14,0.05
+N95 mask,2.0,10.0,4,21,0.03
+N95 mask,2.0,10.0,6,1,0.02
+N95 mask,2.0,10.0,6,3,0.02
+N95 mask,2.0,10.0,6,7,0.02
+N95 mask,2.0,10.0,6,14,0.02
+N95 mask,2.0,10.0,6,21,0.03
+N95 mask,2.0,20.0,2,1,
+N95 mask,2.0,20.0,2,3,
+N95 mask,2.0,20.0,2,7,
+N95 mask,2.0,20.0,2,14,
+N95 mask,2.0,20.0,2,21,
+N95 mask,2.0,20.0,4,1,0.01
+N95 mask,2.0,20.0,4,3,0.01
+N95 mask,2.0,20.0,4,7,0.03
+N95 mask,2.0,20.0,4,14,0.04
+N95 mask,2.0,20.0,4,21,0.04
+N95 mask,2.0,20.0,6,1,0.01
+N95 mask,2.0,20.0,6,3,0.01
+N95 mask,2.0,20.0,6,7,0.01
+N95 mask,2.0,20.0,6,14,0.02
+N95 mask,2.0,20.0,6,21,0.03
+N95 mask,2.0,30.0,2,1,
+N95 mask,2.0,30.0,2,3,
+N95 mask,2.0,30.0,2,7,
+N95 mask,2.0,30.0,2,14,
+N95 mask,2.0,30.0,2,21,
+N95 mask,2.0,30.0,4,1,0.01
+N95 mask,2.0,30.0,4,3,0.02
+N95 mask,2.0,30.0,4,7,0.02
+N95 mask,2.0,30.0,4,14,0.03
+N95 mask,2.0,30.0,4,21,0.04
+N95 mask,2.0,30.0,6,1,0.01
+N95 mask,2.0,30.0,6,3,0.01
+N95 mask,2.0,30.0,6,7,0.01
+N95 mask,2.0,30.0,6,14,0.03
+N95 mask,2.0,30.0,6,21,0.03
+N95 mask,3.0,5.0,2,1,
+N95 mask,3.0,5.0,2,3,
+N95 mask,3.0,5.0,2,7,
+N95 mask,3.0,5.0,2,14,
+N95 mask,3.0,5.0,2,21,
+N95 mask,3.0,5.0,4,1,0.05
+N95 mask,3.0,5.0,4,3,0.05
+N95 mask,3.0,5.0,4,7,0.05
+N95 mask,3.0,5.0,4,14,0.05
+N95 mask,3.0,5.0,4,21,0.05
+N95 mask,3.0,5.0,6,1,0.03
+N95 mask,3.0,5.0,6,3,0.03
+N95 mask,3.0,5.0,6,7,0.03
+N95 mask,3.0,5.0,6,14,0.03
+N95 mask,3.0,5.0,6,21,0.03
+N95 mask,3.0,10.0,2,1,
+N95 mask,3.0,10.0,2,3,
+N95 mask,3.0,10.0,2,7,
+N95 mask,3.0,10.0,2,14,
+N95 mask,3.0,10.0,2,21,
+N95 mask,3.0,10.0,4,1,0.03
+N95 mask,3.0,10.0,4,3,0.03
+N95 mask,3.0,10.0,4,7,0.03
+N95 mask,3.0,10.0,4,14,0.04
+N95 mask,3.0,10.0,4,21,0.05
+N95 mask,3.0,10.0,6,1,0.02
+N95 mask,3.0,10.0,6,3,0.02
+N95 mask,3.0,10.0,6,7,0.02
+N95 mask,3.0,10.0,6,14,0.03
+N95 mask,3.0,10.0,6,21,0.03
+N95 mask,3.0,20.0,2,1,
+N95 mask,3.0,20.0,2,3,
+N95 mask,3.0,20.0,2,7,
+N95 mask,3.0,20.0,2,14,
+N95 mask,3.0,20.0,2,21,
+N95 mask,3.0,20.0,4,1,0.01
+N95 mask,3.0,20.0,4,3,0.03
+N95 mask,3.0,20.0,4,7,0.01
+N95 mask,3.0,20.0,4,14,0.04
+N95 mask,3.0,20.0,4,21,0.04
+N95 mask,3.0,20.0,6,1,0.01
+N95 mask,3.0,20.0,6,3,0.01
+N95 mask,3.0,20.0,6,7,0.02
+N95 mask,3.0,20.0,6,14,0.03
+N95 mask,3.0,20.0,6,21,0.03
+N95 mask,3.0,30.0,2,1,
+N95 mask,3.0,30.0,2,3,
+N95 mask,3.0,30.0,2,7,
+N95 mask,3.0,30.0,2,14,
+N95 mask,3.0,30.0,2,21,
+N95 mask,3.0,30.0,4,1,0.02
+N95 mask,3.0,30.0,4,3,0.02
+N95 mask,3.0,30.0,4,7,0.02
+N95 mask,3.0,30.0,4,14,0.05
+N95 mask,3.0,30.0,4,21,0.05
+N95 mask,3.0,30.0,6,1,0.01
+N95 mask,3.0,30.0,6,3,0.01
+N95 mask,3.0,30.0,6,7,0.01
+N95 mask,3.0,30.0,6,14,0.03
+N95 mask,3.0,30.0,6,21,0.03
+Social distancing,1.0,5.0,2,1,0.2
+Social distancing,1.0,5.0,2,3,0.2
+Social distancing,1.0,5.0,2,7,0.2
+Social distancing,1.0,5.0,2,14,0.35
+Social distancing,1.0,5.0,2,21,0.35
+Social distancing,1.0,5.0,4,1,0.05
+Social distancing,1.0,5.0,4,3,0.1
+Social distancing,1.0,5.0,4,7,0.1
+Social distancing,1.0,5.0,4,14,0.2
+Social distancing,1.0,5.0,4,21,0.17
+Social distancing,1.0,5.0,6,1,0.03
+Social distancing,1.0,5.0,6,3,0.03
+Social distancing,1.0,5.0,6,7,0.07
+Social distancing,1.0,5.0,6,14,0.12
+Social distancing,1.0,5.0,6,21,0.13
+Social distancing,1.0,10.0,2,1,0.2
+Social distancing,1.0,10.0,2,3,0.25
+Social distancing,1.0,10.0,2,7,0.2
+Social distancing,1.0,10.0,2,14,0.45
+Social distancing,1.0,10.0,2,21,0.45
+Social distancing,1.0,10.0,4,1,0.05
+Social distancing,1.0,10.0,4,3,0.07
+Social distancing,1.0,10.0,4,7,0.1
+Social distancing,1.0,10.0,4,14,0.23
+Social distancing,1.0,10.0,4,21,0.2
+Social distancing,1.0,10.0,6,1,0.03
+Social distancing,1.0,10.0,6,3,0.03
+Social distancing,1.0,10.0,6,7,0.08
+Social distancing,1.0,10.0,6,14,0.15
+Social distancing,1.0,10.0,6,21,0.13
+Social distancing,1.0,20.0,2,1,0.31
+Social distancing,1.0,20.0,2,3,0.38
+Social distancing,1.0,20.0,2,7,0.33
+Social distancing,1.0,20.0,2,14,0.5
+Social distancing,1.0,20.0,2,21,0.5
+Social distancing,1.0,20.0,4,1,0.07
+Social distancing,1.0,20.0,4,3,0.12
+Social distancing,1.0,20.0,4,7,0.16
+Social distancing,1.0,20.0,4,14,0.25
+Social distancing,1.0,20.0,4,21,0.25
+Social distancing,1.0,20.0,6,1,0.03
+Social distancing,1.0,20.0,6,3,0.06
+Social distancing,1.0,20.0,6,7,0.11
+Social distancing,1.0,20.0,6,14,0.17
+Social distancing,1.0,20.0,6,21,0.17
+Social distancing,1.0,30.0,2,1,0.42
+Social distancing,1.0,30.0,2,3,0.46
+Social distancing,1.0,30.0,2,7,0.43
+Social distancing,1.0,30.0,2,14,0.5
+Social distancing,1.0,30.0,2,21,0.5
+Social distancing,1.0,30.0,4,1,0.1
+Social distancing,1.0,30.0,4,3,0.21
+Social distancing,1.0,30.0,4,7,0.19
+Social distancing,1.0,30.0,4,14,0.25
+Social distancing,1.0,30.0,4,21,0.25
+Social distancing,1.0,30.0,6,1,0.05
+Social distancing,1.0,30.0,6,3,0.11
+Social distancing,1.0,30.0,6,7,0.14
+Social distancing,1.0,30.0,6,14,0.17
+Social distancing,1.0,30.0,6,21,0.17
+Social distancing,2.0,5.0,2,1,
+Social distancing,2.0,5.0,2,3,
+Social distancing,2.0,5.0,2,7,
+Social distancing,2.0,5.0,2,14,
+Social distancing,2.0,5.0,2,21,
+Social distancing,2.0,5.0,4,1,0.05
+Social distancing,2.0,5.0,4,3,0.1
+Social distancing,2.0,5.0,4,7,0.1
+Social distancing,2.0,5.0,4,14,0.2
+Social distancing,2.0,5.0,4,21,0.17
+Social distancing,2.0,5.0,6,1,0.03
+Social distancing,2.0,5.0,6,3,0.03
+Social distancing,2.0,5.0,6,7,0.05
+Social distancing,2.0,5.0,6,14,0.13
+Social distancing,2.0,5.0,6,21,0.13
+Social distancing,2.0,10.0,2,1,
+Social distancing,2.0,10.0,2,3,
+Social distancing,2.0,10.0,2,7,
+Social distancing,2.0,10.0,2,14,
+Social distancing,2.0,10.0,2,21,
+Social distancing,2.0,10.0,4,1,0.07
+Social distancing,2.0,10.0,4,3,0.07
+Social distancing,2.0,10.0,4,7,0.1
+Social distancing,2.0,10.0,4,14,0.2
+Social distancing,2.0,10.0,4,21,0.23
+Social distancing,2.0,10.0,6,1,0.03
+Social distancing,2.0,10.0,6,3,0.05
+Social distancing,2.0,10.0,6,7,0.07
+Social distancing,2.0,10.0,6,14,0.15
+Social distancing,2.0,10.0,6,21,0.13
+Social distancing,2.0,20.0,2,1,
+Social distancing,2.0,20.0,2,3,
+Social distancing,2.0,20.0,2,7,
+Social distancing,2.0,20.0,2,14,
+Social distancing,2.0,20.0,2,21,
+Social distancing,2.0,20.0,4,1,0.1
+Social distancing,2.0,20.0,4,3,0.13
+Social distancing,2.0,20.0,4,7,0.16
+Social distancing,2.0,20.0,4,14,0.25
+Social distancing,2.0,20.0,4,21,0.25
+Social distancing,2.0,20.0,6,1,0.04
+Social distancing,2.0,20.0,6,3,0.07
+Social distancing,2.0,20.0,6,7,0.1
+Social distancing,2.0,20.0,6,14,0.17
+Social distancing,2.0,20.0,6,21,0.17
+Social distancing,2.0,30.0,2,1,
+Social distancing,2.0,30.0,2,3,
+Social distancing,2.0,30.0,2,7,
+Social distancing,2.0,30.0,2,14,
+Social distancing,2.0,30.0,2,21,
+Social distancing,2.0,30.0,4,1,0.14
+Social distancing,2.0,30.0,4,3,0.25
+Social distancing,2.0,30.0,4,7,0.2
+Social distancing,2.0,30.0,4,14,0.25
+Social distancing,2.0,30.0,4,21,0.25
+Social distancing,2.0,30.0,6,1,0.05
+Social distancing,2.0,30.0,6,3,0.11
+Social distancing,2.0,30.0,6,7,0.14
+Social distancing,2.0,30.0,6,14,0.17
+Social distancing,2.0,30.0,6,21,0.17
+Social distancing,3.0,5.0,2,1,
+Social distancing,3.0,5.0,2,3,
+Social distancing,3.0,5.0,2,7,
+Social distancing,3.0,5.0,2,14,
+Social distancing,3.0,5.0,2,21,
+Social distancing,3.0,5.0,4,1,0.1
+Social distancing,3.0,5.0,4,3,0.1
+Social distancing,3.0,5.0,4,7,0.1
+Social distancing,3.0,5.0,4,14,0.15
+Social distancing,3.0,5.0,4,21,0.15
+Social distancing,3.0,5.0,6,1,0.03
+Social distancing,3.0,5.0,6,3,0.07
+Social distancing,3.0,5.0,6,7,0.07
+Social distancing,3.0,5.0,6,14,0.1
+Social distancing,3.0,5.0,6,21,0.13
+Social distancing,3.0,10.0,2,1,
+Social distancing,3.0,10.0,2,3,
+Social distancing,3.0,10.0,2,7,
+Social distancing,3.0,10.0,2,14,
+Social distancing,3.0,10.0,2,21,
+Social distancing,3.0,10.0,4,1,0.07
+Social distancing,3.0,10.0,4,3,0.1
+Social distancing,3.0,10.0,4,7,0.1
+Social distancing,3.0,10.0,4,14,0.21
+Social distancing,3.0,10.0,4,21,0.23
+Social distancing,3.0,10.0,6,1,0.03
+Social distancing,3.0,10.0,6,3,0.05
+Social distancing,3.0,10.0,6,7,0.07
+Social distancing,3.0,10.0,6,14,0.15
+Social distancing,3.0,10.0,6,21,0.15
+Social distancing,3.0,20.0,2,1,
+Social distancing,3.0,20.0,2,3,
+Social distancing,3.0,20.0,2,7,
+Social distancing,3.0,20.0,2,14,
+Social distancing,3.0,20.0,2,21,
+Social distancing,3.0,20.0,4,1,0.13
+Social distancing,3.0,20.0,4,3,0.15
+Social distancing,3.0,20.0,4,7,0.15
+Social distancing,3.0,20.0,4,14,0.25
+Social distancing,3.0,20.0,4,21,0.25
+Social distancing,3.0,20.0,6,1,0.03
+Social distancing,3.0,20.0,6,3,0.08
+Social distancing,3.0,20.0,6,7,0.09
+Social distancing,3.0,20.0,6,14,0.17
+Social distancing,3.0,20.0,6,21,0.17
+Social distancing,3.0,30.0,2,1,
+Social distancing,3.0,30.0,2,3,
+Social distancing,3.0,30.0,2,7,
+Social distancing,3.0,30.0,2,14,
+Social distancing,3.0,30.0,2,21,
+Social distancing,3.0,30.0,4,1,0.23
+Social distancing,3.0,30.0,4,3,0.28
+Social distancing,3.0,30.0,4,7,0.21
+Social distancing,3.0,30.0,4,14,0.25
+Social distancing,3.0,30.0,4,21,0.25
+Social distancing,3.0,30.0,6,1,0.05
+Social distancing,3.0,30.0,6,3,0.13
+Social distancing,3.0,30.0,6,7,0.14
+Social distancing,3.0,30.0,6,14,0.17
+Social distancing,3.0,30.0,6,21,0.17
+Surgical mask,1.0,5.0,2,1,0.1
+Surgical mask,1.0,5.0,2,3,0.15
+Surgical mask,1.0,5.0,2,7,0.1
+Surgical mask,1.0,5.0,2,14,0.2
+Surgical mask,1.0,5.0,2,21,0.2
+Surgical mask,1.0,5.0,4,1,0.05
+Surgical mask,1.0,5.0,4,3,0.05
+Surgical mask,1.0,5.0,4,7,0.05
+Surgical mask,1.0,5.0,4,14,0.1
+Surgical mask,1.0,5.0,4,21,0.1
+Surgical mask,1.0,5.0,6,1,0.03
+Surgical mask,1.0,5.0,6,3,0.03
+Surgical mask,1.0,5.0,6,7,0.03
+Surgical mask,1.0,5.0,6,14,0.1
+Surgical mask,1.0,5.0,6,21,0.1
+Surgical mask,1.0,10.0,2,1,0.1
+Surgical mask,1.0,10.0,2,3,0.15
+Surgical mask,1.0,10.0,2,7,0.15
+Surgical mask,1.0,10.0,2,14,0.3
+Surgical mask,1.0,10.0,2,21,0.25
+Surgical mask,1.0,10.0,4,1,0.05
+Surgical mask,1.0,10.0,4,3,0.05
+Surgical mask,1.0,10.0,4,7,0.07
+Surgical mask,1.0,10.0,4,14,0.15
+Surgical mask,1.0,10.0,4,21,0.12
+Surgical mask,1.0,10.0,6,1,0.02
+Surgical mask,1.0,10.0,6,3,0.03
+Surgical mask,1.0,10.0,6,7,0.05
+Surgical mask,1.0,10.0,6,14,0.12
+Surgical mask,1.0,10.0,6,21,0.1
+Surgical mask,1.0,20.0,2,1,0.17
+Surgical mask,1.0,20.0,2,3,0.23
+Surgical mask,1.0,20.0,2,7,0.15
+Surgical mask,1.0,20.0,2,14,0.45
+Surgical mask,1.0,20.0,2,21,0.45
+Surgical mask,1.0,20.0,4,1,0.04
+Surgical mask,1.0,20.0,4,3,0.05
+Surgical mask,1.0,20.0,4,7,0.09
+Surgical mask,1.0,20.0,4,14,0.23
+Surgical mask,1.0,20.0,4,21,0.23
+Surgical mask,1.0,20.0,6,1,0.02
+Surgical mask,1.0,20.0,6,3,0.03
+Surgical mask,1.0,20.0,6,7,0.06
+Surgical mask,1.0,20.0,6,14,0.15
+Surgical mask,1.0,20.0,6,21,0.14
+Surgical mask,1.0,30.0,2,1,0.24
+Surgical mask,1.0,30.0,2,3,0.27
+Surgical mask,1.0,30.0,2,7,0.23
+Surgical mask,1.0,30.0,2,14,0.48
+Surgical mask,1.0,30.0,2,21,0.5
+Surgical mask,1.0,30.0,4,1,0.04
+Surgical mask,1.0,30.0,4,3,0.09
+Surgical mask,1.0,30.0,4,7,0.11
+Surgical mask,1.0,30.0,4,14,0.24
+Surgical mask,1.0,30.0,4,21,0.24
+Surgical mask,1.0,30.0,6,1,0.02
+Surgical mask,1.0,30.0,6,3,0.03
+Surgical mask,1.0,30.0,6,7,0.07
+Surgical mask,1.0,30.0,6,14,0.17
+Surgical mask,1.0,30.0,6,21,0.16
+Surgical mask,2.0,5.0,2,1,
+Surgical mask,2.0,5.0,2,3,
+Surgical mask,2.0,5.0,2,7,
+Surgical mask,2.0,5.0,2,14,
+Surgical mask,2.0,5.0,2,21,
+Surgical mask,2.0,5.0,4,1,0.05
+Surgical mask,2.0,5.0,4,3,0.05
+Surgical mask,2.0,5.0,4,7,0.05
+Surgical mask,2.0,5.0,4,14,0.15
+Surgical mask,2.0,5.0,4,21,0.1
+Surgical mask,2.0,5.0,6,1,0.03
+Surgical mask,2.0,5.0,6,3,0.03
+Surgical mask,2.0,5.0,6,7,0.05
+Surgical mask,2.0,5.0,6,14,0.1
+Surgical mask,2.0,5.0,6,21,0.07
+Surgical mask,2.0,10.0,2,1,
+Surgical mask,2.0,10.0,2,3,
+Surgical mask,2.0,10.0,2,7,
+Surgical mask,2.0,10.0,2,14,
+Surgical mask,2.0,10.0,2,21,
+Surgical mask,2.0,10.0,4,1,0.05
+Surgical mask,2.0,10.0,4,3,0.06
+Surgical mask,2.0,10.0,4,7,0.07
+Surgical mask,2.0,10.0,4,14,0.12
+Surgical mask,2.0,10.0,4,21,0.15
+Surgical mask,2.0,10.0,6,1,0.03
+Surgical mask,2.0,10.0,6,3,0.03
+Surgical mask,2.0,10.0,6,7,0.05
+Surgical mask,2.0,10.0,6,14,0.1
+Surgical mask,2.0,10.0,6,21,0.1
+Surgical mask,2.0,20.0,2,1,
+Surgical mask,2.0,20.0,2,3,
+Surgical mask,2.0,20.0,2,7,
+Surgical mask,2.0,20.0,2,14,
+Surgical mask,2.0,20.0,2,21,
+Surgical mask,2.0,20.0,4,1,0.05
+Surgical mask,2.0,20.0,4,3,0.05
+Surgical mask,2.0,20.0,4,7,0.09
+Surgical mask,2.0,20.0,4,14,0.23
+Surgical mask,2.0,20.0,4,21,0.21
+Surgical mask,2.0,20.0,6,1,0.02
+Surgical mask,2.0,20.0,6,3,0.04
+Surgical mask,2.0,20.0,6,7,0.05
+Surgical mask,2.0,20.0,6,14,0.14
+Surgical mask,2.0,20.0,6,21,0.15
+Surgical mask,2.0,30.0,2,1,
+Surgical mask,2.0,30.0,2,3,
+Surgical mask,2.0,30.0,2,7,
+Surgical mask,2.0,30.0,2,14,
+Surgical mask,2.0,30.0,2,21,
+Surgical mask,2.0,30.0,4,1,0.06
+Surgical mask,2.0,30.0,4,3,0.07
+Surgical mask,2.0,30.0,4,7,0.12
+Surgical mask,2.0,30.0,4,14,0.25
+Surgical mask,2.0,30.0,4,21,0.24
+Surgical mask,2.0,30.0,6,1,0.02
+Surgical mask,2.0,30.0,6,3,0.05
+Surgical mask,2.0,30.0,6,7,0.07
+Surgical mask,2.0,30.0,6,14,0.16
+Surgical mask,2.0,30.0,6,21,0.16
+Surgical mask,3.0,5.0,2,1,
+Surgical mask,3.0,5.0,2,3,
+Surgical mask,3.0,5.0,2,7,
+Surgical mask,3.0,5.0,2,14,
+Surgical mask,3.0,5.0,2,21,
+Surgical mask,3.0,5.0,4,1,0.05
+Surgical mask,3.0,5.0,4,3,0.05
+Surgical mask,3.0,5.0,4,7,0.1
+Surgical mask,3.0,5.0,4,14,0.1
+Surgical mask,3.0,5.0,4,21,0.1
+Surgical mask,3.0,5.0,6,1,0.03
+Surgical mask,3.0,5.0,6,3,0.03
+Surgical mask,3.0,5.0,6,7,0.03
+Surgical mask,3.0,5.0,6,14,0.07
+Surgical mask,3.0,5.0,6,21,0.07
+Surgical mask,3.0,10.0,2,1,
+Surgical mask,3.0,10.0,2,3,
+Surgical mask,3.0,10.0,2,7,
+Surgical mask,3.0,10.0,2,14,
+Surgical mask,3.0,10.0,2,21,
+Surgical mask,3.0,10.0,4,1,0.05
+Surgical mask,3.0,10.0,4,3,0.05
+Surgical mask,3.0,10.0,4,7,0.07
+Surgical mask,3.0,10.0,4,14,0.15
+Surgical mask,3.0,10.0,4,21,0.15
+Surgical mask,3.0,10.0,6,1,0.02
+Surgical mask,3.0,10.0,6,3,0.03
+Surgical mask,3.0,10.0,6,7,0.03
+Surgical mask,3.0,10.0,6,14,0.08
+Surgical mask,3.0,10.0,6,21,0.1
+Surgical mask,3.0,20.0,2,1,
+Surgical mask,3.0,20.0,2,3,
+Surgical mask,3.0,20.0,2,7,
+Surgical mask,3.0,20.0,2,14,
+Surgical mask,3.0,20.0,2,21,
+Surgical mask,3.0,20.0,4,1,0.05
+Surgical mask,3.0,20.0,4,3,0.07
+Surgical mask,3.0,20.0,4,7,0.09
+Surgical mask,3.0,20.0,4,14,0.21
+Surgical mask,3.0,20.0,4,21,0.23
+Surgical mask,3.0,20.0,6,1,0.03
+Surgical mask,3.0,20.0,6,3,0.03
+Surgical mask,3.0,20.0,6,7,0.05
+Surgical mask,3.0,20.0,6,14,0.15
+Surgical mask,3.0,20.0,6,21,0.14
+Surgical mask,3.0,30.0,2,1,
+Surgical mask,3.0,30.0,2,3,
+Surgical mask,3.0,30.0,2,7,
+Surgical mask,3.0,30.0,2,14,
+Surgical mask,3.0,30.0,2,21,
+Surgical mask,3.0,30.0,4,1,0.07
+Surgical mask,3.0,30.0,4,3,0.1
+Surgical mask,3.0,30.0,4,7,0.12
+Surgical mask,3.0,30.0,4,14,0.24
+Surgical mask,3.0,30.0,4,21,0.24
+Surgical mask,3.0,30.0,6,1,0.02
+Surgical mask,3.0,30.0,6,3,0.05
+Surgical mask,3.0,30.0,6,7,0.08
+Surgical mask,3.0,30.0,6,14,0.16
+Surgical mask,3.0,30.0,6,21,0.16
