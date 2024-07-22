@@ -1,0 +1,8 @@
+name: lim2020
+channels:
+  - defaults
+dependencies:
+  - ipykernel
+  - numpy=1.19.1
+  - pandas=1.1.1
+  - python=3.8.5
