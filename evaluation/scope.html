@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Scope – Reproducing Author et al.&nbsp;Year</title>
+<title>Scope – Reproducing Lim et al.&nbsp;2020</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -43,7 +43,7 @@ div.csl-indent {
 }</style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -90,6 +90,9 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -105,7 +108,7 @@ div.csl-indent {
     <img src="../quarto_site/stars_logo_blue.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Reproducing Author et al.&nbsp;Year</span>
+    <span class="navbar-title">Reproducing Lim et al.&nbsp;2020</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -126,6 +129,10 @@ div.csl-indent {
         <li>
     <a class="dropdown-item" href="../quarto_site/reproduction_readme.html">
  <span class="dropdown-text">README</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../original_study/reformat_tables.html">
+ <span class="dropdown-text">Reformat the tables</span></a>
   </li>  
     </ul>
   </li>
@@ -171,7 +178,7 @@ div.csl-indent {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/pythonhealthdatascience/stars_reproduction_template"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -194,7 +201,7 @@ div.csl-indent {
   <li><a href="#within-scope" id="toc-within-scope" class="nav-link active" data-scroll-target="#within-scope">Within scope</a></li>
   <li><a href="#outside-scope" id="toc-outside-scope" class="nav-link" data-scroll-target="#outside-scope">Outside scope</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars_reproduction_template/edit/main/evaluation/scope.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars_reproduction_template/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/edit/main/evaluation/scope.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -319,6 +326,131 @@ Supplemental Table 2
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Supplemental Table 2. “Proportion of simulated laboratory staff infected by COVID-19 in base scenario with 15% probability of secondary infection at the end of day 7, day 14 and day 21 of the simulation. In this base scenario, the simulated staff worked fixed alternating workdays (i.e.&nbsp;fixed consecutive days on, and fixed minimum consecutive days off). The results shown are the median of 100 cycles of simulation. NA = not available as the number of staff per shift is too low to simulate under the required conditions.” <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></p>
+<p>Reformatted table:</p>
+<div id="e3e16022" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">end_of_day</th>
+<th data-quarto-table-cell-role="th">shifts_per_day</th>
+<th data-quarto-table-cell-role="th">staff_per_shift</th>
+<th data-quarto-table-cell-role="th">strength</th>
+<th data-quarto-table-cell-role="th">staff_change</th>
+<th data-quarto-table-cell-role="th">prop_infected</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>7</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>1</td>
+<td>0.20</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>7</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>3</td>
+<td>0.20</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>7</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>7</td>
+<td>0.30</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>7</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>14</td>
+<td>0.40</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>7</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>21</td>
+<td>0.30</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">535</td>
+<td>21</td>
+<td>3.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>1</td>
+<td>0.80</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">536</td>
+<td>21</td>
+<td>3.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>3</td>
+<td>0.78</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">537</td>
+<td>21</td>
+<td>3.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>7</td>
+<td>0.39</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">538</td>
+<td>21</td>
+<td>3.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>14</td>
+<td>0.17</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">539</td>
+<td>21</td>
+<td>3.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>21</td>
+<td>0.17</td>
+</tr>
+</tbody>
+</table>
+
+<p>540 rows × 6 columns</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -335,6 +467,131 @@ Supplemental Table 3
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Supplemental Table 3. “Proportion of simulated laboratory staff infected by COVID-19 in base scenario with 5% probability of secondary infection at the end of day 7, day 14 and day 21 of the simulation. In this scenario, the simulated staff worked fixed alternating workdays (i.e.&nbsp;fixed consecutive days on, and fixed minimum consecutive days off). The results shown are the median of 100 cycles of simulation. NA = not available as the number of staff per shift was too low to simulate under the required conditions.” <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></p>
+<p>Reformatted table:</p>
+<div id="e0cc47b1" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">end_of_day</th>
+<th data-quarto-table-cell-role="th">shifts_per_day</th>
+<th data-quarto-table-cell-role="th">staff_per_shift</th>
+<th data-quarto-table-cell-role="th">strength</th>
+<th data-quarto-table-cell-role="th">staff_change</th>
+<th data-quarto-table-cell-role="th">prop_infected</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>7</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>1</td>
+<td>0.10</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>7</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>3</td>
+<td>0.10</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>7</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>7</td>
+<td>0.20</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>7</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>14</td>
+<td>0.10</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>7</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>21</td>
+<td>0.20</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">535</td>
+<td>21</td>
+<td>3.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>1</td>
+<td>0.06</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">536</td>
+<td>21</td>
+<td>3.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>3</td>
+<td>0.11</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">537</td>
+<td>21</td>
+<td>3.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>7</td>
+<td>0.22</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">538</td>
+<td>21</td>
+<td>3.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>14</td>
+<td>0.17</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">539</td>
+<td>21</td>
+<td>3.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>21</td>
+<td>0.17</td>
+</tr>
+</tbody>
+</table>
+
+<p>540 rows × 6 columns</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -351,6 +608,131 @@ Supplemental Table 4
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Supplemental Table 4. “Proportion of simulated laboratory staff infected by COVID-19 in base scenario with 30% probability of secondary infection at the end of day 7, day 14 and day 21 of the simulation. In this scenario, the simulated staff worked fixed alternating workdays (i.e.&nbsp;fixed consecutive days on, and fixed minimum consecutive days off). The results shown are the median of 100 cycles of simulation. NA = not available as the number of staff per shift was too low to simulate under the required conditions.” <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></p>
+<p>Reformatted table:</p>
+<div id="f3e9f8e6" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">end_of_day</th>
+<th data-quarto-table-cell-role="th">shifts_per_day</th>
+<th data-quarto-table-cell-role="th">staff_per_shift</th>
+<th data-quarto-table-cell-role="th">strength</th>
+<th data-quarto-table-cell-role="th">staff_change</th>
+<th data-quarto-table-cell-role="th">prop_infected</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>7</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>1</td>
+<td>0.40</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>7</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>3</td>
+<td>0.30</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>7</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>7</td>
+<td>0.50</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>7</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>14</td>
+<td>0.50</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>7</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>21</td>
+<td>0.50</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">535</td>
+<td>21</td>
+<td>3.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>1</td>
+<td>0.99</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">536</td>
+<td>21</td>
+<td>3.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>3</td>
+<td>0.91</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">537</td>
+<td>21</td>
+<td>3.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>7</td>
+<td>0.39</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">538</td>
+<td>21</td>
+<td>3.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>14</td>
+<td>0.17</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">539</td>
+<td>21</td>
+<td>3.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>21</td>
+<td>0.17</td>
+</tr>
+</tbody>
+</table>
+
+<p>540 rows × 6 columns</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -367,6 +749,131 @@ Supplemental Table 5
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Supplemental Table 5. “Proportion of simulated laboratory staff working in a single shift infected by COVID-19 in a scenario with 15% probability of secondary infection at the end of day 7, day 14 and day 21 of the simulation without predefined minimum rest day (i.e.&nbsp;random shift assignment after each shift). The results shown are the median of 100 cycles of simulation.” <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></p>
+<p>Reformatted table:</p>
+<div id="1e9dec07" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">end_of_day</th>
+<th data-quarto-table-cell-role="th">shifts_per_day</th>
+<th data-quarto-table-cell-role="th">staff_per_shift</th>
+<th data-quarto-table-cell-role="th">strength</th>
+<th data-quarto-table-cell-role="th">staff_change</th>
+<th data-quarto-table-cell-role="th">prop_infected</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>7</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>1</td>
+<td>0.25</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>7</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>3</td>
+<td>0.30</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>7</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>7</td>
+<td>0.30</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>7</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>14</td>
+<td>0.30</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>7</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>21</td>
+<td>0.40</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">175</td>
+<td>21</td>
+<td>1.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>1</td>
+<td>0.59</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">176</td>
+<td>21</td>
+<td>1.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>3</td>
+<td>0.67</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">177</td>
+<td>21</td>
+<td>1.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>7</td>
+<td>0.42</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">178</td>
+<td>21</td>
+<td>1.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>14</td>
+<td>0.31</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">179</td>
+<td>21</td>
+<td>1.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>21</td>
+<td>0.17</td>
+</tr>
+</tbody>
+</table>
+
+<p>180 rows × 6 columns</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -383,6 +890,131 @@ Supplemental Table 6
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Supplemental Table 6. “Proportion of simulated laboratory staff infected by COVID-19 in base scenario with 15% probability of secondary infection at the end of day 14 of the simulation with the staff observing workplace social distancing (by reducing the contact rate by half) and using various personal protective equipment. In this scenario, the simulated staff worked fixed alternating workdays (i.e.&nbsp;fixed consecutive days on, and fixed minimum consecutive days off). The results shown are the median of 100 cycles of simulation. NA = not available as the number of staff per shift is too low to simulate under the required conditions.” <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></p>
+<p>Reformatted table:</p>
+<div id="2f56db1f" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">workplace_measure</th>
+<th data-quarto-table-cell-role="th">shifts_per_day</th>
+<th data-quarto-table-cell-role="th">staff_per_shift</th>
+<th data-quarto-table-cell-role="th">strength</th>
+<th data-quarto-table-cell-role="th">staff_change</th>
+<th data-quarto-table-cell-role="th">prop_infected</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Gloves</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>1</td>
+<td>0.20</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Gloves</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>3</td>
+<td>0.20</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Gloves</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>7</td>
+<td>0.20</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Gloves</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>14</td>
+<td>0.30</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Gloves</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>2</td>
+<td>21</td>
+<td>0.30</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">895</td>
+<td>Surgical mask</td>
+<td>3.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>1</td>
+<td>0.02</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">896</td>
+<td>Surgical mask</td>
+<td>3.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>3</td>
+<td>0.05</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">897</td>
+<td>Surgical mask</td>
+<td>3.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>7</td>
+<td>0.08</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">898</td>
+<td>Surgical mask</td>
+<td>3.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>14</td>
+<td>0.16</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">899</td>
+<td>Surgical mask</td>
+<td>3.0</td>
+<td>30.0</td>
+<td>6</td>
+<td>21</td>
+<td>0.16</td>
+</tr>
+</tbody>
+</table>
+
+<p>900 rows × 6 columns</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -885,11 +1517,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/pythonhealthdatascience/stars_reproduction_template/edit/main/evaluation/scope.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars_reproduction_template/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/edit/main/evaluation/scope.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/pythonhealthdatascience/stars_reproduction_template">
+    <a class="nav-link" href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020">
       <i class="bi bi-github" role="img">
 </i> 
     </a>
@@ -898,7 +1530,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","loop":false,"selector":".lightbox","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","loop":false,"closeEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
