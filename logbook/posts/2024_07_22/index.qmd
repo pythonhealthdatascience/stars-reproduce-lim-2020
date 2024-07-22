@@ -40,11 +40,45 @@ Did spot another result - "*The strongest protective effect is seen with the N95
 
 All other text though seems to be interpreting the figures and tables presented, and not providing new results.
 
-## 15.23-X: Consensus on scope and archive repository
+## 15.23-15.30, 15.38-15.40: Consensus on scope and archive repository
 
 Messaged with Tom who had a look over the scope and agreed he was happy with it. Also, happy with not emailing authors again re: starting reproduction.
 
 Update CHANGELOG.md and CITATION.cff before then creating a release to archive the repository on Zenodo.
+
+## 15.41-15.42: Look over code
+
+Concise / short model code, looks like it will run the model but will need to save results to csv and generate figures and tables with own code.
+
+## 15.44-15.56: Set-up environment
+
+The article mentions that code was in `Python 3` and uses `numpy` and `pandas`. Looking at code, those do appear to be the only packages required that are not base (only other is `random` which is base). Looking at dates:
+
+* Article published online: 12 Sep 2020
+* Code put on GitHub: 29 Aug 2020
+
+Hence, will base specific python version and package versions on being on or prior to **29 August 2020**.
+
+* Python - 3.8 (first release 14 Oct 2019, then 3.9 came in Oct 2020)
+* Numpy - 1.19.1 (21 July 2020, <https://pypi.org/project/numpy/#history>)
+* Pandas - 1.1.1 (28 July 2020, <https://pypi.org/project/pandas/#history>)
+
+Created an environment file and installed with mamba - `mamba env create -f environment.yaml`. Once activated enviroment, once activated with `mamba activate lim2020`, can see with `conda list python` that we have python 3.8.19. Checking online, can see should switch to 3.8.5, which is version from 20 July 2020.
+
+## 15.57-15.58, 16.01-16.05, 16.15-16.33, 16.36-16.45: Run model
+
+Copied `Roster Schedule COVID Simulation-final.py` and renamed to `model.py`. Created `reproduction.ipynb` to run model and then produce outputs, and add `ipykernel` to environment (required for `.ipynb`).
+
+Then ran the model. Whilst it ran, it printed lots of `SettingWithCopyWarning` errors for `stafflist['infected'][staff_infected[i]]=1` and `stafflist['infected'][roster.iloc[0][0]]=1`. (`SettingWithCopyWarning: A value is trying to be set on a copy of a slice from a DataFrame.`) I anticipate these could be resolved with the following changes (which I'll implement once it's finished running):
+
+* `stafflist.loc[staff_infected[i], 'infected'] = 1`
+* `stafflist.loc[roster.iloc[0][0], 'infected'] = 1`
+
+Wasn't certain how long model should take, but paused record of time whilst it ran. After 10 minutes though, I decided to cancel that, and instead just run one version of the input parameters for the model (i.e. one choice from staff per shift, shifts per day, strength, staff change).
+
+I copied over the functions into the `.ipynb` and ran one version of model. Can see this outputs a table where columns are the strength and staff change. I tried running a few to understand how the results table was being produced. I then add code to save the results to `.csv`.
+
+Presently, I think this might only be for one shift per day, although I might be wrong.
 
 ## Timings
 
@@ -61,7 +95,9 @@ times = [
     ('9.18', '10.08'),
     ('10.18', '11.38'),
     ('11.40', '11.42'),
-    ('11.48', '11.55')]
+    ('11.48', '11.55'),
+    ('15.23', '15.30'),
+    ('15.38', '15.40')]
 # TODO: Add remaining times
 
 calculate_times(used_to_date, times)
