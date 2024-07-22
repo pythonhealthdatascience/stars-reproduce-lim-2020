@@ -1,8 +1,7 @@
 # STARS: Computational reproducibility of Lim et al. 2020 <a href="https://github.com/pythonhealthdatascience"><img src="quarto_site/stars_logo_blue.png" align="right" height="120" alt="STARS" /></a>
 
 <!-- Status badge from GitHub action checking validity of CITATION.cff -->
-<!-- TODO: Add DOI badge once repository has been archived on Zenodo -->
-<!-- TODO: Amend the URL to your repository -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12795365.svg)](https://doi.org/10.5281/zenodo.12795365)
 [![Valid CITATION.cff](https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/actions/workflows/cff_validation.yaml/badge.svg)](https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/actions/workflows/cff_validation.yaml)
 
 This repository forms part of work package 1 on the project STARS: Sharing Tools and Artefacts for Reproducible Simulations. It assesses the computational reproducibility of:
