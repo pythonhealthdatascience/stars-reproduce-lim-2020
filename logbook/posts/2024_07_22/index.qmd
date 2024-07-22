@@ -1,0 +1,27 @@
+---
+title: "Day 2"
+author: "Amy Heather"
+date: "2024-07-22"
+categories: [scope]
+bibliography: ../../../quarto_site/references.bib
+---
+
+::: {.callout-note}
+
+TBC. Total time used: TBC (TBC)
+
+:::
+
+## 09.18-10.08, 10.18-11.38: Converting supplementary tables to CSV
+
+Copied each table into LibreOffice Calc and saved as CSV.
+
+As all tables had the same structure, I wrote a script that reformats them. This is so that they don't "share" cells, and instead each row has all the information needed to identify it, making them easier to use and compare against later on.
+
+Displayed these within the scope page.
+
+::: {.callout-tip}
+## Reflection
+
+This took a longer than expected to reformat and sort, and so provision of tables in a "usable" format would have facilitated reproduction, although I understand that the tables that were provided are far more readable and easy to look at.
+:::
