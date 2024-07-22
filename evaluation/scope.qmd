@@ -1,6 +1,7 @@
 ---
 title: "Scope"
 bibliography: ../quarto_site/references.bib
+echo: False
 ---
 
 This page outlines the parts of the journal article which we will attempt to reproduce.
@@ -47,6 +48,13 @@ All images and quotes on this page are sourced from @lim_staff_2020
 
 Supplemental Table 2. "Proportion of simulated laboratory staff infected by COVID-19 in base scenario with 15% probability of secondary infection at the end of day 7, day 14 and day 21 of the simulation. In this base scenario, the simulated staff worked fixed alternating workdays (i.e. fixed consecutive days on, and fixed minimum consecutive days off). The results shown are the median of 100 cycles of simulation. NA = not available as the number of staff per shift is too low to simulate under the required conditions." @lim_staff_2020
 
+Reformatted table:
+```{python}
+import pandas as pd
+
+pd.read_csv('../original_study/supp_tab2_reformat.csv')
+```
+
 :::
 
 ::: {.callout-note appearance="minimal" collapse=true}
@@ -54,6 +62,11 @@ Supplemental Table 2. "Proportion of simulated laboratory staff infected by COVI
 ## Supplemental Table 3
 
 Supplemental Table 3. "Proportion of simulated laboratory staff infected by COVID-19 in base scenario with 5% probability of secondary infection at the end of day 7, day 14 and day 21 of the simulation. In this scenario, the simulated staff worked fixed alternating workdays (i.e. fixed consecutive days on, and fixed minimum consecutive days off).  The results shown are the median of 100 cycles of simulation. NA = not available as the number of staff per shift was too low to simulate under the required conditions." @lim_staff_2020
+
+Reformatted table:
+```{python}
+pd.read_csv('../original_study/supp_tab3_reformat.csv')
+```
 
 :::
 
@@ -63,6 +76,11 @@ Supplemental Table 3. "Proportion of simulated laboratory staff infected by COVI
 
 Supplemental Table 4. "Proportion of simulated laboratory staff infected by COVID-19 in base scenario with 30% probability of secondary infection at the end of day 7, day 14 and day 21 of the simulation. In this scenario, the simulated staff worked fixed alternating workdays (i.e. fixed consecutive days on, and fixed minimum consecutive days off). The results shown are the median of 100 cycles of simulation. NA = not available as the number of staff per shift was too low to simulate under the required conditions. " @lim_staff_2020
 
+Reformatted table:
+```{python}
+pd.read_csv('../original_study/supp_tab4_reformat.csv')
+```
+
 :::
 
 ::: {.callout-note appearance="minimal" collapse=true}
@@ -71,6 +89,11 @@ Supplemental Table 4. "Proportion of simulated laboratory staff infected by COVI
 
 Supplemental Table 5. "Proportion of simulated laboratory staff working in a single shift infected by COVID-19 in a scenario with 15% probability of secondary infection at the end of day 7, day 14 and day 21 of the simulation without predefined minimum rest day (i.e. random shift assignment after each shift). The results shown are the median of 100 cycles of simulation." @lim_staff_2020
 
+Reformatted table:
+```{python}
+pd.read_csv('../original_study/supp_tab5_reformat.csv')
+```
+
 :::
 
 ::: {.callout-note appearance="minimal" collapse=true}
@@ -78,6 +101,11 @@ Supplemental Table 5. "Proportion of simulated laboratory staff working in a sin
 ## Supplemental Table 6
 
 Supplemental Table 6. "Proportion of simulated laboratory staff infected by COVID-19 in base scenario with 15% probability of secondary infection at the end of day 14 of the simulation with the staff observing workplace social distancing (by reducing the contact rate by half) and using various personal protective equipment. In this scenario, the simulated staff worked fixed alternating workdays (i.e. fixed consecutive days on, and fixed minimum consecutive days off). The results shown are the median of 100 cycles of simulation. NA = not available as the number of staff per shift is too low to simulate under the required conditions." @lim_staff_2020
+
+Reformatted table:
+```{python}
+pd.read_csv('../original_study/supp_tab6_reformat.csv')
+```
 
 :::
 
