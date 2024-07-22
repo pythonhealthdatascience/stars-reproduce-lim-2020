@@ -39,3 +39,30 @@ Appears likely that the supplementary tables might actually often contain the da
 Did spot another result - "*The strongest protective effect is seen with the N95 masks (nearly equivalent to a FFP2 mask), which has the effect of reducing the odds of transmission by 0.09.*" - which, on reflection, might be an additional item for the scope, as the odds of transmission are not calculated/provided within the tables or figures.
 
 All other text though seems to be interpreting the figures and tables presented, and not providing new results.
+
+## 15.23-X: Consensus on scope and archive repository
+
+Messaged with Tom who had a look over the scope and agreed he was happy with it. Also, happy with not emailing authors again re: starting reproduction.
+
+Update CHANGELOG.md and CITATION.cff before then creating a release to archive the repository on Zenodo.
+
+## Timings
+
+```{python}
+import sys
+sys.path.append('../')
+from timings import calculate_times
+
+# Minutes used prior to today
+used_to_date = 82
+
+# Times from today
+times = [
+    ('9.18', '10.08'),
+    ('10.18', '11.38'),
+    ('11.40', '11.42'),
+    ('11.48', '11.55')]
+# TODO: Add remaining times
+
+calculate_times(used_to_date, times)
+```
