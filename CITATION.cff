@@ -25,7 +25,6 @@ authors:
     orcid: 'https://orcid.org/0000-0001-5274-5037'
 repository-code: >-
   https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020
-# TODO: Amend to short description of repo and citation for the original study
 abstract: >-
   This repository forms part of work package 1 on the project STARS: Sharing
   Tools and Artefacts for Reproducible Simulations. It assesses the
@@ -35,8 +34,7 @@ abstract: >-
   Equipment to Minimize Risk of Workplace Transmission During the COVID-19
   Pandemic: A Simulation Study. Clinical Biochemistry 86:15-22 (2020).
   https://doi.org/10.1016/j.clinbiochem.2020.09.003
-# TODO: Update license if not using MIT
 license: MIT
 # TODO: Manually update with each GitHub release (start with 0.1.0)
 version: '0.1.0'
-date-released: '2024-07-19'
+date-released: '2024-07-22'
