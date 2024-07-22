@@ -2,7 +2,7 @@
 title: "Day 2"
 author: "Amy Heather"
 date: "2024-07-22"
-categories: [scope]
+categories: [setup, scope]
 bibliography: ../../../quarto_site/references.bib
 ---
 
@@ -25,3 +25,17 @@ Displayed these within the scope page.
 
 This took a longer than expected to reformat and sort, and so provision of tables in a "usable" format would have facilitated reproduction, although I understand that the tables that were provided are far more readable and easy to look at.
 :::
+
+## 11.40-11.42: Updating README
+
+Modifying from template.
+
+## 11.48-11.55: Checking scope
+
+Had another look over the paper to double check if I could spot anything that I think could be in scope.
+
+Appears likely that the supplementary tables might actually often contain the data used to produce the figures, which is handy, as if I weren't able to reproduce the results themselves, I would still be able to use that data to produce the figures (potentially (?) unless we would want to do it from scratch).
+
+Did spot another result - "*The strongest protective effect is seen with the N95 masks (nearly equivalent to a FFP2 mask), which has the effect of reducing the odds of transmission by 0.09.*" - which, on reflection, might be an additional item for the scope, as the odds of transmission are not calculated/provided within the tables or figures.
+
+All other text though seems to be interpreting the figures and tables presented, and not providing new results.
