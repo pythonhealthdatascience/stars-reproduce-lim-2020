@@ -1,0 +1,75 @@
+---
+title: "Day 3"
+author: "Amy Heather"
+date: "2024-07-23"
+categories: [reproduction]
+bibliography: ../../../quarto_site/references.bib
+---
+
+::: {.callout-note}
+
+TBC. Total time used: TBC (TBC)
+
+:::
+
+## 09.40-11.12, 11.17-11.27: Adding parallel processing
+
+Having now run the full model code that was provided, I can see that the loop produced a 10x4 table (for each of the end by day 7, 14 and 21). It varies:
+
+* Staff strength (4, 6)
+* Frequency of staff change (1, 3, 7, 14, 21)
+* Number of staff per shift (5, 10, 20, 30)
+
+It doesn't include:
+
+* Staff strength 2 - *should be easy to add to loop*
+* Scenarios from paper (e.g. varying probability of secondary infection) - *although that example is easy to change with `p = 0.15 # secondary attack rate`*
+
+It had quite a long run time (19m 8s) which will make it difficult to run all these variants. Hence, I will first try to introduce parallel processing to help speed up the reproduction.
+
+* First, I modified `model.py` so the model is run by a function, that is then more easily callable from the reproduction notebook. Initially this was a single function, but then I realised I needed to divide it into a function that runs the model with a single set of parameters, and a function that loops through scenarios, to be easily compatable with parallel processing
+* To simplify/improve reusability of varying the number of staff per shift, I changed the results dataframe index from 0-4 to be based on the provided variants for staff per shift (e.g. 5, 10, 20, 30)
+* Whilst running these, noted we do so fluctuation between re-runs (e.g. 0.47 to 0.54 for day 21 4-1)
+* Then I introduced `from multiprocessing import Pool` and modified the nested for loop so that we can instead apply the function in parallel. I also had to modify how the results dataframes as created, as they were all modifying the same objects, which wouldn't be possible in parallel.
+
+This now ran in 2m 40s - 3m 6s. This is great, and will make running all the different scenarios much easier. By eye, the variation in results before and after parallel processing is very minimal, and all within the range I would expect due to there being no seed control.
+
+Hid warnings and print progress message to enable cleaner output.
+
+## 11.31-11.36, 11.39: Adding parameters
+
+Modified `model.py` so it has staff strength [2, 4, 6] but received error:
+
+```
+File "/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py", line 175, in run_model
+    fillroster1(staff_pool,f,Nday,stafflist,roster)
+  File "/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py", line 65, in fillroster1
+    temp = random.sample(stafflist[stafflist.loc[:,'rest']==0].index.values.tolist(),k=Nday)
+  File "/home/amy/mambaforge/envs/lim2020/lib/python3.8/random.py", line 363, in sample
+    raise ValueError("Sample larger than population or is negative")
+ValueError: Sample larger than population or is negative
+```
+
+I think this is related to strength 2, which is set to NA in the paper when there are two or three shifts per day, stating that it is "not available as the number of staff per shift was too low to simulate under the required conditions". @lim_staff_2020
+
+I wasn't certain how to alter the shifts per day from the model, but I tried commenting out shift 2 and 3 in `contact()`. to see if the model would run. However, I still got the error from above. I introduced error handling, to set the result to NaN if there was a Value Error. With those sections still commented, and only running strength 2, the only results it output were for 2-21.
+
+I tried uncommenting shifts 2 and 3 and running for strength 2. However, this again only output results for 2-21.
+
+## Timings
+
+```{python}
+import sys
+sys.path.append('../')
+from timings import calculate_times
+
+# Minutes used prior to today
+used_to_date = 277
+
+# Times from today
+times = [
+    ('09.40', '11.12')]
+# TODO: Add remaining times
+
+calculate_times(used_to_date, times)
+```
