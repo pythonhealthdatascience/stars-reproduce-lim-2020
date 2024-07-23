@@ -2,13 +2,13 @@
 title: "Day 2"
 author: "Amy Heather"
 date: "2024-07-22"
-categories: [setup, scope]
+categories: [setup, scope, reproduction]
 bibliography: ../../../quarto_site/references.bib
 ---
 
 ::: {.callout-note}
 
-TBC. Total time used: TBC (TBC)
+Reformat tables, consensus on scope, setup environment, first run of model. Total time used: 4h 37m (11.5%)
 
 :::
 
@@ -44,6 +44,8 @@ All other text though seems to be interpreting the figures and tables presented,
 
 Messaged with Tom who had a look over the scope and agreed he was happy with it. Also, happy with not emailing authors again re: starting reproduction.
 
+Alison also later confirmed she was likewise happy with the scope.
+
 Update CHANGELOG.md and CITATION.cff before then creating a release to archive the repository on Zenodo.
 
 ## 15.41-15.42: Look over code
@@ -65,7 +67,7 @@ Hence, will base specific python version and package versions on being on or pri
 
 Created an environment file and installed with mamba - `mamba env create -f environment.yaml`. Once activated enviroment, once activated with `mamba activate lim2020`, can see with `conda list python` that we have python 3.8.19. Checking online, can see should switch to 3.8.5, which is version from 20 July 2020.
 
-## 15.57-15.58, 16.01-16.05, 16.15-16.33, 16.36-16.45: Run model
+## 15.57-15.58, 16.01-16.05, 16.15-16.33, 16.36-16.45, 17.15-17.16, 18.57-18.58: Run model
 
 Copied `Roster Schedule COVID Simulation-final.py` and renamed to `model.py`. Created `reproduction.ipynb` to run model and then produce outputs, and add `ipykernel` to environment (required for `.ipynb`).
 
@@ -79,6 +81,14 @@ Wasn't certain how long model should take, but paused record of time whilst it r
 I copied over the functions into the `.ipynb` and ran one version of model. Can see this outputs a table where columns are the strength and staff change. I tried running a few to understand how the results table was being produced. I then add code to save the results to `.csv`.
 
 Presently, I think this might only be for one shift per day, although I might be wrong.
+
+Once home, set model to run the full loop from the .py script. This took 19 minutes 8 seconds.
+
+::: {.callout-tip}
+## Reflection
+
+Model run time does have an impact on how easy it is to rerun (or then reuse) a model.
+:::
 
 ## Timings
 
@@ -97,8 +107,15 @@ times = [
     ('11.40', '11.42'),
     ('11.48', '11.55'),
     ('15.23', '15.30'),
-    ('15.38', '15.40')]
-# TODO: Add remaining times
+    ('15.38', '15.40'),
+    ('15.41', '15.42'),
+    ('15.44', '15.56'),
+    ('15.57', '15.58'),
+    ('16.01', '16.05'),
+    ('16.15', '16.33'),
+    ('16.36', '16.45'),
+    ('17.15', '17.16'),
+    ('18.57', '18.58')]
 
 calculate_times(used_to_date, times)
 ```
