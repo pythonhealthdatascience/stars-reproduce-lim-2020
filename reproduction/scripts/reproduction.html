@@ -187,7 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Summary</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../evaluation/reflections.html"> 
+    <a class="nav-link" href="../../evaluation/scripts/reflections.qmd"> 
 <span class="menu-text">Reflections</span></a>
   </li>  
 </ul>
@@ -215,7 +215,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#set-up" id="toc-set-up" class="nav-link active" data-scroll-target="#set-up">Set-up</a></li>
   <li><a href="#run-model" id="toc-run-model" class="nav-link" data-scroll-target="#run-model">Run model</a></li>
-  <li><a href="#save-results-to-csv" id="toc-save-results-to-csv" class="nav-link" data-scroll-target="#save-results-to-csv">Save results to csv</a></li>
+  <li><a href="#import-results" id="toc-import-results" class="nav-link" data-scroll-target="#import-results">Import results</a></li>
+  <li><a href="#function-to-compare-tables" id="toc-function-to-compare-tables" class="nav-link" data-scroll-target="#function-to-compare-tables">Function to compare tables</a></li>
+  <li><a href="#examine-differences-in-supplementary-tables-2-3-and-4" id="toc-examine-differences-in-supplementary-tables-2-3-and-4" class="nav-link" data-scroll-target="#examine-differences-in-supplementary-tables-2-3-and-4">Examine differences in supplementary tables 2, 3 and 4</a></li>
   <li><a href="#time-elapsed" id="toc-time-elapsed" class="nav-link" data-scroll-target="#time-elapsed">Time elapsed</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.dev/pythonhealthdatascience/stars-reproduce-lim-2020/blob/main/reproduction/scripts/reproduction.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -273,391 +275,611 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">'''Singleton object for storing paths to data and database.'''</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    outputs <span class="op">=</span> <span class="st">'../outputs'</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    endday7 <span class="op">=</span> <span class="st">'endday7.csv'</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    endday14 <span class="op">=</span> <span class="st">'endday14.csv'</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    endday21 <span class="op">=</span> <span class="st">'endday21.csv'</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    base_5 <span class="op">=</span> <span class="st">'output_base5.csv'</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    base_15 <span class="op">=</span> <span class="st">'output_base15.csv'</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    base_30 <span class="op">=</span> <span class="st">'output_base30.csv'</span></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>paths <span class="op">=</span> Paths()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    paper <span class="op">=</span> <span class="st">'../../original_study'</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    paper_tab2 <span class="op">=</span> <span class="st">'supp_tab2_reformat.csv'</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    paper_tab3 <span class="op">=</span> <span class="st">'supp_tab3_reformat.csv'</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    paper_tab4 <span class="op">=</span> <span class="st">'supp_tab4_reformat.csv'</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    paper_tab5 <span class="op">=</span> <span class="st">'supp_tab5_reformat.csv'</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    paper_tab6 <span class="op">=</span> <span class="st">'supp_tab6_reformat.csv'</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>paths <span class="op">=</span> Paths()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="run-model" class="level2">
 <h2 class="anchored" data-anchor-id="run-model">Run model</h2>
-<div id="cell-8" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>EndDay7, EndDay14, EndDay21 <span class="op">=</span> model.run_scenarios(strength<span class="op">=</span>[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>There was a value error
-Finished simulation [2, 1, 5]There was a value errorThere was a value error
-
-
-Finished simulation [2, 3, 5]Finished simulation [2, 1, 10]
-
-There was a value errorThere was a value errorThere was a value error
-
-
-Finished simulation [2, 1, 20]Finished simulation [2, 3, 10]Finished simulation [2, 7, 5]
-
-
-There was a value errorThere was a value error
-There was a value error
-Finished simulation [2, 14, 5]
-Finished simulation [2, 1, 30]
-Finished simulation [2, 7, 10]
-
-There was a value error
-Finished simulation [2, 3, 20]
-There was a value error
-Finished simulation [2, 3, 30]
-There was a value error
-Finished simulation [2, 14, 10]
-There was a value error
-There was a value errorFinished simulation [2, 7, 20]
-
-Finished simulation [2, 7, 30]
-There was a value error
-Finished simulation [2, 14, 20]
-There was a value error
-Finished simulation [2, 14, 30]
-Finished simulation [2, 21, 5]
-Finished simulation [2, 21, 10]
-Finished simulation [2, 21, 20]
-Finished simulation [2, 21, 30]</code></pre>
+<p>Base scenario with 15% probability of secondary infection</p>
+<div id="cell-9" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run model</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># res = model.run_scenarios()</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Save results to CSV</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># res.to_csv(os.path.join(paths.outputs, paths.base_15), index=False)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Base scenario with 5% probability of secondary infection</p>
+<div id="cell-11" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run model</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># res = model.run_scenarios(secondary_attack_rate=0.05)</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Save results to CSV</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># res.to_csv(os.path.join(paths.outputs, paths.base_5), index=False)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-9" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>display(EndDay7)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>display(EndDay14)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>display(EndDay21)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">2-1</th>
-<th data-quarto-table-cell-role="th">2-3</th>
-<th data-quarto-table-cell-role="th">2-7</th>
-<th data-quarto-table-cell-role="th">2-14</th>
-<th data-quarto-table-cell-role="th">2-21</th>
-<th data-quarto-table-cell-role="th">4-1</th>
-<th data-quarto-table-cell-role="th">4-3</th>
-<th data-quarto-table-cell-role="th">4-7</th>
-<th data-quarto-table-cell-role="th">4-14</th>
-<th data-quarto-table-cell-role="th">4-21</th>
-<th data-quarto-table-cell-role="th">6-1</th>
-<th data-quarto-table-cell-role="th">6-3</th>
-<th data-quarto-table-cell-role="th">6-7</th>
-<th data-quarto-table-cell-role="th">6-14</th>
-<th data-quarto-table-cell-role="th">6-21</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">5</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>0.30</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">10</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>0.40</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">20</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>0.50</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">30</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>0.50</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">2-1</th>
-<th data-quarto-table-cell-role="th">2-3</th>
-<th data-quarto-table-cell-role="th">2-7</th>
-<th data-quarto-table-cell-role="th">2-14</th>
-<th data-quarto-table-cell-role="th">2-21</th>
-<th data-quarto-table-cell-role="th">4-1</th>
-<th data-quarto-table-cell-role="th">4-3</th>
-<th data-quarto-table-cell-role="th">4-7</th>
-<th data-quarto-table-cell-role="th">4-14</th>
-<th data-quarto-table-cell-role="th">4-21</th>
-<th data-quarto-table-cell-role="th">6-1</th>
-<th data-quarto-table-cell-role="th">6-3</th>
-<th data-quarto-table-cell-role="th">6-7</th>
-<th data-quarto-table-cell-role="th">6-14</th>
-<th data-quarto-table-cell-role="th">6-21</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">5</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>0.50</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">10</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>0.50</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">20</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>0.50</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">30</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>0.50</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">2-1</th>
-<th data-quarto-table-cell-role="th">2-3</th>
-<th data-quarto-table-cell-role="th">2-7</th>
-<th data-quarto-table-cell-role="th">2-14</th>
-<th data-quarto-table-cell-role="th">2-21</th>
-<th data-quarto-table-cell-role="th">4-1</th>
-<th data-quarto-table-cell-role="th">4-3</th>
-<th data-quarto-table-cell-role="th">4-7</th>
-<th data-quarto-table-cell-role="th">4-14</th>
-<th data-quarto-table-cell-role="th">4-21</th>
-<th data-quarto-table-cell-role="th">6-1</th>
-<th data-quarto-table-cell-role="th">6-3</th>
-<th data-quarto-table-cell-role="th">6-7</th>
-<th data-quarto-table-cell-role="th">6-14</th>
-<th data-quarto-table-cell-role="th">6-21</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">5</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>0.50</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">10</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>0.50</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">20</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>0.50</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">30</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>0.50</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
+<p>Base scenario with 30% probability of secondary infection</p>
+<div id="cell-13" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run model</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># res = model.run_scenarios(secondary_attack_rate=0.3)</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Save results to CSV</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># res.to_csv(os.path.join(paths.outputs, paths.base_30), index=False)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="save-results-to-csv" class="level2">
-<h2 class="anchored" data-anchor-id="save-results-to-csv">Save results to csv</h2>
-<div id="cell-11" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>EndDay7.to_csv(os.path.join(paths.outputs, paths.endday7), index<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>EndDay14.to_csv(os.path.join(paths.outputs, paths.endday14), index<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>EndDay21.to_csv(os.path.join(paths.outputs, paths.endday21), index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="import-results" class="level2">
+<h2 class="anchored" data-anchor-id="import-results">Import results</h2>
+<div id="cell-15" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>model_tab2 <span class="op">=</span> pd.read_csv(os.path.join(paths.outputs, paths.base_15))</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>paper_tab2 <span class="op">=</span> pd.read_csv(os.path.join(paths.paper, paths.paper_tab2))</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>model_tab3 <span class="op">=</span> pd.read_csv(os.path.join(paths.outputs, paths.base_5))</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>paper_tab3 <span class="op">=</span> pd.read_csv(os.path.join(paths.paper, paths.paper_tab3))</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>model_tab4 <span class="op">=</span> pd.read_csv(os.path.join(paths.outputs, paths.base_30))</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>paper_tab4 <span class="op">=</span> pd.read_csv(os.path.join(paths.paper, paths.paper_tab4))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="function-to-compare-tables" class="level2">
+<h2 class="anchored" data-anchor-id="function-to-compare-tables">Function to compare tables</h2>
+<div id="cell-17" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compare_tables(model_tab, paper_tab):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">'''</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Combine the model and paper tables into single dataframe with a diff column</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters:</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">    -----------</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">    model_tab : dataframe</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">        Raw output from model</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">    paper_tab : dataframe</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">        Reformatted table from supplementary materials</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">    '''</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Merge the dataframes</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    comp <span class="op">=</span> pd.merge(</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>        model_tab.rename(columns<span class="op">=</span>{<span class="st">'prop_infected'</span>: <span class="st">'prop_infected_model'</span>}),</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>        paper_tab.rename(columns<span class="op">=</span>{<span class="st">'prop_infected'</span>: <span class="st">'prop_infected_paper'</span>}))</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate difference</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    comp[<span class="st">'diff'</span>] <span class="op">=</span> <span class="bu">abs</span>(comp[<span class="st">'prop_infected_model'</span>] <span class="op">-</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>                       comp[<span class="st">'prop_infected_paper'</span>])</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> comp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="examine-differences-in-supplementary-tables-2-3-and-4" class="level2">
+<h2 class="anchored" data-anchor-id="examine-differences-in-supplementary-tables-2-3-and-4">Examine differences in supplementary tables 2, 3 and 4</h2>
+<p>Supplementary table 2</p>
+<div id="cell-20" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>t2_comp <span class="op">=</span> compare_tables(model_tab2, paper_tab2)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(t2_comp[<span class="st">'diff'</span>].describe())</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Extracting instances where absolute difference is more than 0.05</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>display(t2_comp[t2_comp[<span class="st">'diff'</span>] <span class="op">&gt;</span> <span class="fl">0.05</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>count    420.000000
+mean       0.009881
+std        0.017903
+min        0.000000
+25%        0.000000
+50%        0.000000
+75%        0.020000
+max        0.120000
+Name: diff, dtype: float64</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">strength</th>
+<th data-quarto-table-cell-role="th">staff_change</th>
+<th data-quarto-table-cell-role="th">staff_per_shift</th>
+<th data-quarto-table-cell-role="th">shifts_per_day</th>
+<th data-quarto-table-cell-role="th">end_of_day</th>
+<th data-quarto-table-cell-role="th">prop_infected_model</th>
+<th data-quarto-table-cell-role="th">prop_infected_paper</th>
+<th data-quarto-table-cell-role="th">diff</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">36</td>
+<td>2</td>
+<td>14</td>
+<td>5</td>
+<td>1</td>
+<td>7</td>
+<td>0.30</td>
+<td>0.40</td>
+<td>0.10</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">48</td>
+<td>2</td>
+<td>21</td>
+<td>5</td>
+<td>1</td>
+<td>7</td>
+<td>0.40</td>
+<td>0.30</td>
+<td>0.10</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">84</td>
+<td>4</td>
+<td>7</td>
+<td>5</td>
+<td>1</td>
+<td>7</td>
+<td>0.15</td>
+<td>0.20</td>
+<td>0.05</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">96</td>
+<td>4</td>
+<td>14</td>
+<td>5</td>
+<td>1</td>
+<td>7</td>
+<td>0.15</td>
+<td>0.20</td>
+<td>0.05</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">108</td>
+<td>4</td>
+<td>21</td>
+<td>5</td>
+<td>1</td>
+<td>7</td>
+<td>0.20</td>
+<td>0.15</td>
+<td>0.05</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">109</td>
+<td>4</td>
+<td>21</td>
+<td>5</td>
+<td>2</td>
+<td>7</td>
+<td>0.15</td>
+<td>0.20</td>
+<td>0.05</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">110</td>
+<td>4</td>
+<td>21</td>
+<td>5</td>
+<td>3</td>
+<td>7</td>
+<td>0.20</td>
+<td>0.15</td>
+<td>0.05</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">246</td>
+<td>4</td>
+<td>1</td>
+<td>20</td>
+<td>1</td>
+<td>14</td>
+<td>0.34</td>
+<td>0.26</td>
+<td>0.08</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">253</td>
+<td>4</td>
+<td>3</td>
+<td>5</td>
+<td>2</td>
+<td>14</td>
+<td>0.20</td>
+<td>0.15</td>
+<td>0.05</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">254</td>
+<td>4</td>
+<td>3</td>
+<td>5</td>
+<td>3</td>
+<td>14</td>
+<td>0.15</td>
+<td>0.20</td>
+<td>0.05</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">264</td>
+<td>4</td>
+<td>7</td>
+<td>5</td>
+<td>1</td>
+<td>14</td>
+<td>0.15</td>
+<td>0.20</td>
+<td>0.05</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">360</td>
+<td>2</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>21</td>
+<td>0.50</td>
+<td>0.40</td>
+<td>0.10</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">420</td>
+<td>4</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>21</td>
+<td>0.15</td>
+<td>0.20</td>
+<td>0.05</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">424</td>
+<td>4</td>
+<td>1</td>
+<td>10</td>
+<td>2</td>
+<td>21</td>
+<td>0.33</td>
+<td>0.41</td>
+<td>0.08</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">426</td>
+<td>4</td>
+<td>1</td>
+<td>20</td>
+<td>1</td>
+<td>21</td>
+<td>0.70</td>
+<td>0.63</td>
+<td>0.07</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">487</td>
+<td>6</td>
+<td>1</td>
+<td>20</td>
+<td>2</td>
+<td>21</td>
+<td>0.30</td>
+<td>0.36</td>
+<td>0.06</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">488</td>
+<td>6</td>
+<td>1</td>
+<td>20</td>
+<td>3</td>
+<td>21</td>
+<td>0.52</td>
+<td>0.40</td>
+<td>0.12</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">497</td>
+<td>6</td>
+<td>3</td>
+<td>10</td>
+<td>3</td>
+<td>21</td>
+<td>0.26</td>
+<td>0.21</td>
+<td>0.05</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Supplementary table 3</p>
+<div id="cell-22" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine tables</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>t3_comp <span class="op">=</span> compare_tables(model_tab3, paper_tab3)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Descriptive statistics for absolute difference in results</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(t3_comp[<span class="st">'diff'</span>].describe())</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Extracting instances where absolute difference is more than 0.05</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>display(t3_comp[t3_comp[<span class="st">'diff'</span>] <span class="op">&gt;</span> <span class="fl">0.05</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>count    420.000000
+mean       0.008738
+std        0.014362
+min        0.000000
+25%        0.000000
+50%        0.000000
+75%        0.010000
+max        0.100000
+Name: diff, dtype: float64</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">strength</th>
+<th data-quarto-table-cell-role="th">staff_change</th>
+<th data-quarto-table-cell-role="th">staff_per_shift</th>
+<th data-quarto-table-cell-role="th">shifts_per_day</th>
+<th data-quarto-table-cell-role="th">end_of_day</th>
+<th data-quarto-table-cell-role="th">prop_infected_model</th>
+<th data-quarto-table-cell-role="th">prop_infected_paper</th>
+<th data-quarto-table-cell-role="th">diff</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">30</td>
+<td>2</td>
+<td>7</td>
+<td>20</td>
+<td>1</td>
+<td>7</td>
+<td>0.15</td>
+<td>0.2</td>
+<td>0.05</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">36</td>
+<td>2</td>
+<td>14</td>
+<td>5</td>
+<td>1</td>
+<td>7</td>
+<td>0.20</td>
+<td>0.1</td>
+<td>0.10</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">210</td>
+<td>2</td>
+<td>7</td>
+<td>20</td>
+<td>1</td>
+<td>14</td>
+<td>0.15</td>
+<td>0.2</td>
+<td>0.05</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">384</td>
+<td>2</td>
+<td>7</td>
+<td>5</td>
+<td>1</td>
+<td>21</td>
+<td>0.30</td>
+<td>0.2</td>
+<td>0.10</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">470</td>
+<td>4</td>
+<td>21</td>
+<td>5</td>
+<td>3</td>
+<td>21</td>
+<td>0.15</td>
+<td>0.2</td>
+<td>0.05</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Supplementary table 4</p>
+<div id="cell-24" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine tables</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>t4_comp <span class="op">=</span> compare_tables(model_tab4, paper_tab4)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Descriptive statistics for absolute difference in results</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(t4_comp[<span class="st">'diff'</span>].describe())</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Extracting instances where absolute difference is more than 0.05</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>display(t4_comp[t4_comp[<span class="st">'diff'</span>] <span class="op">&gt;</span> <span class="fl">0.05</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>count    420.000000
+mean       0.005333
+std        0.013614
+min        0.000000
+25%        0.000000
+50%        0.000000
+75%        0.000000
+max        0.100000
+Name: diff, dtype: float64</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">strength</th>
+<th data-quarto-table-cell-role="th">staff_change</th>
+<th data-quarto-table-cell-role="th">staff_per_shift</th>
+<th data-quarto-table-cell-role="th">shifts_per_day</th>
+<th data-quarto-table-cell-role="th">end_of_day</th>
+<th data-quarto-table-cell-role="th">prop_infected_model</th>
+<th data-quarto-table-cell-role="th">prop_infected_paper</th>
+<th data-quarto-table-cell-role="th">diff</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">12</td>
+<td>2</td>
+<td>3</td>
+<td>5</td>
+<td>1</td>
+<td>7</td>
+<td>0.40</td>
+<td>0.30</td>
+<td>0.10</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">67</td>
+<td>4</td>
+<td>1</td>
+<td>20</td>
+<td>2</td>
+<td>7</td>
+<td>0.34</td>
+<td>0.26</td>
+<td>0.08</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">72</td>
+<td>4</td>
+<td>3</td>
+<td>5</td>
+<td>1</td>
+<td>7</td>
+<td>0.15</td>
+<td>0.20</td>
+<td>0.05</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">74</td>
+<td>4</td>
+<td>3</td>
+<td>5</td>
+<td>3</td>
+<td>7</td>
+<td>0.20</td>
+<td>0.15</td>
+<td>0.05</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">242</td>
+<td>4</td>
+<td>1</td>
+<td>5</td>
+<td>3</td>
+<td>14</td>
+<td>0.40</td>
+<td>0.30</td>
+<td>0.10</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">244</td>
+<td>4</td>
+<td>1</td>
+<td>10</td>
+<td>2</td>
+<td>14</td>
+<td>0.54</td>
+<td>0.60</td>
+<td>0.06</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">307</td>
+<td>6</td>
+<td>1</td>
+<td>20</td>
+<td>2</td>
+<td>14</td>
+<td>0.60</td>
+<td>0.54</td>
+<td>0.06</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">421</td>
+<td>4</td>
+<td>1</td>
+<td>5</td>
+<td>2</td>
+<td>21</td>
+<td>0.60</td>
+<td>0.65</td>
+<td>0.05</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">483</td>
+<td>6</td>
+<td>1</td>
+<td>10</td>
+<td>1</td>
+<td>21</td>
+<td>0.46</td>
+<td>0.41</td>
+<td>0.05</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">484</td>
+<td>6</td>
+<td>1</td>
+<td>10</td>
+<td>2</td>
+<td>21</td>
+<td>0.58</td>
+<td>0.51</td>
+<td>0.07</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">485</td>
+<td>6</td>
+<td>1</td>
+<td>10</td>
+<td>3</td>
+<td>21</td>
+<td>0.61</td>
+<td>0.66</td>
+<td>0.05</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
 </div>
 </section>
 <section id="time-elapsed" class="level2">
 <h2 class="anchored" data-anchor-id="time-elapsed">Time elapsed</h2>
-<div id="cell-13" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find run time in seconds</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>end <span class="op">=</span> time.time()</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>runtime <span class="op">=</span> <span class="bu">round</span>(end<span class="op">-</span>start)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Display converted to minutes and seconds</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Notebook run time: </span><span class="sc">{</span>runtime<span class="op">//</span><span class="dv">60</span><span class="sc">}</span><span class="ss">m </span><span class="sc">{</span>runtime<span class="op">%</span><span class="dv">60</span><span class="sc">}</span><span class="ss">s'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-26" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find run time in seconds</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>end <span class="op">=</span> time.time()</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>runtime <span class="op">=</span> <span class="bu">round</span>(end<span class="op">-</span>start)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Display converted to minutes and seconds</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Notebook run time: </span><span class="sc">{</span>runtime<span class="op">//</span><span class="dv">60</span><span class="sc">}</span><span class="ss">m </span><span class="sc">{</span>runtime<span class="op">%</span><span class="dv">60</span><span class="sc">}</span><span class="ss">s'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Notebook run time: 1m 1s</code></pre>
+<pre><code>Notebook run time: 0m 0s</code></pre>
 </div>
 </div>
 

@@ -206,7 +206,7 @@ div.csl-indent {
 <span class="menu-text">Summary</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../evaluation/reflections.html"> 
+    <a class="nav-link" href="../../../evaluation/scripts/reflections.qmd"> 
 <span class="menu-text">Reflections</span></a>
   </li>  
 </ul>
@@ -264,7 +264,10 @@ div.csl-indent {
    
   <ul>
   <li><a href="#adding-parallel-processing" id="toc-adding-parallel-processing" class="nav-link active" data-scroll-target="#adding-parallel-processing">09.40-11.12, 11.17-11.27: Adding parallel processing</a></li>
-  <li><a href="#adding-parameters" id="toc-adding-parameters" class="nav-link" data-scroll-target="#adding-parameters">11.31-11.36, 11.39: Adding parameters</a></li>
+  <li><a href="#adding-parameters" id="toc-adding-parameters" class="nav-link" data-scroll-target="#adding-parameters">11.31-11.36, 11.39-12.05: Adding parameters</a></li>
+  <li><a href="#troubleshooting-staff-strength-2" id="toc-troubleshooting-staff-strength-2" class="nav-link" data-scroll-target="#troubleshooting-staff-strength-2">12.40-13.18, 13.20-13.44: Troubleshooting staff strength 2</a></li>
+  <li><a href="#supplementary-table-2" id="toc-supplementary-table-2" class="nav-link" data-scroll-target="#supplementary-table-2">13.55-14.09: Supplementary table 2</a></li>
+  <li><a href="#supplementary-table-3-and-4" id="toc-supplementary-table-3-and-4" class="nav-link" data-scroll-target="#supplementary-table-3-and-4">14.10-14.14, 14.25-14.28, 14.33-14.44, 14.49-14.58: Supplementary table 3 and 4</a></li>
   <li><a href="#timings" id="toc-timings" class="nav-link" data-scroll-target="#timings">Timings</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/edit/main/logbook/posts/2024_07_23/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -313,7 +316,7 @@ Note
 <p>Hid warnings and print progress message to enable cleaner output.</p>
 </section>
 <section id="adding-parameters" class="level2">
-<h2 class="anchored" data-anchor-id="adding-parameters">11.31-11.36, 11.39: Adding parameters</h2>
+<h2 class="anchored" data-anchor-id="adding-parameters">11.31-11.36, 11.39-12.05: Adding parameters</h2>
 <p>Modified <code>model.py</code> so it has staff strength [2, 4, 6] but received error:</p>
 <pre><code>File "/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py", line 175, in run_model
     fillroster1(staff_pool,f,Nday,stafflist,roster)
@@ -326,27 +329,163 @@ ValueError: Sample larger than population or is negative</code></pre>
 <p>I wasn’t certain how to alter the shifts per day from the model, but I tried commenting out shift 2 and 3 in <code>contact()</code>. to see if the model would run. However, I still got the error from above. I introduced error handling, to set the result to NaN if there was a Value Error. With those sections still commented, and only running strength 2, the only results it output were for 2-21.</p>
 <p>I tried uncommenting shifts 2 and 3 and running for strength 2. However, this again only output results for 2-21.</p>
 </section>
+<section id="troubleshooting-staff-strength-2" class="level2">
+<h2 class="anchored" data-anchor-id="troubleshooting-staff-strength-2">12.40-13.18, 13.20-13.44: Troubleshooting staff strength 2</h2>
+<p>We don’t expect it to work when there are three shifts per day, so I tried again to figure out how to successfully change it to one shift per day…</p>
+<ul>
+<li>Commented out shift 2 and 3 sections from <code>contact()</code> abd creation of shift 2 and 3 rosters in <code>restartsim()</code>. Got error:</li>
+</ul>
+<pre><code>  File "/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py", line 169, in run_model
+    fillroster1(staff_pool,f,Nday,stafflist,roster)
+  File "/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py", line 63, in fillroster1
+    roster.iloc[f*i+j] = temp
+  File "/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/indexing.py", line 670, in __setitem__
+    iloc._setitem_with_indexer(indexer, value)
+  File "/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/indexing.py", line 1802, in _setitem_with_indexer
+    self.obj._mgr = self.obj._mgr.setitem(indexer=indexer, value=value)
+  File "/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/internals/managers.py", line 534, in setitem
+    return self.apply("setitem", indexer=indexer, value=value)
+  File "/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/internals/managers.py", line 406, in apply
+    applied = getattr(b, f)(**kwargs)
+  File "/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/internals/blocks.py", line 885, in setitem
+    values[indexer] = value
+ValueError: cannot copy sequence with size 18 to array axis with dimension 10
+"""</code></pre>
+<ul>
+<li>This might actually be the issue we were looking for - that we can’t fill up the roster with that staff number. I tried running with strength 4, which should work regardless, but get a similar error</li>
+</ul>
+<pre><code>  File "/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py", line 169, in run_model
+    fillroster1(staff_pool,f,Nday,stafflist,roster)
+  File "/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py", line 63, in fillroster1
+    roster.iloc[f*i+j] = temp
+  File "/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/indexing.py", line 670, in __setitem__
+    iloc._setitem_with_indexer(indexer, value)
+  File "/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/indexing.py", line 1802, in _setitem_with_indexer
+    self.obj._mgr = self.obj._mgr.setitem(indexer=indexer, value=value)
+  File "/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/internals/managers.py", line 534, in setitem
+    return self.apply("setitem", indexer=indexer, value=value)
+  File "/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/internals/managers.py", line 406, in apply
+    applied = getattr(b, f)(**kwargs)
+  File "/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/internals/blocks.py", line 885, in setitem
+    values[indexer] = value
+ValueError: cannot copy sequence with size 9 to array axis with dimension 5</code></pre>
+<ul>
+<li>To be sure it’s not an error I’ve introduced, I went back to the original model code and made a fresh notebook, commenting out the same sections, but with the same result</li>
+<li>I worked through the code, trying to spot anything I should’ve also changed, and noticed that:
+<ul>
+<li><code>Nday = staffpershift1 + staffpershift2 + staffpershift3</code></li>
+<li>Then used in <code>fillroster1(staff_pool,f,Nday)</code></li>
+<li>As <code>temp = random.sample(stafflist[stafflist.loc[:,'rest']==0].index.values.tolist(),k=Nday)</code></li>
+</ul></li>
+<li>I changed that to <code>Nday = staffpershift1</code>, and this then worked!</li>
+</ul>
+<p>I then add a parameter to <code>run_scenarios()</code> to control number of shifts per day, and made those commented out sections into conditional logic depending on whether it’s 1, 2 or 3 days.</p>
+<p>I had to change the results dataframe (as it was set up to only save results for one variant of shifts per day). I decided the simplest solution - that would also make creating the figures later easier - would be to save it in long format.</p>
+<p>I also set the results to NaN if it found that the input parameters were staff strength 2 and more than one shift per day.</p>
+<p>I then ran the whole model, with all the parameter variants.</p>
+</section>
+<section id="supplementary-table-2" class="level2">
+<h2 class="anchored" data-anchor-id="supplementary-table-2">13.55-14.09: Supplementary table 2</h2>
+<p>Compared the results for supplementary table 2, and found nearly all were identical.</p>
+<p>The maximum absolute difference observed was 0.07, which is within the normal variation I observed above between runs of the model without seed control.</p>
+<p>Hence, consider this successfully reproduced at 14.09.</p>
+<div id="c2b89617" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Minutes used prior to today</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>used_to_date <span class="op">=</span> <span class="dv">277</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Times from today</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> [</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'09.40'</span>, <span class="st">'11.12'</span>),</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.17'</span>, <span class="st">'11.27'</span>),</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.31'</span>, <span class="st">'11.36'</span>),</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.39'</span>, <span class="st">'12.05'</span>),</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'12.40'</span>, <span class="st">'13.18'</span>),</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'13.20'</span>, <span class="st">'13.44'</span>),</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'13.55'</span>, <span class="st">'14.09'</span>)]</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Time spent today: 209m, or 3h 29m
+Total used to date: 486m, or 8h 6m
+Time remaining: 1914m, or 31h 54m
+Used 20.2% of 40 hours max</code></pre>
+</div>
+</div>
+</section>
+<section id="supplementary-table-3-and-4" class="level2">
+<h2 class="anchored" data-anchor-id="supplementary-table-3-and-4">14.10-14.14, 14.25-14.28, 14.33-14.44, 14.49-14.58: Supplementary table 3 and 4</h2>
+<p>Re-ran and renamed base scenario with 15% probability of secondary infection, and then ran model again but with 5% and 30% probability. This took about 21 minutes.</p>
+<p>While that ran, I worked on speeding up the model code further, by changing the n(0,100) for loop into a map statement.</p>
+<p>Max difference for each was 0.1, which I feel is within normal variation observed. This was reaffirmed by looking at the few examples where the results were different by more than 0.05, which were few and not felt to be noteable.</p>
+<p>Further confirmed by the fact that, upon re-run, the max difference for supplementary table 2 was now 0.12, when before it was 0.07.</p>
+<p>In all cases, the overwhelming majority of points are very similar, and these could be considered normal variation within the stochasticity of the model.</p>
+<p>Would considered each complete at 14.58.</p>
+<div id="c5d23bfe" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Minutes used prior to today</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>used_to_date <span class="op">=</span> <span class="dv">277</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Times from today</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> [</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'09.40'</span>, <span class="st">'11.12'</span>),</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.17'</span>, <span class="st">'11.27'</span>),</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.31'</span>, <span class="st">'11.36'</span>),</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.39'</span>, <span class="st">'12.05'</span>),</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'12.40'</span>, <span class="st">'13.18'</span>),</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'13.20'</span>, <span class="st">'13.44'</span>),</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'13.55'</span>, <span class="st">'14.09'</span>),</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'14.10'</span>, <span class="st">'14.14'</span>),</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'14.25'</span>, <span class="st">'14.28'</span>),</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'14.33'</span>, <span class="st">'14.44'</span>),</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'14.49'</span>, <span class="st">'14.58'</span>)]</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Time spent today: 236m, or 3h 56m
+Total used to date: 513m, or 8h 33m
+Time remaining: 1887m, or 31h 27m
+Used 21.4% of 40 hours max</code></pre>
+</div>
+</div>
+</section>
 <section id="timings" class="level2">
 <h2 class="anchored" data-anchor-id="timings">Timings</h2>
-<div id="e44164a1" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Minutes used prior to today</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>used_to_date <span class="op">=</span> <span class="dv">277</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Times from today</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> [</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'09.40'</span>, <span class="st">'11.12'</span>)]</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Add remaining times</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="0eee0dd1" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Minutes used prior to today</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>used_to_date <span class="op">=</span> <span class="dv">277</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Times from today</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> [</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'09.40'</span>, <span class="st">'11.12'</span>),</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.17'</span>, <span class="st">'11.27'</span>),</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.31'</span>, <span class="st">'11.36'</span>),</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.39'</span>, <span class="st">'12.05'</span>),</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'12.40'</span>, <span class="st">'13.18'</span>),</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'13.20'</span>, <span class="st">'13.44'</span>),</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'13.55'</span>, <span class="st">'14.09'</span>),</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'14.10'</span>, <span class="st">'14.14'</span>),</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'14.25'</span>, <span class="st">'14.28'</span>),</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'14.33'</span>, <span class="st">'14.44'</span>),</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'14.49'</span>, <span class="st">'14.58'</span>)]</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Add remaining times</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time spent today: 92m, or 1h 32m
-Total used to date: 369m, or 6h 9m
-Time remaining: 2031m, or 33h 51m
-Used 15.4% of 40 hours max</code></pre>
+<pre><code>Time spent today: 236m, or 3h 56m
+Total used to date: 513m, or 8h 33m
+Time remaining: 1887m, or 31h 27m
+Used 21.4% of 40 hours max</code></pre>
 </div>
 </div>
 
