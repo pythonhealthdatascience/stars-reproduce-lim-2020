@@ -36,7 +36,7 @@ This now ran in 2m 40s - 3m 6s. This is great, and will make running all the dif
 
 Hid warnings and print progress message to enable cleaner output.
 
-## 11.31-11.36, 11.39: Adding parameters
+## 11.31-11.36, 11.39-12.05: Adding parameters
 
 Modified `model.py` so it has staff strength [2, 4, 6] but received error:
 
@@ -56,6 +56,135 @@ I wasn't certain how to alter the shifts per day from the model, but I tried com
 
 I tried uncommenting shifts 2 and 3 and running for strength 2. However, this again only output results for 2-21.
 
+## 12.40-13.18, 13.20-13.44: Troubleshooting staff strength 2
+
+We don't expect it to work when there are three shifts per day, so I tried again to figure out how to successfully change it to one shift per day...
+
+* Commented out shift 2 and 3 sections from `contact()` abd creation of shift 2 and 3 rosters in `restartsim()`. Got error:
+
+```
+  File "/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py", line 169, in run_model
+    fillroster1(staff_pool,f,Nday,stafflist,roster)
+  File "/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py", line 63, in fillroster1
+    roster.iloc[f*i+j] = temp
+  File "/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/indexing.py", line 670, in __setitem__
+    iloc._setitem_with_indexer(indexer, value)
+  File "/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/indexing.py", line 1802, in _setitem_with_indexer
+    self.obj._mgr = self.obj._mgr.setitem(indexer=indexer, value=value)
+  File "/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/internals/managers.py", line 534, in setitem
+    return self.apply("setitem", indexer=indexer, value=value)
+  File "/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/internals/managers.py", line 406, in apply
+    applied = getattr(b, f)(**kwargs)
+  File "/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/internals/blocks.py", line 885, in setitem
+    values[indexer] = value
+ValueError: cannot copy sequence with size 18 to array axis with dimension 10
+"""
+```
+
+* This might actually be the issue we were looking for - that we can't fill up the roster with that staff number. I tried running with strength 4, which should work regardless, but get a similar error
+
+```
+  File "/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py", line 169, in run_model
+    fillroster1(staff_pool,f,Nday,stafflist,roster)
+  File "/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py", line 63, in fillroster1
+    roster.iloc[f*i+j] = temp
+  File "/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/indexing.py", line 670, in __setitem__
+    iloc._setitem_with_indexer(indexer, value)
+  File "/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/indexing.py", line 1802, in _setitem_with_indexer
+    self.obj._mgr = self.obj._mgr.setitem(indexer=indexer, value=value)
+  File "/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/internals/managers.py", line 534, in setitem
+    return self.apply("setitem", indexer=indexer, value=value)
+  File "/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/internals/managers.py", line 406, in apply
+    applied = getattr(b, f)(**kwargs)
+  File "/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/internals/blocks.py", line 885, in setitem
+    values[indexer] = value
+ValueError: cannot copy sequence with size 9 to array axis with dimension 5
+```
+
+* To be sure it's not an error I've introduced, I went back to the original model code and made a fresh notebook, commenting out the same sections, but with the same result
+* I worked through the code, trying to spot anything I should've also changed, and noticed that:
+    * `Nday = staffpershift1 + staffpershift2 + staffpershift3`
+    * Then used in `fillroster1(staff_pool,f,Nday)`
+    * As `temp = random.sample(stafflist[stafflist.loc[:,'rest']==0].index.values.tolist(),k=Nday)`
+* I changed that to `Nday = staffpershift1`, and this then worked!
+
+I then add a parameter to `run_scenarios()` to control number of shifts per day, and made those commented out sections into conditional logic depending on whether it's 1, 2 or 3 days.
+
+I had to change the results dataframe (as it was set up to only save results for one variant of shifts per day). I decided the simplest solution - that would also make creating the figures later easier - would be to save it in long format.
+
+I also set the results to NaN if it found that the input parameters were staff strength 2 and more than one shift per day.
+
+I then ran the whole model, with all the parameter variants.
+
+## 13.55-14.09: Supplementary table 2
+
+Compared the results for supplementary table 2, and found nearly all were identical.
+
+The maximum absolute difference observed was 0.07, which is within the normal variation I observed above between runs of the model without seed control.
+
+Hence, consider this successfully reproduced at 14.09.
+
+```{python}
+import sys
+sys.path.append('../')
+from timings import calculate_times
+
+# Minutes used prior to today
+used_to_date = 277
+
+# Times from today
+times = [
+    ('09.40', '11.12'),
+    ('11.17', '11.27'),
+    ('11.31', '11.36'),
+    ('11.39', '12.05'),
+    ('12.40', '13.18'),
+    ('13.20', '13.44'),
+    ('13.55', '14.09')]
+
+calculate_times(used_to_date, times)
+```
+
+## 14.10-14.14, 14.25-14.28, 14.33-14.44, 14.49-14.58: Supplementary table 3 and 4
+
+Re-ran and renamed base scenario with 15% probability of secondary infection, and then ran model again but with 5% and 30% probability. This took about 21 minutes.
+
+While that ran, I worked on speeding up the model code further, by changing the n(0,100) for loop into a map statement.
+
+Max difference for each was 0.1, which I feel is within normal variation observed. This was reaffirmed by looking at the few examples where the results were different by more than 0.05, which were few and not felt to be noteable.
+
+Further confirmed by the fact that, upon re-run, the max difference for supplementary table 2 was now
+0.12, when before it was 0.07.
+
+In all cases, the overwhelming majority of points are very similar, and these could be considered normal variation within the stochasticity of the model.
+
+Would considered each complete at 14.58.
+
+```{python}
+import sys
+sys.path.append('../')
+from timings import calculate_times
+
+# Minutes used prior to today
+used_to_date = 277
+
+# Times from today
+times = [
+    ('09.40', '11.12'),
+    ('11.17', '11.27'),
+    ('11.31', '11.36'),
+    ('11.39', '12.05'),
+    ('12.40', '13.18'),
+    ('13.20', '13.44'),
+    ('13.55', '14.09'),
+    ('14.10', '14.14'),
+    ('14.25', '14.28'),
+    ('14.33', '14.44'),
+    ('14.49', '14.58')]
+
+calculate_times(used_to_date, times)
+```
+
 ## Timings
 
 ```{python}
@@ -68,7 +197,17 @@ used_to_date = 277
 
 # Times from today
 times = [
-    ('09.40', '11.12')]
+    ('09.40', '11.12'),
+    ('11.17', '11.27'),
+    ('11.31', '11.36'),
+    ('11.39', '12.05'),
+    ('12.40', '13.18'),
+    ('13.20', '13.44'),
+    ('13.55', '14.09'),
+    ('14.10', '14.14'),
+    ('14.25', '14.28'),
+    ('14.33', '14.44'),
+    ('14.49', '14.58')]
 # TODO: Add remaining times
 
 calculate_times(used_to_date, times)
