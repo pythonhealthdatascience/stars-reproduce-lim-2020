@@ -210,7 +210,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#set-up" id="toc-set-up" class="nav-link active" data-scroll-target="#set-up">Set-up</a></li>
-  <li><a href="#define-model-functions" id="toc-define-model-functions" class="nav-link" data-scroll-target="#define-model-functions">Define model functions</a></li>
   <li><a href="#run-model" id="toc-run-model" class="nav-link" data-scroll-target="#run-model">Run model</a></li>
   <li><a href="#save-results-to-csv" id="toc-save-results-to-csv" class="nav-link" data-scroll-target="#save-results-to-csv">Save results to csv</a></li>
   <li><a href="#time-elapsed" id="toc-time-elapsed" class="nav-link" data-scroll-target="#time-elapsed">Time elapsed</a></li>
@@ -243,21 +242,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="set-up">Set-up</h2>
 <p>Import required packages</p>
 <div id="cell-4" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dataclasses <span class="im">import</span> dataclass</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import model</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> model</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Data processing and figure generation</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Import and start timer (used to record runtime of this notebook)</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>start <span class="op">=</span> time.time()</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Manage file paths</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dataclasses <span class="im">import</span> dataclass</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Hide SettingWithCopyWarning error</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Resolve error</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pandas.core.common <span class="im">import</span> SettingWithCopyWarning</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>warnings.simplefilter(action<span class="op">=</span><span class="st">"ignore"</span>, category<span class="op">=</span>SettingWithCopyWarning)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>warnings.simplefilter(action<span class="op">=</span><span class="st">"ignore"</span>, category<span class="op">=</span>SettingWithCopyWarning)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Import and start timer (used to record runtime of this notebook)</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>start <span class="op">=</span> time.time()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Set file paths</p>
 <div id="cell-6" class="cell" data-execution_count="2">
@@ -273,297 +276,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>paths <span class="op">=</span> Paths()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Create empty results dataframes</p>
-<div id="cell-8" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display all</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.max_columns'</span>, <span class="va">None</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.max_rows'</span>, <span class="va">None</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Heading for each column in DataFrame : Staff Strength - Shift Change Interval</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>column1 <span class="op">=</span> [<span class="st">'2-'</span><span class="op">+</span><span class="bu">str</span>(i) <span class="cf">for</span> i <span class="kw">in</span> [<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">14</span>,<span class="dv">21</span>]]</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>column2 <span class="op">=</span> [<span class="st">'4-'</span><span class="op">+</span><span class="bu">str</span>(i) <span class="cf">for</span> i <span class="kw">in</span> [<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">14</span>,<span class="dv">21</span>]]</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>column3 <span class="op">=</span> [<span class="st">'6-'</span><span class="op">+</span><span class="bu">str</span>(i) <span class="cf">for</span> i <span class="kw">in</span> [<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">14</span>,<span class="dv">21</span>]]</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Dataframe which store the outcome at end of day 7</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>EndDay7 <span class="op">=</span> pd.DataFrame(index<span class="op">=</span><span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">4</span>),columns<span class="op">=</span>column1<span class="op">+</span>column2<span class="op">+</span>column3)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Dataframe which store the outcome at end of day 14</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>EndDay14 <span class="op">=</span> pd.DataFrame(index<span class="op">=</span><span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">4</span>),columns<span class="op">=</span>column1<span class="op">+</span>column2<span class="op">+</span>column3)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Dataframe which store the outcome at end of day 21</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>EndDay21 <span class="op">=</span> pd.DataFrame(index<span class="op">=</span><span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">4</span>),columns<span class="op">=</span>column1<span class="op">+</span>column2<span class="op">+</span>column3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>View example</p>
-<div id="cell-10" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>EndDay7</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">2-1</th>
-<th data-quarto-table-cell-role="th">2-3</th>
-<th data-quarto-table-cell-role="th">2-7</th>
-<th data-quarto-table-cell-role="th">2-14</th>
-<th data-quarto-table-cell-role="th">2-21</th>
-<th data-quarto-table-cell-role="th">4-1</th>
-<th data-quarto-table-cell-role="th">4-3</th>
-<th data-quarto-table-cell-role="th">4-7</th>
-<th data-quarto-table-cell-role="th">4-14</th>
-<th data-quarto-table-cell-role="th">4-21</th>
-<th data-quarto-table-cell-role="th">6-1</th>
-<th data-quarto-table-cell-role="th">6-3</th>
-<th data-quarto-table-cell-role="th">6-7</th>
-<th data-quarto-table-cell-role="th">6-14</th>
-<th data-quarto-table-cell-role="th">6-21</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</section>
-<section id="define-model-functions" class="level2">
-<h2 class="anchored" data-anchor-id="define-model-functions">Define model functions</h2>
-<div id="cell-12" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to reset the simulation for a new cycle</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> restartsim(staff_pool, staffpershift1,staffpershift2, staffpershift3):</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Staffs are assigned numbers ranging from 0 to staff_pool</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># staff_pool = total number of staffs</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># staffpershift1 = number of staffs in the 1st shift</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># staffpershift2 = number of staffs in the 2nd shift (40% of the 1st shift)</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># staffpershift3 = number of staffs in the 3rd shift (40% of the 1st shift)</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># roster = a data frame to store the roster, with 21 rows, each row showing the staff for the day</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># The columns in roster dataframe shows the staffs in each shift: shift number - staff slot number</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># e.g.: Shift1-2 is the 2nd staff slot for the 1st shift</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># e.g.: Shift2-3 is the 3rd staff slot for the 2nd shift</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    roster <span class="op">=</span> pd.DataFrame(index<span class="op">=</span><span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">21</span>),columns<span class="op">=</span>[<span class="st">'Shift1-'</span><span class="op">+</span><span class="bu">str</span>(i) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,staffpershift1)])</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span> (<span class="dv">0</span>, staffpershift2):</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>        roster[<span class="st">'Shift2-'</span><span class="op">+</span><span class="bu">str</span>(i)] <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span> (<span class="dv">0</span>, staffpershift3):</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        roster[<span class="st">'Shift3-'</span><span class="op">+</span><span class="bu">str</span>(i)] <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create a staff list with 3 columns,</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 'infected' column shows if the staff is infected: 0 = susceptible; 1 = infected</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 'rest' column shows if the staff is resting after working shift (won't be select for roster): 0 = not resting, 1 = resting;</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 'ref' column is a reference column with value set to 0.</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    stafflist <span class="op">=</span> pd.DataFrame(index<span class="op">=</span><span class="bu">range</span>(<span class="dv">0</span>,staff_pool),columns<span class="op">=</span>[<span class="st">'infected'</span>,<span class="st">'rest'</span>,<span class="st">'ref'</span>])</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    stafflist.loc[<span class="dv">0</span>:staff_pool, <span class="st">'infected'</span>]<span class="op">=</span><span class="dv">0</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    stafflist.loc[<span class="dv">0</span>:staff_pool, <span class="st">'rest'</span>]<span class="op">=</span><span class="dv">0</span></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    stafflist.loc[<span class="dv">0</span>:staff_pool, <span class="st">'ref'</span>]<span class="op">=</span><span class="dv">0</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> stafflist,roster</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to fill up the roster with staff number; ensure that the staffs rest for a minimal period after working a shift</span></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fillroster1(staff_pool,f,Nday):</span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># staff_pool = total number of staffs</span></span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># f = shift change frequency/interval</span></span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Nday = total number of staff for 1 day</span></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>    <span class="co"># num_cycle = number of shift rotation over the 21 days of simulation;</span></span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>    num_cycle <span class="op">=</span> <span class="bu">int</span>(<span class="dv">21</span><span class="op">/</span>f)</span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Special handling for f = 14 as 21 is not a multiple of 14.</span></span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> f <span class="op">==</span> <span class="dv">14</span>:</span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>        temp <span class="op">=</span> random.sample(stafflist[stafflist.loc[:,<span class="st">'rest'</span>]<span class="op">==</span><span class="dv">0</span>].index.values.tolist(),k<span class="op">=</span>Nday)</span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,f):</span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>            roster.iloc[j] <span class="op">=</span> temp</span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>        stafflist.loc[temp,<span class="st">'rest'</span>]<span class="op">=</span><span class="dv">1</span></span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>        temp <span class="op">=</span> random.sample(stafflist[stafflist.loc[:,<span class="st">'rest'</span>]<span class="op">==</span><span class="dv">0</span>].index.values.tolist(),k<span class="op">=</span>Nday)</span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(f,<span class="dv">21</span>):</span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>            roster.iloc[j] <span class="op">=</span> temp</span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>    <span class="co"># For other f values, fill up the roster by randomly drawing Nday non-resting staffs from the staff list</span></span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span> (<span class="dv">0</span>,num_cycle):</span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>            temp <span class="op">=</span> random.sample(stafflist[stafflist.loc[:,<span class="st">'rest'</span>]<span class="op">==</span><span class="dv">0</span>].index.values.tolist(),k<span class="op">=</span>Nday)</span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,f):</span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>                roster.iloc[f<span class="op">*</span>i<span class="op">+</span>j] <span class="op">=</span> temp</span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>            stafflist[<span class="st">'rest'</span>]<span class="op">=</span>stafflist[<span class="st">'rest'</span>]<span class="op">-</span><span class="dv">1</span></span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>            stafflist[<span class="st">'rest'</span>]<span class="op">=</span>stafflist[[<span class="st">'rest'</span>,<span class="st">'ref'</span>]].<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>            stafflist.loc[temp,<span class="st">'rest'</span>]<span class="op">=</span><span class="dv">1</span></span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to model probabilistic transmission via contact within lab</span></span>
-<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> contact(p,c1,c2,c3, day,staffpershift1, staffpershift2, staffpershift3):</span>
-<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>    <span class="co"># p = probability of disease transmission</span></span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>    <span class="co"># c1,c2,c3 = contact rate for shift 1,2 and 3 respectively</span></span>
-<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>    <span class="co"># day = number of days after the simulation start</span></span>
-<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>    <span class="co"># staffpershift1 = number of staffs in the 1st shift</span></span>
-<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>    <span class="co"># staffpershift2 = number of staffs in the 2nd shift (40% of the 1st shift)</span></span>
-<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>    <span class="co"># staffpershift3 = number of staffs in the 3rd shift (40% of the 1st shift)</span></span>
-<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>    <span class="co"># To determine which staff is in 1st shift</span></span>
-<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>    staff_in_shift <span class="op">=</span> roster.loc[day,[<span class="st">'Shift1-'</span><span class="op">+</span><span class="bu">str</span>(i) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,staffpershift1)]]</span>
-<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Form a dataframe with it</span></span>
-<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>    staff_in_shift_df <span class="op">=</span> stafflist.iloc[<span class="bu">list</span>(staff_in_shift)]</span>
-<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>    <span class="co"># For Shift 1:</span></span>
-<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If there is at least 1 infected staff</span></span>
-<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> stafflist[<span class="st">'infected'</span>][staff_in_shift].<span class="bu">sum</span>()<span class="op">&gt;</span><span class="dv">0</span>:</span>
-<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>        <span class="co"># identify staffs who are infected</span></span>
-<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>        staff_I <span class="op">=</span> staff_in_shift_df[staff_in_shift_df[<span class="st">'infected'</span>]<span class="op">==</span><span class="dv">1</span>]</span>
-<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>        <span class="co"># identify staffs who are susceptible</span></span>
-<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>        staff_S <span class="op">=</span> staff_in_shift_df[staff_in_shift_df[<span class="st">'infected'</span>]<span class="op">==</span><span class="dv">0</span>]</span>
-<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">list</span>(staff_I.index):</span>
-<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a>            <span class="co"># The number of successful contact per infected staff, k is determined by Poisson distribution</span></span>
-<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a>            contact.n_infected <span class="op">=</span> <span class="bu">min</span>(np.random.poisson(lam<span class="op">=</span>p<span class="op">*</span>c1, size<span class="op">=</span><span class="dv">1</span>),[<span class="bu">len</span>(staff_in_shift)<span class="op">-</span><span class="dv">1</span>])</span>
-<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Randomly select k staff from those working in the same shift</span></span>
-<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a>            staff_infected <span class="op">=</span> random.sample(<span class="bu">list</span>(staff_S.index)<span class="op">+</span><span class="bu">list</span>(staff_I[staff_I.index <span class="op">!=</span> j].index),k<span class="op">=</span>contact.n_infected[<span class="dv">0</span>])</span>
-<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="bu">len</span>(staff_infected)):</span>
-<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a>                stafflist[<span class="st">'infected'</span>][staff_infected[i]]<span class="op">=</span><span class="dv">1</span></span>
-<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a>    <span class="co"># For Shift 2: repeating the same infectious process in Shift 1</span></span>
-<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a>    staff_in_shift <span class="op">=</span> roster.loc[day,[<span class="st">'Shift2-'</span><span class="op">+</span><span class="bu">str</span>(i) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,staffpershift2)]]</span>
-<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a>    staff_in_shift_df <span class="op">=</span> stafflist.iloc[<span class="bu">list</span>(staff_in_shift)]</span>
-<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> stafflist[<span class="st">'infected'</span>][staff_in_shift].<span class="bu">sum</span>()<span class="op">&gt;</span><span class="dv">0</span>:</span>
-<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a>        staff_I <span class="op">=</span> staff_in_shift_df[staff_in_shift_df[<span class="st">'infected'</span>]<span class="op">==</span><span class="dv">1</span>]</span>
-<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a>        staff_S <span class="op">=</span> staff_in_shift_df[staff_in_shift_df[<span class="st">'infected'</span>]<span class="op">==</span><span class="dv">0</span>]</span>
-<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">list</span>(staff_I.index):</span>
-<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a>            contact.n_infected <span class="op">=</span> <span class="bu">min</span>(np.random.poisson(lam<span class="op">=</span>p<span class="op">*</span>c2, size<span class="op">=</span><span class="dv">1</span>),[<span class="bu">len</span>(staff_in_shift)<span class="op">-</span><span class="dv">1</span>])</span>
-<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a>            staff_infected <span class="op">=</span> random.sample(<span class="bu">list</span>(staff_S.index)<span class="op">+</span><span class="bu">list</span>(staff_I[staff_I.index <span class="op">!=</span> j].index),k<span class="op">=</span>contact.n_infected[<span class="dv">0</span>])</span>
-<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="bu">len</span>(staff_infected)):</span>
-<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a>                stafflist[<span class="st">'infected'</span>][staff_infected[i]]<span class="op">=</span><span class="dv">1</span></span>
-<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a>    <span class="co"># For Shift 3: repeating the same infectious process in Shift 1</span></span>
-<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a>    staff_in_shift <span class="op">=</span> roster.loc[day,[<span class="st">'Shift3-'</span><span class="op">+</span><span class="bu">str</span>(i) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,staffpershift3)]]</span>
-<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a>    staff_in_shift_df <span class="op">=</span> stafflist.iloc[<span class="bu">list</span>(staff_in_shift)]</span>
-<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> stafflist[<span class="st">'infected'</span>][staff_in_shift].<span class="bu">sum</span>()<span class="op">&gt;</span><span class="dv">0</span>:</span>
-<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a>        staff_I <span class="op">=</span> staff_in_shift_df[staff_in_shift_df[<span class="st">'infected'</span>]<span class="op">==</span><span class="dv">1</span>]</span>
-<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a>        staff_S <span class="op">=</span> staff_in_shift_df[staff_in_shift_df[<span class="st">'infected'</span>]<span class="op">==</span><span class="dv">0</span>]</span>
-<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">list</span>(staff_I.index):</span>
-<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a>            contact.n_infected <span class="op">=</span> <span class="bu">min</span>(np.random.poisson(lam<span class="op">=</span>p<span class="op">*</span>c3, size<span class="op">=</span><span class="dv">1</span>),[<span class="bu">len</span>(staff_in_shift)<span class="op">-</span><span class="dv">1</span>])</span>
-<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a>            staff_infected <span class="op">=</span> random.sample(<span class="bu">list</span>(staff_S.index)<span class="op">+</span><span class="bu">list</span>(staff_I[staff_I.index <span class="op">!=</span> j].index),k<span class="op">=</span>contact.n_infected[<span class="dv">0</span>])</span>
-<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="bu">len</span>(staff_infected)):</span>
-<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a>                stafflist[<span class="st">'infected'</span>][staff_infected[i]]<span class="op">=</span><span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
 <section id="run-model" class="level2">
 <h2 class="anchored" data-anchor-id="run-model">Run model</h2>
-<div id="cell-14" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Looping through simulation parameters</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> staff_strength <span class="kw">in</span> [<span class="dv">4</span>,<span class="dv">6</span>]:</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> f <span class="kw">in</span> [<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">14</span>,<span class="dv">21</span>]:</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        s <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> staffpershift1 <span class="kw">in</span> [<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]:</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>            result <span class="op">=</span> pd.DataFrame(index<span class="op">=</span><span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">100</span>),columns<span class="op">=</span>[<span class="bu">str</span>(i) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">22</span>)])</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>            staffpershift2 <span class="op">=</span> <span class="bu">int</span>(staffpershift1<span class="op">*</span><span class="fl">0.4</span>)</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>            staffpershift3 <span class="op">=</span> <span class="bu">int</span>(staffpershift1<span class="op">*</span><span class="fl">0.4</span>)</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>            Nday <span class="op">=</span> staffpershift1 <span class="op">+</span> staffpershift2 <span class="op">+</span> staffpershift3</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>            staff_pool <span class="op">=</span> staffpershift1<span class="op">*</span>staff_strength</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>            p <span class="op">=</span> <span class="fl">0.15</span> <span class="co"># secondary attack rate</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>            c1 <span class="op">=</span> <span class="fl">0.40</span><span class="op">*</span>staffpershift1 <span class="co"># number of contact for shift 1</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>            c2 <span class="op">=</span> <span class="fl">0.40</span><span class="op">*</span>staffpershift2 <span class="co"># number of contact for shift 2</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>            c3 <span class="op">=</span> <span class="fl">0.40</span><span class="op">*</span>staffpershift3 <span class="co"># number of contact for shift 3</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>            <span class="co"># n = number of cycle for the same simulation param</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span> (<span class="dv">0</span>, <span class="dv">100</span>):</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Call the function to reset simulation</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>                stafflist, roster <span class="op">=</span> restartsim(staff_pool,staffpershift1, staffpershift2,staffpershift3)</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Call the function to fill the staff roster</span></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>                fillroster1(staff_pool,f,Nday)</span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Let the 1st person in the roster be infected;</span></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>                stafflist[<span class="st">'infected'</span>][roster.iloc[<span class="dv">0</span>][<span class="dv">0</span>]]<span class="op">=</span><span class="dv">1</span></span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Run the simulation for 21 days</span></span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>                <span class="cf">for</span> day <span class="kw">in</span> <span class="bu">range</span> (<span class="dv">0</span>,<span class="dv">21</span>):</span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>                    contact(p,c1,c2,c3,day,staffpershift1,staffpershift2,staffpershift3)</span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>                    result[<span class="bu">str</span>(day)][n]<span class="op">=</span>stafflist[<span class="st">'infected'</span>].<span class="bu">sum</span>()<span class="op">/</span>staff_pool</span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Storing the median value of infected staff proportion in dataframe at 7,14,21 days after the simulation start.</span></span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>            EndDay7[<span class="bu">str</span>(staff_strength)<span class="op">+</span><span class="st">'-'</span><span class="op">+</span><span class="bu">str</span>(f)][s] <span class="op">=</span> <span class="bu">format</span>(result.median()[<span class="dv">6</span>],<span class="st">'.2f'</span>)</span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>            EndDay14[<span class="bu">str</span>(staff_strength)<span class="op">+</span><span class="st">'-'</span><span class="op">+</span><span class="bu">str</span>(f)][s] <span class="op">=</span> <span class="bu">format</span>(result.median()[<span class="dv">13</span>],<span class="st">'.2f'</span>)</span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>            EndDay21[<span class="bu">str</span>(staff_strength)<span class="op">+</span><span class="st">'-'</span><span class="op">+</span><span class="bu">str</span>(f)][s] <span class="op">=</span> <span class="bu">format</span>(result.median()[<span class="dv">20</span>],<span class="st">'.2f'</span>)</span>
-<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>            s <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-8" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>EndDay7, EndDay14, EndDay21 <span class="op">=</span> model.run_scenarios()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1113: RuntimeWarning: All-NaN slice encountered
+  r, k = function_base._ureduce(a, func=_nanmedian, axis=axis, out=out,
+/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1113: RuntimeWarning: All-NaN slice encountered
+  r, k = function_base._ureduce(a, func=_nanmedian, axis=axis, out=out,
+/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1113: RuntimeWarning: All-NaN slice encountered
+  r, k = function_base._ureduce(a, func=_nanmedian, axis=axis, out=out,
+/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1113: RuntimeWarning: All-NaN slice encountered
+  r, k = function_base._ureduce(a, func=_nanmedian, axis=axis, out=out,
+/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1113: RuntimeWarning: All-NaN slice encountered
+  r, k = function_base._ureduce(a, func=_nanmedian, axis=axis, out=out,
+/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1113: RuntimeWarning: All-NaN slice encountered
+  r, k = function_base._ureduce(a, func=_nanmedian, axis=axis, out=out,
+/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1113: RuntimeWarning: All-NaN slice encountered
+  r, k = function_base._ureduce(a, func=_nanmedian, axis=axis, out=out,
+/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1113: RuntimeWarning: All-NaN slice encountered
+  r, k = function_base._ureduce(a, func=_nanmedian, axis=axis, out=out,
+/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1113: RuntimeWarning: All-NaN slice encountered
   r, k = function_base._ureduce(a, func=_nanmedian, axis=axis, out=out,
 /home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1113: RuntimeWarning: All-NaN slice encountered
   r, k = function_base._ureduce(a, func=_nanmedian, axis=axis, out=out,
@@ -613,10 +348,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   r, k = function_base._ureduce(a, func=_nanmedian, axis=axis, out=out,</code></pre>
 </div>
 </div>
-<div id="cell-15" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>display(EndDay7)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>display(EndDay14)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>display(EndDay21)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-9" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>display(EndDay7)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>display(EndDay14)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>display(EndDay21)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 
@@ -644,7 +379,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<td data-quarto-table-cell-role="th">5</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -652,65 +387,65 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>0.10</td>
 <td>0.10</td>
+<td>0.15</td>
 <td>0.15</td>
 <td>0.20</td>
-<td>0.15</td>
-<td>0.03</td>
+<td>0.07</td>
 <td>0.07</td>
 <td>0.13</td>
-<td>0.13</td>
+<td>0.10</td>
 <td>0.13</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<td data-quarto-table-cell-role="th">10</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>0.07</td>
-<td>0.12</td>
+<td>0.10</td>
+<td>0.20</td>
 <td>0.23</td>
 <td>0.20</td>
-<td>0.20</td>
 <td>0.03</td>
 <td>0.07</td>
 <td>0.15</td>
 <td>0.13</td>
-<td>0.15</td>
+<td>0.13</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<td data-quarto-table-cell-role="th">20</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>0.10</td>
+<td>0.11</td>
 <td>0.16</td>
 <td>0.25</td>
-<td>0.24</td>
 <td>0.25</td>
-<td>0.05</td>
-<td>0.08</td>
+<td>0.25</td>
+<td>0.04</td>
+<td>0.09</td>
 <td>0.17</td>
 <td>0.17</td>
 <td>0.17</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<td data-quarto-table-cell-role="th">30</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>0.17</td>
-<td>0.21</td>
+<td>0.18</td>
+<td>0.20</td>
 <td>0.25</td>
 <td>0.25</td>
 <td>0.25</td>
 <td>0.06</td>
-<td>0.11</td>
+<td>0.13</td>
 <td>0.17</td>
 <td>0.17</td>
 <td>0.17</td>
@@ -747,14 +482,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<td data-quarto-table-cell-role="th">5</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>0.10</td>
-<td>0.20</td>
+<td>0.15</td>
+<td>0.15</td>
 <td>0.15</td>
 <td>0.25</td>
 <td>0.25</td>
@@ -765,50 +500,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>0.17</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<td data-quarto-table-cell-role="th">10</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>0.21</td>
-<td>0.28</td>
-<td>0.23</td>
+<td>0.19</td>
+<td>0.25</td>
+<td>0.20</td>
 <td>0.25</td>
 <td>0.25</td>
 <td>0.07</td>
-<td>0.13</td>
+<td>0.15</td>
 <td>0.15</td>
 <td>0.17</td>
 <td>0.17</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<td data-quarto-table-cell-role="th">20</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
+<td>0.44</td>
 <td>0.49</td>
-<td>0.47</td>
 <td>0.25</td>
 <td>0.25</td>
 <td>0.25</td>
 <td>0.17</td>
-<td>0.30</td>
+<td>0.33</td>
 <td>0.17</td>
 <td>0.17</td>
 <td>0.17</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<td data-quarto-table-cell-role="th">30</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>0.78</td>
-<td>0.60</td>
+<td>0.79</td>
+<td>0.63</td>
 <td>0.25</td>
 <td>0.25</td>
 <td>0.25</td>
@@ -850,13 +585,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<td data-quarto-table-cell-role="th">5</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>0.20</td>
+<td>0.25</td>
 <td>0.30</td>
 <td>0.30</td>
 <td>0.25</td>
@@ -868,43 +603,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>0.17</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<td data-quarto-table-cell-role="th">10</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>0.47</td>
-<td>0.49</td>
+<td>0.42</td>
+<td>0.45</td>
 <td>0.42</td>
 <td>0.25</td>
 <td>0.25</td>
-<td>0.15</td>
-<td>0.25</td>
+<td>0.13</td>
 <td>0.27</td>
+<td>0.28</td>
 <td>0.17</td>
 <td>0.17</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<td data-quarto-table-cell-role="th">20</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>0.90</td>
-<td>0.80</td>
-<td>0.47</td>
+<td>0.79</td>
+<td>0.49</td>
 <td>0.25</td>
 <td>0.25</td>
-<td>0.47</td>
-<td>0.60</td>
+<td>0.48</td>
+<td>0.61</td>
 <td>0.36</td>
 <td>0.17</td>
 <td>0.17</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<td data-quarto-table-cell-role="th">30</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -915,9 +650,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>0.49</td>
 <td>0.25</td>
 <td>0.25</td>
-<td>0.80</td>
+<td>0.79</td>
 <td>0.78</td>
-<td>0.38</td>
+<td>0.39</td>
 <td>0.17</td>
 <td>0.17</td>
 </tr>
@@ -930,23 +665,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="save-results-to-csv" class="level2">
 <h2 class="anchored" data-anchor-id="save-results-to-csv">Save results to csv</h2>
-<div id="cell-17" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>EndDay7.to_csv(os.path.join(paths.outputs, paths.endday7), index<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>EndDay14.to_csv(os.path.join(paths.outputs, paths.endday14), index<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>EndDay21.to_csv(os.path.join(paths.outputs, paths.endday21), index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-11" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>EndDay7.to_csv(os.path.join(paths.outputs, paths.endday7), index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>EndDay14.to_csv(os.path.join(paths.outputs, paths.endday14), index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>EndDay21.to_csv(os.path.join(paths.outputs, paths.endday21), index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="time-elapsed" class="level2">
 <h2 class="anchored" data-anchor-id="time-elapsed">Time elapsed</h2>
-<div id="cell-19" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find run time in seconds</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>end <span class="op">=</span> time.time()</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>runtime <span class="op">=</span> <span class="bu">round</span>(end<span class="op">-</span>start)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Display converted to minutes and seconds</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Notebook run time: </span><span class="sc">{</span>runtime<span class="op">//</span><span class="dv">60</span><span class="sc">}</span><span class="ss">m </span><span class="sc">{</span>runtime<span class="op">%</span><span class="dv">60</span><span class="sc">}</span><span class="ss">s'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-13" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find run time in seconds</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>end <span class="op">=</span> time.time()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>runtime <span class="op">=</span> <span class="bu">round</span>(end<span class="op">-</span>start)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Display converted to minutes and seconds</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Notebook run time: </span><span class="sc">{</span>runtime<span class="op">//</span><span class="dv">60</span><span class="sc">}</span><span class="ss">m </span><span class="sc">{</span>runtime<span class="op">%</span><span class="dv">60</span><span class="sc">}</span><span class="ss">s'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Notebook run time: 19m 8s</code></pre>
+<pre><code>Notebook run time: 2m 40s</code></pre>
 </div>
 </div>
 

@@ -207,6 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
                                 <div class="quarto-categories">
                 <div class="quarto-category">setup</div>
                 <div class="quarto-category">scope</div>
+                <div class="quarto-category">reproduction</div>
               </div>
                   </div>
   </div>
@@ -246,7 +247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#consensus-on-scope-and-archive-repository" id="toc-consensus-on-scope-and-archive-repository" class="nav-link" data-scroll-target="#consensus-on-scope-and-archive-repository">15.23-15.30, 15.38-15.40: Consensus on scope and archive repository</a></li>
   <li><a href="#look-over-code" id="toc-look-over-code" class="nav-link" data-scroll-target="#look-over-code">15.41-15.42: Look over code</a></li>
   <li><a href="#set-up-environment" id="toc-set-up-environment" class="nav-link" data-scroll-target="#set-up-environment">15.44-15.56: Set-up environment</a></li>
-  <li><a href="#run-model" id="toc-run-model" class="nav-link" data-scroll-target="#run-model">15.57-15.58, 16.01-16.05, 16.15-16.33, 16.36-16.45: Run model</a></li>
+  <li><a href="#run-model" id="toc-run-model" class="nav-link" data-scroll-target="#run-model">15.57-15.58, 16.01-16.05, 16.15-16.33, 16.36-16.45, 17.15-17.16, 18.57-18.58: Run model</a></li>
   <li><a href="#timings" id="toc-timings" class="nav-link" data-scroll-target="#timings">Timings</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/edit/main/logbook/posts/2024_07_22/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -268,7 +269,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>TBC. Total time used: TBC (TBC)</p>
+<p>Reformat tables, consensus on scope, setup environment, first run of model. Total time used: 4h 37m (11.5%)</p>
 </div>
 </div>
 <section id="converting-supplementary-tables-to-csv" class="level2">
@@ -304,6 +305,7 @@ Reflection
 <section id="consensus-on-scope-and-archive-repository" class="level2">
 <h2 class="anchored" data-anchor-id="consensus-on-scope-and-archive-repository">15.23-15.30, 15.38-15.40: Consensus on scope and archive repository</h2>
 <p>Messaged with Tom who had a look over the scope and agreed he was happy with it. Also, happy with not emailing authors again re: starting reproduction.</p>
+<p>Alison also later confirmed she was likewise happy with the scope.</p>
 <p>Update CHANGELOG.md and CITATION.cff before then creating a release to archive the repository on Zenodo.</p>
 </section>
 <section id="look-over-code" class="level2">
@@ -326,7 +328,7 @@ Reflection
 <p>Created an environment file and installed with mamba - <code>mamba env create -f environment.yaml</code>. Once activated enviroment, once activated with <code>mamba activate lim2020</code>, can see with <code>conda list python</code> that we have python 3.8.19. Checking online, can see should switch to 3.8.5, which is version from 20 July 2020.</p>
 </section>
 <section id="run-model" class="level2">
-<h2 class="anchored" data-anchor-id="run-model">15.57-15.58, 16.01-16.05, 16.15-16.33, 16.36-16.45: Run model</h2>
+<h2 class="anchored" data-anchor-id="run-model">15.57-15.58, 16.01-16.05, 16.15-16.33, 16.36-16.45, 17.15-17.16, 18.57-18.58: Run model</h2>
 <p>Copied <code>Roster Schedule COVID Simulation-final.py</code> and renamed to <code>model.py</code>. Created <code>reproduction.ipynb</code> to run model and then produce outputs, and add <code>ipykernel</code> to environment (required for <code>.ipynb</code>).</p>
 <p>Then ran the model. Whilst it ran, it printed lots of <code>SettingWithCopyWarning</code> errors for <code>stafflist['infected'][staff_infected[i]]=1</code> and <code>stafflist['infected'][roster.iloc[0][0]]=1</code>. (<code>SettingWithCopyWarning: A value is trying to be set on a copy of a slice from a DataFrame.</code>) I anticipate these could be resolved with the following changes (which I’ll implement once it’s finished running):</p>
 <ul>
@@ -336,10 +338,24 @@ Reflection
 <p>Wasn’t certain how long model should take, but paused record of time whilst it ran. After 10 minutes though, I decided to cancel that, and instead just run one version of the input parameters for the model (i.e.&nbsp;one choice from staff per shift, shifts per day, strength, staff change).</p>
 <p>I copied over the functions into the <code>.ipynb</code> and ran one version of model. Can see this outputs a table where columns are the strength and staff change. I tried running a few to understand how the results table was being produced. I then add code to save the results to <code>.csv</code>.</p>
 <p>Presently, I think this might only be for one shift per day, although I might be wrong.</p>
+<p>Once home, set model to run the full loop from the .py script. This took 19 minutes 8 seconds.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Reflection
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Model run time does have an impact on how easy it is to rerun (or then reuse) a model.</p>
+</div>
+</div>
 </section>
 <section id="timings" class="level2">
 <h2 class="anchored" data-anchor-id="timings">Timings</h2>
-<div id="009b7dc6" class="cell" data-execution_count="1">
+<div id="93b988e8" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
@@ -354,15 +370,22 @@ Reflection
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.40'</span>, <span class="st">'11.42'</span>),</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.48'</span>, <span class="st">'11.55'</span>),</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'15.23'</span>, <span class="st">'15.30'</span>),</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'15.38'</span>, <span class="st">'15.40'</span>)]</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Add remaining times</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'15.38'</span>, <span class="st">'15.40'</span>),</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'15.41'</span>, <span class="st">'15.42'</span>),</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'15.44'</span>, <span class="st">'15.56'</span>),</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'15.57'</span>, <span class="st">'15.58'</span>),</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'16.01'</span>, <span class="st">'16.05'</span>),</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'16.15'</span>, <span class="st">'16.33'</span>),</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'16.36'</span>, <span class="st">'16.45'</span>),</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'17.15'</span>, <span class="st">'17.16'</span>),</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'18.57'</span>, <span class="st">'18.58'</span>)]</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time spent today: 148m, or 2h 28m
-Total used to date: 230m, or 3h 50m
-Time remaining: 2170m, or 36h 10m
-Used 9.6% of 40 hours max</code></pre>
+<pre><code>Time spent today: 195m, or 3h 15m
+Total used to date: 277m, or 4h 37m
+Time remaining: 2123m, or 35h 23m
+Used 11.5% of 40 hours max</code></pre>
 </div>
 </div>
 
