@@ -161,9 +161,9 @@ def run_model(staff_strength, f, s, staffpershift1, secondary_attack_rate,
             result[str(day)][n]=stafflist['infected'].sum()/staff_pool
 
     # Storing the median value of infected staff proportion in dataframe at 7,14,21 days after the simulation start.
-    EndDay7[str(staff_strength)+'-'+str(f)][s] = format(result.median()[6],'.2f')
-    EndDay14[str(staff_strength)+'-'+str(f)][s] = format(result.median()[13],'.2f')
-    EndDay21[str(staff_strength)+'-'+str(f)][s] = format(result.median()[20],'.2f')
+    EndDay7[str(staff_strength)+'-'+str(f)][staffpershift1] = format(result.median()[6],'.2f')
+    EndDay14[str(staff_strength)+'-'+str(f)][staffpershift1] = format(result.median()[13],'.2f')
+    EndDay21[str(staff_strength)+'-'+str(f)][staffpershift1] = format(result.median()[20],'.2f')
 
     return EndDay7, EndDay14, EndDay21
 
@@ -203,9 +203,20 @@ def run_scenarios(strength=[4, 6],
     column3 = ['6-'+str(i) for i in [1,3,7,14,21]]
 
     # Dataframes which store the outcome at end of days 7, 14 and 21
-    EndDay7 = pd.DataFrame(index=range(0,4),columns=column1+column2+column3)
-    EndDay14 = pd.DataFrame(index=range(0,4),columns=column1+column2+column3)
-    EndDay21 = pd.DataFrame(index=range(0,4),columns=column1+column2+column3)
+    EndDay7 = pd.DataFrame(index=staff_shift, columns=column1+column2+column3)
+    EndDay14 = pd.DataFrame(index=staff_shift, columns=column1+column2+column3)
+    EndDay21 = pd.DataFrame(index=staff_shift, columns=column1+column2+column3)
+    '''EndDay7 = pd.DataFrame(index=range(0, len(staff_shift)),
+                           columns=column1+column2+column3)
+    EndDay14 = pd.DataFrame(index=range(0, len(staff_shift)),
+                            columns=column1+column2+column3)
+    EndDay21 = pd.DataFrame(index=range(0, len(staff_shift)),
+                            columns=column1+column2+column3)'''
+
+    # Set index to be numbers of staff per shift
+    #EndDay7.set_index(staff_shift, inplace=True)
+    #EndDay14.set_index(staff_shift, inplace=True)
+    #EndDay21.set_index(staff_shift, inplace=True)
 
     # Looping through simulation parameters
     for staff_strength in strength:
@@ -215,6 +226,6 @@ def run_scenarios(strength=[4, 6],
                 EndDay7, EndDay14, EndDay21 = run_model(
                     staff_strength, f, s, staffpershift1,
                     secondary_attack_rate, EndDay7, EndDay14, EndDay21)
-                s += 1
+                # s += 1
 
     return EndDay7, EndDay14, EndDay21
