@@ -160,7 +160,8 @@ def run_model(
     Returns:
     --------
     res : dictionary
-        Contains the model parameters and results from end of day 7, 14 and 21
+        Contains the model parameters and results from each day of the end of
+        each day in the simulation (day 1 to 21)
     '''
     # Set result to NA if the input is strength 2 and more than 1 shift per day
     if (staff_strength == 2 and shift_day > 1):
@@ -211,14 +212,15 @@ def run_model(
                         staffpershift3, stafflist, roster, shift_day)
                 result[str(day)][n] = stafflist['infected'].sum()/staff_pool
 
-        # Store median results for end of day 7, 14 and 21 in a dictionary
-        res = {'strength': staff_strength,
-               'staff_change': f,
-               'staff_per_shift': staffpershift1,
-               'shifts_per_day': shift_day,
-               'day7': format(result.median()[6], '.2f'),
-               'day14': format(result.median()[13], '.2f'),
-               'day21': format(result.median()[20], '.2f')}
+        # Store median results for each day in a dictionary, alongside the
+        # model parameters used for that run
+        res1 = {'strength': staff_strength,
+                'staff_change': f,
+                'staff_per_shift': staffpershift1,
+                'shifts_per_day': shift_day}
+        res2 = {f'day{i+1}': format(result.median()[i], '.2f')
+                for i in range(0, 21)}
+        res = {**res1, **res2}
 
     # Print that this simulation is done, to help with monitoring progress
     print_param = ['shifts_per_day', 'strength',
