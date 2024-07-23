@@ -161,88 +161,63 @@ def run_model(
     res : dictionary
         Contains the model parameters and results from end of day 7, 14 and 21
     '''
-    result = pd.DataFrame(index=range(0,100),columns=[str(i) for i in range(0,22)])
-    staffpershift2 = int(staffpershift1*0.4)
-    staffpershift3 = int(staffpershift1*0.4)
-    staff_pool = staffpershift1*staff_strength
-
-    # Adjust Nday depending on whether it is 1, 2 or 3 shifts per day
-    if shift_day == 1:
-        Nday = staffpershift1
-    elif shift_day == 2:
-        Nday = staffpershift1 + staffpershift2
-    elif shift_day == 3:
-        Nday = staffpershift1 + staffpershift2 + staffpershift3
-
-    p = secondary_attack_rate
-    c1 = 0.40*staffpershift1  # number of contact for shift 1
-    c2 = 0.40*staffpershift2  # number of contact for shift 2
-    c3 = 0.40*staffpershift3  # number of contact for shift 3
-
-    #  n = number of cycle for the same simulation param
-    for n in range(0, 100):
-        # Call the function to reset simulation
-        stafflist, roster = restartsim(staff_pool,
-                                       staffpershift1, staffpershift2,
-                                       staffpershift3, shift_day)
-
-        # Call the function to fill the staff roster
-        fillroster1(staff_pool, f, Nday, stafflist, roster)
-
-        # Let the 1st person in the roster be infected;
-        stafflist['infected'][roster.iloc[0][0]] = 1
-
-        # Run the simulation for 21 days
-        for day in range(0, 21):
-            contact(p, c1, c2, c3, day, staffpershift1, staffpershift2,
-                    staffpershift3, stafflist, roster, shift_day)
-            result[str(day)][n] = stafflist['infected'].sum()/staff_pool
-
-        # Store results in a dictionary
+    # Set result to NA if the input is strength 2 and more than 1 shift per day
+    if (staff_strength == 2 and shift_day > 1):
         res = {'strength': staff_strength,
                'change': f,
                'shift': staffpershift1,
                'shift_day': shift_day,
-               'day7': result.median()[6],
-               'day14': result.median()[13],
-               'day21': result.median()[20]}
+               'day7': np.nan,
+               'day14': np.nan,
+               'day21': np.nan}
+    # Otherwise, run the model...
+    else:
+        result = pd.DataFrame(index=range(0, 100),
+                              columns=[str(i) for i in range(0, 22)])
+        staffpershift2 = int(staffpershift1*0.4)
+        staffpershift3 = int(staffpershift1*0.4)
+        staff_pool = staffpershift1*staff_strength
 
-    '''# Try to run the model
-    try:
+        # Adjust Nday depending on whether it is 1, 2 or 3 shifts per day
+        if shift_day == 1:
+            Nday = staffpershift1
+        elif shift_day == 2:
+            Nday = staffpershift1 + staffpershift2
+        elif shift_day == 3:
+            Nday = staffpershift1 + staffpershift2 + staffpershift3
+
+        p = secondary_attack_rate
+        c1 = 0.40*staffpershift1  # number of contact for shift 1
+        c2 = 0.40*staffpershift2  # number of contact for shift 2
+        c3 = 0.40*staffpershift3  # number of contact for shift 3
+
         #  n = number of cycle for the same simulation param
-        for n in range (0, 100):
+        for n in range(0, 100):
             # Call the function to reset simulation
-            stafflist, roster = restartsim(staff_pool,staffpershift1, staffpershift2,staffpershift3)
+            stafflist, roster = restartsim(staff_pool, staffpershift1,
+                                           staffpershift2, staffpershift3,
+                                           shift_day)
 
             # Call the function to fill the staff roster
-            fillroster1(staff_pool,f,Nday,stafflist,roster)
+            fillroster1(staff_pool, f, Nday, stafflist, roster)
 
             # Let the 1st person in the roster be infected;
-            stafflist['infected'][roster.iloc[0][0]]=1
+            stafflist['infected'][roster.iloc[0][0]] = 1
 
             # Run the simulation for 21 days
-            for day in range (0,21):
-                contact(p,c1,c2,c3,day,staffpershift1,staffpershift2,staffpershift3,stafflist,roster)
-                result[str(day)][n]=stafflist['infected'].sum()/staff_pool
+            for day in range(0, 21):
+                contact(p, c1, c2, c3, day, staffpershift1, staffpershift2,
+                        staffpershift3, stafflist, roster, shift_day)
+                result[str(day)][n] = stafflist['infected'].sum()/staff_pool
 
             # Store results in a dictionary
             res = {'strength': staff_strength,
                    'change': f,
                    'shift': staffpershift1,
+                   'shift_day': shift_day,
                    'day7': result.median()[6],
                    'day14': result.median()[13],
                    'day21': result.median()[20]}
-
-    # If there is an error...
-    except ValueError:
-        print('There was a value error')
-        # Store result as NA
-        res = {'strength': staff_strength,
-               'change': f,
-               'shift': staffpershift1,
-               'day7': np.nan,
-               'day14': np.nan,
-               'day21': np.nan}'''
 
     # Print that this simulation is done, to help with monitoring progress
     print_param = ['shift_day', 'strength', 'change', 'shift']
@@ -291,8 +266,8 @@ def run_scenarios(strength=[2, 4, 6],
 
     # Convert list into dataframe with row for each result
     res = pd.melt(pd.DataFrame(resultlist),
-                id_vars=['strength', 'change', 'shift', 'shift_day'],
-                var_name='end_of_day', value_name='prop_infected')
+                  id_vars=['strength', 'change', 'shift', 'shift_day'],
+                  var_name='end_of_day', value_name='prop_infected')
 
     # Strip 'day' from the end_of_day column (so just left with 7, 14, 21)
     res['end_of_day'] = pd.to_numeric(res['end_of_day'].str.replace('day', ''))
