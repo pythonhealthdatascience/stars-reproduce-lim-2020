@@ -138,78 +138,6 @@ def contact(p, c1, c2, c3, day, staffpershift1, staffpershift2,
                     stafflist['infected'][staff_infected[i]]=1
 
 
-def simulation(
-        staff_pool,
-        staffpershift1,
-        staffpershift2,
-        staffpershift3,
-        shift_day,
-        f,
-        Nday,
-        p,
-        c1,
-        c2,
-        c3,
-        n):
-    '''
-    Conduct a single run of the simulation.
-
-    Parameters:
-    -----------
-    staff_pool : int
-        Total number of staff
-    staffpershift1 : int
-        Number of staff on the first shift
-    staffpershift2 : int
-        Number of staff on the second shift
-    staffpershift3 : int
-        Number of staff on the third shift
-    shift_day : int
-        Number of shifts per day
-    f : int
-        Frequency of staff change
-    Nday : int
-        Total number of staff for one day
-    p : number between 0 and 1
-        Secondary attack rate
-    c1 : number
-        Number of contact for first shift
-    c2 : number
-        Number of contact for second shift
-    c3 : number
-        Number of contact for third shift
-    n : int
-        Number of replications
-
-    Returns:
-    --------
-    result : list
-        List storing result from each day of the simulation
-    '''
-    # Call the function to reset simulation
-    stafflist, roster = restartsim(
-        staff_pool,
-        staffpershift1,
-        staffpershift2,
-        staffpershift3,
-        shift_day)
-
-    # Call the function to fill the staff roster
-    fillroster1(staff_pool, f, Nday, stafflist, roster)
-
-    # Let the 1st person in the roster be infected;
-    stafflist['infected'][roster.iloc[0][0]] = 1
-
-    # Initialise empty list to store results
-    result = list()
-
-    # Run the simulation for 21 days
-    for day in range(0, 21):
-        contact(p, c1, c2, c3, day, staffpershift1, staffpershift2,
-                staffpershift3, stafflist, roster, shift_day)
-        result.append(stafflist['infected'].sum()/staff_pool)
-
-
 def run_model(
         staff_strength, f, staffpershift1, shift_day, secondary_attack_rate):
     '''
@@ -245,7 +173,8 @@ def run_model(
                'day21': np.nan}
     # Otherwise, run the model...
     else:
-        # Calculate some additional parameters
+        result = pd.DataFrame(index=range(0, 100),
+                              columns=[str(i) for i in range(0, 22)])
         staffpershift2 = int(staffpershift1*0.4)
         staffpershift3 = int(staffpershift1*0.4)
         staff_pool = staffpershift1*staff_strength
@@ -263,25 +192,33 @@ def run_model(
         c2 = 0.40*staffpershift2  # number of contact for shift 2
         c3 = 0.40*staffpershift3  # number of contact for shift 3
 
-        # Run model replications
-        # n = number of cycle for the same simulation param
-        results = list()
+        #  n = number of cycle for the same simulation param
         for n in range(0, 100):
-            results.append(simulation(
-                staff_pool, staffpershift1, staffpershift2, staffpershift3,
-                shift_day, f, Nday, p, c1, c2, c3, n))
+            # Call the function to reset simulation
+            stafflist, roster = restartsim(staff_pool, staffpershift1,
+                                           staffpershift2, staffpershift3,
+                                           shift_day)
 
-        # Get median results for each day across the replications
-        res_median = np.median(results, axis=0)
+            # Call the function to fill the staff roster
+            fillroster1(staff_pool, f, Nday, stafflist, roster)
+
+            # Let the 1st person in the roster be infected;
+            stafflist['infected'][roster.iloc[0][0]] = 1
+
+            # Run the simulation for 21 days
+            for day in range(0, 21):
+                contact(p, c1, c2, c3, day, staffpershift1, staffpershift2,
+                        staffpershift3, stafflist, roster, shift_day)
+                result[str(day)][n] = stafflist['infected'].sum()/staff_pool
 
         # Store median results for end of day 7, 14 and 21 in a dictionary
         res = {'strength': staff_strength,
                'staff_change': f,
                'staff_per_shift': staffpershift1,
                'shifts_per_day': shift_day,
-               'day7': format(res_median[6], '.2f'),
-               'day14': format(res_median[13], '.2f'),
-               'day21': format(res_median[20], '.2f')}
+               'day7': format(result.median()[6], '.2f'),
+               'day14': format(result.median()[13], '.2f'),
+               'day21': format(result.median()[20], '.2f')}
 
     # Print that this simulation is done, to help with monitoring progress
     print_param = ['shifts_per_day', 'strength',
