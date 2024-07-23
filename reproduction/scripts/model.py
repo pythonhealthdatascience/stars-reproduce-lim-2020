@@ -6,22 +6,27 @@ import itertools
 
 
 # Function to reset the simulation for a new cycle
-def restartsim(staff_pool, staffpershift1,staffpershift2, staffpershift3):
+def restartsim(
+        staff_pool, staffpershift1, staffpershift2, staffpershift3, shift_day):
     # Staffs are assigned numbers ranging from 0 to staff_pool
     # staff_pool = total number of staffs
     # staffpershift1 = number of staffs in the 1st shift
     # staffpershift2 = number of staffs in the 2nd shift (40% of the 1st shift)
     # staffpershift3 = number of staffs in the 3rd shift (40% of the 1st shift)
+    # shift_day = number of shifts per day
 
     # roster = a data frame to store the roster, with 21 rows, each row showing the staff for the day
     # The columns in roster dataframe shows the staffs in each shift: shift number - staff slot number
     # e.g.: Shift1-2 is the 2nd staff slot for the 1st shift
     # e.g.: Shift2-3 is the 3rd staff slot for the 2nd shift
+    # Depending on number of shifts per day, may need one, two or three shifts in roster
     roster = pd.DataFrame(index=range(0,21),columns=['Shift1-'+str(i) for i in range(0,staffpershift1)])
-    for i in range (0, staffpershift2):
-        roster['Shift2-'+str(i)] = 0
-    for i in range (0, staffpershift3):
-        roster['Shift3-'+str(i)] = 0
+    if shift_day >= 2:
+        for i in range (0, staffpershift2):
+            roster['Shift2-'+str(i)] = 0
+    if shift_day == 3:
+        for i in range (0, staffpershift3):
+            roster['Shift3-'+str(i)] = 0
 
     # Create a staff list with 3 columns,
     # 'infected' column shows if the staff is infected: 0 = susceptible; 1 = infected
@@ -67,7 +72,8 @@ def fillroster1(staff_pool, f, Nday, stafflist, roster):
 
 
 # Function to model probabilistic transmission via contact within lab
-def contact(p, c1, c2, c3, day, staffpershift1, staffpershift2, staffpershift3, stafflist, roster):
+def contact(p, c1, c2, c3, day, staffpershift1, staffpershift2,
+            staffpershift3, stafflist, roster, shift_day):
     # p = probability of disease transmission
     # c1,c2,c3 = contact rate for shift 1,2 and 3 respectively
     # day = number of days after the simulation start
@@ -76,6 +82,7 @@ def contact(p, c1, c2, c3, day, staffpershift1, staffpershift2, staffpershift3, 
     # staffpershift3 = number of staffs in the 3rd shift (40% of the 1st shift)
     # stafflist = dataframe showing which staff are infected and resting, and with a reference column
     # roster = data frame with 21 rows, each showing the staff for the day
+    # shift_day = number of shifts per day
 
     # To determine which staff is in 1st shift
     staff_in_shift = roster.loc[day,['Shift1-'+str(i) for i in range(0,staffpershift1)]]
@@ -100,36 +107,39 @@ def contact(p, c1, c2, c3, day, staffpershift1, staffpershift2, staffpershift3, 
             for i in range(0,len(staff_infected)):
                 stafflist['infected'][staff_infected[i]]=1
 
-    # For Shift 2: repeating the same infectious process in Shift 1
-    staff_in_shift = roster.loc[day,['Shift2-'+str(i) for i in range(0,staffpershift2)]]
-    staff_in_shift_df = stafflist.iloc[list(staff_in_shift)]
+    if shift_day >= 2:
+        # For Shift 2: repeating the same infectious process in Shift 1
+        staff_in_shift = roster.loc[day,['Shift2-'+str(i) for i in range(0,staffpershift2)]]
+        staff_in_shift_df = stafflist.iloc[list(staff_in_shift)]
 
-    if stafflist['infected'][staff_in_shift].sum()>0:
-        staff_I = staff_in_shift_df[staff_in_shift_df['infected']==1]
-        staff_S = staff_in_shift_df[staff_in_shift_df['infected']==0]
+        if stafflist['infected'][staff_in_shift].sum()>0:
+            staff_I = staff_in_shift_df[staff_in_shift_df['infected']==1]
+            staff_S = staff_in_shift_df[staff_in_shift_df['infected']==0]
 
-        for j in list(staff_I.index):
-            contact.n_infected = min(np.random.poisson(lam=p*c2, size=1),[len(staff_in_shift)-1])
-            staff_infected = random.sample(list(staff_S.index)+list(staff_I[staff_I.index != j].index),k=contact.n_infected[0])
-            for i in range(0,len(staff_infected)):
-                stafflist['infected'][staff_infected[i]]=1
+            for j in list(staff_I.index):
+                contact.n_infected = min(np.random.poisson(lam=p*c2, size=1),[len(staff_in_shift)-1])
+                staff_infected = random.sample(list(staff_S.index)+list(staff_I[staff_I.index != j].index),k=contact.n_infected[0])
+                for i in range(0,len(staff_infected)):
+                    stafflist['infected'][staff_infected[i]]=1
 
-    # For Shift 3: repeating the same infectious process in Shift 1
-    staff_in_shift = roster.loc[day,['Shift3-'+str(i) for i in range(0,staffpershift3)]]
-    staff_in_shift_df = stafflist.iloc[list(staff_in_shift)]
+    if shift_day == 3:
+        # For Shift 3: repeating the same infectious process in Shift 1
+        staff_in_shift = roster.loc[day,['Shift3-'+str(i) for i in range(0,staffpershift3)]]
+        staff_in_shift_df = stafflist.iloc[list(staff_in_shift)]
 
-    if stafflist['infected'][staff_in_shift].sum()>0:
-        staff_I = staff_in_shift_df[staff_in_shift_df['infected']==1]
-        staff_S = staff_in_shift_df[staff_in_shift_df['infected']==0]
+        if stafflist['infected'][staff_in_shift].sum()>0:
+            staff_I = staff_in_shift_df[staff_in_shift_df['infected']==1]
+            staff_S = staff_in_shift_df[staff_in_shift_df['infected']==0]
 
-        for j in list(staff_I.index):
-            contact.n_infected = min(np.random.poisson(lam=p*c3, size=1),[len(staff_in_shift)-1])
-            staff_infected = random.sample(list(staff_S.index)+list(staff_I[staff_I.index != j].index),k=contact.n_infected[0])
-            for i in range(0,len(staff_infected)):
-                stafflist['infected'][staff_infected[i]]=1
+            for j in list(staff_I.index):
+                contact.n_infected = min(np.random.poisson(lam=p*c3, size=1),[len(staff_in_shift)-1])
+                staff_infected = random.sample(list(staff_S.index)+list(staff_I[staff_I.index != j].index),k=contact.n_infected[0])
+                for i in range(0,len(staff_infected)):
+                    stafflist['infected'][staff_infected[i]]=1
 
 
-def run_model(staff_strength, f, staffpershift1, secondary_attack_rate):
+def run_model(
+        staff_strength, f, staffpershift1, shift_day, secondary_attack_rate):
     '''
     Run the COVID-19 simulation model for a single given set of parameters.
 
@@ -141,6 +151,8 @@ def run_model(staff_strength, f, staffpershift1, secondary_attack_rate):
         Frequency of staff change
     staffpershift1 : list
         Number of staff per shift
+    shift_day : list
+        Number of shifts per day
     secondary_attack_rate : number between 0 and 1
         Probability of COVID-19 transmission through contact between an
         infected staff and susceptible staff
@@ -152,15 +164,50 @@ def run_model(staff_strength, f, staffpershift1, secondary_attack_rate):
     result = pd.DataFrame(index=range(0,100),columns=[str(i) for i in range(0,22)])
     staffpershift2 = int(staffpershift1*0.4)
     staffpershift3 = int(staffpershift1*0.4)
-    Nday = staffpershift1 + staffpershift2 + staffpershift3
     staff_pool = staffpershift1*staff_strength
 
-    p = secondary_attack_rate
-    c1 = 0.40*staffpershift1 # number of contact for shift 1
-    c2 = 0.40*staffpershift2 # number of contact for shift 2
-    c3 = 0.40*staffpershift3 # number of contact for shift 3
+    # Adjust Nday depending on whether it is 1, 2 or 3 shifts per day
+    if shift_day == 1:
+        Nday = staffpershift1
+    elif shift_day == 2:
+        Nday = staffpershift1 + staffpershift2
+    elif shift_day == 3:
+        Nday = staffpershift1 + staffpershift2 + staffpershift3
 
-    # Try to run the model
+    p = secondary_attack_rate
+    c1 = 0.40*staffpershift1  # number of contact for shift 1
+    c2 = 0.40*staffpershift2  # number of contact for shift 2
+    c3 = 0.40*staffpershift3  # number of contact for shift 3
+
+    #  n = number of cycle for the same simulation param
+    for n in range(0, 100):
+        # Call the function to reset simulation
+        stafflist, roster = restartsim(staff_pool,
+                                       staffpershift1, staffpershift2,
+                                       staffpershift3, shift_day)
+
+        # Call the function to fill the staff roster
+        fillroster1(staff_pool, f, Nday, stafflist, roster)
+
+        # Let the 1st person in the roster be infected;
+        stafflist['infected'][roster.iloc[0][0]] = 1
+
+        # Run the simulation for 21 days
+        for day in range(0, 21):
+            contact(p, c1, c2, c3, day, staffpershift1, staffpershift2,
+                    staffpershift3, stafflist, roster, shift_day)
+            result[str(day)][n] = stafflist['infected'].sum()/staff_pool
+
+        # Store results in a dictionary
+        res = {'strength': staff_strength,
+               'change': f,
+               'shift': staffpershift1,
+               'shift_day': shift_day,
+               'day7': result.median()[6],
+               'day14': result.median()[13],
+               'day21': result.median()[20]}
+
+    '''# Try to run the model
     try:
         #  n = number of cycle for the same simulation param
         for n in range (0, 100):
@@ -195,10 +242,10 @@ def run_model(staff_strength, f, staffpershift1, secondary_attack_rate):
                'shift': staffpershift1,
                'day7': np.nan,
                'day14': np.nan,
-               'day21': np.nan}
+               'day21': np.nan}'''
 
     # Print that this simulation is done, to help with monitoring progress
-    print_param = ['strength', 'change', 'shift']
+    print_param = ['shift_day', 'strength', 'change', 'shift']
     print(f'Finished simulation {[res.get(p) for p in print_param]}')
     return res
 
@@ -206,6 +253,7 @@ def run_model(staff_strength, f, staffpershift1, secondary_attack_rate):
 def run_scenarios(strength=[2, 4, 6],
                   staff_change=[1, 3, 7, 14, 21],
                   staff_shift=[5, 10, 20, 30],
+                  shift_day=[1, 2, 3],
                   secondary_attack_rate=0.15):
     '''
     Run the COVID-19 simulation model with a range of scenarios, with
@@ -219,31 +267,20 @@ def run_scenarios(strength=[2, 4, 6],
         Frequency of staff change
     staff_shift : list
         Number of staff per shift
+    shift_day : list
+        Number of shifts per day
     secondary_attack_rate : number between 0 and 1
         Probability of COVID-19 transmission through contact between an
         infected staff and susceptible staff
 
     Returns:
     --------
-    EndDay7 : dataframe
-        Outcome at end of day 7
-    EndDay14 : dataframe
-        Outcome at end of day 14
-    EndDay21 : dataframe
-        Outcome at end of day 21
+    res : dataframe
+        Dataframe with results from all the varying model parameters
     '''
-    # Headings for columns in DataFrame : Staff Strength-Shift Change Interval
-    column1 = [f'2-{i}' for i in [1, 3, 7, 14, 21]]
-    column2 = [f'4-{i}' for i in [1, 3, 7, 14, 21]]
-    column3 = [f'6-{i}' for i in [1, 3, 7, 14, 21]]
-
-    # Dataframes which store the outcome at end of days 7, 14 and 21
-    EndDay7 = pd.DataFrame(index=staff_shift, columns=column1+column2+column3)
-    EndDay14 = pd.DataFrame(index=staff_shift, columns=column1+column2+column3)
-    EndDay21 = pd.DataFrame(index=staff_shift, columns=column1+column2+column3)
-
     # Generate list of tuples with every possible combination of parameters
-    paramlist = list(itertools.product(strength, staff_change, staff_shift))
+    paramlist = list(itertools.product(
+        strength, staff_change, staff_shift, shift_day))
     # Append the other parameter required by the model
     paramlist = [list(tup) + [secondary_attack_rate] for tup in paramlist]
 
@@ -252,13 +289,12 @@ def run_scenarios(strength=[2, 4, 6],
     with Pool() as pool:
         resultlist = pool.starmap(run_model, paramlist)
 
-    # Loop through list of dictionaries and save results into the dataframes
-    for d in resultlist:
-        EndDay7[f'''{d['strength']}-{d['change']}'''][d['shift']] = format(
-            d['day7'], '.2f')
-        EndDay14[f'''{d['strength']}-{d['change']}'''][d['shift']] = format(
-            d['day14'], '.2f')
-        EndDay21[f'''{d['strength']}-{d['change']}'''][d['shift']] = format(
-            d['day21'], '.2f')
+    # Convert list into dataframe with row for each result
+    res = pd.melt(pd.DataFrame(resultlist),
+                id_vars=['strength', 'change', 'shift', 'shift_day'],
+                var_name='end_of_day', value_name='prop_infected')
 
-    return EndDay7, EndDay14, EndDay21
+    # Strip 'day' from the end_of_day column (so just left with 7, 14, 21)
+    res['end_of_day'] = pd.to_numeric(res['end_of_day'].str.replace('day', ''))
+
+    return res
