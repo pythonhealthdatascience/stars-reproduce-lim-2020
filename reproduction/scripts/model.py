@@ -1,6 +1,8 @@
 import random
 import numpy as np
 import pandas as pd
+from multiprocessing import Pool
+import itertools
 
 
 # Function to reset the simulation for a new cycle
@@ -128,10 +130,25 @@ def contact(p, c1, c2, c3, day, staffpershift1, staffpershift2, staffpershift3, 
                 stafflist['infected'][staff_infected[i]]=1
 
 
-def run_model(staff_strength, f, s, staffpershift1, secondary_attack_rate,
-              EndDay7, EndDay14, EndDay21):
+def run_model(staff_strength, f, staffpershift1, secondary_attack_rate):
     '''
     Run the COVID-19 simulation model for a single given set of parameters.
+
+    Parameters:
+    ----------
+    staff_strength : list
+        Staff strength
+    f : list
+        Frequency of staff change
+    staffpershift1 : list
+        Number of staff per shift
+    secondary_attack_rate : number between 0 and 1
+        Probability of COVID-19 transmission through contact between an
+        infected staff and susceptible staff
+    Returns:
+    --------
+    res : dictionary
+        Contains the model parameters and results from end of day 7, 14 and 21
     '''
     result = pd.DataFrame(index=range(0,100),columns=[str(i) for i in range(0,22)])
     staffpershift2 = int(staffpershift1*0.4)
@@ -161,11 +178,16 @@ def run_model(staff_strength, f, s, staffpershift1, secondary_attack_rate,
             result[str(day)][n]=stafflist['infected'].sum()/staff_pool
 
     # Storing the median value of infected staff proportion in dataframe at 7,14,21 days after the simulation start.
-    EndDay7[str(staff_strength)+'-'+str(f)][staffpershift1] = format(result.median()[6],'.2f')
-    EndDay14[str(staff_strength)+'-'+str(f)][staffpershift1] = format(result.median()[13],'.2f')
-    EndDay21[str(staff_strength)+'-'+str(f)][staffpershift1] = format(result.median()[20],'.2f')
-
-    return EndDay7, EndDay14, EndDay21
+    # EndDay7[str(staff_strength)+'-'+str(f)][staffpershift1] = format(result.median()[6],'.2f')
+    # EndDay14[str(staff_strength)+'-'+str(f)][staffpershift1] = format(result.median()[13],'.2f')
+    # EndDay21[str(staff_strength)+'-'+str(f)][staffpershift1] = format(result.median()[20],'.2f')
+    res = {'strength': staff_strength,
+           'change': f,
+           'shift': staffpershift1,
+           'day7': result.median()[6],
+           'day14': result.median()[13],
+           'day21': result.median()[20]}
+    return res
 
 
 def run_scenarios(strength=[4, 6],
@@ -198,34 +220,32 @@ def run_scenarios(strength=[4, 6],
         Outcome at end of day 21
     '''
     # Headings for columns in DataFrame : Staff Strength-Shift Change Interval
-    column1 = ['2-'+str(i) for i in [1,3,7,14,21]]
-    column2 = ['4-'+str(i) for i in [1,3,7,14,21]]
-    column3 = ['6-'+str(i) for i in [1,3,7,14,21]]
+    column1 = [f'2-{i}' for i in [1, 3, 7, 14, 21]]
+    column2 = [f'4-{i}' for i in [1, 3, 7, 14, 21]]
+    column3 = [f'6-{i}' for i in [1, 3, 7, 14, 21]]
 
     # Dataframes which store the outcome at end of days 7, 14 and 21
     EndDay7 = pd.DataFrame(index=staff_shift, columns=column1+column2+column3)
     EndDay14 = pd.DataFrame(index=staff_shift, columns=column1+column2+column3)
     EndDay21 = pd.DataFrame(index=staff_shift, columns=column1+column2+column3)
-    '''EndDay7 = pd.DataFrame(index=range(0, len(staff_shift)),
-                           columns=column1+column2+column3)
-    EndDay14 = pd.DataFrame(index=range(0, len(staff_shift)),
-                            columns=column1+column2+column3)
-    EndDay21 = pd.DataFrame(index=range(0, len(staff_shift)),
-                            columns=column1+column2+column3)'''
 
-    # Set index to be numbers of staff per shift
-    #EndDay7.set_index(staff_shift, inplace=True)
-    #EndDay14.set_index(staff_shift, inplace=True)
-    #EndDay21.set_index(staff_shift, inplace=True)
+    # Generate list of tuples with every possible combination of parameters
+    paramlist = list(itertools.product(strength, staff_change, staff_shift))
+    # Append the other parameter required by the model
+    paramlist = [list(tup) + [secondary_attack_rate] for tup in paramlist]
 
-    # Looping through simulation parameters
-    for staff_strength in strength:
-        for f in staff_change:
-            s = 0
-            for staffpershift1 in staff_shift:
-                EndDay7, EndDay14, EndDay21 = run_model(
-                    staff_strength, f, s, staffpershift1,
-                    secondary_attack_rate, EndDay7, EndDay14, EndDay21)
-                # s += 1
+    # Create a process pool that uses all the CPUs and apply the function
+    # This runs the model through all the scenarios using parallel processing
+    with Pool() as pool:
+        resultlist = pool.starmap(run_model, paramlist)
+
+    # Loop through list of dictionaries and save results into the dataframes
+    for d in resultlist:
+        EndDay7[f'''{d['strength']}-{d['change']}'''][d['shift']] = format(
+            d['day7'], '.2f')
+        EndDay14[f'''{d['strength']}-{d['change']}'''][d['shift']] = format(
+            d['day14'], '.2f')
+        EndDay21[f'''{d['strength']}-{d['change']}'''][d['shift']] = format(
+            d['day21'], '.2f')
 
     return EndDay7, EndDay14, EndDay21
