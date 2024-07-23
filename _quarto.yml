@@ -23,9 +23,7 @@ website:
           - text: README
             href: quarto_site/reproduction_readme.qmd
           - href: original_study/reformat_tables.ipynb
-          # TODO: Add link to reproduction notebook (as in example below)
-          # - text: Notebook
-          #   href: reproduction/reproduction.ipynb
+          - href: reproduction/reproduction.ipynb
       - text: Evaluation
         menu:
           - evaluation/scope.qmd
