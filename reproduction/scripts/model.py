@@ -7,13 +7,11 @@ import itertools
 
 # Function to reset the simulation for a new cycle
 def restartsim(staff_pool, staffpershift1,staffpershift2, staffpershift3):
-    '''
     # Staffs are assigned numbers ranging from 0 to staff_pool
     # staff_pool = total number of staffs
     # staffpershift1 = number of staffs in the 1st shift
     # staffpershift2 = number of staffs in the 2nd shift (40% of the 1st shift)
     # staffpershift3 = number of staffs in the 3rd shift (40% of the 1st shift)
-    '''
 
     # roster = a data frame to store the roster, with 21 rows, each row showing the staff for the day
     # The columns in roster dataframe shows the staffs in each shift: shift number - staff slot number
@@ -38,13 +36,11 @@ def restartsim(staff_pool, staffpershift1,staffpershift2, staffpershift3):
 
 # Function to fill up the roster with staff number; ensure that the staffs rest for a minimal period after working a shift
 def fillroster1(staff_pool, f, Nday, stafflist, roster):
-    '''
     # staff_pool = total number of staffs
     # f = shift change frequency/interval
     # Nday = total number of staff for 1 day
     # stafflist = dataframe showing which staff are infected and resting, and with a reference column
     # roster = data frame with 21 rows, each showing the staff for the day
-    '''
 
     # num_cycle = number of shift rotation over the 21 days of simulation;
     num_cycle = int(21/f)
@@ -72,7 +68,6 @@ def fillroster1(staff_pool, f, Nday, stafflist, roster):
 
 # Function to model probabilistic transmission via contact within lab
 def contact(p, c1, c2, c3, day, staffpershift1, staffpershift2, staffpershift3, stafflist, roster):
-    '''
     # p = probability of disease transmission
     # c1,c2,c3 = contact rate for shift 1,2 and 3 respectively
     # day = number of days after the simulation start
@@ -81,7 +76,6 @@ def contact(p, c1, c2, c3, day, staffpershift1, staffpershift2, staffpershift3, 
     # staffpershift3 = number of staffs in the 3rd shift (40% of the 1st shift)
     # stafflist = dataframe showing which staff are infected and resting, and with a reference column
     # roster = data frame with 21 rows, each showing the staff for the day
-    '''
 
     # To determine which staff is in 1st shift
     staff_in_shift = roster.loc[day,['Shift1-'+str(i) for i in range(0,staffpershift1)]]
@@ -166,29 +160,42 @@ def run_model(staff_strength, f, staffpershift1, secondary_attack_rate):
     c2 = 0.40*staffpershift2 # number of contact for shift 2
     c3 = 0.40*staffpershift3 # number of contact for shift 3
 
-    # n = number of cycle for the same simulation param
-    for n in range (0, 100):
-        # Call the function to reset simulation
-        stafflist, roster = restartsim(staff_pool,staffpershift1, staffpershift2,staffpershift3)
+    # Try to run the model
+    try:
+        #  n = number of cycle for the same simulation param
+        for n in range (0, 100):
+            # Call the function to reset simulation
+            stafflist, roster = restartsim(staff_pool,staffpershift1, staffpershift2,staffpershift3)
 
-        # Call the function to fill the staff roster
-        fillroster1(staff_pool,f,Nday,stafflist,roster)
+            # Call the function to fill the staff roster
+            fillroster1(staff_pool,f,Nday,stafflist,roster)
 
-        # Let the 1st person in the roster be infected;
-        stafflist['infected'][roster.iloc[0][0]]=1
+            # Let the 1st person in the roster be infected;
+            stafflist['infected'][roster.iloc[0][0]]=1
 
-        # Run the simulation for 21 days
-        for day in range (0,21):
-            contact(p,c1,c2,c3,day,staffpershift1,staffpershift2,staffpershift3,stafflist,roster)
-            result[str(day)][n]=stafflist['infected'].sum()/staff_pool
+            # Run the simulation for 21 days
+            for day in range (0,21):
+                contact(p,c1,c2,c3,day,staffpershift1,staffpershift2,staffpershift3,stafflist,roster)
+                result[str(day)][n]=stafflist['infected'].sum()/staff_pool
 
-    # Store results in a dictionary
-    res = {'strength': staff_strength,
-           'change': f,
-           'shift': staffpershift1,
-           'day7': result.median()[6],
-           'day14': result.median()[13],
-           'day21': result.median()[20]}
+            # Store results in a dictionary
+            res = {'strength': staff_strength,
+                   'change': f,
+                   'shift': staffpershift1,
+                   'day7': result.median()[6],
+                   'day14': result.median()[13],
+                   'day21': result.median()[20]}
+
+    # If there is an error...
+    except ValueError:
+        print('There was a value error')
+        # Store result as NA
+        res = {'strength': staff_strength,
+               'change': f,
+               'shift': staffpershift1,
+               'day7': np.nan,
+               'day14': np.nan,
+               'day21': np.nan}
 
     # Print that this simulation is done, to help with monitoring progress
     print_param = ['strength', 'change', 'shift']
