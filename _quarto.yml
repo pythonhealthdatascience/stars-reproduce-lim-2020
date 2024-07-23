@@ -35,7 +35,7 @@ website:
       - text: Summary
         href: evaluation/reproduction_report.qmd
       - text: Reflections
-        href: evaluation/reflections.qmd
+        href: evaluation/scripts/reflections.qmd
     # Right-aligned within navbar...
     right:
       - icon: github
