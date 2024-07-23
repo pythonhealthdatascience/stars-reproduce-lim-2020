@@ -1,5 +1,6 @@
 ---
 title: "Reproduction success"
+echo: False
 ---
 
 <!-- TODO: Remove this warning once completed assessment -->
@@ -22,15 +23,17 @@ from time_to_complete import process_times, success_static, success_interactive
 # List of time to complete each item
 # TODO: Change to actual items and times for this project
 time_list = [
-    [100, 'In-text result 1'],
-    [200, 'In-text result 2'],
-    [400, 'Figure 2'], # Finished work, not completed, adjust to set to NaN
+    [np.nan, 'Figure 2'],
     [np.nan, 'Figure 3'],
     [np.nan, 'Figure 4'],
-    [300, 'Figure 5'],
-    [np.nan, 'Supplementary figure'],
-    [np.nan, 'In-text result 3']]
-times_df = process_times(time_list, adjust='Figure 2')
+    [np.nan, 'Figure 5'],
+    [486, 'Supplemental table 2'],
+    [513, 'Supplemental table 3'],
+    [513, 'Supplemental table 4'],
+    [np.nan, 'Supplemental table 5'],
+    [np.nan, 'Supplemental table 6'],
+    [np.nan, 'In-text result 1']]
+times_df = process_times(time_list)
 display(times_df)
 ```
 
