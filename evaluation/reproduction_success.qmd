@@ -23,8 +23,8 @@ from time_to_complete import process_times, success_static, success_interactive
 # List of time to complete each item
 # TODO: Change to actual items and times for this project
 time_list = [
-    [np.nan, 'Figure 2'],
-    [np.nan, 'Figure 3'],
+    [607, 'Figure 2'],
+    [647, 'Figure 3'],
     [np.nan, 'Figure 4'],
     [np.nan, 'Figure 5'],
     [486, 'Supplemental table 2'],
