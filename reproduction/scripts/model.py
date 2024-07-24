@@ -138,8 +138,8 @@ def contact(p, c1, c2, c3, day, staffpershift1, staffpershift2,
                     stafflist['infected'][staff_infected[i]]=1
 
 
-def run_model(
-        staff_strength, f, staffpershift1, shift_day, secondary_attack_rate):
+def run_model(staff_strength, f, staffpershift1, shift_day,
+              secondary_attack_rate, contact_rate):
     '''
     Run the COVID-19 simulation model for a single given set of parameters,
     with 100 replications.
@@ -157,6 +157,11 @@ def run_model(
     secondary_attack_rate : number between 0 and 1
         Probability of COVID-19 transmission through contact between an
         infected staff and susceptible staff
+    contact_rate: number between 0 and 1
+        Number of people each staff member comes into contact with is assumed
+        to follow a Poisson distribution with an average contact rate as
+        provided. For contact rate 0.4, it is assumed that a staff had contact
+        with 40% of their colleagues on the same shift.
     Returns:
     --------
     res : dictionary
@@ -189,9 +194,9 @@ def run_model(
             Nday = staffpershift1 + staffpershift2 + staffpershift3
 
         p = secondary_attack_rate
-        c1 = 0.40*staffpershift1  # number of contact for shift 1
-        c2 = 0.40*staffpershift2  # number of contact for shift 2
-        c3 = 0.40*staffpershift3  # number of contact for shift 3
+        c1 = contact_rate*staffpershift1  # number of contact for shift 1
+        c2 = contact_rate*staffpershift2  # number of contact for shift 2
+        c3 = contact_rate*staffpershift3  # number of contact for shift 3
 
         #  n = number of cycle for the same simulation param
         for n in range(0, 100):
@@ -233,7 +238,8 @@ def run_scenarios(strength=[2, 4, 6],
                   staff_change=[1, 3, 7, 14, 21],
                   staff_shift=[5, 10, 20, 30],
                   shift_day=[1, 2, 3],
-                  secondary_attack_rate=0.15):
+                  secondary_attack_rate=0.15,
+                  contact_rate=0.4):
     '''
     Run the COVID-19 simulation model with a range of scenarios, with
     parallel processing to improve run time.
@@ -251,6 +257,11 @@ def run_scenarios(strength=[2, 4, 6],
     secondary_attack_rate : number between 0 and 1
         Probability of COVID-19 transmission through contact between an
         infected staff and susceptible staff
+    contact_rate: number between 0 and 1
+        Number of people each staff member comes into contact with is assumed
+        to follow a Poisson distribution with an average contact rate as
+        provided. For contact rate 0.4, it is assumed that a staff had contact
+        with 40% of their colleagues on the same shift.
 
     Returns:
     --------
@@ -261,7 +272,8 @@ def run_scenarios(strength=[2, 4, 6],
     paramlist = list(itertools.product(
         strength, staff_change, staff_shift, shift_day))
     # Append the other parameter required by the model
-    paramlist = [list(tup) + [secondary_attack_rate] for tup in paramlist]
+    paramlist = [list(tup) + [secondary_attack_rate, contact_rate]
+                 for tup in paramlist]
 
     # Create a process pool that uses all the CPUs and apply the function
     # This runs the model through all the scenarios using parallel processing
@@ -274,7 +286,7 @@ def run_scenarios(strength=[2, 4, 6],
                            'staff_per_shift', 'shifts_per_day'],
                   var_name='end_of_day', value_name='prop_infected')
 
-    # Strip 'day' from the end_of_day column (so just left with 7, 14, 21)
+    # Strip 'day' from the end_of_day column (so just left with 1, 2, 3...)
     res['end_of_day'] = pd.to_numeric(res['end_of_day'].str.replace('day', ''))
 
     return res
