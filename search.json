@@ -242,7 +242,7 @@
     "href": "evaluation/reproduction_success.html",
     "title": "Reproduction success",
     "section": "",
-    "text": "Please note: Work is ongoing, and this page is not yet complete\nAs cited throughout, images on this page are sourced from Lim et al. (2020)"
+    "text": "Please note: Work is ongoing, and this page is not yet complete\nAs cited throughout, images on this page are sourced from Lim et al. (2020)\nDue to the size of the original tables, I have previewed the head of each, but then presented descriptive statistics from comparing all the values in each table."
   },
   {
     "objectID": "evaluation/reproduction_success.html#time-to-completion",
@@ -277,49 +277,42 @@
     "href": "evaluation/reproduction_success.html#figure-5",
     "title": "Reproduction success",
     "section": "Figure 5",
-    "text": "Figure 5\nOriginal figure (Lim et al. (2020)):\n\n\n\n\n\nReproduction:\nTBC"
+    "text": "Figure 5\nOriginal figure (Lim et al. (2020)):\n\n\n\n\n\nReproduction:"
   },
   {
     "objectID": "evaluation/reproduction_success.html#supplemental-table-2",
     "href": "evaluation/reproduction_success.html#supplemental-table-2",
     "title": "Reproduction success",
     "section": "Supplemental Table 2",
-    "text": "Supplemental Table 2\nTBC"
+    "text": "Supplemental Table 2\nPreview of the reformatted original table (Lim et al. (2020)) alongside the reproduced table.\nThen, shares the results from calculating the absolute difference in the prop_infected row between the tables, and describes the observed differences.\n\n\n'Preview of original'\n\n\n\n\n\n\n\n\n\nend_of_day\nshifts_per_day\nstaff_per_shift\nstrength\nstaff_change\nprop_infected\n\n\n\n\n0\n7\n1.0\n5.0\n2\n1\n0.20\n\n\n1\n7\n1.0\n5.0\n2\n3\n0.20\n\n\n2\n7\n1.0\n5.0\n2\n7\n0.30\n\n\n3\n7\n1.0\n5.0\n2\n14\n0.40\n\n\n4\n7\n1.0\n5.0\n2\n21\n0.30\n\n\n5\n7\n1.0\n5.0\n4\n1\n0.10\n\n\n6\n7\n1.0\n5.0\n4\n3\n0.10\n\n\n7\n7\n1.0\n5.0\n4\n7\n0.20\n\n\n8\n7\n1.0\n5.0\n4\n14\n0.20\n\n\n9\n7\n1.0\n5.0\n4\n21\n0.15\n\n\n\n\n\n\n\n'Preview of reproduction'\n\n\n\n\n\n\n\n\n\nend_of_day\nshifts_per_day\nstaff_per_shift\nstrength\nstaff_change\nprop_infected\n\n\n\n\n0\n7\n1\n5\n2\n1\n0.20\n\n\n12\n7\n1\n5\n2\n3\n0.20\n\n\n24\n7\n1\n5\n2\n7\n0.40\n\n\n36\n7\n1\n5\n2\n14\n0.40\n\n\n48\n7\n1\n5\n2\n21\n0.30\n\n\n60\n7\n1\n5\n4\n1\n0.10\n\n\n72\n7\n1\n5\n4\n3\n0.10\n\n\n84\n7\n1\n5\n4\n7\n0.20\n\n\n96\n7\n1\n5\n4\n14\n0.15\n\n\n108\n7\n1\n5\n4\n21\n0.15\n\n\n\n\n\n\n\ncount    420.000000\nmean       0.008571\nstd        0.016976\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.010000\nmax        0.100000\nName: diff, dtype: float64"
   },
   {
     "objectID": "evaluation/reproduction_success.html#supplemental-table-3",
     "href": "evaluation/reproduction_success.html#supplemental-table-3",
     "title": "Reproduction success",
     "section": "Supplemental Table 3",
-    "text": "Supplemental Table 3\nTBC"
+    "text": "Supplemental Table 3\nPreview of the reformatted original table (Lim et al. (2020)) alongside the reproduced table.\nThen, shares the results from calculating the absolute difference in the prop_infected row between the tables, and describes the observed differences.\n\n\n'Preview of original'\n\n\n\n\n\n\n\n\n\nend_of_day\nshifts_per_day\nstaff_per_shift\nstrength\nstaff_change\nprop_infected\n\n\n\n\n0\n7\n1.0\n5.0\n2\n1\n0.10\n\n\n1\n7\n1.0\n5.0\n2\n3\n0.10\n\n\n2\n7\n1.0\n5.0\n2\n7\n0.20\n\n\n3\n7\n1.0\n5.0\n2\n14\n0.10\n\n\n4\n7\n1.0\n5.0\n2\n21\n0.20\n\n\n5\n7\n1.0\n5.0\n4\n1\n0.05\n\n\n6\n7\n1.0\n5.0\n4\n3\n0.05\n\n\n7\n7\n1.0\n5.0\n4\n7\n0.10\n\n\n8\n7\n1.0\n5.0\n4\n14\n0.05\n\n\n9\n7\n1.0\n5.0\n4\n21\n0.05\n\n\n\n\n\n\n\n'Preview of reproduction'\n\n\n\n\n\n\n\n\n\nend_of_day\nshifts_per_day\nstaff_per_shift\nstrength\nstaff_change\nprop_infected\n\n\n\n\n0\n7\n1\n5\n2\n1\n0.10\n\n\n12\n7\n1\n5\n2\n3\n0.10\n\n\n24\n7\n1\n5\n2\n7\n0.10\n\n\n36\n7\n1\n5\n2\n14\n0.20\n\n\n48\n7\n1\n5\n2\n21\n0.20\n\n\n60\n7\n1\n5\n4\n1\n0.05\n\n\n72\n7\n1\n5\n4\n3\n0.05\n\n\n84\n7\n1\n5\n4\n7\n0.05\n\n\n96\n7\n1\n5\n4\n14\n0.05\n\n\n108\n7\n1\n5\n4\n21\n0.10\n\n\n\n\n\n\n\ncount    420.000000\nmean       0.010119\nstd        0.017154\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.020000\nmax        0.100000\nName: diff, dtype: float64"
   },
   {
     "objectID": "evaluation/reproduction_success.html#supplemental-table-4",
     "href": "evaluation/reproduction_success.html#supplemental-table-4",
     "title": "Reproduction success",
     "section": "Supplemental Table 4",
-    "text": "Supplemental Table 4\nTBC"
+    "text": "Supplemental Table 4\nPreview of the reformatted original table (Lim et al. (2020)) alongside the reproduced table.\nThen, shares the results from calculating the absolute difference in the prop_infected row between the tables, and describes the observed differences.\n\n\n'Preview of original'\n\n\n\n\n\n\n\n\n\nend_of_day\nshifts_per_day\nstaff_per_shift\nstrength\nstaff_change\nprop_infected\n\n\n\n\n0\n7\n1.0\n5.0\n2\n1\n0.40\n\n\n1\n7\n1.0\n5.0\n2\n3\n0.30\n\n\n2\n7\n1.0\n5.0\n2\n7\n0.50\n\n\n3\n7\n1.0\n5.0\n2\n14\n0.50\n\n\n4\n7\n1.0\n5.0\n2\n21\n0.50\n\n\n5\n7\n1.0\n5.0\n4\n1\n0.10\n\n\n6\n7\n1.0\n5.0\n4\n3\n0.20\n\n\n7\n7\n1.0\n5.0\n4\n7\n0.25\n\n\n8\n7\n1.0\n5.0\n4\n14\n0.25\n\n\n9\n7\n1.0\n5.0\n4\n21\n0.25\n\n\n\n\n\n\n\n'Preview of reproduction'\n\n\n\n\n\n\n\n\n\nend_of_day\nshifts_per_day\nstaff_per_shift\nstrength\nstaff_change\nprop_infected\n\n\n\n\n0\n7\n1\n5\n2\n1\n0.30\n\n\n12\n7\n1\n5\n2\n3\n0.40\n\n\n24\n7\n1\n5\n2\n7\n0.50\n\n\n36\n7\n1\n5\n2\n14\n0.50\n\n\n48\n7\n1\n5\n2\n21\n0.50\n\n\n60\n7\n1\n5\n4\n1\n0.10\n\n\n72\n7\n1\n5\n4\n3\n0.15\n\n\n84\n7\n1\n5\n4\n7\n0.25\n\n\n96\n7\n1\n5\n4\n14\n0.25\n\n\n108\n7\n1\n5\n4\n21\n0.25\n\n\n\n\n\n\n\ncount    420.000000\nmean       0.004929\nstd        0.012860\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.000000\nmax        0.100000\nName: diff, dtype: float64"
   },
   {
     "objectID": "evaluation/reproduction_success.html#supplemental-table-5",
     "href": "evaluation/reproduction_success.html#supplemental-table-5",
     "title": "Reproduction success",
     "section": "Supplemental Table 5",
-    "text": "Supplemental Table 5\nTBC"
+    "text": "Supplemental Table 5\nPreview of the reformatted original table (Lim et al. (2020)) alongside the reproduced table.\nThen, shares the results from calculating the absolute difference in the prop_infected row between the tables, and describes the observed differences.\n\n\n'Preview of original'\n\n\n\n\n\n\n\n\n\nend_of_day\nshifts_per_day\nstaff_per_shift\nstrength\nstaff_change\nprop_infected\n\n\n\n\n0\n7\n1.0\n5.0\n2\n1\n0.25\n\n\n1\n7\n1.0\n5.0\n2\n3\n0.30\n\n\n2\n7\n1.0\n5.0\n2\n7\n0.30\n\n\n3\n7\n1.0\n5.0\n2\n14\n0.30\n\n\n4\n7\n1.0\n5.0\n2\n21\n0.40\n\n\n5\n7\n1.0\n5.0\n4\n1\n0.10\n\n\n6\n7\n1.0\n5.0\n4\n3\n0.10\n\n\n7\n7\n1.0\n5.0\n4\n7\n0.15\n\n\n8\n7\n1.0\n5.0\n4\n14\n0.15\n\n\n9\n7\n1.0\n5.0\n4\n21\n0.15\n\n\n\n\n\n\n\n'Preview of reproduction'\n\n\n\n\n\n\n\n\n\nend_of_day\nshifts_per_day\nstaff_per_shift\nstrength\nstaff_change\nprop_infected\n\n\n\n\n0\n7\n1\n5\n2\n1\n0.20\n\n\n4\n7\n1\n5\n2\n3\n0.30\n\n\n8\n7\n1\n5\n2\n7\n0.40\n\n\n12\n7\n1\n5\n2\n14\n0.40\n\n\n16\n7\n1\n5\n2\n21\n0.35\n\n\n20\n7\n1\n5\n4\n1\n0.10\n\n\n24\n7\n1\n5\n4\n3\n0.15\n\n\n28\n7\n1\n5\n4\n7\n0.15\n\n\n32\n7\n1\n5\n4\n14\n0.15\n\n\n36\n7\n1\n5\n4\n21\n0.15\n\n\n\n\n\n\n\ncount    180.000000\nmean       0.012611\nstd        0.022055\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.020000\nmax        0.100000\nName: diff, dtype: float64"
   },
   {
     "objectID": "evaluation/reproduction_success.html#supplemental-table-6",
     "href": "evaluation/reproduction_success.html#supplemental-table-6",
     "title": "Reproduction success",
     "section": "Supplemental Table 6",
-    "text": "Supplemental Table 6\nTBC"
-  },
-  {
-    "objectID": "evaluation/reproduction_success.html#in-text-result-1",
-    "href": "evaluation/reproduction_success.html#in-text-result-1",
-    "title": "Reproduction success",
-    "section": "In-text result 1",
-    "text": "In-text result 1\nOriginal:\n“The strongest protective effect is seen with the N95 masks (nearly equivalent to a FFP2 mask), which has the effect of reducing the odds of transmission by 0.09” Lim et al. (2020)\nReproduction:\nTBC"
+    "text": "Supplemental Table 6\nPreview of the reformatted original table (Lim et al. (2020)) alongside the reproduced table.\nThen, shares the results from calculating the absolute difference in the prop_infected row between the tables, and describes the observed differences.\n\n\n'Preview of original'\n\n\n\n\n\n\n\n\n\nworkplace_measure\nshifts_per_day\nstaff_per_shift\nstrength\nstaff_change\nprop_infected\n\n\n\n\n0\nGloves\n1.0\n5.0\n2\n1\n0.20\n\n\n1\nGloves\n1.0\n5.0\n2\n3\n0.20\n\n\n2\nGloves\n1.0\n5.0\n2\n7\n0.20\n\n\n3\nGloves\n1.0\n5.0\n2\n14\n0.30\n\n\n4\nGloves\n1.0\n5.0\n2\n21\n0.30\n\n\n5\nGloves\n1.0\n5.0\n4\n1\n0.05\n\n\n6\nGloves\n1.0\n5.0\n4\n3\n0.05\n\n\n7\nGloves\n1.0\n5.0\n4\n7\n0.10\n\n\n8\nGloves\n1.0\n5.0\n4\n14\n0.15\n\n\n9\nGloves\n1.0\n5.0\n4\n21\n0.15\n\n\n\n\n\n\n\n'Preview of reproduction'\n\n\n\n\n\n\n\n\n\nworkplace_measure\nshifts_per_day\nstaff_per_shift\nstrength\nstaff_change\nprop_infected\n\n\n\n\n180\nGloves\n1\n5\n2\n1\n0.20\n\n\n192\nGloves\n1\n5\n2\n3\n0.20\n\n\n204\nGloves\n1\n5\n2\n7\n0.20\n\n\n216\nGloves\n1\n5\n2\n14\n0.30\n\n\n228\nGloves\n1\n5\n2\n21\n0.30\n\n\n240\nGloves\n1\n5\n4\n1\n0.05\n\n\n252\nGloves\n1\n5\n4\n3\n0.05\n\n\n264\nGloves\n1\n5\n4\n7\n0.10\n\n\n276\nGloves\n1\n5\n4\n14\n0.15\n\n\n288\nGloves\n1\n5\n4\n21\n0.15\n\n\n\n\n\n\n\ncount    700.000000\nmean       0.005614\nstd        0.011337\nmin        0.000000\n25%        0.000000\n50%        0.000000\n75%        0.010000\nmax        0.100000\nName: diff, dtype: float64"
   },
   {
     "objectID": "quarto_site/license.html",
