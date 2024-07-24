@@ -2,13 +2,13 @@
 title: "Day 3"
 author: "Amy Heather"
 date: "2024-07-23"
-categories: [reproduction]
+categories: [reproduce]
 bibliography: ../../../quarto_site/references.bib
 ---
 
 ::: {.callout-note}
 
-Add parralel processing and reproduced supplementary tables 2-4 and Figure 2. Total time used: 10h 7m (25.3%)
+Add parallel processing and reproduced supplementary tables 2-4 and Figure 2. Total time used: 10h 7m (25.3%)
 
 :::
 
