@@ -60,6 +60,9 @@ div.csl-indent {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -233,14 +236,12 @@ div.csl-indent {
 <section id="stress-des" class="level2">
 <h2 class="anchored" data-anchor-id="stress-des">STRESS-DES</h2>
 <p>Of the <strong>24</strong> items in the checklist:</p>
-<!-- TODO: Add counts from evaluation -->
 <ul>
-<li><strong>X</strong> were met fully (✅)</li>
-<li><strong>X</strong> were partially met (🟡)</li>
-<li><strong>X</strong> were not met (❌)</li>
-<li><strong>X</strong> were not applicable (N/A)</li>
+<li><strong>16</strong> were met fully (✅)</li>
+<li><strong>2</strong> were partially met (🟡)</li>
+<li><strong>3</strong> were not met (❌)</li>
+<li><strong>3</strong> were not applicable (N/A)</li>
 </ul>
-<!-- TODO: Fill in the table. Options are ✅ Fully, 🟡 Partially, ❌ Not met, or N/A -->
 <table class="caption-top table">
 <colgroup>
 <col style="width: 12%">
@@ -266,20 +267,20 @@ div.csl-indent {
 <tr class="even">
 <td>1.1 Purpose of the model</td>
 <td>Explain the background and objectives for the model</td>
-<td><!----></td>
-<td><!----></td>
+<td>✅ Fully</td>
+<td>Provided in <code>1. Introduction</code> -“The International Federation of Clinical Chemistry and Laboratory Medicine (IFCC) has recently formed a Taskforce on COVID-19 to provide guidance to laboratory practitioners in managing this challenge [COVID-19]… A global survey by the Taskforce has then revealed that clinical laboratories have used PPE variably. The laboratories also found it challenging to manage staff rostering, split team arrangement and maintain workplace social distancing (physical distancing)… this simulation study was conducted to explore the relative impact of staff rostering, split team arrangement, social distancing and use of PPE on the potential risk of transmission within the laboratory environment. From the results of this simulation, several recommendations are de- veloped to further assist laboratories in planning their workplace in order to minimize the risk of transmission of SARS-Cov-2 infection.”<br><br><span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></td>
 </tr>
 <tr class="odd">
 <td>1.2 Model outputs</td>
 <td>Define all quantitative performance measures that are reported, using equations where necessary. Specify how and when they are calculated during the model run along with how any measures of error such as confidence intervals are calculated.</td>
-<td><!----></td>
-<td><!----></td>
+<td>✅ Fully</td>
+<td>All outputs are medians. <code>2.2 Transmission assumptions</code> - “the median of the proportion of staff infected are recorded”<br><br><span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></td>
 </tr>
 <tr class="even">
 <td>1.3 Experimentation aims</td>
 <td>If the model has been used for experimentation, state the objectives that it was used to investigate.<br>(A) Scenario based analysis – Provide a name and description for each scenario, providing a rationale for the choice of scenarios and ensure that item 2.3 (below) is completed.<br>(B) Design of experiments – Provide details of the overall design of the experiments with reference to performance measures and their parameters (provide further details in data below).<br>(C) Simulation Optimisation – (if appropriate) Provide full details of what is to be optimised, the parameters that were included and the algorithm(s) that was be used. Where possible provide a citation of the algorithm(s).</td>
-<td><!----></td>
-<td><!----></td>
+<td>✅ Fully</td>
+<td>The various parameters and scenarios of the analysis are described in detail in <code>2. Material and methods</code> in sections:<br>• <code>2.1.1 Number of staff per shift and number of shifts</code><br>• <code>2.1.2 Overall number of staff accessible to work in the laboratory (i.e. overall staff pool)</code><br>• <code>2.1.3 Shift arrangement</code><br>• <code>2.1.4 Split team arrangement</code><br>• <code>2.3 Secondary attack rate</code><br>• <code>2.4 Impact of personal protective equipment</code><br>• <code>2.5 Impact of social distancing</code></td>
 </tr>
 <tr class="odd">
 <td><strong>Logic</strong></td>
@@ -290,56 +291,56 @@ div.csl-indent {
 <tr class="even">
 <td>2.1 Base model overview diagram</td>
 <td>Describe the base model using appropriate diagrams and description. This could include one or more process flow, activity cycle or equivalent diagrams sufficient to describe the model to readers. Avoid complicated diagrams in the main text. The goal is to describe the breadth and depth of the model with respect to the system being studied.</td>
-<td><!----></td>
-<td><!----></td>
+<td>✅ Fully</td>
+<td><code>Figure 1</code><br><br><a href="../original_study/fig1.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure 1"><img src="../original_study/fig1.jpg" class="img-fluid" alt="Figure 1"></a><br><br><span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></td>
 </tr>
 <tr class="odd">
 <td>2.2 Base model logic</td>
 <td>Give details of the base model logic. Give additional model logic details sufficient to communicate to the reader how the model works.</td>
-<td><!----></td>
-<td><!----></td>
+<td>✅ Fully</td>
+<td>Detailed in <code>2. Material and methods</code> and supported by <code>Figure 1</code>.</td>
 </tr>
 <tr class="even">
 <td>2.3 Scenario logic</td>
 <td>Give details of the logical difference between the base case model and scenarios (if any). This could be incorporated as text or where differences are substantial could be incorporated in the same manner as 2.2.</td>
-<td><!----></td>
-<td><!----></td>
+<td>✅ Fully</td>
+<td>Detailed in <code>2. Material and methods</code></td>
 </tr>
 <tr class="odd">
 <td>2.4 Algorithms</td>
 <td>Provide further detail on any algorithms in the model that (for example) mimic complex or manual processes in the real world (i.e.&nbsp;scheduling of arrivals/ appointments/ operations/ maintenance, operation of a conveyor system, machine breakdowns, etc.). Sufficient detail should be included (or referred to in other published work) for the algorithms to be reproducible. Pseudo-code may be used to describe an algorithm.</td>
-<td><!----></td>
-<td><!----></td>
+<td>✅ Fully</td>
+<td>The only sampling algorithm used in the model is the Poisson distribution for sampling the number of successful contact per infected staff, and this is described in <code>2.2 Transmission assumptions</code><br><br>“Due to the stochastic nature of virus transmission, not all contacts lead to successful virus transmissions. Therefore, the probabilistic factor of p is applied to the average contact rate parameter c in a modified Poisson distribution for the number of “successful” contacts, which refers to contacts that lead to successful viral transmission, per work shift. Mathematically, it is described by: P(k) = (pc)k/k! e-pc where P(k) represents the probability for k successful contact in a work shift, with k being a non-negative integer, p is the probability of transmission while c is the average contact rate (i.e.&nbsp;average number of unique contacts in a shift). From this Poisson distribution k is drawn randomly when susceptible staff are assigned to a shift with at least one infected staff. Subsequently, k staff are randomly drawn from other staff in the same shift to be infected to propagate the infection. Of note, P is a function of R0 (the basic reproduction number), contact rate and length of infection period for an entire population”<br><br><span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></td>
 </tr>
 <tr class="even">
 <td>2.5.1 Components - entities</td>
 <td>Give details of all entities within the simulation including a description of their role in the model and a description of all their attributes.</td>
-<td><!----></td>
-<td><!----></td>
+<td>✅ Fully</td>
+<td><code>2. Material and methods</code> - “The entities in the simulation are laboratory staff assigned to work in a particular shift.”<br><br><span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></td>
 </tr>
 <tr class="odd">
 <td>2.5.2 Components - activities</td>
 <td>Describe the activities that entities engage in within the model. Provide details of entity routing into and out of the activity.</td>
-<td><!----></td>
-<td><!----></td>
+<td>✅ Fully</td>
+<td>The activity in the model is to be either on or off shift. <code>2. Material and methods</code> - “In this simple model, each staff can only assume one of the two states, namely staying at home or working in the laboratory. The state of working in the laboratory is further divided into sub-states, representing each work shift, for rosters with more than 1 shift per day.”<br><br><span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></td>
 </tr>
 <tr class="even">
 <td>2.5.3 Components - resources</td>
 <td>List all the resources included within the model and which activities make use of them.</td>
-<td><!----></td>
-<td><!----></td>
+<td>N/A</td>
+<td>The entity (lab staff) does not require any resources to complete the activity (going on shift). Instead, the model just requires a certain number of entities to be doing the activity.</td>
 </tr>
 <tr class="odd">
 <td>2.5.4 Components - queues</td>
 <td>Give details of the assumed queuing discipline used in the model (e.g.&nbsp;First in First Out, Last in First Out, prioritisation, etc.). Where one or more queues have a different discipline from the rest, provide a list of queues, indicating the queuing discipline used for each. If reneging, balking or jockeying occur, etc., provide details of the rules. Detail any delays or capacity constraints on the queues.</td>
-<td><!----></td>
-<td><!----></td>
+<td>N/A</td>
+<td>There are no queues for activities.</td>
 </tr>
 <tr class="even">
 <td>2.5.5 Components - entry/exit points</td>
 <td>Give details of the model boundaries i.e.&nbsp;all arrival and exit points of entities. Detail the arrival mechanism (e.g.&nbsp;‘thinning’ to mimic a non-homogenous Poisson process or balking)</td>
-<td><!----></td>
-<td><!----></td>
+<td>✅ Fully</td>
+<td>Entities remain in the model for the whole duration.<br><br><code>2.2 Transmission assumptions</code> - “Throughout the simulation, it is assumed that the infected staff are not quarantined”<br><br><span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></td>
 </tr>
 <tr class="odd">
 <td><strong>Data</strong></td>
@@ -350,26 +351,26 @@ div.csl-indent {
 <tr class="even">
 <td>3.1 Data sources</td>
 <td>List and detail all data sources. Sources may include:<br>• Interviews with stakeholders,<br>• Samples of routinely collected data,<br>• Prospectively collected samples for the purpose of the simulation study,<br>• Public domain data published in either academic or organisational literature. Provide, where possible, the link and DOI to the data or reference to published literature.<br>All data source descriptions should include details of the sample size, sample date ranges and use within the study.</td>
-<td><!----></td>
-<td><!----></td>
+<td>✅ Fully</td>
+<td><code>2.1 Workplace assumptions</code> - “The workplace assumptions are arbitrarily determined to represent a wide range of laboratory scenarios.”<br><br><code>4.3 Other observations</code> - “These data on protective effects of PPE are obtained from a meta-analysis of 6 case-control studies related to severe acute respiratory syndrome (SARS) [17], but should be broadly applicable to the current COVID-19 situation.” - <em>although [17] does not have this information, it appears this intends to cite [18] in their references, Jefferson T, Dooley L, Ferroni E, Al-Ansary LA, van Driel ML, Bawazeer GA, Jones MA, Hoffmann TC, Clark J, Beller EM, Glasziou PP, Conly JM. Physical interventions to interrupt or reduce the spread of respiratory viruses. Cochrane Database Syst Rev.&nbsp;2023 Jan 30;1(1):CD006207. doi: 10.1002/14651858.CD006207.pub6. PMID: 36715243; PMCID: PMC9885521.</em><br><br><span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></td>
 </tr>
 <tr class="odd">
 <td>3.2 Pre-processing</td>
 <td>Provide details of any data manipulation that has taken place before its use in the simulation, e.g.&nbsp;interpolation to account for missing data or the removal of outliers.</td>
-<td><!----></td>
-<td><!----></td>
+<td>N/A</td>
+<td>Based on data sources, assume this to be not applicable.</td>
 </tr>
 <tr class="even">
 <td>3.3 Input parameters</td>
 <td>List all input variables in the model. Provide a description of their use and include parameter values. For stochastic inputs provide details of any continuous, discrete or empirical distributions used along with all associated parameters. Give details of all time dependent parameters and correlation.<br>Clearly state:<br>• Base case data<br>• Data use in experimentation, where different from the base case.<br>• Where optimisation or design of experiments has been used, state the range of values that parameters can take.<br>• Where theoretical distributions are used, state how these were selected and prioritised above other candidate distributions.</td>
-<td><!----></td>
-<td><!----></td>
+<td>✅ Fully</td>
+<td>Nearly all parameters are included in <code>Table 1</code><br><br><a href="../original_study/supp_tab1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Table 1"><img src="../original_study/supp_tab1.png" class="img-fluid" alt="Table 1"></a><br><br>The others are described in the article though, e.g.&nbsp;<code>2.5 Impact of social distancing</code> - “To simulate the effect of workplace social distancing, <em>c</em> is arbitrarily reduced by halve”<br><br><span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></td>
 </tr>
 <tr class="odd">
 <td>3.4 Assumptions</td>
 <td>Where data or knowledge of the real system is unavailable what assumptions are included in the model? This might include parameter values, distributions or routing logic within the model.</td>
-<td><!----></td>
-<td><!----></td>
+<td>✅ Fully</td>
+<td>Extensively details assumptions throughout <code>2. Material and methods</code> and <code>4 Discussions</code></td>
 </tr>
 <tr class="even">
 <td><strong>Experimentation</strong></td>
@@ -380,20 +381,20 @@ div.csl-indent {
 <tr class="odd">
 <td>4.1 Initialisation</td>
 <td>Report if the system modelled is terminating or non-terminating. State if a warm-up period has been used, its length and the analysis method used to select it. For terminating systems state the stopping condition.<br>State what if any initial model conditions have been included, e.g., pre-loaded queues and activities. Report whether initialisation of these variables is deterministic or stochastic.</td>
-<td><!----></td>
-<td><!----></td>
+<td>❌ Not met</td>
+<td>Not described.</td>
 </tr>
 <tr class="even">
 <td>4.2 Run length</td>
 <td>Detail the run length of the simulation model and time units.</td>
-<td><!----></td>
-<td><!----></td>
+<td>✅ Fully</td>
+<td>Time unit is days (1, 2 or 3 shifts per day), and runs for 21 days. Described in article, e.g.&nbsp;<code>2.2 Transmission assumptions</code> - “duration of simulation (i.e.&nbsp;21 days)”<br><br><span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></td>
 </tr>
 <tr class="odd">
 <td>4.3 Estimation approach</td>
 <td>State the method used to account for the stochasticity: For example, two common methods are multiple replications or batch means. Where multiple replications have been used, state the number of replications and for batch means, indicate the batch length and whether the batch means procedure is standard, spaced or overlapping. For both procedures provide a justification for the methods used and the number of replications/size of batches.</td>
-<td><!----></td>
-<td><!----></td>
+<td>✅ Fully</td>
+<td><code>2.2 Transmission assumptions</code> - “In view of the stochastic nature of virus transmission and roster allocation, simulations with the same parameters are repeated 100 times and the median of the proportion of staff infected are recorded.”<br><br><span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></td>
 </tr>
 <tr class="even">
 <td><strong>Implementation</strong></td>
@@ -404,26 +405,26 @@ div.csl-indent {
 <tr class="odd">
 <td>5.1 Software or programming language</td>
 <td>State the operating system and version and build number.<br>State the name, version and build number of commercial or open source DES software that the model is implemented in.<br>State the name and version of general-purpose programming languages used (e.g.&nbsp;Python 3.5).<br>Where frameworks and libraries have been used provide all details including version numbers.</td>
-<td><!----></td>
-<td><!----></td>
+<td>🟡 Partially</td>
+<td><code>2.7 Simulation package</code> - “This simulation was performed with codes written in Python 3 on a desktop computer (Intel Core i5 3.5 GHz, 8 GB RAM). Standard libraries such as NumPy and pandas are employed.”<br><br>Does not mention operating system, or version of the packages used.<br><br><span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></td>
 </tr>
 <tr class="even">
 <td>5.2 Random sampling</td>
 <td>State the algorithm used to generate random samples in the software/programming language used e.g.&nbsp;Mersenne Twister.<br>If common random numbers are used, state how seeds (or random number streams) are distributed among sampling processes.</td>
-<td><!----></td>
-<td><!----></td>
+<td>❌ Not met</td>
+<td>Not described in the paper. Know from the code that they used common random numbers without seed control.</td>
 </tr>
 <tr class="odd">
 <td>5.3 Model execution</td>
 <td>State the event processing mechanism used e.g.&nbsp;three phase, event, activity, process interaction.<br><em>Note that in some commercial software the event processing mechanism may not be published. In these cases authors should adhere to item 5.1 software recommendations.</em><br>State all priority rules included if entities/activities compete for resources.<br>If the model is parallel, distributed and/or use grid or cloud computing, etc., state and preferably reference the technology used. For parallel and distributed simulations the time management algorithms used. If the HLA is used then state the version of the standard, which run-time infrastructure (and version), and any supporting documents (FOMs, etc.)</td>
-<td><!----></td>
-<td><!----></td>
+<td>❌ Not met</td>
+<td>Not described</td>
 </tr>
 <tr class="even">
 <td>5.4 System specification</td>
 <td>State the model run time and specification of hardware used. This is particularly important for large scale models that require substantial computing power. For parallel, distributed and/or use grid or cloud computing, etc. state the details of all systems used in the implementation (processors, network, etc.)</td>
-<td><!----></td>
-<td><!----></td>
+<td>🟡 Partially</td>
+<td><code>2.7 Simulation package</code> - “This simulation was performed with codes written in Python 3 on a desktop computer (Intel Core i5 3.5 GHz, 8 GB RAM).” <br><br>Does not mention run time<br><br><span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></td>
 </tr>
 <tr class="odd">
 <td><strong>Code access</strong></td>
@@ -434,8 +435,8 @@ div.csl-indent {
 <tr class="even">
 <td>6.1 Computer model sharing statement</td>
 <td>Describe how someone could obtain the model described in the paper, the simulation software and any other associated software (or hardware) needed to reproduce the results. Provide, where possible, the link and DOIs to these.</td>
-<td><!----></td>
-<td><!----></td>
+<td>✅ Fully</td>
+<td><code>2.7 Simulation package</code> - “The simulation codes used in this study are provided here (https://github.com/chaose5/COVID- roster-simulation) and in the Supplemental Material.”<br><br><span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></td>
 </tr>
 </tbody>
 </table>
@@ -613,6 +614,9 @@ Handy tips:
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-lim_staff_2020" class="csl-entry" role="listitem">
+Lim, Chun Yee, Mary Kathryn Bohn, Giuseppe Lippi, Maurizio Ferrari, Tze Ping Loh, Kwok-Yung Yuen, Khosrow Adeli, and Andrea Rita Horvath. 2020. <span>“Staff Rostering, Split Team Arrangement, Social Distancing (Physical Distancing) and Use of Personal Protective Equipment to Minimize Risk of Workplace Transmission During the <span>COVID</span>-19 Pandemic: <span>A</span> Simulation Study.”</span> <em>Clinical Biochemistry</em> 86 (December): 15–22. <a href="https://doi.org/10.1016/j.clinbiochem.2020.09.003">https://doi.org/10.1016/j.clinbiochem.2020.09.003</a>.
+</div>
 <div id="ref-monks_strengthening_2019" class="csl-entry" role="listitem">
 Monks, Thomas, Christine S. M. Currie, Bhakti Stephan Onggo, Stewart Robinson, Martin Kunc, and Simon J. E. Taylor. 2019. <span>“Strengthening the Reporting of Empirical Simulation Studies: <span>Introducing</span> the <span>STRESS</span> Guidelines.”</span> <em>Journal of Simulation</em> 13 (1): 55–67. <a href="https://doi.org/10.1080/17477778.2018.1442155">https://doi.org/10.1080/17477778.2018.1442155</a>.
 </div>
@@ -1077,6 +1081,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"selector":".lightbox","openEffect":"zoom","descPosition":"bottom"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
