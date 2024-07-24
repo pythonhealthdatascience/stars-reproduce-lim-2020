@@ -34,6 +34,175 @@ times = [
 calculate_times(used_to_date, times)
 ```
 
+## 10.00-10.08: Figure 4
+
+Again, could easily use prior data and functions, just filling in with all the right parameters.
+
+Happy that this is successfully reproduced at 10.08.
+
+```{python}
+import sys
+sys.path.append('../')
+from timings import calculate_times
+
+# Minutes used prior to today
+used_to_date = 607
+
+# Times from today
+times = [
+    ('09.03', '09.27'),
+    ('09.30', '09.46'),
+    ('10.00', '10.08')]
+
+calculate_times(used_to_date, times)
+```
+
+## 10.19-10.31, 10.44-10.54, 11.19-11.25, 11.35-11.42: Supplemental table 6
+
+The protective measures have odds ratios provided in supplemental table 1. As described in section `2.4`, these reflect the reduced probability of infection, and "the odds ratios [are] adopted for the reduction of *p* in the simulation". @lim_staff_2020
+
+*p* is the secondary attack rate / probability of transmission between infected and susceptible staff. It is set at 15% (base), with scenarios of 5% and 30%.
+
+The supplementary table lists odds ratios of:
+
+* Wearing gloves: 0.45
+* Wearing surgical mask: 0.32
+* Wearing gown: 0.23
+* Wearing N95 mask: 0.09
+
+In supplemental table 6, it states that it is:
+
+> "Proportion of simulated laboratory staff infected by COVID-19 in base scenario with 15% probability of secondary infection at the end of day 14 of the simulation with the staff observing workplace social distancing (by reducing the contact rate by half) and using various personal protective equipment. In this scenario, the simulated staff worked fixed alternating workdays (i.e. fixed consecutive days on, and fixed minimum consecutive days off). The results shown are the median of 100 cycles of simulation. NA = not available as the number of staff per shift is too low to simulate under the required conditions." @lim_staff_2020
+
+Hence, it appears we adjust p=0.15 by the odds ratios, to reduce the odds of transmission. It wasn't immediately clear to me how to perform this calculation, although I quickly realised that it was likely to be multiplication, which results in the lowest odds for N95 (as we expect, with article results mentioning that "the strongest protective effect is seen with the N95 masks").
+
+```{python}
+print(f'''
+Gloves: {0.15*0.45}
+Surgical mask: {0.15*0.32}
+Gown: {0.15*0.32}
+Wearing N95 mask: {0.15*0.09}
+''')
+```
+
+As p/secondary_attack_rate is already a parameter in `run_scenarios()`, I could easily set up and run these scenarios.
+
+This scenario is used in Figure 5 and Supplemental Table 6. Supplemental table 6 includes an additional scenario of workplace social distancing, which it states is achieved by reducing the contact rate (c) by half. In `model.py` (and as stated in section `2.5`) this is used as follows:
+
+```
+c1 = 0.40*staffpershift1  # number of contact for shift 1
+c2 = 0.40*staffpershift2  # number of contact for shift 2
+c3 = 0.40*staffpershift3  # number of contact for shift 3
+```
+
+Hence, we can simply half 0.4 to use 0.2 instead. I set this up as a parameter that can be altered within `run_scenarios()` inputs. These was one section that also used `0.4`, and I wasn't sure whether I needed to change that also:
+
+```
+staffpershift2 = int(staffpershift1*0.4)
+staffpershift3 = int(staffpershift1*0.4)
+```
+
+As it is not calculating the contact rate, I have assumed not for now.
+
+Ran all these and compared against the supplementary table. Very similar, with minimal variation as would expect from stochasticity of model, and so I am happy to mark this as reproduced at 11.42.
+
+```{python}
+import sys
+sys.path.append('../')
+from timings import calculate_times
+
+# Minutes used prior to today
+used_to_date = 607
+
+# Times from today
+times = [
+    ('09.03', '09.27'),
+    ('09.30', '09.46'),
+    ('10.00', '10.08'),
+    ('10.19', '10.31'),
+    ('10.44', '10.54'),
+    ('11.19', '11.25'),
+    ('11.35', '11.42')]
+
+calculate_times(used_to_date, times)
+```
+
+::: {.callout-tip}
+## Reflections
+
+So far, reproduction has been facilitated by:
+
+* Model simplicity
+* Simplicity of figures
+* Some clear model parameters from article, tables and legends
+* Some parameters that we need to alter were already set up as function inputs that can be changed programmatically
+* Lots of comments in the code to aid understanding
+
+Barriers:
+
+* Some slightly unclear scenarios (or that take a little longer to figure out)
+* No code for scenarios or figures or tables
+* Some parameters that we need to alter are hard coded
+* Run time
+
+:::
+
+## 11.48-12.06, 12.09-12.15: Supplementary table 5
+
+Supplementary table 5 has random roster assignment (which is used alongside table 6 to create figure 5).
+
+This is only run with one shift per day.
+
+It was initially unclear to be how to implement this scenario. I looked at the available description:
+
+* The random roster assignment is described in `2.1.3` as "Additionally, the scenario where the simulated staff are randomly assigned a new shift without fixed rest days are also examined in laboratories with a single shift." This is as opposed to the alternating shift roster where "the staff was assumed to change shift after a single day (shift), as well as after working 3, 7, 14, 21 consecutive days. After each shift, the simulated staff is assumed to return and stay at home for at least the same number of days as the shift before being randomly assigned to a new shift with the other off-duty colleagues. For example, if a simulated staff works for 3 consecutive days, the staff will be off duty for at least the 3 following days." @lim_staff_2020
+* In the supplementary materials, the random roster assignment is described as working "without predefined minimum rest day (i.e. random shift assignment after each shift)" @lim_staff_2020
+
+Looking at `model.py`...
+
+* I can see that Lim et al. 2020 have commented above `fillroster1()` that this function is to full up the roster with staff, and that it ensures that the staff rest for a minimal period after working.
+* In the `roster` dataframe, the comments state that `0 = not resting` and `1 = resting` for the `rest` column.
+* The `rest column` is populated by `fillroster1()`. It samples from the staff in `stafflist` that are marked as not resting, sample the number of staff needed for that day. This is done as many times as needed for simulation (e.g. if shift changes every day (`f=1`), then the number of times will repeat is 21 (`num_cycle=int(21/f)`)). When it does this, it marks a rest day with the line `stafflist.loc[temp,'rest']=1`. I'm assuming that conditionally removing that line may be how we implement the scenario
+
+I add this to `model.py`.
+
+As for other tables, results were very similar, and I was satisfied this was reproduced at 12.15.
+
+```{python}
+import sys
+sys.path.append('../')
+from timings import calculate_times
+
+# Minutes used prior to today
+used_to_date = 607
+
+# Times from today
+times = [
+    ('09.03', '09.27'),
+    ('09.30', '09.46'),
+    ('10.00', '10.08'),
+    ('10.19', '10.31'),
+    ('10.44', '10.54'),
+    ('11.19', '11.25'),
+    ('11.35', '11.42'),
+    ('11.48', '12.06'),
+    ('12.09', '12.15')]
+
+calculate_times(used_to_date, times)
+```
+
+## 12.16-12.20: Removed mistake in scope
+
+In heinsight, I realised we had made a mistake with the scope, as we had set in-text result 1 as:
+
+> "The strongest protective effect is seen with the N95 masks (nearly equivalent to a FFP2 mask), which has the effect of reducing the odds of transmission by 0.09" @lim_staff_2020
+
+However, I realised that this is not a result of the model, but instead just stating the odds ratio used to alter the probability of secondary transmission, as presented in supplementary table 1.
+
+![](../../../original_study/supp_tab1.png)
+
+As such, I removed this from the scope.
+
 ## Timings
 
 ```{python}
@@ -47,7 +216,14 @@ used_to_date = 607
 # Times from today
 times = [
     ('09.03', '09.27'),
-    ('09.30', '09.46')]
+    ('09.30', '09.46'),
+    ('10.00', '10.08'),
+    ('10.19', '10.31'),
+    ('10.44', '10.54'),
+    ('11.19', '11.25'),
+    ('11.35', '11.42'),
+    ('11.48', '12.06'),
+    ('12.09', '12.15')]
 
 calculate_times(used_to_date, times)
 ```
