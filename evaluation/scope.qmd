@@ -109,14 +109,6 @@ pd.read_csv('../original_study/supp_tab6_reformat.csv')
 
 :::
 
-::: {.callout-note appearance="minimal" collapse=true}
-
-## In-text result 1
-
-"The strongest protective effect is seen with the N95 masks (nearly equivalent to a FFP2 mask), which has the effect of reducing the odds of transmission by 0.09" @lim_staff_2020
-
-:::
-
 ## Outside scope
 
 ::: {.callout-note appearance="minimal" collapse=true}

@@ -8,7 +8,7 @@ bibliography: ../quarto_site/references.bib
 **Please note: Work is ongoing, and this page is not yet complete**
 
 <!-- TODO: Add this once complete -->
-<!-- Of the 10 items in the scope, X% (X out of X) were considered to be **successfully reproduced**. -->
+<!-- Of the 9 items in the scope, X% (X out of X) were considered to be **successfully reproduced**. -->
 
 As cited throughout, images on this page are sourced from @lim_staff_2020
 
@@ -29,11 +29,9 @@ time_list = [
     [486, 'Supplemental table 2'],
     [513, 'Supplemental table 3'],
     [513, 'Supplemental table 4'],
-    [np.nan, 'Supplemental table 5'],
-    [np.nan, 'Supplemental table 6'],
-    [np.nan, 'In-text result 1']]
+    [714, 'Supplemental table 5'],
+    [690, 'Supplemental table 6']]
 times_df = process_times(time_list)
-display(times_df)
 ```
 
 Non-interactive plot:
