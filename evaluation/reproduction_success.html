@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -40,6 +60,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -128,8 +151,8 @@ require(['plotly'], function(Plotly) {
  <span class="dropdown-text">Reformat the tables</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../reproduction/reproduction.ipynb">
- <span class="dropdown-text"></span></a>
+    <a class="dropdown-item" href="../reproduction/scripts/reproduction.html">
+ <span class="dropdown-text">Reproduction</span></a>
   </li>  
     </ul>
   </li>
@@ -169,7 +192,7 @@ require(['plotly'], function(Plotly) {
 <span class="menu-text">Summary</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../evaluation/scripts/reflections.qmd"> 
+    <a class="nav-link" href="../evaluation/reflections.html"> 
 <span class="menu-text">Reflections</span></a>
   </li>  
 </ul>
@@ -196,7 +219,16 @@ require(['plotly'], function(Plotly) {
    
   <ul>
   <li><a href="#time-to-completion" id="toc-time-to-completion" class="nav-link active" data-scroll-target="#time-to-completion">Time-to-completion</a></li>
-  <li><a href="#figure-x" id="toc-figure-x" class="nav-link" data-scroll-target="#figure-x">Figure X</a></li>
+  <li><a href="#figure-2" id="toc-figure-2" class="nav-link" data-scroll-target="#figure-2">Figure 2</a></li>
+  <li><a href="#figure-3" id="toc-figure-3" class="nav-link" data-scroll-target="#figure-3">Figure 3</a></li>
+  <li><a href="#figure-4" id="toc-figure-4" class="nav-link" data-scroll-target="#figure-4">Figure 4</a></li>
+  <li><a href="#figure-5" id="toc-figure-5" class="nav-link" data-scroll-target="#figure-5">Figure 5</a></li>
+  <li><a href="#supplemental-table-2" id="toc-supplemental-table-2" class="nav-link" data-scroll-target="#supplemental-table-2">Supplemental Table 2</a></li>
+  <li><a href="#supplemental-table-3" id="toc-supplemental-table-3" class="nav-link" data-scroll-target="#supplemental-table-3">Supplemental Table 3</a></li>
+  <li><a href="#supplemental-table-4" id="toc-supplemental-table-4" class="nav-link" data-scroll-target="#supplemental-table-4">Supplemental Table 4</a></li>
+  <li><a href="#supplemental-table-5" id="toc-supplemental-table-5" class="nav-link" data-scroll-target="#supplemental-table-5">Supplemental Table 5</a></li>
+  <li><a href="#supplemental-table-6" id="toc-supplemental-table-6" class="nav-link" data-scroll-target="#supplemental-table-6">Supplemental Table 6</a></li>
+  <li><a href="#in-text-result-1" id="toc-in-text-result-1" class="nav-link" data-scroll-target="#in-text-result-1">In-text result 1</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/edit/main/evaluation/reproduction_success.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -223,13 +255,13 @@ require(['plotly'], function(Plotly) {
 
 
 <!-- TODO: Remove this warning once completed assessment -->
-<p><strong>Please note: This is a template page and has not yet been completed</strong></p>
-<!-- TODO: Use skeleton to create page describing reproduction success. If it is subjective (e.g. comparing figures), be sure to explain how you decided that the figure was now successfully reproduced or not -->
-<p>Of the X items in the scope, X% (X out of X) were considered to be <strong>successfully reproduced</strong>.</p>
-<p>As cited throughout, images on this page are sourced from <!-- Add @reference --></p>
+<p><strong>Please note: Work is ongoing, and this page is not yet complete</strong></p>
+<!-- TODO: Add this once complete -->
+<!-- Of the 10 items in the scope, X% (X out of X) were considered to be **successfully reproduced**. -->
+<p>As cited throughout, images on this page are sourced from <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></p>
 <section id="time-to-completion" class="level2">
 <h2 class="anchored" data-anchor-id="time-to-completion">Time-to-completion</h2>
-<div id="b11c9d49" class="cell" data-execution_count="1">
+<div id="1f90af3a" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 
@@ -250,91 +282,91 @@ require(['plotly'], function(Plotly) {
 <td>0.0</td>
 <td>Start</td>
 <td>0.0</td>
-<td>0.00</td>
+<td>0.000000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>486.0</td>
 <td>NaN</td>
 <td>0.0</td>
-<td>8.10</td>
+<td>8.100000</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>486.0</td>
 <td>Supplemental table 2</td>
 <td>10.0</td>
-<td>8.10</td>
+<td>8.100000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
 <td>513.0</td>
 <td>NaN</td>
 <td>10.0</td>
-<td>8.55</td>
+<td>8.550000</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
 <td>513.0</td>
 <td>Supplemental table 3</td>
 <td>20.0</td>
-<td>8.55</td>
+<td>8.550000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">5</td>
 <td>513.0</td>
 <td>NaN</td>
 <td>20.0</td>
-<td>8.55</td>
+<td>8.550000</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">6</td>
 <td>513.0</td>
 <td>Supplemental table 4</td>
 <td>30.0</td>
-<td>8.55</td>
+<td>8.550000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">7</td>
-<td>NaN</td>
+<td>607.0</td>
 <td>NaN</td>
 <td>30.0</td>
-<td>NaN</td>
+<td>10.116667</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">8</td>
-<td>NaN</td>
+<td>607.0</td>
 <td>Figure 2</td>
 <td>40.0</td>
-<td>NaN</td>
+<td>10.116667</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">9</td>
-<td>NaN</td>
+<td>647.0</td>
 <td>NaN</td>
 <td>40.0</td>
-<td>NaN</td>
+<td>10.783333</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">10</td>
-<td>NaN</td>
+<td>647.0</td>
 <td>Figure 3</td>
 <td>50.0</td>
-<td>NaN</td>
+<td>10.783333</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">11</td>
-<td>NaN</td>
+<td>655.0</td>
 <td>NaN</td>
 <td>50.0</td>
-<td>NaN</td>
+<td>10.916667</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">12</td>
-<td>NaN</td>
+<td>655.0</td>
 <td>Figure 4</td>
 <td>60.0</td>
-<td>NaN</td>
+<td>10.916667</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">13</td>
@@ -406,7 +438,7 @@ require(['plotly'], function(Plotly) {
 </div>
 </div>
 <p>Non-interactive plot:</p>
-<div id="89b18fc3" class="cell" data-execution_count="2">
+<div id="ffe794e8" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -416,11 +448,11 @@ require(['plotly'], function(Plotly) {
 </div>
 </div>
 <p>Interactive plot:</p>
-<div id="5051c5aa" class="cell" data-execution_count="3">
+<div id="5a944974" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
-<div>                            <div id="1efd7b6b-dcaa-4940-8239-ae72a8ade49f" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("1efd7b6b-dcaa-4940-8239-ae72a8ade49f")) {                    Plotly.newPlot(                        "1efd7b6b-dcaa-4940-8239-ae72a8ade49f",                        [{"hoverinfo":"skip","mode":"lines","x":[0.0,8.1,8.1,8.55,8.55,8.55,8.55,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"y":[0.0,0.0,10.0,10.0,20.0,20.0,30.0,30.0,40.0,40.0,50.0,50.0,60.0,60.0,70.0,70.0,80.0,80.0,90.0,90.0,100.0,100.0],"type":"scatter"},{"hoverlabel":{"namelength":0},"hovertemplate":"%{hovertext}\u003cbr\u003eTime: %{x:.1f} hours\u003cbr\u003eCompletion: %{y:.1f}%","hovertext":["Start","Supplemental table 2","Supplemental table 3","Supplemental table 4","Figure 2","Figure 3","Figure 4","Figure 5","Supplemental table 5","Supplemental table 6","In-text result 1"],"marker":{"color":"blue","size":6},"mode":"markers","x":[0.0,8.1,8.55,8.55,null,null,null,null,null,null,null],"y":[0.0,10.0,20.0,30.0,40.0,50.0,60.0,70.0,80.0,90.0,100.0],"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"title":{"text":"Time elapsed (hours)"},"range":[0,40],"fixedrange":true},"yaxis":{"title":{"text":"Percentage of items reproduced"},"range":[0,100],"ticksuffix":"%","fixedrange":true},"showlegend":false},                        {"displayModeBar": false, "responsive": true}                    ).then(function(){
+<div>                            <div id="8ebe06b4-7ff9-449f-961f-964745d62ab4" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("8ebe06b4-7ff9-449f-961f-964745d62ab4")) {                    Plotly.newPlot(                        "8ebe06b4-7ff9-449f-961f-964745d62ab4",                        [{"hoverinfo":"skip","mode":"lines","x":[0.0,8.1,8.1,8.55,8.55,8.55,8.55,10.116666666666667,10.116666666666667,10.783333333333333,10.783333333333333,10.916666666666666,10.916666666666666,null,null,null,null,null,null,null,null,null],"y":[0.0,0.0,10.0,10.0,20.0,20.0,30.0,30.0,40.0,40.0,50.0,50.0,60.0,60.0,70.0,70.0,80.0,80.0,90.0,90.0,100.0,100.0],"type":"scatter"},{"hoverlabel":{"namelength":0},"hovertemplate":"%{hovertext}\u003cbr\u003eTime: %{x:.1f} hours\u003cbr\u003eCompletion: %{y:.1f}%","hovertext":["Start","Supplemental table 2","Supplemental table 3","Supplemental table 4","Figure 2","Figure 3","Figure 4","Figure 5","Supplemental table 5","Supplemental table 6","In-text result 1"],"marker":{"color":"blue","size":6},"mode":"markers","x":[0.0,8.1,8.55,8.55,10.116666666666667,10.783333333333333,10.916666666666666,null,null,null,null],"y":[0.0,10.0,20.0,30.0,40.0,50.0,60.0,70.0,80.0,90.0,100.0],"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"title":{"text":"Time elapsed (hours)"},"range":[0,40],"fixedrange":true},"yaxis":{"title":{"text":"Percentage of items reproduced"},"range":[0,100],"ticksuffix":"%","fixedrange":true},"showlegend":false},                        {"displayModeBar": false, "responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('1efd7b6b-dcaa-4940-8239-ae72a8ade49f');
+var gd = document.getElementById('8ebe06b4-7ff9-449f-961f-964745d62ab4');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -446,19 +478,100 @@ if (outputEl) {{
 </div>
 </div>
 </section>
-<section id="figure-x" class="level2">
-<h2 class="anchored" data-anchor-id="figure-x">Figure X</h2>
-<p><strong>Consensus: Not reproduced / Successfully reproduced</strong></p>
-<p>Original figure:</p>
-<!-- Image, e.g.
-![](../original_study/fig2.jpg){width=80% fig-align="center" .lightbox} -->
+<section id="figure-2" class="level2">
+<h2 class="anchored" data-anchor-id="figure-2">Figure 2</h2>
+<!-- TODO: Add once have consensus
+**Consensus: Not reproduced / Successfully reproduced** -->
+<p>Original figure (<span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span>):</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../original_study/fig2.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="../original_study/fig2.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></a></p>
+</figure>
+</div>
 <p>Reproduction:</p>
-<!-- Image -->
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../reproduction/outputs/fig2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="../reproduction/outputs/fig2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></a></p>
+</figure>
+</div>
+</section>
+<section id="figure-3" class="level2">
+<h2 class="anchored" data-anchor-id="figure-3">Figure 3</h2>
+<p>Original figure (<span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span>):</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../original_study/fig3.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="../original_study/fig3.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></a></p>
+</figure>
+</div>
+<p>Reproduction:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../reproduction/outputs/fig3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="../reproduction/outputs/fig3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></a></p>
+</figure>
+</div>
+</section>
+<section id="figure-4" class="level2">
+<h2 class="anchored" data-anchor-id="figure-4">Figure 4</h2>
+<p>Original figure (<span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span>):</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../original_study/fig4.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="../original_study/fig4.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></a></p>
+</figure>
+</div>
+<p>Reproduction:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../reproduction/outputs/fig4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="../reproduction/outputs/fig4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></a></p>
+</figure>
+</div>
+</section>
+<section id="figure-5" class="level2">
+<h2 class="anchored" data-anchor-id="figure-5">Figure 5</h2>
+<p>Original figure (<span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span>):</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../original_study/fig5.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="../original_study/fig5.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></a></p>
+</figure>
+</div>
+<p>Reproduction:</p>
+<p>TBC</p>
+</section>
+<section id="supplemental-table-2" class="level2">
+<h2 class="anchored" data-anchor-id="supplemental-table-2">Supplemental Table 2</h2>
+<p>TBC</p>
+</section>
+<section id="supplemental-table-3" class="level2">
+<h2 class="anchored" data-anchor-id="supplemental-table-3">Supplemental Table 3</h2>
+<p>TBC</p>
+</section>
+<section id="supplemental-table-4" class="level2">
+<h2 class="anchored" data-anchor-id="supplemental-table-4">Supplemental Table 4</h2>
+<p>TBC</p>
+</section>
+<section id="supplemental-table-5" class="level2">
+<h2 class="anchored" data-anchor-id="supplemental-table-5">Supplemental Table 5</h2>
+<p>TBC</p>
+</section>
+<section id="supplemental-table-6" class="level2">
+<h2 class="anchored" data-anchor-id="supplemental-table-6">Supplemental Table 6</h2>
+<p>TBC</p>
+</section>
+<section id="in-text-result-1" class="level2">
+<h2 class="anchored" data-anchor-id="in-text-result-1">In-text result 1</h2>
+<p>Original:</p>
+<p>“The strongest protective effect is seen with the N95 masks (nearly equivalent to a FFP2 mask), which has the effect of reducing the odds of transmission by 0.09” <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></p>
+<p>Reproduction:</p>
+<p>TBC</p>
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-lim_staff_2020" class="csl-entry" role="listitem">
+Lim, Chun Yee, Mary Kathryn Bohn, Giuseppe Lippi, Maurizio Ferrari, Tze Ping Loh, Kwok-Yung Yuen, Khosrow Adeli, and Andrea Rita Horvath. 2020. <span>“Staff Rostering, Split Team Arrangement, Social Distancing (Physical Distancing) and Use of Personal Protective Equipment to Minimize Risk of Workplace Transmission During the <span>COVID</span>-19 Pandemic: <span>A</span> Simulation Study.”</span> <em>Clinical Biochemistry</em> 86 (December): 15–22. <a href="https://doi.org/10.1016/j.clinbiochem.2020.09.003">https://doi.org/10.1016/j.clinbiochem.2020.09.003</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -916,6 +1029,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false,"closeEffect":"zoom"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

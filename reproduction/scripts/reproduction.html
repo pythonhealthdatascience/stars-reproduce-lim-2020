@@ -146,8 +146,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Reformat the tables</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../reproduction/reproduction.ipynb">
- <span class="dropdown-text"></span></a>
+    <a class="dropdown-item" href="../../reproduction/scripts/reproduction.html">
+ <span class="dropdown-text">Reproduction</span></a>
   </li>  
     </ul>
   </li>
@@ -187,7 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Summary</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../evaluation/scripts/reflections.qmd"> 
+    <a class="nav-link" href="../../evaluation/reflections.html"> 
 <span class="menu-text">Reflections</span></a>
   </li>  
 </ul>
@@ -218,7 +218,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#import-results" id="toc-import-results" class="nav-link" data-scroll-target="#import-results">Import results</a></li>
   <li><a href="#function-to-compare-tables" id="toc-function-to-compare-tables" class="nav-link" data-scroll-target="#function-to-compare-tables">Function to compare tables</a></li>
   <li><a href="#examine-differences-in-supplementary-tables-2-3-and-4" id="toc-examine-differences-in-supplementary-tables-2-3-and-4" class="nav-link" data-scroll-target="#examine-differences-in-supplementary-tables-2-3-and-4">Examine differences in supplementary tables 2, 3 and 4</a></li>
+  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures">Figures</a>
+  <ul class="collapse">
   <li><a href="#figure-2" id="toc-figure-2" class="nav-link" data-scroll-target="#figure-2">Figure 2</a></li>
+  <li><a href="#figure-3" id="toc-figure-3" class="nav-link" data-scroll-target="#figure-3">Figure 3</a></li>
+  <li><a href="#figure-4" id="toc-figure-4" class="nav-link" data-scroll-target="#figure-4">Figure 4</a></li>
+  </ul></li>
   <li><a href="#time-elapsed" id="toc-time-elapsed" class="nav-link" data-scroll-target="#time-elapsed">Time elapsed</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.dev/pythonhealthdatascience/stars-reproduce-lim-2020/blob/main/reproduction/scripts/reproduction.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -289,8 +294,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    tab5 <span class="op">=</span> <span class="st">'supp_tab5_reformat.csv'</span></span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    tab6 <span class="op">=</span> <span class="st">'supp_tab6_reformat.csv'</span></span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    fig2 <span class="op">=</span> <span class="st">'fig2.png'</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>paths <span class="op">=</span> Paths()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    fig3 <span class="op">=</span> <span class="st">'fig3.png'</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    fig4 <span class="op">=</span> <span class="st">'fig4.png'</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>paths <span class="op">=</span> Paths()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="run-model" class="level2">
@@ -922,53 +929,64 @@ Name: diff, dtype: float64</code></pre>
 </div>
 </div>
 </section>
-<section id="figure-2" class="level2">
-<h2 class="anchored" data-anchor-id="figure-2">Figure 2</h2>
+<section id="figures" class="level2">
+<h2 class="anchored" data-anchor-id="figures">Figures</h2>
 <p>Define function to create the subplots</p>
 <div id="cell-30" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_fig2(fig_dict_list, ax, title):</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">'''</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Create one of the Figure 2 subplots</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters:</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">    -----------</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co">    fig_dict_list : list</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co">        List of dictionaries with parameters to filter dataframe by and for</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="co">        formatting the figure</span></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="co">    ax : axes object</span></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="co">        To create the plot on</span></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="co">    title : string</span></span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="co">        Title for the subplot</span></span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="co">    '''</span></span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create each of the line plots</span></span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> fig_dict <span class="kw">in</span> fig_dict_list:</span>
-<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Get the filters for the dataframe</span></span>
-<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>        filt <span class="op">=</span> {key: fig_dict[key] <span class="cf">for</span> key <span class="kw">in</span> [</span>
-<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>            <span class="st">'shifts_per_day'</span>, <span class="st">'staff_per_shift'</span>, <span class="st">'strength'</span>, <span class="st">'staff_change'</span>]}</span>
-<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Get subset of dataframe meeting the conditions</span></span>
-<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>        query <span class="op">=</span> <span class="st">' &amp; '</span>.join([<span class="ss">f"</span><span class="sc">{</span>col<span class="sc">}</span><span class="ss"> == </span><span class="sc">{</span>val<span class="sc">}</span><span class="ss">"</span> <span class="cf">for</span> col, val <span class="kw">in</span> filt.items()])</span>
-<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>        subset <span class="op">=</span> fig_dict[<span class="st">'df'</span>].query(query)</span>
-<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Reformat so ready to plot</span></span>
-<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>        to_plot <span class="op">=</span> subset.set_index(<span class="st">'end_of_day'</span>)[<span class="st">'prop_infected'</span>]</span>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_fig(fig_dict_list, ax, letter, title,</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>             ylabel<span class="op">=</span><span class="st">'Proportion of staff infected'</span>, legend<span class="op">=</span><span class="va">True</span>):</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">'''</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Create one of the subplots from the article's figures.</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters:</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co">    -----------</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co">    fig_dict_list : list</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="co">        List of dictionaries with parameters to filter dataframe by and for</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="co">        formatting the figure</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="co">    ax : axes object</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="co">        To create the plot on</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="co">    letter : string</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="co">        Letter of subplot (e.g. '(a)', '(b)')</span></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="co">    title : string</span></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a><span class="co">        Title for the subplot</span></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a><span class="co">    ylabel : string</span></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a><span class="co">        Title for Y axis</span></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a><span class="co">    legend : boolean</span></span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a><span class="co">        Whether to include a figure legend for that subplot</span></span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a><span class="co">    '''</span></span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create each of the line plots</span></span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> fig_dict <span class="kw">in</span> fig_dict_list:</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Get the filters for the dataframe</span></span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>        filt <span class="op">=</span> {key: fig_dict[key] <span class="cf">for</span> key <span class="kw">in</span> [</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>            <span class="st">'shifts_per_day'</span>, <span class="st">'staff_per_shift'</span>, <span class="st">'strength'</span>, <span class="st">'staff_change'</span>]}</span>
 <span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Plot on ax</span></span>
-<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>        ax.plot(to_plot, label<span class="op">=</span>fig_dict[<span class="st">'label'</span>], color<span class="op">=</span>fig_dict[<span class="st">'color'</span>],</span>
-<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>                linestyle<span class="op">=</span>fig_dict[<span class="st">'linestyle'</span>], linewidth<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Get subset of dataframe meeting the conditions</span></span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>        query <span class="op">=</span> <span class="st">' &amp; '</span>.join([<span class="ss">f"</span><span class="sc">{</span>col<span class="sc">}</span><span class="ss"> == </span><span class="sc">{</span>val<span class="sc">}</span><span class="ss">"</span> <span class="cf">for</span> col, val <span class="kw">in</span> filt.items()])</span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>        subset <span class="op">=</span> fig_dict[<span class="st">'df'</span>].query(query)</span>
 <span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Formatting the figure to match the paper</span></span>
-<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>    ax.set_title(title)</span>
-<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">'Day'</span>)</span>
-<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a>    ax.set_xticks(np.arange(<span class="dv">0</span>, <span class="dv">21</span>, <span class="dv">5</span>))</span>
-<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a>    ax.set_ylabel(<span class="st">'Proportion of staff infected'</span>)</span>
-<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>    ax.set_ylim(<span class="dv">0</span>, <span class="dv">1</span>)</span>
-<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a>    ax.legend(loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
-<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a>    ax.grid()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Reformat so ready to plot</span></span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>        to_plot <span class="op">=</span> subset.set_index(<span class="st">'end_of_day'</span>)[<span class="st">'prop_infected'</span>]</span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Plot on ax</span></span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a>        ax.plot(to_plot, label<span class="op">=</span>fig_dict[<span class="st">'label'</span>], color<span class="op">=</span>fig_dict[<span class="st">'color'</span>],</span>
+<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>                linestyle<span class="op">=</span>fig_dict[<span class="st">'linestyle'</span>], linewidth<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Formatting the figure to match the paper</span></span>
+<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a>    ax.set_title(title)</span>
+<span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">'Day'</span>)</span>
+<span id="cb17-43"><a href="#cb17-43" aria-hidden="true" tabindex="-1"></a>    ax.set_xticks(np.arange(<span class="dv">0</span>, <span class="dv">21</span>, <span class="dv">5</span>))</span>
+<span id="cb17-44"><a href="#cb17-44" aria-hidden="true" tabindex="-1"></a>    ax.set_ylabel(ylabel)</span>
+<span id="cb17-45"><a href="#cb17-45" aria-hidden="true" tabindex="-1"></a>    ax.set_ylim(<span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb17-46"><a href="#cb17-46" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> legend <span class="op">==</span> <span class="va">True</span>:</span>
+<span id="cb17-47"><a href="#cb17-47" aria-hidden="true" tabindex="-1"></a>        ax.legend(loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
+<span id="cb17-48"><a href="#cb17-48" aria-hidden="true" tabindex="-1"></a>    ax.annotate(letter, xy<span class="op">=</span>(<span class="op">-</span><span class="fl">0.15</span>, <span class="fl">1.1</span>), xycoords<span class="op">=</span><span class="st">'axes fraction'</span>)</span>
+<span id="cb17-49"><a href="#cb17-49" aria-hidden="true" tabindex="-1"></a>    ax.grid()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<section id="figure-2" class="level3">
+<h3 class="anchored" data-anchor-id="figure-2">Figure 2</h3>
 <p>Set out parameters for each of the lines</p>
-<div id="cell-32" class="cell" data-execution_count="15">
+<div id="cell-33" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>fig2a_black <span class="op">=</span> {</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'shifts_per_day'</span>: <span class="dv">1</span>,</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'staff_per_shift'</span>: <span class="dv">30</span>,</span>
@@ -1042,7 +1060,7 @@ Name: diff, dtype: float64</code></pre>
 <span id="cb18-71"><a href="#cb18-71" aria-hidden="true" tabindex="-1"></a>    <span class="st">'staff_change'</span>: <span class="dv">1</span>,</span>
 <span id="cb18-72"><a href="#cb18-72" aria-hidden="true" tabindex="-1"></a>    <span class="st">'df'</span>: model_base5,</span>
 <span id="cb18-73"><a href="#cb18-73" aria-hidden="true" tabindex="-1"></a>    <span class="st">'label'</span>: <span class="st">'5%'</span>,</span>
-<span id="cb18-74"><a href="#cb18-74" aria-hidden="true" tabindex="-1"></a>    <span class="st">'color'</span>: <span class="st">'blue'</span>,</span>
+<span id="cb18-74"><a href="#cb18-74" aria-hidden="true" tabindex="-1"></a>    <span class="st">'color'</span>: <span class="st">'#0D5BB7'</span>,</span>
 <span id="cb18-75"><a href="#cb18-75" aria-hidden="true" tabindex="-1"></a>    <span class="st">'linestyle'</span>: <span class="st">':'</span></span>
 <span id="cb18-76"><a href="#cb18-76" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb18-77"><a href="#cb18-77" aria-hidden="true" tabindex="-1"></a></span>
@@ -1064,23 +1082,23 @@ Name: diff, dtype: float64</code></pre>
 <span id="cb18-93"><a href="#cb18-93" aria-hidden="true" tabindex="-1"></a>    <span class="st">'staff_change'</span>: <span class="dv">1</span>,</span>
 <span id="cb18-94"><a href="#cb18-94" aria-hidden="true" tabindex="-1"></a>    <span class="st">'df'</span>: model_base30,</span>
 <span id="cb18-95"><a href="#cb18-95" aria-hidden="true" tabindex="-1"></a>    <span class="st">'label'</span>: <span class="st">'3%'</span>,</span>
-<span id="cb18-96"><a href="#cb18-96" aria-hidden="true" tabindex="-1"></a>    <span class="st">'color'</span>: <span class="st">'red'</span>,</span>
+<span id="cb18-96"><a href="#cb18-96" aria-hidden="true" tabindex="-1"></a>    <span class="st">'color'</span>: <span class="st">'#C14C46'</span>,</span>
 <span id="cb18-97"><a href="#cb18-97" aria-hidden="true" tabindex="-1"></a>    <span class="st">'linestyle'</span>: <span class="st">'--'</span></span>
 <span id="cb18-98"><a href="#cb18-98" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Create the figure</p>
-<div id="cell-34" class="cell" data-execution_count="16">
+<div id="cell-35" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up number of subplots and figure size</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the subplots</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>plot_fig2([fig2a_black, fig2a_green], ax[<span class="dv">0</span>,<span class="dv">0</span>],</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>plot_fig([fig2a_black, fig2a_green], ax[<span class="dv">0</span>,<span class="dv">0</span>], letter<span class="op">=</span><span class="st">'(a)'</span>,</span>
 <span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'1 shift per day</span><span class="ch">\n</span><span class="st">Total staff = 60'</span>)</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>plot_fig2([fig2b_black, fig2b_green], ax[<span class="dv">0</span>,<span class="dv">1</span>],</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>plot_fig([fig2b_black, fig2b_green], ax[<span class="dv">0</span>,<span class="dv">1</span>], letter<span class="op">=</span><span class="st">'(b)'</span>,</span>
 <span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'2 shifts per day</span><span class="ch">\n</span><span class="st">Total staff = 120'</span>)</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>plot_fig2([fig2c_black, fig2c_green], ax[<span class="dv">1</span>,<span class="dv">0</span>],</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>plot_fig([fig2c_black, fig2c_green], ax[<span class="dv">1</span>,<span class="dv">0</span>], letter<span class="op">=</span><span class="st">'(c)'</span>,</span>
 <span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'3 shifts per day</span><span class="ch">\n</span><span class="st">Total staff = 120'</span>)</span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>plot_fig2([fig2d_blue, fig2d_black, fig2d_red], ax[<span class="dv">1</span>,<span class="dv">1</span>],</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>plot_fig([fig2d_blue, fig2d_black, fig2d_red], ax[<span class="dv">1</span>,<span class="dv">1</span>], letter<span class="op">=</span><span class="st">'(d)'</span>,</span>
 <span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>          title<span class="op">=</span><span class="st">'2 shifts per day</span><span class="ch">\n</span><span class="st">Total staff = 4 x 30 staff/shift'</span>)</span>
 <span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Prevent overlap between subplots</span></span>
@@ -1100,17 +1118,241 @@ Name: diff, dtype: float64</code></pre>
 </div>
 </div>
 </section>
+<section id="figure-3" class="level3">
+<h3 class="anchored" data-anchor-id="figure-3">Figure 3</h3>
+<p>Formatting for each of the four lines (which are the same for each subplot)</p>
+<div id="cell-38" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>fig3_lines <span class="op">=</span> [</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Black line</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'staff_per_shift'</span>: <span class="dv">5</span>,</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'label'</span>: <span class="st">'5 staff/shift'</span>,</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">'color'</span>: <span class="st">'black'</span>,</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">'linestyle'</span>: <span class="st">'-'</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Green line</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">'staff_per_shift'</span>: <span class="dv">10</span>,</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">'label'</span>: <span class="st">'10 staff/shift'</span>,</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">'color'</span>: <span class="st">'#94B454'</span>,</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">'linestyle'</span>: <span class="st">'--'</span></span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Purple line</span></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">'staff_per_shift'</span>: <span class="dv">20</span>,</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">'label'</span>: <span class="st">'20 staff/shift'</span>,</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">'color'</span>: <span class="st">'#7F619D'</span>,</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">'linestyle'</span>: <span class="st">':'</span></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Red line</span></span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">'staff_per_shift'</span>: <span class="dv">30</span>,</span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">'label'</span>: <span class="st">'30 staff/shift'</span>,</span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">'color'</span>: <span class="st">'#C14C46'</span>,</span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">'linestyle'</span>: <span class="st">'-'</span></span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Set default parameters for each subplot</p>
+<div id="cell-40" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>all_fig3 <span class="op">=</span> {</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'staff_change'</span>: <span class="dv">1</span>,</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'df'</span>: model_base15</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># These are default for Figure 3 and 4, so we reuse them below</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>all_fig34a <span class="op">=</span> {</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'shifts_per_day'</span>: <span class="dv">1</span>,</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'strength'</span>: <span class="dv">4</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>all_fig34b <span class="op">=</span> {</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">'shifts_per_day'</span>: <span class="dv">1</span>,</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">'strength'</span>: <span class="dv">6</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>all_fig34c <span class="op">=</span> {</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">'shifts_per_day'</span>: <span class="dv">2</span>,</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">'strength'</span>: <span class="dv">4</span></span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>all_fig34d <span class="op">=</span> {</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">'shifts_per_day'</span>: <span class="dv">2</span>,</span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">'strength'</span>: <span class="dv">6</span></span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>all_fig34e <span class="op">=</span> {</span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>    <span class="st">'shifts_per_day'</span>: <span class="dv">3</span>,</span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">'strength'</span>: <span class="dv">4</span></span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a>all_fig34f <span class="op">=</span> {</span>
+<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a>    <span class="st">'shifts_per_day'</span>: <span class="dv">3</span>,</span>
+<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a>    <span class="st">'strength'</span>: <span class="dv">6</span></span>
+<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Combine dictionaries to get conditions for plots</p>
+<div id="cell-42" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>fig3a <span class="op">=</span> [{<span class="op">**</span>all_fig3, <span class="op">**</span>all_fig34a, <span class="op">**</span>x} <span class="cf">for</span> x <span class="kw">in</span> fig3_lines]</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>fig3b <span class="op">=</span> [{<span class="op">**</span>all_fig3, <span class="op">**</span>all_fig34b, <span class="op">**</span>x} <span class="cf">for</span> x <span class="kw">in</span> fig3_lines]</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>fig3c <span class="op">=</span> [{<span class="op">**</span>all_fig3, <span class="op">**</span>all_fig34c, <span class="op">**</span>x} <span class="cf">for</span> x <span class="kw">in</span> fig3_lines]</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>fig3d <span class="op">=</span> [{<span class="op">**</span>all_fig3, <span class="op">**</span>all_fig34d, <span class="op">**</span>x} <span class="cf">for</span> x <span class="kw">in</span> fig3_lines]</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>fig3e <span class="op">=</span> [{<span class="op">**</span>all_fig3, <span class="op">**</span>all_fig34e, <span class="op">**</span>x} <span class="cf">for</span> x <span class="kw">in</span> fig3_lines]</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>fig3f <span class="op">=</span> [{<span class="op">**</span>all_fig3, <span class="op">**</span>all_fig34f, <span class="op">**</span>x} <span class="cf">for</span> x <span class="kw">in</span> fig3_lines]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Create the plot</p>
+<div id="cell-44" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up number of subplots and figure size</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">3</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">9</span>))</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>plot_fig(fig3a, ax[<span class="dv">0</span>,<span class="dv">0</span>], title<span class="op">=</span><span class="st">'Total staff = 4 x no. staff/shift'</span>,</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>         letter<span class="op">=</span><span class="st">'(a)'</span>,</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>         ylabel<span class="op">=</span><span class="st">'$</span><span class="ch">\\</span><span class="st">bf{1\ shift\ per\ day}$</span><span class="ch">\n</span><span class="st">Proportion of staff infected'</span>)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>plot_fig(fig3b, ax[<span class="dv">0</span>,<span class="dv">1</span>], letter<span class="op">=</span><span class="st">'(b)'</span>,</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>         title<span class="op">=</span><span class="st">'Total staff = 6 x no. staff/shift'</span>, legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>plot_fig(fig3c, ax[<span class="dv">1</span>,<span class="dv">0</span>], letter<span class="op">=</span><span class="st">'(c)'</span>, title<span class="op">=</span><span class="st">''</span>,</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>         ylabel<span class="op">=</span><span class="st">'$</span><span class="ch">\\</span><span class="st">bf{2\ shifts\ per\ day}$</span><span class="ch">\n</span><span class="st">Proportion of staff infected'</span>,</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>         legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>plot_fig(fig3d, ax[<span class="dv">1</span>,<span class="dv">1</span>], letter<span class="op">=</span><span class="st">'(d)'</span>, title<span class="op">=</span><span class="st">''</span>, legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>plot_fig(fig3e, ax[<span class="dv">2</span>,<span class="dv">0</span>], letter<span class="op">=</span><span class="st">'(e)'</span>, title<span class="op">=</span><span class="st">''</span>,</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>         ylabel<span class="op">=</span><span class="st">'$</span><span class="ch">\\</span><span class="st">bf{3\ shifts\ per\ day}$</span><span class="ch">\n</span><span class="st">Proportion of staff infected'</span>,</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>         legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>plot_fig(fig3f, ax[<span class="dv">2</span>,<span class="dv">1</span>], letter<span class="op">=</span><span class="st">'(f)'</span>, title<span class="op">=</span><span class="st">''</span>, legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Prevent overlap between subplots</span></span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the figure</span></span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a>plt.savefig(os.path.join(paths.outputs, paths.fig3))</span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the figure</span></span>
+<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="reproduction_files/figure-html/cell-21-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="figure-4" class="level3">
+<h3 class="anchored" data-anchor-id="figure-4">Figure 4</h3>
+<p>Formatting for each of the five lines (which are the same for each subplot)</p>
+<div id="cell-46" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>fig4_lines <span class="op">=</span> [</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Black line</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'staff_change'</span>: <span class="dv">1</span>,</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'label'</span>: <span class="st">'Shift change after 1 day'</span>,</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">'color'</span>: <span class="st">'black'</span>,</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">'linestyle'</span>: <span class="st">'-'</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Grey line</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">'staff_change'</span>: <span class="dv">3</span>,</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">'label'</span>: <span class="st">'Shift change after 3 days'</span>,</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">'color'</span>: <span class="st">'#7F7F7F'</span>,</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">'linestyle'</span>: <span class="st">'--'</span></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Blue line</span></span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">'staff_change'</span>: <span class="dv">7</span>,</span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">'label'</span>: <span class="st">'Shift change after 7 days'</span>,</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">'color'</span>: <span class="st">'#0054B4'</span>,</span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">'linestyle'</span>: <span class="st">':'</span></span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Red line</span></span>
+<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">'staff_change'</span>: <span class="dv">14</span>,</span>
+<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">'label'</span>: <span class="st">'Shift change after 14 days'</span>,</span>
+<span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">'color'</span>: <span class="st">'#F20000'</span>,</span>
+<span id="cb24-28"><a href="#cb24-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">'linestyle'</span>: <span class="st">'-'</span></span>
+<span id="cb24-29"><a href="#cb24-29" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb24-30"><a href="#cb24-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Green line</span></span>
+<span id="cb24-31"><a href="#cb24-31" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb24-32"><a href="#cb24-32" aria-hidden="true" tabindex="-1"></a>        <span class="st">'staff_change'</span>: <span class="dv">21</span>,</span>
+<span id="cb24-33"><a href="#cb24-33" aria-hidden="true" tabindex="-1"></a>        <span class="st">'label'</span>: <span class="st">'Shift change after 21 days'</span>,</span>
+<span id="cb24-34"><a href="#cb24-34" aria-hidden="true" tabindex="-1"></a>        <span class="st">'color'</span>: <span class="st">'#9BB05C'</span>,</span>
+<span id="cb24-35"><a href="#cb24-35" aria-hidden="true" tabindex="-1"></a>        <span class="st">'linestyle'</span>: <span class="st">'--'</span></span>
+<span id="cb24-36"><a href="#cb24-36" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb24-37"><a href="#cb24-37" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Set default parameters for subplots (using some defined above, as same as Figure 3 for some)</p>
+<div id="cell-48" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>all_fig4 <span class="op">=</span> {</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'staff_per_shift'</span>: <span class="dv">20</span>,</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'df'</span>: model_base15</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Combine dictionaries to get conditions for plots</p>
+<div id="cell-50" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>fig4a <span class="op">=</span> [{<span class="op">**</span>all_fig4, <span class="op">**</span>all_fig34a, <span class="op">**</span>x} <span class="cf">for</span> x <span class="kw">in</span> fig4_lines]</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>fig4b <span class="op">=</span> [{<span class="op">**</span>all_fig4, <span class="op">**</span>all_fig34b, <span class="op">**</span>x} <span class="cf">for</span> x <span class="kw">in</span> fig4_lines]</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>fig4c <span class="op">=</span> [{<span class="op">**</span>all_fig4, <span class="op">**</span>all_fig34c, <span class="op">**</span>x} <span class="cf">for</span> x <span class="kw">in</span> fig4_lines]</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>fig4d <span class="op">=</span> [{<span class="op">**</span>all_fig4, <span class="op">**</span>all_fig34d, <span class="op">**</span>x} <span class="cf">for</span> x <span class="kw">in</span> fig4_lines]</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>fig4e <span class="op">=</span> [{<span class="op">**</span>all_fig4, <span class="op">**</span>all_fig34e, <span class="op">**</span>x} <span class="cf">for</span> x <span class="kw">in</span> fig4_lines]</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>fig4f <span class="op">=</span> [{<span class="op">**</span>all_fig4, <span class="op">**</span>all_fig34f, <span class="op">**</span>x} <span class="cf">for</span> x <span class="kw">in</span> fig4_lines]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Create the plot</p>
+<div id="cell-52" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up number of subplots and figure size</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">3</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">9</span>))</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>plot_fig(fig4a, ax[<span class="dv">0</span>,<span class="dv">0</span>], letter<span class="op">=</span><span class="st">'(a)'</span>,</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>         title<span class="op">=</span><span class="st">'Total staff = 4 x no. staff/shift'</span>,</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>         ylabel<span class="op">=</span><span class="st">'$</span><span class="ch">\\</span><span class="st">bf{1\ shift\ per\ day}$</span><span class="ch">\n</span><span class="st">Proportion of staff infected'</span>,</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>         legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>plot_fig(fig4b, ax[<span class="dv">0</span>,<span class="dv">1</span>], letter<span class="op">=</span><span class="st">'(b)'</span>,</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>         title<span class="op">=</span><span class="st">'Total staff = 6 x no. staff/shift'</span>, legend<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>plot_fig(fig4c, ax[<span class="dv">1</span>,<span class="dv">0</span>], letter<span class="op">=</span><span class="st">'(c)'</span>, title<span class="op">=</span><span class="st">''</span>,</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>         ylabel<span class="op">=</span><span class="st">'$</span><span class="ch">\\</span><span class="st">bf{2\ shifts\ per\ day}$</span><span class="ch">\n</span><span class="st">Proportion of staff infected'</span>,</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>         legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>plot_fig(fig4d, ax[<span class="dv">1</span>,<span class="dv">1</span>], letter<span class="op">=</span><span class="st">'(d)'</span>, title<span class="op">=</span><span class="st">''</span>, legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>plot_fig(fig4e, ax[<span class="dv">2</span>,<span class="dv">0</span>], letter<span class="op">=</span><span class="st">'(e)'</span>, title<span class="op">=</span><span class="st">''</span>,</span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>         ylabel<span class="op">=</span><span class="st">'$</span><span class="ch">\\</span><span class="st">bf{3\ shifts\ per\ day}$</span><span class="ch">\n</span><span class="st">Proportion of staff infected'</span>,</span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>         legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>plot_fig(fig4f, ax[<span class="dv">2</span>,<span class="dv">1</span>], letter<span class="op">=</span><span class="st">'(f)'</span>, title<span class="op">=</span><span class="st">''</span>, legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Prevent overlap between subplots</span></span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the figure</span></span>
+<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a>plt.savefig(os.path.join(paths.outputs, paths.fig4))</span>
+<span id="cb27-29"><a href="#cb27-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-30"><a href="#cb27-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the figure</span></span>
+<span id="cb27-31"><a href="#cb27-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="reproduction_files/figure-html/cell-25-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
 <section id="time-elapsed" class="level2">
 <h2 class="anchored" data-anchor-id="time-elapsed">Time elapsed</h2>
-<div id="cell-36" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find run time in seconds</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>end <span class="op">=</span> time.time()</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>runtime <span class="op">=</span> <span class="bu">round</span>(end<span class="op">-</span>start)</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Display converted to minutes and seconds</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Notebook run time: </span><span class="sc">{</span>runtime<span class="op">//</span><span class="dv">60</span><span class="sc">}</span><span class="ss">m </span><span class="sc">{</span>runtime<span class="op">%</span><span class="dv">60</span><span class="sc">}</span><span class="ss">s'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-54" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find run time in seconds</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>end <span class="op">=</span> time.time()</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>runtime <span class="op">=</span> <span class="bu">round</span>(end<span class="op">-</span>start)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Display converted to minutes and seconds</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Notebook run time: </span><span class="sc">{</span>runtime<span class="op">//</span><span class="dv">60</span><span class="sc">}</span><span class="ss">m </span><span class="sc">{</span>runtime<span class="op">%</span><span class="dv">60</span><span class="sc">}</span><span class="ss">s'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Notebook run time: 0m 2s</code></pre>
+<pre><code>Notebook run time: 0m 4s</code></pre>
 </div>
 </div>
 
