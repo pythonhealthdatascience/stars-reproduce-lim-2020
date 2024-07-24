@@ -8,7 +8,7 @@ bibliography: ../../../quarto_site/references.bib
 
 ::: {.callout-note}
 
-Finished reproduction and completed evaluation against guidelines. Total time used for reproduction: 12h 27m (31.1%). Time used for evaluation: 1h 23m.
+Finished reproduction and completed evaluation against guidelines. Total time used for reproduction: 12h 27m (31.1%). Time used for evaluation: 1h 30m.
 
 :::
 
@@ -303,6 +303,9 @@ calculate_times(used_to_date, times)
 
 `12 Is cross validation performed and reported` - In previous studies, if they have mentioned that it was not possible to compare due to there not being other relevant studies, I've set as N/A. However, they do not mention this. Also, they state that estimates on protective effectives of PPE for severe acute respiratory syndrome (SARS) "should be broadly applicable to the current COVID-19 situation", so it's assumed that there could be models in that context, and as not described as being a lack of models in this paper, could reasonably assume that there could be relevant models available that were not identified and used for cross validation.
 
+## 16.40-16.47: Wrote email to Tom and Alison sharing uncertainities from evaluation
+
+
 ```{python}
 import sys
 sys.path.append('../')
@@ -316,7 +319,8 @@ times = [
     ('13.57', '14.03'),
     ('14.07', '14.16'),
     ('14.17', '15.05'),
-    ('16.06', '16.26')]
+    ('16.06', '16.26'),
+    ('16.40', '16.47')]
 
 calculate_times(used_to_date, times, limit=False)
 ```
