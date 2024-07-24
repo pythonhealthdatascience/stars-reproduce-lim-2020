@@ -23,7 +23,7 @@ website:
           - text: README
             href: quarto_site/reproduction_readme.qmd
           - href: original_study/reformat_tables.ipynb
-          - href: reproduction/reproduction.ipynb
+          - href: reproduction/scripts/reproduction.ipynb
       - text: Evaluation
         menu:
           - evaluation/scope.qmd
@@ -35,7 +35,7 @@ website:
       - text: Summary
         href: evaluation/reproduction_report.qmd
       - text: Reflections
-        href: evaluation/scripts/reflections.qmd
+        href: evaluation/reflections.qmd
     # Right-aligned within navbar...
     right:
       - icon: github
