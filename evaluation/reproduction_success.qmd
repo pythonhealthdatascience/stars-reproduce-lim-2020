@@ -8,9 +8,11 @@ bibliography: ../quarto_site/references.bib
 **Please note: Work is ongoing, and this page is not yet complete**
 
 <!-- TODO: Add this once complete -->
-<!-- Of the 9 items in the scope, X% (X out of X) were considered to be **successfully reproduced**. -->
+<!-- Of the 9 items in the scope, 100% (9 out of 9) were considered to be **successfully reproduced**. -->
 
 As cited throughout, images on this page are sourced from @lim_staff_2020
+
+Due to the size of the original tables, I have previewed the head of each, but then presented descriptive statistics from comparing all the values in each table.
 
 ## Time-to-completion
 
@@ -20,12 +22,11 @@ import pandas as pd
 from time_to_complete import process_times, success_static, success_interactive
 
 # List of time to complete each item
-# TODO: Change to actual items and times for this project
 time_list = [
     [607, 'Figure 2'],
     [647, 'Figure 3'],
     [655, 'Figure 4'],
-    [np.nan, 'Figure 5'],
+    [747, 'Figure 5'],
     [486, 'Supplemental table 2'],
     [513, 'Supplemental table 3'],
     [513, 'Supplemental table 4'],
@@ -87,34 +88,107 @@ Original figure (@lim_staff_2020):
 
 Reproduction:
 
-TBC
+![](../reproduction/outputs/fig5.png){width=80% fig-align="center" .lightbox}
 
 ## Supplemental Table 2
 
-TBC
+```{python}
+def view_tables(paper_path, model_path):
+    '''
+    Preview table (created function as need to sort columns so they're in the
+    same order between the original and reproduction table when viewing).
+
+    Then describe the absolute difference in values between the tables.
+
+    Parameters:
+    -----------
+    paper_path : string
+        Path to CSV file with result from model
+    model_path : string
+        Path to CSV file with result from model
+    '''
+    # Import dataframes
+    paper_tab = pd.read_csv(paper_path)
+    model_tab = pd.read_csv(model_path)
+
+    # Get columns from paper, and use those to order and sort rows
+    cols = paper_tab.columns.to_list()
+
+    # Sort and preview both dataframes
+    text = ['Preview of original', 'Preview of reproduction']
+    i=0
+    for df in [paper_tab, model_tab]:
+        # Sort columns
+        df = df[cols]
+        # Sort rows
+        df = df.sort_values(by=cols)
+        # View first ten rows of dataframe
+        display(text[i])
+        display(df.head(10))
+        i += 1
+
+    # Merge the dataframes
+    comp = pd.merge(
+        model_tab.rename(columns={'prop_infected': 'prop_infected_model'}),
+        paper_tab.rename(columns={'prop_infected': 'prop_infected_paper'}))
+
+    # Calculate difference
+    comp['diff'] = abs(comp['prop_infected_model'] -
+                       comp['prop_infected_paper'])
+
+    # Display descriptive statistics for that difference
+    display(comp['diff'].describe())
+```
+
+Preview of the reformatted original table (@lim_staff_2020) alongside the reproduced table.
+
+Then, shares the results from calculating the absolute difference in the `prop_infected` row between the tables, and describes the observed differences.
+
+```{python}
+view_tables('../original_study/supp_tab2_reformat.csv',
+            '../reproduction/outputs/supp_tab2_reformat.csv')
+```
 
 ## Supplemental Table 3
 
-TBC
+Preview of the reformatted original table (@lim_staff_2020) alongside the reproduced table.
+
+Then, shares the results from calculating the absolute difference in the `prop_infected` row between the tables, and describes the observed differences.
+
+```{python}
+view_tables('../original_study/supp_tab3_reformat.csv',
+            '../reproduction/outputs/supp_tab3_reformat.csv')
+```
 
 ## Supplemental Table 4
 
-TBC
+Preview of the reformatted original table (@lim_staff_2020) alongside the reproduced table.
+
+Then, shares the results from calculating the absolute difference in the `prop_infected` row between the tables, and describes the observed differences.
+
+```{python}
+view_tables('../original_study/supp_tab4_reformat.csv',
+            '../reproduction/outputs/supp_tab4_reformat.csv')
+```
 
 ## Supplemental Table 5
 
-TBC
+Preview of the reformatted original table (@lim_staff_2020) alongside the reproduced table.
+
+Then, shares the results from calculating the absolute difference in the `prop_infected` row between the tables, and describes the observed differences.
+
+```{python}
+view_tables('../original_study/supp_tab5_reformat.csv',
+            '../reproduction/outputs/supp_tab5_reformat.csv')
+```
 
 ## Supplemental Table 6
 
-TBC
+Preview of the reformatted original table (@lim_staff_2020) alongside the reproduced table.
 
-## In-text result 1
+Then, shares the results from calculating the absolute difference in the `prop_infected` row between the tables, and describes the observed differences.
 
-Original:
-
-"The strongest protective effect is seen with the N95 masks (nearly equivalent to a FFP2 mask), which has the effect of reducing the odds of transmission by 0.09" @lim_staff_2020
-
-Reproduction:
-
-TBC
+```{python}
+view_tables('../original_study/supp_tab6_reformat.csv',
+            '../reproduction/outputs/supp_tab6_reformat.csv')
+```
