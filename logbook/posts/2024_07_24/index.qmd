@@ -2,13 +2,13 @@
 title: "Day 4"
 author: "Amy Heather"
 date: "2024-07-24"
-categories: [reproduction]
+categories: [reproduce, guidelines]
 bibliography: ../../../quarto_site/references.bib
 ---
 
 ::: {.callout-note}
 
-TBC. Total time used for reproduction: 12h 27m (31.1%)
+Finished reproduction and completed evaluation against guidelines. Total time used for reproduction: 12h 27m (31.1%). Time used for evaluation: 1h 23m.
 
 :::
 
@@ -252,7 +252,11 @@ times = [
 calculate_times(used_to_date, times)
 ```
 
-## Timings
+## Untimed: Displaying the tables on reproduction success page
+
+Due to size of tables, created function to preview and show differences in the tables, rather than just sharing the whole tables, as I normally would.
+
+## Timings for reproduction
 
 ```{python}
 import sys
@@ -277,4 +281,42 @@ times = [
     ('12.21', '12.50')]
 
 calculate_times(used_to_date, times)
+```
+
+## 13.57-14.03: STARS framework
+
+## 14.07-14.16: Journal badges
+
+`complete`: marked as no as I had to write code for scenarios, figures and tables
+
+`structure`: **uncertain**, tentatively marked as unmet, as I feel what was provided was well structured (with comments akin to docstrings at the start of functions, lots of comments throughout the script), although I am uncertain as I also had to make several changes in order to more easily use it (as some of the parameters were hard-coded in the for loop or functions, etc.)
+
+`documentation_sufficient`: it meets that documentation is sufficient to "understand how it works, to enable it to be run", but not "including package versions", and so marked as unmet
+
+## 14.17-15.05: STRESS-DES
+
+`2.5.3 Components - resources` and `2.5.4 Components - queues` - **uncertain**, want to double check whether I am correct in marking as N/A.
+
+## 16.06-16.26: Checklist derived from ISPOR-SDM
+
+`6 Is the target population described?` - **uncertain**, set as N/A, but could you argue fully met, given the context and what would be relevant to describe about the target population? Or is this wanting numbers of laboratories and so on? Partially? Not met? Very unsure!
+
+`12 Is cross validation performed and reported` - In previous studies, if they have mentioned that it was not possible to compare due to there not being other relevant studies, I've set as N/A. However, they do not mention this. Also, they state that estimates on protective effectives of PPE for severe acute respiratory syndrome (SARS) "should be broadly applicable to the current COVID-19 situation", so it's assumed that there could be models in that context, and as not described as being a lack of models in this paper, could reasonably assume that there could be relevant models available that were not identified and used for cross validation.
+
+```{python}
+import sys
+sys.path.append('../')
+from timings import calculate_times
+
+# Minutes used prior to today
+used_to_date = 0
+
+# Times from today
+times = [
+    ('13.57', '14.03'),
+    ('14.07', '14.16'),
+    ('14.17', '15.05'),
+    ('16.06', '16.26')]
+
+calculate_times(used_to_date, times, limit=False)
 ```
