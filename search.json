@@ -193,14 +193,14 @@
     "href": "evaluation/reproduction_report.html#study",
     "title": "Summary report",
     "section": "Study",
-    "text": "Study\n\n[Authors]. [Title]. [Journal] [Volume], [Edition] ([Year]). &lt;[URL]&gt;.\n\n[Paragraph summarising model]"
+    "text": "Study\n\nLim CY, Bohn MK, Lippi G, Ferrari M, Loh TP, Yuen K, Adeli K, Horvath AR Staff Rostering, Split Team Arrangement, Social Distancing (Physical Distancing) and Use of Personal Protective Equipment to Minimize Risk of Workplace Transmission During the COVID-19 Pandemic: A Simulation Study. Clinical Biochemistry 86:15-22 (2020). https://doi.org/10.1016/j.clinbiochem.2020.09.003.\n\nThis is a discrete-event simulation modelling the transmission of COVID-19 in laboratory. It examines the proportion of staff infected in scenarios varying the: number of shifts per day; number of staff per shift; overall staff pool; shift patterns; secondary attack rate of the virus; introduction of protective measures (social distancing and personal protective equipment). The model is created using Python.\nImages from the original study on this page are soruced from Lim et al. (2020)"
   },
   {
     "objectID": "evaluation/reproduction_report.html#computational-reproducibility",
     "href": "evaluation/reproduction_report.html#computational-reproducibility",
     "title": "Summary report",
     "section": "Computational reproducibility",
-    "text": "Computational reproducibility\nSuccessfully reproduced X out of X (X%) of items from the scope in Xh Xm (X%).\nRequired troubleshooting:\n\n[List of required changes to code]\n\n\nItem XItem YFigure 4\n\n\n[One sentence description of item X]\n[Display side-by-side] \n\n\n[Set-up as for Item X]\n\n\n[Set-up as for Item X]"
+    "text": "Computational reproducibility\nSuccessfully reproduced 9 out of 9 (100%) of items from the scope in 12h 27m (31.1%).\nRequired troubleshooting:\n\n[List of required changes to code]\n\n\nItem XItem YFigure 4\n\n\n[One sentence description of item X]\n[Display side-by-side] \n\n\n[Set-up as for Item X]\n\n\n[Set-up as for Item X]"
   },
   {
     "objectID": "evaluation/reproduction_report.html#evaluation-against-guidelines",
@@ -291,7 +291,7 @@
     "href": "evaluation/reporting.html",
     "title": "Reporting guidelines",
     "section": "",
-    "text": "Please note: This is a template page and has not yet been completed\nThis page evaluates the extent to which the journal article meets the criteria from two discrete-event simulation study reporting guidelines:"
+    "text": "This page evaluates the extent to which the journal article meets the criteria from two discrete-event simulation study reporting guidelines:"
   },
   {
     "objectID": "evaluation/reporting.html#stress-des",
@@ -473,7 +473,7 @@
     "href": "logbook/posts/2024_07_24/index.html",
     "title": "Day 4",
     "section": "",
-    "text": "Note\n\n\n\nFinished reproduction and completed evaluation against guidelines. Total time used for reproduction: 12h 27m (31.1%). Time used for evaluation: 1h 23m."
+    "text": "Note\n\n\n\nFinished reproduction and completed evaluation against guidelines. Total time used for reproduction: 12h 27m (31.1%). Time used for evaluation: 1h 30m."
   },
   {
     "objectID": "logbook/posts/2024_07_24/index.html#figure-3",
@@ -557,7 +557,14 @@
     "href": "logbook/posts/2024_07_24/index.html#checklist-derived-from-ispor-sdm",
     "title": "Day 4",
     "section": "16.06-16.26: Checklist derived from ISPOR-SDM",
-    "text": "16.06-16.26: Checklist derived from ISPOR-SDM\n6 Is the target population described? - uncertain, set as N/A, but could you argue fully met, given the context and what would be relevant to describe about the target population? Or is this wanting numbers of laboratories and so on? Partially? Not met? Very unsure!\n12 Is cross validation performed and reported - In previous studies, if they have mentioned that it was not possible to compare due to there not being other relevant studies, I’ve set as N/A. However, they do not mention this. Also, they state that estimates on protective effectives of PPE for severe acute respiratory syndrome (SARS) “should be broadly applicable to the current COVID-19 situation”, so it’s assumed that there could be models in that context, and as not described as being a lack of models in this paper, could reasonably assume that there could be relevant models available that were not identified and used for cross validation.\n\nimport sys\nsys.path.append('../')\nfrom timings import calculate_times\n\n# Minutes used prior to today\nused_to_date = 0\n\n# Times from today\ntimes = [\n    ('13.57', '14.03'),\n    ('14.07', '14.16'),\n    ('14.17', '15.05'),\n    ('16.06', '16.26')]\n\ncalculate_times(used_to_date, times, limit=False)\n\nTime spent today: 83m, or 1h 23m\nTotal used to date: 83m, or 1h 23m"
+    "text": "16.06-16.26: Checklist derived from ISPOR-SDM\n6 Is the target population described? - uncertain, set as N/A, but could you argue fully met, given the context and what would be relevant to describe about the target population? Or is this wanting numbers of laboratories and so on? Partially? Not met? Very unsure!\n12 Is cross validation performed and reported - In previous studies, if they have mentioned that it was not possible to compare due to there not being other relevant studies, I’ve set as N/A. However, they do not mention this. Also, they state that estimates on protective effectives of PPE for severe acute respiratory syndrome (SARS) “should be broadly applicable to the current COVID-19 situation”, so it’s assumed that there could be models in that context, and as not described as being a lack of models in this paper, could reasonably assume that there could be relevant models available that were not identified and used for cross validation."
+  },
+  {
+    "objectID": "logbook/posts/2024_07_24/index.html#wrote-email-to-tom-and-alison-sharing-uncertainities-from-evaluation",
+    "href": "logbook/posts/2024_07_24/index.html#wrote-email-to-tom-and-alison-sharing-uncertainities-from-evaluation",
+    "title": "Day 4",
+    "section": "16.40-16.47: Wrote email to Tom and Alison sharing uncertainities from evaluation",
+    "text": "16.40-16.47: Wrote email to Tom and Alison sharing uncertainities from evaluation\n\nimport sys\nsys.path.append('../')\nfrom timings import calculate_times\n\n# Minutes used prior to today\nused_to_date = 0\n\n# Times from today\ntimes = [\n    ('13.57', '14.03'),\n    ('14.07', '14.16'),\n    ('14.17', '15.05'),\n    ('16.06', '16.26'),\n    ('16.40', '16.47')]\n\ncalculate_times(used_to_date, times, limit=False)\n\nTime spent today: 90m, or 1h 30m\nTotal used to date: 90m, or 1h 30m"
   },
   {
     "objectID": "logbook/posts/2024_07_23/index.html",
