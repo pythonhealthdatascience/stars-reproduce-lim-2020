@@ -268,6 +268,7 @@ div.csl-indent {
   <li><a href="#supplemental-table-6" id="toc-supplemental-table-6" class="nav-link" data-scroll-target="#supplemental-table-6">10.19-10.31, 10.44-10.54, 11.19-11.25, 11.35-11.42: Supplemental table 6</a></li>
   <li><a href="#supplementary-table-5" id="toc-supplementary-table-5" class="nav-link" data-scroll-target="#supplementary-table-5">11.48-12.06, 12.09-12.15: Supplementary table 5</a></li>
   <li><a href="#removed-mistake-in-scope" id="toc-removed-mistake-in-scope" class="nav-link" data-scroll-target="#removed-mistake-in-scope">12.16-12.20: Removed mistake in scope</a></li>
+  <li><a href="#figure-5" id="toc-figure-5" class="nav-link" data-scroll-target="#figure-5">12.21-12.50: Figure 5</a></li>
   <li><a href="#timings" id="toc-timings" class="nav-link" data-scroll-target="#timings">Timings</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/edit/main/logbook/posts/2024_07_24/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -289,14 +290,14 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>TBC. Total time used: TBC (TBC)</p>
+<p>TBC. Total time used for reproduction: 12h 27m (31.1%)</p>
 </div>
 </div>
 <section id="figure-3" class="level2">
 <h2 class="anchored" data-anchor-id="figure-3">09.03-09.27, 09.30-09.46: Figure 3</h2>
 <p>This used data I had already produced, and I could easily reuse my function from Figure 2 - just had to input the right parameters. Add letters to subplot to improve clarity.</p>
 <p>Feel to be successfully reproduced at 09.46</p>
-<div id="e681003f" class="cell" data-execution_count="1">
+<div id="3cd2090e" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
@@ -322,7 +323,7 @@ Used 27.0% of 40 hours max</code></pre>
 <h2 class="anchored" data-anchor-id="figure-4">10.00-10.08: Figure 4</h2>
 <p>Again, could easily use prior data and functions, just filling in with all the right parameters.</p>
 <p>Happy that this is successfully reproduced at 10.08.</p>
-<div id="5018fa7b" class="cell" data-execution_count="2">
+<div id="d0c44929" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
@@ -361,7 +362,7 @@ Used 27.3% of 40 hours max</code></pre>
 <p>“Proportion of simulated laboratory staff infected by COVID-19 in base scenario with 15% probability of secondary infection at the end of day 14 of the simulation with the staff observing workplace social distancing (by reducing the contact rate by half) and using various personal protective equipment. In this scenario, the simulated staff worked fixed alternating workdays (i.e.&nbsp;fixed consecutive days on, and fixed minimum consecutive days off). The results shown are the median of 100 cycles of simulation. NA = not available as the number of staff per shift is too low to simulate under the required conditions.” <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></p>
 </blockquote>
 <p>Hence, it appears we adjust p=0.15 by the odds ratios, to reduce the odds of transmission. It wasn’t immediately clear to me how to perform this calculation, although I quickly realised that it was likely to be multiplication, which results in the lowest odds for N95 (as we expect, with article results mentioning that “the strongest protective effect is seen with the N95 masks”).</p>
-<div id="ada302bd" class="cell" data-execution_count="3">
+<div id="7deef85d" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'''</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ss">Gloves: </span><span class="sc">{</span><span class="fl">0.15</span><span class="op">*</span><span class="fl">0.45</span><span class="sc">}</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ss">Surgical mask: </span><span class="sc">{</span><span class="fl">0.15</span><span class="op">*</span><span class="fl">0.32</span><span class="sc">}</span></span>
@@ -387,7 +388,7 @@ c3 = 0.40*staffpershift3  # number of contact for shift 3</code></pre>
 staffpershift3 = int(staffpershift1*0.4)</code></pre>
 <p>As it is not calculating the contact rate, I have assumed not for now.</p>
 <p>Ran all these and compared against the supplementary table. Very similar, with minimal variation as would expect from stochasticity of model, and so I am happy to mark this as reproduced at 11.42.</p>
-<div id="ae7ac40b" class="cell" data-execution_count="4">
+<div id="38793a22" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
@@ -426,7 +427,7 @@ Reflections
 <p>So far, reproduction has been facilitated by:</p>
 <ul>
 <li>Model simplicity</li>
-<li>Simplicity of figures</li>
+<li>Simplicity of figures and similarity between figures</li>
 <li>Some clear model parameters from article, tables and legends</li>
 <li>Some parameters that we need to alter were already set up as function inputs that can be changed programmatically</li>
 <li>Lots of comments in the code to aid understanding</li>
@@ -458,7 +459,7 @@ Reflections
 </ul>
 <p>I add this to <code>model.py</code>.</p>
 <p>As for other tables, results were very similar, and I was satisfied this was reproduced at 12.15.</p>
-<div id="8438e47f" class="cell" data-execution_count="5">
+<div id="f9c8ed4f" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
@@ -497,9 +498,24 @@ Used 29.8% of 40 hours max</code></pre>
 <p><img src="../../../original_study/supp_tab1.png" class="img-fluid"></p>
 <p>As such, I removed this from the scope.</p>
 </section>
-<section id="timings" class="level2">
-<h2 class="anchored" data-anchor-id="timings">Timings</h2>
-<div id="79fd8e5d" class="cell" data-execution_count="6">
+<section id="figure-5" class="level2">
+<h2 class="anchored" data-anchor-id="figure-5">12.21-12.50: Figure 5</h2>
+<p>For Figure 5, I could use the data and functions already produced.</p>
+<p>It wasn’t immediately clear what some of the parameters (<code>strength</code> and <code>staff_per_shift</code>).</p>
+<p>I had this for <code>staff_change</code> since the first figure, and in that case used <code>1</code> based on this appearing to be the default value from the description. However, it was not possible to take the same approach for these, as none was marked as more clearly a default.</p>
+<p>I then noticed that section <code>3.2</code> mentions that it is “a single shift per day, an overall staff pool of twice the number of staff per shift and has fixed alternating workday”. <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span>. Hence, it seems it uses <code>strength=2</code>.</p>
+<p>I decided to try <code>staff_per_shift=20</code> based on the prior Figure 4, as that had used that as its default value across the subplots. However, I felt it looked a little different, so I tried with 10, 20 and 30 respectively (as below).</p>
+<p><img src="fig5_10staff.png" class="img-fluid" style="width:32.0%" alt="Figure 5 with 10 staff per shift"> <img src="fig5_20staff.png" class="img-fluid" style="width:32.0%" alt="Figure 5 with 20 staff per shift"> <img src="fig5_30staff.png" class="img-fluid" style="width:32.0%" alt="Figure 5 with 30 staff per shift"></p>
+<p>Original, for reference, from <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span>:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../../original_study/fig5.jpg" class="img-fluid figure-img" style="width:32.0%"></p>
+<figcaption>Figure 5</figcaption>
+</figure>
+</div>
+<p>I felt that the results were more similar when plot with 30 staff per shift. Given that I hadn’t found any note anywhere of what parameter was used for this figure, I decided to switch to that.</p>
+<p>At this point, I am satisifed that the variation between the original and reproduction is within the expected variation from the stochasticity of the model, and so consider reproduced at 12.50.</p>
+<div id="43b13046" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
@@ -517,14 +533,49 @@ Used 29.8% of 40 hours max</code></pre>
 <span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.19'</span>, <span class="st">'11.25'</span>),</span>
 <span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.35'</span>, <span class="st">'11.42'</span>),</span>
 <span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.48'</span>, <span class="st">'12.06'</span>),</span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'12.09'</span>, <span class="st">'12.15'</span>)]</span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'12.09'</span>, <span class="st">'12.15'</span>),</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'12.16'</span>, <span class="st">'12.20'</span>),</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'12.21'</span>, <span class="st">'12.50'</span>)]</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time spent today: 107m, or 1h 47m
-Total used to date: 714m, or 11h 54m
-Time remaining: 1686m, or 28h 6m
-Used 29.8% of 40 hours max</code></pre>
+<pre><code>Time spent today: 140m, or 2h 20m
+Total used to date: 747m, or 12h 27m
+Time remaining: 1653m, or 27h 33m
+Used 31.1% of 40 hours max</code></pre>
+</div>
+</div>
+</section>
+<section id="timings" class="level2">
+<h2 class="anchored" data-anchor-id="timings">Timings</h2>
+<div id="bfde228a" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Minutes used prior to today</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>used_to_date <span class="op">=</span> <span class="dv">607</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Times from today</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> [</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'09.03'</span>, <span class="st">'09.27'</span>),</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'09.30'</span>, <span class="st">'09.46'</span>),</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'10.00'</span>, <span class="st">'10.08'</span>),</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'10.19'</span>, <span class="st">'10.31'</span>),</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'10.44'</span>, <span class="st">'10.54'</span>),</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.19'</span>, <span class="st">'11.25'</span>),</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.35'</span>, <span class="st">'11.42'</span>),</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.48'</span>, <span class="st">'12.06'</span>),</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'12.09'</span>, <span class="st">'12.15'</span>),</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'12.16'</span>, <span class="st">'12.20'</span>),</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'12.21'</span>, <span class="st">'12.50'</span>)]</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Time spent today: 140m, or 2h 20m
+Total used to date: 747m, or 12h 27m
+Time remaining: 1653m, or 27h 33m
+Used 31.1% of 40 hours max</code></pre>
 </div>
 </div>
 
