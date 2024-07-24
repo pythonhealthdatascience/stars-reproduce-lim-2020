@@ -56,7 +56,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -244,6 +264,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#figure-3" id="toc-figure-3" class="nav-link active" data-scroll-target="#figure-3">09.03-09.27, 09.30-09.46: Figure 3</a></li>
+  <li><a href="#figure-4" id="toc-figure-4" class="nav-link" data-scroll-target="#figure-4">10.00-10.08: Figure 4</a></li>
+  <li><a href="#supplemental-table-6" id="toc-supplemental-table-6" class="nav-link" data-scroll-target="#supplemental-table-6">10.19-10.31, 10.44-10.54, 11.19-11.25, 11.35-11.42: Supplemental table 6</a></li>
+  <li><a href="#supplementary-table-5" id="toc-supplementary-table-5" class="nav-link" data-scroll-target="#supplementary-table-5">11.48-12.06, 12.09-12.15: Supplementary table 5</a></li>
+  <li><a href="#removed-mistake-in-scope" id="toc-removed-mistake-in-scope" class="nav-link" data-scroll-target="#removed-mistake-in-scope">12.16-12.20: Removed mistake in scope</a></li>
   <li><a href="#timings" id="toc-timings" class="nav-link" data-scroll-target="#timings">Timings</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/edit/main/logbook/posts/2024_07_24/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -272,7 +296,7 @@ Note
 <h2 class="anchored" data-anchor-id="figure-3">09.03-09.27, 09.30-09.46: Figure 3</h2>
 <p>This used data I had already produced, and I could easily reuse my function from Figure 2 - just had to input the right parameters. Add letters to subplot to improve clarity.</p>
 <p>Feel to be successfully reproduced at 09.46</p>
-<div id="40545646" class="cell" data-execution_count="1">
+<div id="e681003f" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
@@ -294,9 +318,11 @@ Used 27.0% of 40 hours max</code></pre>
 </div>
 </div>
 </section>
-<section id="timings" class="level2">
-<h2 class="anchored" data-anchor-id="timings">Timings</h2>
-<div id="3dd6717c" class="cell" data-execution_count="2">
+<section id="figure-4" class="level2">
+<h2 class="anchored" data-anchor-id="figure-4">10.00-10.08: Figure 4</h2>
+<p>Again, could easily use prior data and functions, just filling in with all the right parameters.</p>
+<p>Happy that this is successfully reproduced at 10.08.</p>
+<div id="5018fa7b" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
@@ -307,21 +333,210 @@ Used 27.0% of 40 hours max</code></pre>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Times from today</span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> [</span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'09.03'</span>, <span class="st">'09.27'</span>),</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'09.30'</span>, <span class="st">'09.46'</span>)]</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'09.30'</span>, <span class="st">'09.46'</span>),</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'10.00'</span>, <span class="st">'10.08'</span>)]</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time spent today: 40m, or 0h 40m
-Total used to date: 647m, or 10h 47m
-Time remaining: 1753m, or 29h 13m
-Used 27.0% of 40 hours max</code></pre>
+<pre><code>Time spent today: 48m, or 0h 48m
+Total used to date: 655m, or 10h 55m
+Time remaining: 1745m, or 29h 5m
+Used 27.3% of 40 hours max</code></pre>
 </div>
 </div>
+</section>
+<section id="supplemental-table-6" class="level2">
+<h2 class="anchored" data-anchor-id="supplemental-table-6">10.19-10.31, 10.44-10.54, 11.19-11.25, 11.35-11.42: Supplemental table 6</h2>
+<p>The protective measures have odds ratios provided in supplemental table 1. As described in section <code>2.4</code>, these reflect the reduced probability of infection, and “the odds ratios [are] adopted for the reduction of <em>p</em> in the simulation”. <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></p>
+<p><em>p</em> is the secondary attack rate / probability of transmission between infected and susceptible staff. It is set at 15% (base), with scenarios of 5% and 30%.</p>
+<p>The supplementary table lists odds ratios of:</p>
+<ul>
+<li>Wearing gloves: 0.45</li>
+<li>Wearing surgical mask: 0.32</li>
+<li>Wearing gown: 0.23</li>
+<li>Wearing N95 mask: 0.09</li>
+</ul>
+<p>In supplemental table 6, it states that it is:</p>
+<blockquote class="blockquote">
+<p>“Proportion of simulated laboratory staff infected by COVID-19 in base scenario with 15% probability of secondary infection at the end of day 14 of the simulation with the staff observing workplace social distancing (by reducing the contact rate by half) and using various personal protective equipment. In this scenario, the simulated staff worked fixed alternating workdays (i.e.&nbsp;fixed consecutive days on, and fixed minimum consecutive days off). The results shown are the median of 100 cycles of simulation. NA = not available as the number of staff per shift is too low to simulate under the required conditions.” <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></p>
+</blockquote>
+<p>Hence, it appears we adjust p=0.15 by the odds ratios, to reduce the odds of transmission. It wasn’t immediately clear to me how to perform this calculation, although I quickly realised that it was likely to be multiplication, which results in the lowest odds for N95 (as we expect, with article results mentioning that “the strongest protective effect is seen with the N95 masks”).</p>
+<div id="ada302bd" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'''</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ss">Gloves: </span><span class="sc">{</span><span class="fl">0.15</span><span class="op">*</span><span class="fl">0.45</span><span class="sc">}</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ss">Surgical mask: </span><span class="sc">{</span><span class="fl">0.15</span><span class="op">*</span><span class="fl">0.32</span><span class="sc">}</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ss">Gown: </span><span class="sc">{</span><span class="fl">0.15</span><span class="op">*</span><span class="fl">0.32</span><span class="sc">}</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ss">Wearing N95 mask: </span><span class="sc">{</span><span class="fl">0.15</span><span class="op">*</span><span class="fl">0.09</span><span class="sc">}</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ss">'''</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Gloves: 0.0675
+Surgical mask: 0.048
+Gown: 0.048
+Wearing N95 mask: 0.0135
+</code></pre>
+</div>
+</div>
+<p>As p/secondary_attack_rate is already a parameter in <code>run_scenarios()</code>, I could easily set up and run these scenarios.</p>
+<p>This scenario is used in Figure 5 and Supplemental Table 6. Supplemental table 6 includes an additional scenario of workplace social distancing, which it states is achieved by reducing the contact rate (c) by half. In <code>model.py</code> (and as stated in section <code>2.5</code>) this is used as follows:</p>
+<pre><code>c1 = 0.40*staffpershift1  # number of contact for shift 1
+c2 = 0.40*staffpershift2  # number of contact for shift 2
+c3 = 0.40*staffpershift3  # number of contact for shift 3</code></pre>
+<p>Hence, we can simply half 0.4 to use 0.2 instead. I set this up as a parameter that can be altered within <code>run_scenarios()</code> inputs. These was one section that also used <code>0.4</code>, and I wasn’t sure whether I needed to change that also:</p>
+<pre><code>staffpershift2 = int(staffpershift1*0.4)
+staffpershift3 = int(staffpershift1*0.4)</code></pre>
+<p>As it is not calculating the contact rate, I have assumed not for now.</p>
+<p>Ran all these and compared against the supplementary table. Very similar, with minimal variation as would expect from stochasticity of model, and so I am happy to mark this as reproduced at 11.42.</p>
+<div id="ae7ac40b" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Minutes used prior to today</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>used_to_date <span class="op">=</span> <span class="dv">607</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Times from today</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> [</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'09.03'</span>, <span class="st">'09.27'</span>),</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'09.30'</span>, <span class="st">'09.46'</span>),</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'10.00'</span>, <span class="st">'10.08'</span>),</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'10.19'</span>, <span class="st">'10.31'</span>),</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'10.44'</span>, <span class="st">'10.54'</span>),</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.19'</span>, <span class="st">'11.25'</span>),</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.35'</span>, <span class="st">'11.42'</span>)]</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Time spent today: 83m, or 1h 23m
+Total used to date: 690m, or 11h 30m
+Time remaining: 1710m, or 28h 30m
+Used 28.7% of 40 hours max</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Reflections
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>So far, reproduction has been facilitated by:</p>
+<ul>
+<li>Model simplicity</li>
+<li>Simplicity of figures</li>
+<li>Some clear model parameters from article, tables and legends</li>
+<li>Some parameters that we need to alter were already set up as function inputs that can be changed programmatically</li>
+<li>Lots of comments in the code to aid understanding</li>
+</ul>
+<p>Barriers:</p>
+<ul>
+<li>Some slightly unclear scenarios (or that take a little longer to figure out)</li>
+<li>No code for scenarios or figures or tables</li>
+<li>Some parameters that we need to alter are hard coded</li>
+<li>Run time</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="supplementary-table-5" class="level2">
+<h2 class="anchored" data-anchor-id="supplementary-table-5">11.48-12.06, 12.09-12.15: Supplementary table 5</h2>
+<p>Supplementary table 5 has random roster assignment (which is used alongside table 6 to create figure 5).</p>
+<p>This is only run with one shift per day.</p>
+<p>It was initially unclear to be how to implement this scenario. I looked at the available description:</p>
+<ul>
+<li>The random roster assignment is described in <code>2.1.3</code> as “Additionally, the scenario where the simulated staff are randomly assigned a new shift without fixed rest days are also examined in laboratories with a single shift.” This is as opposed to the alternating shift roster where “the staff was assumed to change shift after a single day (shift), as well as after working 3, 7, 14, 21 consecutive days. After each shift, the simulated staff is assumed to return and stay at home for at least the same number of days as the shift before being randomly assigned to a new shift with the other off-duty colleagues. For example, if a simulated staff works for 3 consecutive days, the staff will be off duty for at least the 3 following days.” <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></li>
+<li>In the supplementary materials, the random roster assignment is described as working “without predefined minimum rest day (i.e.&nbsp;random shift assignment after each shift)” <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></li>
+</ul>
+<p>Looking at <code>model.py</code>…</p>
+<ul>
+<li>I can see that Lim et al.&nbsp;2020 have commented above <code>fillroster1()</code> that this function is to full up the roster with staff, and that it ensures that the staff rest for a minimal period after working.</li>
+<li>In the <code>roster</code> dataframe, the comments state that <code>0 = not resting</code> and <code>1 = resting</code> for the <code>rest</code> column.</li>
+<li>The <code>rest column</code> is populated by <code>fillroster1()</code>. It samples from the staff in <code>stafflist</code> that are marked as not resting, sample the number of staff needed for that day. This is done as many times as needed for simulation (e.g.&nbsp;if shift changes every day (<code>f=1</code>), then the number of times will repeat is 21 (<code>num_cycle=int(21/f)</code>)). When it does this, it marks a rest day with the line <code>stafflist.loc[temp,'rest']=1</code>. I’m assuming that conditionally removing that line may be how we implement the scenario</li>
+</ul>
+<p>I add this to <code>model.py</code>.</p>
+<p>As for other tables, results were very similar, and I was satisfied this was reproduced at 12.15.</p>
+<div id="8438e47f" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Minutes used prior to today</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>used_to_date <span class="op">=</span> <span class="dv">607</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Times from today</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> [</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'09.03'</span>, <span class="st">'09.27'</span>),</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'09.30'</span>, <span class="st">'09.46'</span>),</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'10.00'</span>, <span class="st">'10.08'</span>),</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'10.19'</span>, <span class="st">'10.31'</span>),</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'10.44'</span>, <span class="st">'10.54'</span>),</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.19'</span>, <span class="st">'11.25'</span>),</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.35'</span>, <span class="st">'11.42'</span>),</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.48'</span>, <span class="st">'12.06'</span>),</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'12.09'</span>, <span class="st">'12.15'</span>)]</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Time spent today: 107m, or 1h 47m
+Total used to date: 714m, or 11h 54m
+Time remaining: 1686m, or 28h 6m
+Used 29.8% of 40 hours max</code></pre>
+</div>
+</div>
+</section>
+<section id="removed-mistake-in-scope" class="level2">
+<h2 class="anchored" data-anchor-id="removed-mistake-in-scope">12.16-12.20: Removed mistake in scope</h2>
+<p>In heinsight, I realised we had made a mistake with the scope, as we had set in-text result 1 as:</p>
+<blockquote class="blockquote">
+<p>“The strongest protective effect is seen with the N95 masks (nearly equivalent to a FFP2 mask), which has the effect of reducing the odds of transmission by 0.09” <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></p>
+</blockquote>
+<p>However, I realised that this is not a result of the model, but instead just stating the odds ratio used to alter the probability of secondary transmission, as presented in supplementary table 1.</p>
+<p><img src="../../../original_study/supp_tab1.png" class="img-fluid"></p>
+<p>As such, I removed this from the scope.</p>
+</section>
+<section id="timings" class="level2">
+<h2 class="anchored" data-anchor-id="timings">Timings</h2>
+<div id="79fd8e5d" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Minutes used prior to today</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>used_to_date <span class="op">=</span> <span class="dv">607</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Times from today</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> [</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'09.03'</span>, <span class="st">'09.27'</span>),</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'09.30'</span>, <span class="st">'09.46'</span>),</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'10.00'</span>, <span class="st">'10.08'</span>),</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'10.19'</span>, <span class="st">'10.31'</span>),</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'10.44'</span>, <span class="st">'10.54'</span>),</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.19'</span>, <span class="st">'11.25'</span>),</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.35'</span>, <span class="st">'11.42'</span>),</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'11.48'</span>, <span class="st">'12.06'</span>),</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'12.09'</span>, <span class="st">'12.15'</span>)]</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>calculate_times(used_to_date, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Time spent today: 107m, or 1h 47m
+Total used to date: 714m, or 11h 54m
+Time remaining: 1686m, or 28h 6m
+Used 29.8% of 40 hours max</code></pre>
+</div>
+</div>
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-lim_staff_2020" class="csl-entry" role="listitem">
+Lim, Chun Yee, Mary Kathryn Bohn, Giuseppe Lippi, Maurizio Ferrari, Tze Ping Loh, Kwok-Yung Yuen, Khosrow Adeli, and Andrea Rita Horvath. 2020. <span>“Staff Rostering, Split Team Arrangement, Social Distancing (Physical Distancing) and Use of Personal Protective Equipment to Minimize Risk of Workplace Transmission During the <span>COVID</span>-19 Pandemic: <span>A</span> Simulation Study.”</span> <em>Clinical Biochemistry</em> 86 (December): 15–22. <a href="https://doi.org/10.1016/j.clinbiochem.2020.09.003">https://doi.org/10.1016/j.clinbiochem.2020.09.003</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
