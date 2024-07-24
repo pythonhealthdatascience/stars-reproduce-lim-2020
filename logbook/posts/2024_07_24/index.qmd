@@ -8,7 +8,7 @@ bibliography: ../../../quarto_site/references.bib
 
 ::: {.callout-note}
 
-TBC. Total time used: TBC (TBC)
+TBC. Total time used for reproduction: 12h 27m (31.1%)
 
 :::
 
@@ -133,7 +133,7 @@ calculate_times(used_to_date, times)
 So far, reproduction has been facilitated by:
 
 * Model simplicity
-* Simplicity of figures
+* Simplicity of figures and similarity between figures
 * Some clear model parameters from article, tables and legends
 * Some parameters that we need to alter were already set up as function inputs that can be changed programmatically
 * Lots of comments in the code to aid understanding
@@ -203,6 +203,55 @@ However, I realised that this is not a result of the model, but instead just sta
 
 As such, I removed this from the scope.
 
+## 12.21-12.50: Figure 5
+
+For Figure 5, I could use the data and functions already produced.
+
+It wasn't immediately clear what some of the parameters (`strength` and `staff_per_shift`).
+
+I had this for `staff_change` since the first figure, and in that case used `1` based on this appearing to be the default value from the description. However, it was not possible to take the same approach for these, as none was marked as more clearly a default.
+
+I then noticed that section `3.2` mentions that it is "a single shift per day, an overall staff pool of twice the number of staff per shift and has fixed alternating workday". @lim_staff_2020. Hence, it seems it uses `strength=2`.
+
+I decided to try `staff_per_shift=20` based on the prior Figure 4, as that had used that as its default value across the subplots. However, I felt it looked a little different, so I tried with 10, 20 and 30 respectively (as below).
+
+![Figure 5 with 10 staff per shift](fig5_10staff.png){width=32%}
+![Figure 5 with 20 staff per shift](fig5_20staff.png){width=32%}
+![Figure 5 with 30 staff per shift](fig5_30staff.png){width=32%}
+
+Original, for reference, from @lim_staff_2020:
+
+![Figure 5](../../../original_study/fig5.jpg){width=32%}
+
+I felt that the results were more similar when plot with 30 staff per shift. Given that I hadn't found any note anywhere of what parameter was used for this figure, I decided to switch to that.
+
+At this point, I am satisifed that the variation between the original and reproduction is within the expected variation from the stochasticity of the model, and so consider reproduced at 12.50.
+
+```{python}
+import sys
+sys.path.append('../')
+from timings import calculate_times
+
+# Minutes used prior to today
+used_to_date = 607
+
+# Times from today
+times = [
+    ('09.03', '09.27'),
+    ('09.30', '09.46'),
+    ('10.00', '10.08'),
+    ('10.19', '10.31'),
+    ('10.44', '10.54'),
+    ('11.19', '11.25'),
+    ('11.35', '11.42'),
+    ('11.48', '12.06'),
+    ('12.09', '12.15'),
+    ('12.16', '12.20'),
+    ('12.21', '12.50')]
+
+calculate_times(used_to_date, times)
+```
+
 ## Timings
 
 ```{python}
@@ -223,7 +272,9 @@ times = [
     ('11.19', '11.25'),
     ('11.35', '11.42'),
     ('11.48', '12.06'),
-    ('12.09', '12.15')]
+    ('12.09', '12.15'),
+    ('12.16', '12.20'),
+    ('12.21', '12.50')]
 
 calculate_times(used_to_date, times)
 ```
