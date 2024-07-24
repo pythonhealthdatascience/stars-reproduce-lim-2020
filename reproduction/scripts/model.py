@@ -40,12 +40,13 @@ def restartsim(
 
 
 # Function to fill up the roster with staff number; ensure that the staffs rest for a minimal period after working a shift
-def fillroster1(staff_pool, f, Nday, stafflist, roster):
+def fillroster1(staff_pool, f, Nday, stafflist, roster, rest_day):
     # staff_pool = total number of staffs
     # f = shift change frequency/interval
     # Nday = total number of staff for 1 day
     # stafflist = dataframe showing which staff are infected and resting, and with a reference column
     # roster = data frame with 21 rows, each showing the staff for the day
+    # rest_day = boolean, whether to enforce a minimum rest of one day, after shifts
 
     # num_cycle = number of shift rotation over the 21 days of simulation;
     num_cycle = int(21/f)
@@ -55,7 +56,9 @@ def fillroster1(staff_pool, f, Nday, stafflist, roster):
         temp = random.sample(stafflist[stafflist.loc[:,'rest']==0].index.values.tolist(),k=Nday)
         for j in range(0,f):
             roster.iloc[j] = temp
-        stafflist.loc[temp,'rest']=1
+        # If True, implement a minimum rest of one day, after the shift
+        if rest_day:
+            stafflist.loc[temp, 'rest'] = 1
         temp = random.sample(stafflist[stafflist.loc[:,'rest']==0].index.values.tolist(),k=Nday)
         for j in range(f,21):
             roster.iloc[j] = temp
@@ -68,7 +71,9 @@ def fillroster1(staff_pool, f, Nday, stafflist, roster):
                 roster.iloc[f*i+j] = temp
             stafflist['rest']=stafflist['rest']-1
             stafflist['rest']=stafflist[['rest','ref']].max(axis=1)
-            stafflist.loc[temp,'rest']=1
+            # If True, implement a minimum rest of one day, after the shift
+            if rest_day:
+                stafflist.loc[temp, 'rest'] = 1
 
 
 # Function to model probabilistic transmission via contact within lab
@@ -139,7 +144,7 @@ def contact(p, c1, c2, c3, day, staffpershift1, staffpershift2,
 
 
 def run_model(staff_strength, f, staffpershift1, shift_day,
-              secondary_attack_rate, contact_rate):
+              secondary_attack_rate, contact_rate, rest_day):
     '''
     Run the COVID-19 simulation model for a single given set of parameters,
     with 100 replications.
@@ -162,6 +167,9 @@ def run_model(staff_strength, f, staffpershift1, shift_day,
         to follow a Poisson distribution with an average contact rate as
         provided. For contact rate 0.4, it is assumed that a staff had contact
         with 40% of their colleagues on the same shift.
+    rest_day : boolean
+        Whether to enforce a minimum rest of one day, after shifts
+
     Returns:
     --------
     res : dictionary
@@ -206,7 +214,7 @@ def run_model(staff_strength, f, staffpershift1, shift_day,
                                            shift_day)
 
             # Call the function to fill the staff roster
-            fillroster1(staff_pool, f, Nday, stafflist, roster)
+            fillroster1(staff_pool, f, Nday, stafflist, roster, rest_day)
 
             # Let the 1st person in the roster be infected;
             stafflist['infected'][roster.iloc[0][0]] = 1
@@ -239,7 +247,8 @@ def run_scenarios(strength=[2, 4, 6],
                   staff_shift=[5, 10, 20, 30],
                   shift_day=[1, 2, 3],
                   secondary_attack_rate=0.15,
-                  contact_rate=0.4):
+                  contact_rate=0.4,
+                  rest_day=True):
     '''
     Run the COVID-19 simulation model with a range of scenarios, with
     parallel processing to improve run time.
@@ -262,6 +271,8 @@ def run_scenarios(strength=[2, 4, 6],
         to follow a Poisson distribution with an average contact rate as
         provided. For contact rate 0.4, it is assumed that a staff had contact
         with 40% of their colleagues on the same shift.
+    rest_day : boolean
+        Whether to enforce a minimum rest of one day, after shifts
 
     Returns:
     --------
@@ -272,7 +283,7 @@ def run_scenarios(strength=[2, 4, 6],
     paramlist = list(itertools.product(
         strength, staff_change, staff_shift, shift_day))
     # Append the other parameter required by the model
-    paramlist = [list(tup) + [secondary_attack_rate, contact_rate]
+    paramlist = [list(tup) + [secondary_attack_rate, contact_rate, rest_day]
                  for tup in paramlist]
 
     # Create a process pool that uses all the CPUs and apply the function
