@@ -8,7 +8,7 @@ bibliography: ../../../quarto_site/references.bib
 
 ::: {.callout-note}
 
-TBC. Total time used: TBC (TBC)
+Add parralel processing and reproduced supplementary tables 2-4 and Figure 2. Total time used: 10h 7m (25.3%)
 
 :::
 
@@ -206,7 +206,7 @@ TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
 """
 ```
 
-## 15.25-15.42, 15.49: Figure 2
+## 15.25-15.42, 15.49-16.55: Figure 2
 
 The total staff is 6, 120, or 4 * 30 staff per shift. The total number of staff is expressed as multiples of staff in the first shift, and referred to as staff strength, and discussed in section `2.1.2`.
 
@@ -219,6 +219,8 @@ I was initially unsure on the frequency of staff changes. The shift arrangement 
 Add matplotlib to environment but didn't specify to older version, as appears the figures in the article are produced in excel.
 
 Wrote code to extract the required results from the dataframe and produce the figure.
+
+Looks just like paper. Happy that this is reproduced at 16.55.
 
 ## Timings
 
@@ -242,8 +244,10 @@ times = [
     ('14.10', '14.14'),
     ('14.25', '14.28'),
     ('14.33', '14.44'),
-    ('14.49', '14.58')]
-# TODO: Add remaining times
+    ('14.49', '14.58'),
+    ('15.08', '15.19'),
+    ('15.25', '15.42'),
+    ('15.49', '16.55')]
 
 calculate_times(used_to_date, times)
 ```
