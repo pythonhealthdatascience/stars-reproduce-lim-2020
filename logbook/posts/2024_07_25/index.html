@@ -265,6 +265,28 @@ Note
 </section>
 <section id="untimed-research-compendium" class="level2">
 <h2 class="anchored" data-anchor-id="untimed-research-compendium">Untimed: Research compendium</h2>
+<ul>
+<li>Add seed to <code>model.py</code> so can reproduce own results
+<ul>
+<li><code>start_seed</code> in <code>run_scenarios()</code> (default 0) and <code>run_model()</code>, used as first line in the replciation for loop, <code>np.random.seed(start_seed + n)</code></li>
+<li>Ran model with limited number of parameters twice to confirm I got the same results each time, but they came out with some differences</li>
+<li>I tried also adding <code>random.seed(start_seed + n)</code> (as the code samples using <code>random</code> and <code>numpy</code>), and then produced matching results</li>
+</ul></li>
+</ul>
+<pre><code>res1 = model.run_scenarios(strength=[4], staff_change=[7], shift_day=[1])
+res2 = model.run_scenarios(strength=[4], staff_change=[7], shift_day=[1])
+res1.compare(res2)</code></pre>
+<ul>
+<li>Re-ran all scenarios from scratch (with seed control now in place), and saved run times</li>
+<li>Add tests
+<ul>
+<li>Add <code>pytest</code> to environment (originally also <code>pytest-xdist</code> and <code>pip</code> to environment, but then decided against this as there was already parallel processing add to the code itself)</li>
+<li>Wrote test for two scenarios (using similar structure as did from <a href="https://github.com/pythonhealthdatascience/stars-reproduce-shoaib-2022/blob/main/reproduction/tests/test_model.py">first reproduction</a>) - but not for all scenarios, purely due to long run time.</li>
+<li>Requires <code>__init__.py</code> in <code>tests/</code> and in model <code>scripts/</code></li>
+</ul></li>
+<li>Add Dockerfile</li>
+<li>Update reproduction README</li>
+</ul>
 
 
 </section>

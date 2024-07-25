@@ -218,47 +218,98 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="reproduction-readme" class="level1">
 <h1>Reproduction README</h1>
-<!-- TODO: Remove this warning once filled out README -->
-<p><strong>Please note: This is a template README and has not yet been completed</strong></p>
-<!-- TODO: Fill out the README -->
 <section id="model-summary" class="level2">
 <h2 class="anchored" data-anchor-id="model-summary">Model summary</h2>
-<p>TBC</p>
+<blockquote class="blockquote">
+<p>Lim CY, Bohn MK, Lippi G, Ferrari M, Loh TP, Yuen K, Adeli K, Horvath AR <strong>Staff Rostering, Split Team Arrangement, Social Distancing (Physical Distancing) and Use of Personal Protective Equipment to Minimize Risk of Workplace Transmission During the COVID-19 Pandemic: A Simulation Study</strong>. <em>Clinical Biochemistry</em> 86:15-22 (2020). <a href="https://doi.org/10.1016/j.clinbiochem.2020.09.003" class="uri">https://doi.org/10.1016/j.clinbiochem.2020.09.003</a>.</p>
+</blockquote>
+<p>This is a discrete-event simulation modelling the transmission of COVID-19 in laboratory. It examines the proportion of staff infected in scenarios varying the: number of shifts per day; number of staff per shift; overall staff pool; shift patterns; secondary attack rate of the virus; introduction of protective measures (social distancing and personal protective equipment). The model is created using Python.</p>
 </section>
 <section id="scope-of-the-reproduction" class="level2">
 <h2 class="anchored" data-anchor-id="scope-of-the-reproduction">Scope of the reproduction</h2>
-<p>TBC</p>
+<p>In this assessment, we attempted to reproduce 9 items: 4 figures and 5 tables.</p>
 </section>
 <section id="reproducing-these-results" class="level2">
 <h2 class="anchored" data-anchor-id="reproducing-these-results">Reproducing these results</h2>
 <section id="repository-overview" class="level3">
 <h3 class="anchored" data-anchor-id="repository-overview">Repository overview</h3>
-<p>TBC</p>
+<p>├── docker │ └── … ├── outputs │ └── … ├── scripts │ └── … ├── tests │ └── … ├── environment.yaml └── README.md</p>
+<ul>
+<li><code>docker/</code> - Instructions for creation of Docker container.</li>
+<li><code>outputs/</code> - Output files from the model.</li>
+<li><code>scripts/</code> - Code for the model and for reproducing items from the scope.</li>
+<li><code>tests/</code> - Test to check that model produces consistent results with our reproduction.</li>
+<li><code>environment.yaml</code> - Instructions for creation of python environment.</li>
+<li><code>README.md</code> - This file!</li>
+</ul>
 </section>
 <section id="step-1.-set-up-environment" class="level3">
 <h3 class="anchored" data-anchor-id="step-1.-set-up-environment">Step 1. Set up environment</h3>
-<p>TBC</p>
+<section id="option-a-condamamba-environment" class="level4">
+<h4 class="anchored" data-anchor-id="option-a-condamamba-environment">Option A: Conda/mamba environment</h4>
+<p>A <code>conda</code>/<code>mamba</code> environment has been provided. To create this environment on your machine, you should run this command in your terminal: <code>conda env create -f environment.yaml</code>.</p>
+<p>You can then use this environment in your preferred IDE, such as VSCode (where you will be asked to select the kernel/interpreter). You can activate it in the terminal by running <code>conda activate lim2020</code>.</p>
+<p>You can run either of these commands also using <code>mamba</code> instead (e.g.&nbsp;<code>mamba activate lim2020</code>).</p>
+</section>
+<section id="option-b-build-local-docker-image" class="level4">
+<h4 class="anchored" data-anchor-id="option-b-build-local-docker-image">Option B: Build local docker image</h4>
+<p>A <code>Dockerfile</code> is provided, which you can use to build the Docker image. The docker image will include the correct version of Python and the packages, and an installation of jupyterlab which you can run from your browser. It will also include the scripts and outputs from this directory.</p>
+<p>For this option (and option C), you’ll need to ensure that <code>docker</code> is installed on your machine.</p>
+<p>To create the docker image and then open jupyter lab:</p>
+<ol type="1">
+<li>In the terminal, navigate to parent directory of the <code>reproduction/</code> folder</li>
+<li>Build the image: <code>docker build --tag lim2020 . -f ./reproduction/docker/Dockerfile</code>. You may require admin access on linux (i.e.&nbsp;<code>sudo docker build</code>…)</li>
+<li>Create a docker container from that image and open jupyter lab: <code>(sleep 2 &amp;&amp; xdg-open http://localhost:8080) &amp; sudo docker run -it -p 8080:80 --name lim2020_docker lim2020</code></li>
+</ol>
+</section>
+<section id="option-c-pull-pre-built-docker-image" class="level4">
+<h4 class="anchored" data-anchor-id="option-c-pull-pre-built-docker-image">Option C: Pull pre-built docker image</h4>
+<p>A pre-built image is available on the GitHub container registry. To use it:</p>
+<ol type="1">
+<li>Create a Personal Access Token (Classic) for your GitHub account with <code>write:packages</code> and <code>delete:packages</code> access</li>
+<li>On terminal, run <code>sudo docker login ghcr.io -u githubusername</code> and enter your sudo password (if prompted), followed by the token just generated (which acts as your GitHub password)</li>
+<li>Download the image: <code>sudo docker pull ghcr.io/pythonhealthdatascience/lim2020</code></li>
+<li>Create container and open RStudio: <code>(sleep 2 &amp;&amp; xdg-open http://localhost:8080) &amp; sudo docker run -it -p 8080:80 --name lim2020_docker ghcr.io/pythonhealthdatascience/lim2020:latest</code></li>
+</ol>
+</section>
 </section>
 <section id="step-2.-running-the-model" class="level3">
 <h3 class="anchored" data-anchor-id="step-2.-running-the-model">Step 2. Running the model</h3>
-<p>TBC</p>
+<section id="option-a-execute-the-notebooks" class="level4">
+<h4 class="anchored" data-anchor-id="option-a-execute-the-notebooks">Option A: Execute the notebooks</h4>
+<p>To run all the model scenarios, open and execute the provided <code>ipynb</code> files in <code>scripts/</code>. You can do so within your preferred IDE (e.g.&nbsp;VSCode, JupyterLab).</p>
+</section>
+<section id="option-b-pytest" class="level4">
+<h4 class="anchored" data-anchor-id="option-b-pytest">Option B: Pytest</h4>
+<p>Two of the model scenarios have been included as tests within <code>tests/</code>. You can run these by executing the following command from your terminal whilst in the <code>reproduction/</code> directory with the <code>lim2020</code> environment active:</p>
+<p><code>pytest</code></p>
+<p>This will run the two scenarios and compare the results against those we have saved. Although this will not produce any figures from the paper, and will not run all the scenarios, it will allow you to check if you are getting results consistent with our reproduction, on your own machine.</p>
+<p>Once the tests begin to run, you should see information indicating the test has started, but then should expect to see no further updates to the screen until both tests have completed.</p>
+<p>Example of output when start tests:</p>
+<pre class="{bash}"><code>=========================================================================== test session starts ============================================================================
+platform linux -- Python 3.8.5, pytest-7.4.4, pluggy-1.0.0
+rootdir: /home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction
+plugins: xdist-3.6.1
+collected 2 items                                                                                                                                                          
+
+tests/test_model.py .. </code></pre>
+<p>Example of finished tests (if both tests passed):</p>
+<pre class="{bash}"><code>============= 2 passed, 9 warnings in 395.17s (0:06:35) =============</code></pre>
+</section>
 </section>
 </section>
 <section id="reproduction-specs-and-runtime" class="level2">
 <h2 class="anchored" data-anchor-id="reproduction-specs-and-runtime">Reproduction specs and runtime</h2>
-<p>TBC</p>
-<!-- Hint: On Linux, you can find specs by running the following commands in the terminal:
-cat /etc/os-release  # Shows operating system and version
-lscpu  # Shows computer model
-free -g  # Shows RAM in GB (combine total column) -->
+<p>This reproduction was conducted on an Intel Core i7-12700H with 32GB RAM running Ubuntu 22.04.4 Linux.</p>
+<p>On that machine, running all scenarios from scratch, the total run time is <strong>49 minutes and 17 seconds</strong>.</p>
 </section>
 <section id="citation" class="level2">
 <h2 class="anchored" data-anchor-id="citation">Citation</h2>
-<p>TBC</p>
+<p>To cite the original study, please refer to the reference above. To cite this reproduction, please refer to the CITATION.cff file in the parent folder.</p>
 </section>
 <section id="license" class="level2">
 <h2 class="anchored" data-anchor-id="license">License</h2>
-<p>TBC</p>
+<p>This repository is licensed under the MIT License.</p>
 
 
 </section>
