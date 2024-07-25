@@ -1,18 +1,12 @@
 ---
 title: "Summary report"
-subtitle: "For computational reproducibility assessment of Author et al. Year"
+subtitle: "For computational reproducibility assessment of Lim et al. 2020"
 format:
   html:
     page-layout: full
 echo: False
 bibliography: ../quarto_site/references.bib
 ---
-
-<!-- TODO: Remove this warning once filled out report -->
-**Please note: This is a template page and has not yet been completed**
-
-<!-- TODO: Use this skeleton to create a summary report -->
-
 ## Study
 
 > Lim CY, Bohn MK, Lippi G, Ferrari M, Loh TP, Yuen K, Adeli K, Horvath AR **Staff Rostering, Split Team Arrangement, Social Distancing (Physical Distancing) and Use of Personal Protective Equipment to Minimize Risk of Workplace Transmission During the COVID-19 Pandemic: A Simulation Study**. *Clinical Biochemistry* 86:15-22 (2020). <https://doi.org/10.1016/j.clinbiochem.2020.09.003>.
@@ -31,22 +25,62 @@ Required troubleshooting:
 
 ::: {.panel-tabset}
 
-## Item X
+## Figure 2
 
-[One sentence description of item X]
+![Original](../original_study/fig2.jpg){width=49% .lightbox}
+![Reproduction](../reproduction/outputs/fig2.png){width=49% .lightbox}
 
-[Display side-by-side]
-<!-- Example:
-![Original](../original_study/article_fig2.png){width=49% .lightbox}
-![Reproduction](../reproduction/output/patients_base_3_month.png){width=49% .lightbox} -->
+## Figure 3
 
-## Item Y
-
-[Set-up as for Item X]
+![Original](../original_study/fig3.jpg){width=49% .lightbox}
+![Reproduction](../reproduction/outputs/fig3.png){width=49% .lightbox}
 
 ## Figure 4
 
-[Set-up as for Item X]
+![Original](../original_study/fig4.jpg){width=49% .lightbox}
+![Reproduction](../reproduction/outputs/fig4.png){width=49% .lightbox}
+
+## Figure 5
+
+![Original](../original_study/fig5.jpg){width=49% .lightbox}
+![Reproduction](../reproduction/outputs/fig5.png){width=49% .lightbox}
+
+## Supplemental Table 2
+
+```{python}
+from compare_tables import view_tables
+
+view_tables('../original_study/supp_tab2_reformat.csv',
+            '../reproduction/outputs/supp_tab2_reformat.csv')
+```
+
+## Supplemental Table 3
+
+```{python}
+view_tables('../original_study/supp_tab3_reformat.csv',
+            '../reproduction/outputs/supp_tab3_reformat.csv')
+```
+
+## Supplemental Table 4
+
+```{python}
+view_tables('../original_study/supp_tab4_reformat.csv',
+            '../reproduction/outputs/supp_tab4_reformat.csv')
+```
+
+## Supplemental Table 5
+
+```{python}
+view_tables('../original_study/supp_tab5_reformat.csv',
+            '../reproduction/outputs/supp_tab5_reformat.csv')
+```
+
+## Supplemental Table 6
+
+```{python}
+view_tables('../original_study/supp_tab6_reformat.csv',
+            '../reproduction/outputs/supp_tab6_reformat.csv')
+```
 
 :::
 
