@@ -304,7 +304,7 @@ Note
 <h2 class="anchored" data-anchor-id="figure-3">09.03-09.27, 09.30-09.46: Figure 3</h2>
 <p>This used data I had already produced, and I could easily reuse my function from Figure 2 - just had to input the right parameters. Add letters to subplot to improve clarity.</p>
 <p>Feel to be successfully reproduced at 09.46</p>
-<div id="330b9bed" class="cell" data-execution_count="1">
+<div id="a4998dab" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
@@ -330,7 +330,7 @@ Used 27.0% of 40 hours max</code></pre>
 <h2 class="anchored" data-anchor-id="figure-4">10.00-10.08: Figure 4</h2>
 <p>Again, could easily use prior data and functions, just filling in with all the right parameters.</p>
 <p>Happy that this is successfully reproduced at 10.08.</p>
-<div id="81f31784" class="cell" data-execution_count="2">
+<div id="0d5c5b44" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
@@ -369,7 +369,7 @@ Used 27.3% of 40 hours max</code></pre>
 <p>“Proportion of simulated laboratory staff infected by COVID-19 in base scenario with 15% probability of secondary infection at the end of day 14 of the simulation with the staff observing workplace social distancing (by reducing the contact rate by half) and using various personal protective equipment. In this scenario, the simulated staff worked fixed alternating workdays (i.e.&nbsp;fixed consecutive days on, and fixed minimum consecutive days off). The results shown are the median of 100 cycles of simulation. NA = not available as the number of staff per shift is too low to simulate under the required conditions.” <span class="citation" data-cites="lim_staff_2020">Lim et al. (<a href="#ref-lim_staff_2020" role="doc-biblioref">2020</a>)</span></p>
 </blockquote>
 <p>Hence, it appears we adjust p=0.15 by the odds ratios, to reduce the odds of transmission. It wasn’t immediately clear to me how to perform this calculation, although I quickly realised that it was likely to be multiplication, which results in the lowest odds for N95 (as we expect, with article results mentioning that “the strongest protective effect is seen with the N95 masks”).</p>
-<div id="7ef193c3" class="cell" data-execution_count="3">
+<div id="9120b311" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'''</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ss">Gloves: </span><span class="sc">{</span><span class="fl">0.15</span><span class="op">*</span><span class="fl">0.45</span><span class="sc">}</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ss">Surgical mask: </span><span class="sc">{</span><span class="fl">0.15</span><span class="op">*</span><span class="fl">0.32</span><span class="sc">}</span></span>
@@ -395,7 +395,7 @@ c3 = 0.40*staffpershift3  # number of contact for shift 3</code></pre>
 staffpershift3 = int(staffpershift1*0.4)</code></pre>
 <p>As it is not calculating the contact rate, I have assumed not for now.</p>
 <p>Ran all these and compared against the supplementary table. Very similar, with minimal variation as would expect from stochasticity of model, and so I am happy to mark this as reproduced at 11.42.</p>
-<div id="476a9701" class="cell" data-execution_count="4">
+<div id="2797b258" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
@@ -466,7 +466,7 @@ Reflections
 </ul>
 <p>I add this to <code>model.py</code>.</p>
 <p>As for other tables, results were very similar, and I was satisfied this was reproduced at 12.15.</p>
-<div id="f4aebaf1" class="cell" data-execution_count="5">
+<div id="104cfb96" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
@@ -522,7 +522,7 @@ Used 29.8% of 40 hours max</code></pre>
 </div>
 <p>I felt that the results were more similar when plot with 30 staff per shift. Given that I hadn’t found any note anywhere of what parameter was used for this figure, I decided to switch to that.</p>
 <p>At this point, I am satisifed that the variation between the original and reproduction is within the expected variation from the stochasticity of the model, and so consider reproduced at 12.50.</p>
-<div id="435be18a" class="cell" data-execution_count="6">
+<div id="d94c577c" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
@@ -559,7 +559,7 @@ Used 31.1% of 40 hours max</code></pre>
 </section>
 <section id="timings-for-reproduction" class="level2">
 <h2 class="anchored" data-anchor-id="timings-for-reproduction">Timings for reproduction</h2>
-<div id="8067c225" class="cell" data-execution_count="7">
+<div id="b506bfd5" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
@@ -610,7 +610,7 @@ Used 31.1% of 40 hours max</code></pre>
 </section>
 <section id="wrote-email-to-tom-and-alison-sharing-uncertainities-from-evaluation" class="level2">
 <h2 class="anchored" data-anchor-id="wrote-email-to-tom-and-alison-sharing-uncertainities-from-evaluation">16.40-16.47: Wrote email to Tom and Alison sharing uncertainities from evaluation</h2>
-<div id="3a8f4b99" class="cell" data-execution_count="8">
+<div id="bacbf085" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'../'</span>)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> timings <span class="im">import</span> calculate_times</span>
