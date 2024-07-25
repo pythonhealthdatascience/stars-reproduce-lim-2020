@@ -4,11 +4,7 @@ echo: False
 bibliography: ../quarto_site/references.bib
 ---
 
-<!-- TODO: Remove this warning once completed assessment -->
-**Please note: Work is ongoing, and this page is not yet complete**
-
-<!-- TODO: Add this once complete -->
-<!-- Of the 9 items in the scope, 100% (9 out of 9) were considered to be **successfully reproduced**. -->
+Of the 9 items in the scope, 100% (9 out of 9) were considered to be **successfully reproduced**.
 
 As cited throughout, images on this page are sourced from @lim_staff_2020
 
@@ -49,8 +45,7 @@ success_interactive(times_df)
 
 ## Figure 2
 
-<!-- TODO: Add once have consensus
-**Consensus: Not reproduced / Successfully reproduced** -->
+**Consensus: Successfully reproduced**
 
 Original figure (@lim_staff_2020):
 
@@ -62,6 +57,8 @@ Reproduction:
 
 ## Figure 3
 
+**Consensus: Successfully reproduced**
+
 Original figure (@lim_staff_2020):
 
 ![](../original_study/fig3.jpg){width=80% fig-align="center" .lightbox}
@@ -71,6 +68,8 @@ Reproduction:
 ![](../reproduction/outputs/fig3.png){width=80% fig-align="center" .lightbox}
 
 ## Figure 4
+
+**Consensus: Successfully reproduced**
 
 Original figure (@lim_staff_2020):
 
@@ -82,6 +81,8 @@ Reproduction:
 
 ## Figure 5
 
+**Consensus: Successfully reproduced**
+
 Original figure (@lim_staff_2020):
 
 ![](../original_study/fig5.jpg){width=80% fig-align="center" .lightbox}
@@ -91,6 +92,8 @@ Reproduction:
 ![](../reproduction/outputs/fig5.png){width=80% fig-align="center" .lightbox}
 
 ## Supplemental Table 2
+
+**Consensus: Successfully reproduced**
 
 Preview of the reformatted original table (@lim_staff_2020) alongside the reproduced table.
 
@@ -105,6 +108,8 @@ view_tables('../original_study/supp_tab2_reformat.csv',
 
 ## Supplemental Table 3
 
+**Consensus: Successfully reproduced**
+
 Preview of the reformatted original table (@lim_staff_2020) alongside the reproduced table.
 
 Then, shares the results from calculating the absolute difference in the `prop_infected` row between the tables, and describes the observed differences.
@@ -115,6 +120,8 @@ view_tables('../original_study/supp_tab3_reformat.csv',
 ```
 
 ## Supplemental Table 4
+
+**Consensus: Successfully reproduced**
 
 Preview of the reformatted original table (@lim_staff_2020) alongside the reproduced table.
 
@@ -127,6 +134,8 @@ view_tables('../original_study/supp_tab4_reformat.csv',
 
 ## Supplemental Table 5
 
+**Consensus: Successfully reproduced**
+
 Preview of the reformatted original table (@lim_staff_2020) alongside the reproduced table.
 
 Then, shares the results from calculating the absolute difference in the `prop_infected` row between the tables, and describes the observed differences.
@@ -137,6 +146,8 @@ view_tables('../original_study/supp_tab5_reformat.csv',
 ```
 
 ## Supplemental Table 6
+
+**Consensus: Successfully reproduced**
 
 Preview of the reformatted original table (@lim_staff_2020) alongside the reproduced table.
 
