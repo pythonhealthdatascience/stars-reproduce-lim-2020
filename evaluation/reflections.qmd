@@ -2,19 +2,38 @@
 title: "Reflections"
 ---
 
-<!-- TODO: Remove this warning once completed assessment -->
-**Please note: This is a template page and has not yet been completed**
-
 This page contains reflections on the facilitators and barriers to this reproduction, as well as a full list of the troubleshooting steps taken to reproduce this work.
+
+## What facilitated this reproduction?
+
+* Simplicity of the model structure and code
+* Simplicity of figures and similarity between figures
+* Several of the model parameters are clearly provided in the article, tables and legends
+* Structure of provided code (model largely in functions) made it easier when making changes to run it programmatically (although wasn't all in functions)
+* Lots of comments in the code (including doc-string-style comments at the start of functions) that aided understanding of how it worked
+* Stated Python major version (although not minor version)
 
 ## What would have helped facilitate this reproduction?
 
-<!-- TODO: Add reflections. Example:
-**Provide environment (packages and versions)**
+**Provide tables as spreadsheets (e.g. `.csv`)**
 
-* Not all packages needed will be listed in the imports (e.g. greenlet, pathlib)
-* Didn't work with latest package versions, had to backdate it for it to work
--->
+**Provide environment file with package versions**
+
+**Model run time**
+
+* State the expected run time
+* Long run time made it difficult to run all the different scenarios, and so I add parallel processing to help speed this up
+
+**Include all model parameters and scenarios in the code**
+
+* Several parameters or scenarios were not incorporated in the code, and had to be added (e.g. with conditional logic to skip or change code run, removing hard-coding, adding parameters to existing)
+
+**Set up model so that scenarios can be run programmatically**
+
+* Several parameters were hard coded
+* Model was set to run a single scenario, and so needed to change to function that can call to easily vary parameters and run scenarios programmatically
+
+**Provide code to produce figures**
 
 ## Full list of troubleshooting steps
 
@@ -23,12 +42,37 @@ This page contains reflections on the facilitators and barriers to this reproduc
 
 Troubleshooting steps are grouped by theme, and the day these occurred is given in brackets at the end of each bullet.
 
-<!-- TODO: Add full list of troubleshooting steps. Example:
+### Tables
+
+* Tables in word document - had to copy into CSV, and then decided to reformat into long format for easier comparison and plotting (although I understand that the wide format provided are more readable/easy to look at) (2)
 
 ### Environment
 
-* No environment file, and no versions for Python or Salabim in paper (2)
-* Dependencies based on PHC.py and package versions on or prior to 14th March 2021 (2)
--->
+* No environment file, but does state it is `Python 3`, and mentions all packages used (`numpy`, `pandas`) (although not their versions).Selected versions on or prior to 29 August 2020 (2)
+* Easily built environment with `mamba` and `environment.yaml`
+
+### Model run time
+
+* When initially running the model, I wasn't certain how long to expect it to take. After 10 minutes, switched to using just one or two parameters, and when later ran with all (as provided in `.py` script), it took 19 minutes
+* Given there were then several different scenarios to run, this run time made it a bit trickier to work with and run the model. Hence, I add some parallel processing to help speed it up. This reduced run time to apx. 3 minutes. With the later addition of other parameters, the typical run time was 6 minutes (and we anticipate the original run time of 19 minutes would also have been much higher with these additional parameters added).
+
+### Including all required parameters for base case and scenarios
+
+* The model script provided could not run with strength = 2, although this was a typical parameter in the model. I needed to add some code to deal with this situation (prevent from running certain combinations when strength is 2), as is described in the paper.
+* The model script provided only ran three shifts per day, but the paper presents results from 1, 2 or 3. I needed to add some code to conditionally alter the number of shifts, preventing certain sections of code from running to reduce the shift number.
+* No code was provided to run the scenarios. I changed the `for loop` into a function that can run scenarios programmatically
+* Some parameters that we needed to change in scenarios were hard-coded and had to be changed into function inputs instead
+* As no code was provided for scenarios, I had to use the paper to understand how to implement them. They were generally pretty clear, although I found the `random roster assignment` scenario was a little trickier, as it required identifying that we needed to change two lines with `stafflist.loc[temp,'rest']=1` to `=0`, which was immediately obvious.
+* For Figure 5, I had to guess the value for `staff_per_shift`
+
+### Creating figures
+
+* The model script provided was only set up to provide results from days 7, 14 and 21. The figures require daily results, so I needed to modify the code to output that.
+* No code is provided to produce the figures, so I needed to write that from scratch.
+
+### Other minor things to note
+
+* The code repeatedly outputs two warning messages - I set these to not appear - but presence of warning messages had no impact on functionality of code, beyond it being a verbose output
+* The results obtained looked very similar to the original article, with minimal differences that I felt to be within the expected variation from the model stochasticity. However, if seeds had been present, we would have been able to say with certainty. I did not feel I needed to add seeds during the reproduction to get the same results, but I will add seeds at a later point so that we can guarantee we are reproducing our own results on re-runs.
 
 :::
