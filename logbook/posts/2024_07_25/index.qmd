@@ -34,3 +34,22 @@ Regarding the uncertainties from the evaluation:
     * Yes ISPOR is typically targeted at patients. But my view was that the population modelled was the lab staff. If you think they are adequately described in the paper I would mark this as met.  Happy to discuss.
 
 ## Untimed: Research compendium
+
+* Add seed to `model.py` so can reproduce own results
+    * `start_seed` in `run_scenarios()` (default 0) and `run_model()`, used as first line in the replciation for loop, `np.random.seed(start_seed + n)`
+    * Ran model with limited number of parameters twice to confirm I got the same results each time, but they came out with some differences
+    * I tried also adding `random.seed(start_seed + n)` (as the code samples using `random` and `numpy`), and then produced matching results
+
+```
+res1 = model.run_scenarios(strength=[4], staff_change=[7], shift_day=[1])
+res2 = model.run_scenarios(strength=[4], staff_change=[7], shift_day=[1])
+res1.compare(res2)
+```
+
+* Re-ran all scenarios from scratch (with seed control now in place), and saved run times
+* Add tests
+    * Add `pytest` to environment (originally also `pytest-xdist` and `pip` to environment, but then decided against this as there was already parallel processing add to the code itself)
+    * Wrote test for two scenarios (using similar structure as did from [first reproduction](https://github.com/pythonhealthdatascience/stars-reproduce-shoaib-2022/blob/main/reproduction/tests/test_model.py)) - but not for all scenarios, purely due to long run time.
+    * Requires `__init__.py` in `tests/` and in model `scripts/`
+* Add Dockerfile
+* Update reproduction README
