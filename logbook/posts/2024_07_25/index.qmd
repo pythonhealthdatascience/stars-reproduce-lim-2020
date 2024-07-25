@@ -1,0 +1,36 @@
+---
+title: "Day 5"
+author: "Amy Heather"
+date: "2024-07-25"
+categories: [compendium]
+bibliography: ../../../quarto_site/references.bib
+---
+
+::: {.callout-note}
+
+Reflections, summary report and research compendium.
+
+:::
+
+## Untimed: Reflections
+
+Completed reflections page.
+
+## Untimed: Summary report
+
+Completed summary report.
+
+## Untimed: Consensus/second opinion
+
+Tom agreed that all items had been successfully reproduced.
+
+Regarding the uncertainties from the evaluation:
+
+* Badges - "Artefacts are well structured/organised (e.g. to the extent that reuse and repurposing is facilitated, adhering to norms and standards of research community)" - I have tentatively marked this as unmet. I feel that the script provided was well-structured (with functions and lots of comments throughout the script, including comments playing the role of docstrings at the start of the functions). However, I have set it as unmet as I still had to make several changes in order to easily use it and change parameters for scenarios (as parameters were often hard-coded in the for loop, or in the functions themselves)
+    * Yes I agree this is unmet.  Ideally there is an simple way to experiment with the model. In an ideal world the authors provide a reproducible Analytical Pipeline (RAP) for simulation where each experiment can reproduced without lots of manual setup.
+* STRESS-DES - "2.5.3 Components - resources" and "2.5.4 Components - queues" - as described on the page, I have marked this as non-applicable, but wanted to double-check if that sounded right to you
+    * I agree.  There aren't any to document.
+* Checklist derived from ISPOR-SDM - "6 Is the target population described?" - I was very uncertain on whether this would be not applicable, fully met, or unmet! Uncertainty as this is not a typical scenario where you're e.g. focusing on a disease/treatment, and have a population of patients. So I wasn't really sure what population description would be required to meet this. It does describe the results from a survey on attributes of lab people to PPE.
+    * Yes ISPOR is typically targeted at patients. But my view was that the population modelled was the lab staff. If you think they are adequately described in the paper I would mark this as met.  Happy to discuss.
+
+## Untimed: Research compendium
