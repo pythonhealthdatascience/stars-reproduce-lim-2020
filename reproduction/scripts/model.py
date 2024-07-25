@@ -144,7 +144,7 @@ def contact(p, c1, c2, c3, day, staffpershift1, staffpershift2,
 
 
 def run_model(staff_strength, f, staffpershift1, shift_day,
-              secondary_attack_rate, contact_rate, rest_day):
+              secondary_attack_rate, contact_rate, rest_day, start_seed):
     '''
     Run the COVID-19 simulation model for a single given set of parameters,
     with 100 replications.
@@ -169,6 +169,8 @@ def run_model(staff_strength, f, staffpershift1, shift_day,
         with 40% of their colleagues on the same shift.
     rest_day : boolean
         Whether to enforce a minimum rest of one day, after shifts
+    start_seed : int
+        Seed for first replication. Will then increment for each replication.
 
     Returns:
     --------
@@ -208,6 +210,10 @@ def run_model(staff_strength, f, staffpershift1, shift_day,
 
         #  n = number of cycle for the same simulation param
         for n in range(0, 100):
+            # Set seed (incrementing with replications so not duplicate result)
+            random.seed(start_seed + n)
+            np.random.seed(start_seed + n)
+
             # Call the function to reset simulation
             stafflist, roster = restartsim(staff_pool, staffpershift1,
                                            staffpershift2, staffpershift3,
@@ -248,7 +254,8 @@ def run_scenarios(strength=[2, 4, 6],
                   shift_day=[1, 2, 3],
                   secondary_attack_rate=0.15,
                   contact_rate=0.4,
-                  rest_day=True):
+                  rest_day=True,
+                  start_seed=0):
     '''
     Run the COVID-19 simulation model with a range of scenarios, with
     parallel processing to improve run time.
@@ -273,6 +280,8 @@ def run_scenarios(strength=[2, 4, 6],
         with 40% of their colleagues on the same shift.
     rest_day : boolean
         Whether to enforce a minimum rest of one day, after shifts
+    start_seed : int
+        Seed for first replication. Will then increment for each replication.
 
     Returns:
     --------
@@ -283,7 +292,8 @@ def run_scenarios(strength=[2, 4, 6],
     paramlist = list(itertools.product(
         strength, staff_change, staff_shift, shift_day))
     # Append the other parameter required by the model
-    paramlist = [list(tup) + [secondary_attack_rate, contact_rate, rest_day]
+    paramlist = [list(tup) +
+                 [secondary_attack_rate, contact_rate, rest_day, start_seed]
                  for tup in paramlist]
 
     # Create a process pool that uses all the CPUs and apply the function

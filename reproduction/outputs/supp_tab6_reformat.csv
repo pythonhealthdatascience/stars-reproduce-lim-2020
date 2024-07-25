@@ -8,16 +8,16 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 2,1,20,1,14,0.3,Social distancing
 2,1,20,2,14,,Social distancing
 2,1,20,3,14,,Social distancing
-2,1,30,1,14,0.42,Social distancing
+2,1,30,1,14,0.4,Social distancing
 2,1,30,2,14,,Social distancing
 2,1,30,3,14,,Social distancing
 2,3,5,1,14,0.2,Social distancing
 2,3,5,2,14,,Social distancing
 2,3,5,3,14,,Social distancing
-2,3,10,1,14,0.25,Social distancing
+2,3,10,1,14,0.23,Social distancing
 2,3,10,2,14,,Social distancing
 2,3,10,3,14,,Social distancing
-2,3,20,1,14,0.38,Social distancing
+2,3,20,1,14,0.35,Social distancing
 2,3,20,2,14,,Social distancing
 2,3,20,3,14,,Social distancing
 2,3,30,1,14,0.45,Social distancing
@@ -29,16 +29,16 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 2,7,10,1,14,0.2,Social distancing
 2,7,10,2,14,,Social distancing
 2,7,10,3,14,,Social distancing
-2,7,20,1,14,0.28,Social distancing
+2,7,20,1,14,0.29,Social distancing
 2,7,20,2,14,,Social distancing
 2,7,20,3,14,,Social distancing
-2,7,30,1,14,0.42,Social distancing
+2,7,30,1,14,0.4,Social distancing
 2,7,30,2,14,,Social distancing
 2,7,30,3,14,,Social distancing
 2,14,5,1,14,0.3,Social distancing
 2,14,5,2,14,,Social distancing
 2,14,5,3,14,,Social distancing
-2,14,10,1,14,0.43,Social distancing
+2,14,10,1,14,0.4,Social distancing
 2,14,10,2,14,,Social distancing
 2,14,10,3,14,,Social distancing
 2,14,20,1,14,0.5,Social distancing
@@ -50,7 +50,7 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 2,21,5,1,14,0.3,Social distancing
 2,21,5,2,14,,Social distancing
 2,21,5,3,14,,Social distancing
-2,21,10,1,14,0.45,Social distancing
+2,21,10,1,14,0.4,Social distancing
 2,21,10,2,14,,Social distancing
 2,21,10,3,14,,Social distancing
 2,21,20,1,14,0.5,Social distancing
@@ -61,45 +61,45 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 2,21,30,3,14,,Social distancing
 4,1,5,1,14,0.05,Social distancing
 4,1,5,2,14,0.05,Social distancing
-4,1,5,3,14,0.1,Social distancing
+4,1,5,3,14,0.05,Social distancing
 4,1,10,1,14,0.05,Social distancing
-4,1,10,2,14,0.07,Social distancing
+4,1,10,2,14,0.06,Social distancing
 4,1,10,3,14,0.07,Social distancing
-4,1,20,1,14,0.06,Social distancing
+4,1,20,1,14,0.07,Social distancing
 4,1,20,2,14,0.09,Social distancing
-4,1,20,3,14,0.1,Social distancing
-4,1,30,1,14,0.12,Social distancing
+4,1,20,3,14,0.11,Social distancing
+4,1,30,1,14,0.1,Social distancing
 4,1,30,2,14,0.12,Social distancing
-4,1,30,3,14,0.2,Social distancing
-4,3,5,1,14,0.1,Social distancing
+4,1,30,3,14,0.18,Social distancing
+4,3,5,1,14,0.05,Social distancing
 4,3,5,2,14,0.1,Social distancing
 4,3,5,3,14,0.1,Social distancing
 4,3,10,1,14,0.07,Social distancing
-4,3,10,2,14,0.1,Social distancing
+4,3,10,2,14,0.07,Social distancing
 4,3,10,3,14,0.1,Social distancing
-4,3,20,1,14,0.11,Social distancing
+4,3,20,1,14,0.12,Social distancing
 4,3,20,2,14,0.12,Social distancing
-4,3,20,3,14,0.17,Social distancing
-4,3,30,1,14,0.2,Social distancing
-4,3,30,2,14,0.25,Social distancing
-4,3,30,3,14,0.28,Social distancing
+4,3,20,3,14,0.16,Social distancing
+4,3,30,1,14,0.18,Social distancing
+4,3,30,2,14,0.22,Social distancing
+4,3,30,3,14,0.27,Social distancing
 4,7,5,1,14,0.1,Social distancing
 4,7,5,2,14,0.1,Social distancing
 4,7,5,3,14,0.1,Social distancing
 4,7,10,1,14,0.1,Social distancing
 4,7,10,2,14,0.1,Social distancing
-4,7,10,3,14,0.1,Social distancing
-4,7,20,1,14,0.16,Social distancing
-4,7,20,2,14,0.15,Social distancing
-4,7,20,3,14,0.16,Social distancing
-4,7,30,1,14,0.21,Social distancing
-4,7,30,2,14,0.22,Social distancing
-4,7,30,3,14,0.21,Social distancing
+4,7,10,3,14,0.09,Social distancing
+4,7,20,1,14,0.15,Social distancing
+4,7,20,2,14,0.14,Social distancing
+4,7,20,3,14,0.15,Social distancing
+4,7,30,1,14,0.2,Social distancing
+4,7,30,2,14,0.21,Social distancing
+4,7,30,3,14,0.2,Social distancing
 4,14,5,1,14,0.15,Social distancing
-4,14,5,2,14,0.17,Social distancing
+4,14,5,2,14,0.15,Social distancing
 4,14,5,3,14,0.2,Social distancing
-4,14,10,1,14,0.23,Social distancing
-4,14,10,2,14,0.21,Social distancing
+4,14,10,1,14,0.2,Social distancing
+4,14,10,2,14,0.23,Social distancing
 4,14,10,3,14,0.23,Social distancing
 4,14,20,1,14,0.25,Social distancing
 4,14,20,2,14,0.25,Social distancing
@@ -109,10 +109,10 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 4,14,30,3,14,0.25,Social distancing
 4,21,5,1,14,0.15,Social distancing
 4,21,5,2,14,0.15,Social distancing
-4,21,5,3,14,0.2,Social distancing
+4,21,5,3,14,0.15,Social distancing
 4,21,10,1,14,0.23,Social distancing
 4,21,10,2,14,0.23,Social distancing
-4,21,10,3,14,0.23,Social distancing
+4,21,10,3,14,0.2,Social distancing
 4,21,20,1,14,0.25,Social distancing
 4,21,20,2,14,0.25,Social distancing
 4,21,20,3,14,0.25,Social distancing
@@ -126,53 +126,53 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 6,1,10,2,14,0.03,Social distancing
 6,1,10,3,14,0.03,Social distancing
 6,1,20,1,14,0.03,Social distancing
-6,1,20,2,14,0.04,Social distancing
+6,1,20,2,14,0.03,Social distancing
 6,1,20,3,14,0.04,Social distancing
 6,1,30,1,14,0.04,Social distancing
 6,1,30,2,14,0.04,Social distancing
-6,1,30,3,14,0.05,Social distancing
+6,1,30,3,14,0.06,Social distancing
 6,3,5,1,14,0.03,Social distancing
-6,3,5,2,14,0.05,Social distancing
-6,3,5,3,14,0.07,Social distancing
+6,3,5,2,14,0.03,Social distancing
+6,3,5,3,14,0.03,Social distancing
 6,3,10,1,14,0.03,Social distancing
-6,3,10,2,14,0.05,Social distancing
-6,3,10,3,14,0.03,Social distancing
+6,3,10,2,14,0.03,Social distancing
+6,3,10,3,14,0.05,Social distancing
 6,3,20,1,14,0.06,Social distancing
 6,3,20,2,14,0.05,Social distancing
 6,3,20,3,14,0.07,Social distancing
-6,3,30,1,14,0.11,Social distancing
-6,3,30,2,14,0.12,Social distancing
-6,3,30,3,14,0.13,Social distancing
+6,3,30,1,14,0.09,Social distancing
+6,3,30,2,14,0.09,Social distancing
+6,3,30,3,14,0.11,Social distancing
 6,7,5,1,14,0.07,Social distancing
 6,7,5,2,14,0.07,Social distancing
 6,7,5,3,14,0.07,Social distancing
 6,7,10,1,14,0.07,Social distancing
 6,7,10,2,14,0.07,Social distancing
 6,7,10,3,14,0.07,Social distancing
-6,7,20,1,14,0.1,Social distancing
-6,7,20,2,14,0.1,Social distancing
-6,7,20,3,14,0.1,Social distancing
-6,7,30,1,14,0.13,Social distancing
+6,7,20,1,14,0.09,Social distancing
+6,7,20,2,14,0.09,Social distancing
+6,7,20,3,14,0.09,Social distancing
+6,7,30,1,14,0.14,Social distancing
 6,7,30,2,14,0.14,Social distancing
-6,7,30,3,14,0.14,Social distancing
-6,14,5,1,14,0.13,Social distancing
-6,14,5,2,14,0.13,Social distancing
-6,14,5,3,14,0.1,Social distancing
-6,14,10,1,14,0.15,Social distancing
-6,14,10,2,14,0.15,Social distancing
-6,14,10,3,14,0.13,Social distancing
+6,7,30,3,14,0.13,Social distancing
+6,14,5,1,14,0.1,Social distancing
+6,14,5,2,14,0.1,Social distancing
+6,14,5,3,14,0.12,Social distancing
+6,14,10,1,14,0.13,Social distancing
+6,14,10,2,14,0.14,Social distancing
+6,14,10,3,14,0.15,Social distancing
 6,14,20,1,14,0.17,Social distancing
 6,14,20,2,14,0.17,Social distancing
 6,14,20,3,14,0.17,Social distancing
 6,14,30,1,14,0.17,Social distancing
 6,14,30,2,14,0.17,Social distancing
 6,14,30,3,14,0.17,Social distancing
-6,21,5,1,14,0.13,Social distancing
-6,21,5,2,14,0.12,Social distancing
-6,21,5,3,14,0.13,Social distancing
+6,21,5,1,14,0.1,Social distancing
+6,21,5,2,14,0.1,Social distancing
+6,21,5,3,14,0.1,Social distancing
 6,21,10,1,14,0.15,Social distancing
-6,21,10,2,14,0.13,Social distancing
-6,21,10,3,14,0.15,Social distancing
+6,21,10,2,14,0.15,Social distancing
+6,21,10,3,14,0.13,Social distancing
 6,21,20,1,14,0.17,Social distancing
 6,21,20,2,14,0.17,Social distancing
 6,21,20,3,14,0.17,Social distancing
@@ -188,7 +188,7 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 2,1,20,1,14,0.28,Gloves
 2,1,20,2,14,,Gloves
 2,1,20,3,14,,Gloves
-2,1,30,1,14,0.38,Gloves
+2,1,30,1,14,0.37,Gloves
 2,1,30,2,14,,Gloves
 2,1,30,3,14,,Gloves
 2,3,5,1,14,0.2,Gloves
@@ -197,10 +197,10 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 2,3,10,1,14,0.2,Gloves
 2,3,10,2,14,,Gloves
 2,3,10,3,14,,Gloves
-2,3,20,1,14,0.3,Gloves
+2,3,20,1,14,0.33,Gloves
 2,3,20,2,14,,Gloves
 2,3,20,3,14,,Gloves
-2,3,30,1,14,0.43,Gloves
+2,3,30,1,14,0.42,Gloves
 2,3,30,2,14,,Gloves
 2,3,30,3,14,,Gloves
 2,7,5,1,14,0.2,Gloves
@@ -209,16 +209,16 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 2,7,10,1,14,0.2,Gloves
 2,7,10,2,14,,Gloves
 2,7,10,3,14,,Gloves
-2,7,20,1,14,0.25,Gloves
+2,7,20,1,14,0.28,Gloves
 2,7,20,2,14,,Gloves
 2,7,20,3,14,,Gloves
-2,7,30,1,14,0.38,Gloves
+2,7,30,1,14,0.37,Gloves
 2,7,30,2,14,,Gloves
 2,7,30,3,14,,Gloves
 2,14,5,1,14,0.3,Gloves
 2,14,5,2,14,,Gloves
 2,14,5,3,14,,Gloves
-2,14,10,1,14,0.45,Gloves
+2,14,10,1,14,0.4,Gloves
 2,14,10,2,14,,Gloves
 2,14,10,3,14,,Gloves
 2,14,20,1,14,0.5,Gloves
@@ -241,45 +241,45 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 2,21,30,3,14,,Gloves
 4,1,5,1,14,0.05,Gloves
 4,1,5,2,14,0.05,Gloves
-4,1,5,3,14,0.1,Gloves
+4,1,5,3,14,0.05,Gloves
 4,1,10,1,14,0.05,Gloves
 4,1,10,2,14,0.05,Gloves
 4,1,10,3,14,0.07,Gloves
 4,1,20,1,14,0.06,Gloves
-4,1,20,2,14,0.09,Gloves
+4,1,20,2,14,0.07,Gloves
 4,1,20,3,14,0.09,Gloves
 4,1,30,1,14,0.08,Gloves
-4,1,30,2,14,0.11,Gloves
+4,1,30,2,14,0.1,Gloves
 4,1,30,3,14,0.13,Gloves
 4,3,5,1,14,0.05,Gloves
-4,3,5,2,14,0.1,Gloves
-4,3,5,3,14,0.08,Gloves
+4,3,5,2,14,0.08,Gloves
+4,3,5,3,14,0.1,Gloves
 4,3,10,1,14,0.07,Gloves
 4,3,10,2,14,0.07,Gloves
 4,3,10,3,14,0.07,Gloves
-4,3,20,1,14,0.09,Gloves
-4,3,20,2,14,0.14,Gloves
+4,3,20,1,14,0.1,Gloves
+4,3,20,2,14,0.11,Gloves
 4,3,20,3,14,0.12,Gloves
-4,3,30,1,14,0.17,Gloves
-4,3,30,2,14,0.21,Gloves
-4,3,30,3,14,0.2,Gloves
+4,3,30,1,14,0.16,Gloves
+4,3,30,2,14,0.18,Gloves
+4,3,30,3,14,0.22,Gloves
 4,7,5,1,14,0.1,Gloves
 4,7,5,2,14,0.1,Gloves
 4,7,5,3,14,0.1,Gloves
 4,7,10,1,14,0.1,Gloves
 4,7,10,2,14,0.1,Gloves
-4,7,10,3,14,0.1,Gloves
+4,7,10,3,14,0.07,Gloves
 4,7,20,1,14,0.14,Gloves
-4,7,20,2,14,0.12,Gloves
-4,7,20,3,14,0.12,Gloves
+4,7,20,2,14,0.14,Gloves
+4,7,20,3,14,0.13,Gloves
 4,7,30,1,14,0.18,Gloves
-4,7,30,2,14,0.19,Gloves
-4,7,30,3,14,0.19,Gloves
+4,7,30,2,14,0.18,Gloves
+4,7,30,3,14,0.18,Gloves
 4,14,5,1,14,0.15,Gloves
 4,14,5,2,14,0.15,Gloves
-4,14,5,3,14,0.17,Gloves
+4,14,5,3,14,0.15,Gloves
 4,14,10,1,14,0.2,Gloves
-4,14,10,2,14,0.17,Gloves
+4,14,10,2,14,0.2,Gloves
 4,14,10,3,14,0.2,Gloves
 4,14,20,1,14,0.25,Gloves
 4,14,20,2,14,0.25,Gloves
@@ -307,32 +307,32 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 6,1,10,3,14,0.03,Gloves
 6,1,20,1,14,0.03,Gloves
 6,1,20,2,14,0.03,Gloves
-6,1,20,3,14,0.04,Gloves
+6,1,20,3,14,0.03,Gloves
 6,1,30,1,14,0.03,Gloves
-6,1,30,2,14,0.05,Gloves
-6,1,30,3,14,0.06,Gloves
+6,1,30,2,14,0.03,Gloves
+6,1,30,3,14,0.04,Gloves
 6,3,5,1,14,0.03,Gloves
 6,3,5,2,14,0.03,Gloves
-6,3,5,3,14,0.07,Gloves
+6,3,5,3,14,0.03,Gloves
 6,3,10,1,14,0.03,Gloves
 6,3,10,2,14,0.03,Gloves
-6,3,10,3,14,0.03,Gloves
+6,3,10,3,14,0.05,Gloves
 6,3,20,1,14,0.05,Gloves
-6,3,20,2,14,0.06,Gloves
-6,3,20,3,14,0.07,Gloves
-6,3,30,1,14,0.08,Gloves
-6,3,30,2,14,0.09,Gloves
-6,3,30,3,14,0.1,Gloves
+6,3,20,2,14,0.04,Gloves
+6,3,20,3,14,0.06,Gloves
+6,3,30,1,14,0.07,Gloves
+6,3,30,2,14,0.07,Gloves
+6,3,30,3,14,0.09,Gloves
 6,7,5,1,14,0.07,Gloves
 6,7,5,2,14,0.07,Gloves
 6,7,5,3,14,0.07,Gloves
-6,7,10,1,14,0.07,Gloves
+6,7,10,1,14,0.05,Gloves
 6,7,10,2,14,0.07,Gloves
 6,7,10,3,14,0.07,Gloves
-6,7,20,1,14,0.09,Gloves
+6,7,20,1,14,0.08,Gloves
 6,7,20,2,14,0.08,Gloves
-6,7,20,3,14,0.08,Gloves
-6,7,30,1,14,0.12,Gloves
+6,7,20,3,14,0.09,Gloves
+6,7,30,1,14,0.13,Gloves
 6,7,30,2,14,0.12,Gloves
 6,7,30,3,14,0.12,Gloves
 6,14,5,1,14,0.1,Gloves
@@ -342,7 +342,7 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 6,14,10,2,14,0.13,Gloves
 6,14,10,3,14,0.13,Gloves
 6,14,20,1,14,0.17,Gloves
-6,14,20,2,14,0.17,Gloves
+6,14,20,2,14,0.16,Gloves
 6,14,20,3,14,0.17,Gloves
 6,14,30,1,14,0.17,Gloves
 6,14,30,2,14,0.17,Gloves
@@ -350,7 +350,7 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 6,21,5,1,14,0.1,Gloves
 6,21,5,2,14,0.1,Gloves
 6,21,5,3,14,0.1,Gloves
-6,21,10,1,14,0.15,Gloves
+6,21,10,1,14,0.13,Gloves
 6,21,10,2,14,0.13,Gloves
 6,21,10,3,14,0.13,Gloves
 6,21,20,1,14,0.17,Gloves
@@ -359,40 +359,40 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 6,21,30,1,14,0.17,Gloves
 6,21,30,2,14,0.17,Gloves
 6,21,30,3,14,0.17,Gloves
-2,1,5,1,14,0.2,Surgical mask
+2,1,5,1,14,0.1,Surgical mask
 2,1,5,2,14,,Surgical mask
 2,1,5,3,14,,Surgical mask
-2,1,10,1,14,0.15,Surgical mask
+2,1,10,1,14,0.1,Surgical mask
 2,1,10,2,14,,Surgical mask
 2,1,10,3,14,,Surgical mask
-2,1,20,1,14,0.17,Surgical mask
+2,1,20,1,14,0.15,Surgical mask
 2,1,20,2,14,,Surgical mask
 2,1,20,3,14,,Surgical mask
-2,1,30,1,14,0.23,Surgical mask
+2,1,30,1,14,0.22,Surgical mask
 2,1,30,2,14,,Surgical mask
 2,1,30,3,14,,Surgical mask
-2,3,5,1,14,0.2,Surgical mask
+2,3,5,1,14,0.1,Surgical mask
 2,3,5,2,14,,Surgical mask
 2,3,5,3,14,,Surgical mask
 2,3,10,1,14,0.15,Surgical mask
 2,3,10,2,14,,Surgical mask
 2,3,10,3,14,,Surgical mask
-2,3,20,1,14,0.23,Surgical mask
+2,3,20,1,14,0.2,Surgical mask
 2,3,20,2,14,,Surgical mask
 2,3,20,3,14,,Surgical mask
-2,3,30,1,14,0.3,Surgical mask
+2,3,30,1,14,0.28,Surgical mask
 2,3,30,2,14,,Surgical mask
 2,3,30,3,14,,Surgical mask
 2,7,5,1,14,0.1,Surgical mask
 2,7,5,2,14,,Surgical mask
 2,7,5,3,14,,Surgical mask
-2,7,10,1,14,0.15,Surgical mask
+2,7,10,1,14,0.1,Surgical mask
 2,7,10,2,14,,Surgical mask
 2,7,10,3,14,,Surgical mask
 2,7,20,1,14,0.15,Surgical mask
 2,7,20,2,14,,Surgical mask
 2,7,20,3,14,,Surgical mask
-2,7,30,1,14,0.25,Surgical mask
+2,7,30,1,14,0.23,Surgical mask
 2,7,30,2,14,,Surgical mask
 2,7,30,3,14,,Surgical mask
 2,14,5,1,14,0.2,Surgical mask
@@ -422,15 +422,15 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 4,1,5,1,14,0.05,Surgical mask
 4,1,5,2,14,0.05,Surgical mask
 4,1,5,3,14,0.05,Surgical mask
-4,1,10,1,14,0.05,Surgical mask
+4,1,10,1,14,0.03,Surgical mask
 4,1,10,2,14,0.05,Surgical mask
 4,1,10,3,14,0.05,Surgical mask
 4,1,20,1,14,0.04,Surgical mask
 4,1,20,2,14,0.04,Surgical mask
 4,1,20,3,14,0.05,Surgical mask
-4,1,30,1,14,0.05,Surgical mask
+4,1,30,1,14,0.04,Surgical mask
 4,1,30,2,14,0.06,Surgical mask
-4,1,30,3,14,0.07,Surgical mask
+4,1,30,3,14,0.06,Surgical mask
 4,3,5,1,14,0.05,Surgical mask
 4,3,5,2,14,0.05,Surgical mask
 4,3,5,3,14,0.05,Surgical mask
@@ -440,40 +440,40 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 4,3,20,1,14,0.06,Surgical mask
 4,3,20,2,14,0.06,Surgical mask
 4,3,20,3,14,0.07,Surgical mask
-4,3,30,1,14,0.06,Surgical mask
-4,3,30,2,14,0.1,Surgical mask
-4,3,30,3,14,0.11,Surgical mask
-4,7,5,1,14,0.1,Surgical mask
-4,7,5,2,14,0.1,Surgical mask
-4,7,5,3,14,0.1,Surgical mask
-4,7,10,1,14,0.07,Surgical mask
-4,7,10,2,14,0.07,Surgical mask
-4,7,10,3,14,0.07,Surgical mask
-4,7,20,1,14,0.06,Surgical mask
+4,3,30,1,14,0.07,Surgical mask
+4,3,30,2,14,0.08,Surgical mask
+4,3,30,3,14,0.1,Surgical mask
+4,7,5,1,14,0.05,Surgical mask
+4,7,5,2,14,0.05,Surgical mask
+4,7,5,3,14,0.05,Surgical mask
+4,7,10,1,14,0.05,Surgical mask
+4,7,10,2,14,0.05,Surgical mask
+4,7,10,3,14,0.05,Surgical mask
+4,7,20,1,14,0.07,Surgical mask
 4,7,20,2,14,0.07,Surgical mask
 4,7,20,3,14,0.07,Surgical mask
-4,7,30,1,14,0.1,Surgical mask
-4,7,30,2,14,0.1,Surgical mask
+4,7,30,1,14,0.11,Surgical mask
+4,7,30,2,14,0.11,Surgical mask
 4,7,30,3,14,0.11,Surgical mask
-4,14,5,1,14,0.15,Surgical mask
-4,14,5,2,14,0.15,Surgical mask
+4,14,5,1,14,0.1,Surgical mask
+4,14,5,2,14,0.1,Surgical mask
 4,14,5,3,14,0.1,Surgical mask
 4,14,10,1,14,0.15,Surgical mask
-4,14,10,2,14,0.12,Surgical mask
-4,14,10,3,14,0.16,Surgical mask
+4,14,10,2,14,0.15,Surgical mask
+4,14,10,3,14,0.15,Surgical mask
 4,14,20,1,14,0.21,Surgical mask
-4,14,20,2,14,0.2,Surgical mask
+4,14,20,2,14,0.21,Surgical mask
 4,14,20,3,14,0.21,Surgical mask
 4,14,30,1,14,0.24,Surgical mask
 4,14,30,2,14,0.24,Surgical mask
 4,14,30,3,14,0.24,Surgical mask
 4,21,5,1,14,0.1,Surgical mask
-4,21,5,2,14,0.15,Surgical mask
+4,21,5,2,14,0.1,Surgical mask
 4,21,5,3,14,0.1,Surgical mask
-4,21,10,1,14,0.14,Surgical mask
+4,21,10,1,14,0.15,Surgical mask
 4,21,10,2,14,0.15,Surgical mask
 4,21,10,3,14,0.15,Surgical mask
-4,21,20,1,14,0.21,Surgical mask
+4,21,20,1,14,0.23,Surgical mask
 4,21,20,2,14,0.21,Surgical mask
 4,21,20,3,14,0.21,Surgical mask
 4,21,30,1,14,0.24,Surgical mask
@@ -483,10 +483,10 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 6,1,5,2,14,0.03,Surgical mask
 6,1,5,3,14,0.03,Surgical mask
 6,1,10,1,14,0.02,Surgical mask
-6,1,10,2,14,0.03,Surgical mask
+6,1,10,2,14,0.02,Surgical mask
 6,1,10,3,14,0.02,Surgical mask
 6,1,20,1,14,0.02,Surgical mask
-6,1,20,2,14,0.03,Surgical mask
+6,1,20,2,14,0.02,Surgical mask
 6,1,20,3,14,0.02,Surgical mask
 6,1,30,1,14,0.02,Surgical mask
 6,1,30,2,14,0.02,Surgical mask
@@ -498,44 +498,44 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 6,3,10,2,14,0.03,Surgical mask
 6,3,10,3,14,0.03,Surgical mask
 6,3,20,1,14,0.03,Surgical mask
-6,3,20,2,14,0.04,Surgical mask
+6,3,20,2,14,0.03,Surgical mask
 6,3,20,3,14,0.03,Surgical mask
 6,3,30,1,14,0.03,Surgical mask
-6,3,30,2,14,0.05,Surgical mask
+6,3,30,2,14,0.04,Surgical mask
 6,3,30,3,14,0.04,Surgical mask
 6,7,5,1,14,0.03,Surgical mask
-6,7,5,2,14,0.07,Surgical mask
+6,7,5,2,14,0.03,Surgical mask
 6,7,5,3,14,0.03,Surgical mask
-6,7,10,1,14,0.05,Surgical mask
+6,7,10,1,14,0.03,Surgical mask
 6,7,10,2,14,0.03,Surgical mask
 6,7,10,3,14,0.03,Surgical mask
-6,7,20,1,14,0.06,Surgical mask
+6,7,20,1,14,0.05,Surgical mask
 6,7,20,2,14,0.05,Surgical mask
-6,7,20,3,14,0.04,Surgical mask
+6,7,20,3,14,0.05,Surgical mask
 6,7,30,1,14,0.07,Surgical mask
-6,7,30,2,14,0.07,Surgical mask
+6,7,30,2,14,0.08,Surgical mask
 6,7,30,3,14,0.07,Surgical mask
 6,14,5,1,14,0.07,Surgical mask
 6,14,5,2,14,0.07,Surgical mask
 6,14,5,3,14,0.07,Surgical mask
-6,14,10,1,14,0.1,Surgical mask
-6,14,10,2,14,0.09,Surgical mask
-6,14,10,3,14,0.1,Surgical mask
-6,14,20,1,14,0.13,Surgical mask
+6,14,10,1,14,0.09,Surgical mask
+6,14,10,2,14,0.1,Surgical mask
+6,14,10,3,14,0.09,Surgical mask
+6,14,20,1,14,0.14,Surgical mask
 6,14,20,2,14,0.14,Surgical mask
 6,14,20,3,14,0.14,Surgical mask
 6,14,30,1,14,0.16,Surgical mask
 6,14,30,2,14,0.16,Surgical mask
 6,14,30,3,14,0.16,Surgical mask
-6,21,5,1,14,0.1,Surgical mask
+6,21,5,1,14,0.07,Surgical mask
 6,21,5,2,14,0.07,Surgical mask
-6,21,5,3,14,0.1,Surgical mask
+6,21,5,3,14,0.07,Surgical mask
 6,21,10,1,14,0.09,Surgical mask
-6,21,10,2,14,0.1,Surgical mask
+6,21,10,2,14,0.08,Surgical mask
 6,21,10,3,14,0.1,Surgical mask
 6,21,20,1,14,0.14,Surgical mask
-6,21,20,2,14,0.15,Surgical mask
-6,21,20,3,14,0.13,Surgical mask
+6,21,20,2,14,0.14,Surgical mask
+6,21,20,3,14,0.14,Surgical mask
 6,21,30,1,14,0.16,Surgical mask
 6,21,30,2,14,0.16,Surgical mask
 6,21,30,3,14,0.16,Surgical mask
@@ -560,7 +560,7 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 2,3,20,1,14,0.12,Gown
 2,3,20,2,14,,Gown
 2,3,20,3,14,,Gown
-2,3,30,1,14,0.15,Gown
+2,3,30,1,14,0.17,Gown
 2,3,30,2,14,,Gown
 2,3,30,3,14,,Gown
 2,7,5,1,14,0.1,Gown
@@ -572,7 +572,7 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 2,7,20,1,14,0.1,Gown
 2,7,20,2,14,,Gown
 2,7,20,3,14,,Gown
-2,7,30,1,14,0.12,Gown
+2,7,30,1,14,0.13,Gown
 2,7,30,2,14,,Gown
 2,7,30,3,14,,Gown
 2,14,5,1,14,0.2,Gown
@@ -581,22 +581,22 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 2,14,10,1,14,0.2,Gown
 2,14,10,2,14,,Gown
 2,14,10,3,14,,Gown
-2,14,20,1,14,0.3,Gown
+2,14,20,1,14,0.29,Gown
 2,14,20,2,14,,Gown
 2,14,20,3,14,,Gown
-2,14,30,1,14,0.42,Gown
+2,14,30,1,14,0.41,Gown
 2,14,30,2,14,,Gown
 2,14,30,3,14,,Gown
 2,21,5,1,14,0.2,Gown
 2,21,5,2,14,,Gown
 2,21,5,3,14,,Gown
-2,21,10,1,14,0.2,Gown
+2,21,10,1,14,0.15,Gown
 2,21,10,2,14,,Gown
 2,21,10,3,14,,Gown
 2,21,20,1,14,0.3,Gown
 2,21,20,2,14,,Gown
 2,21,20,3,14,,Gown
-2,21,30,1,14,0.4,Gown
+2,21,30,1,14,0.42,Gown
 2,21,30,2,14,,Gown
 2,21,30,3,14,,Gown
 4,1,5,1,14,0.05,Gown
@@ -604,24 +604,24 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 4,1,5,3,14,0.05,Gown
 4,1,10,1,14,0.03,Gown
 4,1,10,2,14,0.03,Gown
-4,1,10,3,14,0.05,Gown
+4,1,10,3,14,0.03,Gown
 4,1,20,1,14,0.03,Gown
-4,1,20,2,14,0.04,Gown
-4,1,20,3,14,0.05,Gown
+4,1,20,2,14,0.03,Gown
+4,1,20,3,14,0.04,Gown
 4,1,30,1,14,0.03,Gown
 4,1,30,2,14,0.03,Gown
-4,1,30,3,14,0.05,Gown
+4,1,30,3,14,0.04,Gown
 4,3,5,1,14,0.05,Gown
 4,3,5,2,14,0.05,Gown
 4,3,5,3,14,0.05,Gown
 4,3,10,1,14,0.03,Gown
-4,3,10,2,14,0.05,Gown
+4,3,10,2,14,0.03,Gown
 4,3,10,3,14,0.05,Gown
-4,3,20,1,14,0.03,Gown
+4,3,20,1,14,0.04,Gown
 4,3,20,2,14,0.04,Gown
 4,3,20,3,14,0.05,Gown
 4,3,30,1,14,0.04,Gown
-4,3,30,2,14,0.04,Gown
+4,3,30,2,14,0.05,Gown
 4,3,30,3,14,0.05,Gown
 4,7,5,1,14,0.05,Gown
 4,7,5,2,14,0.05,Gown
@@ -629,36 +629,36 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 4,7,10,1,14,0.05,Gown
 4,7,10,2,14,0.05,Gown
 4,7,10,3,14,0.05,Gown
-4,7,20,1,14,0.06,Gown
+4,7,20,1,14,0.05,Gown
 4,7,20,2,14,0.05,Gown
 4,7,20,3,14,0.05,Gown
-4,7,30,1,14,0.06,Gown
-4,7,30,2,14,0.06,Gown
+4,7,30,1,14,0.07,Gown
+4,7,30,2,14,0.07,Gown
 4,7,30,3,14,0.06,Gown
 4,14,5,1,14,0.1,Gown
 4,14,5,2,14,0.1,Gown
 4,14,5,3,14,0.1,Gown
 4,14,10,1,14,0.1,Gown
-4,14,10,2,14,0.1,Gown
-4,14,10,3,14,0.09,Gown
-4,14,20,1,14,0.15,Gown
-4,14,20,2,14,0.15,Gown
+4,14,10,2,14,0.07,Gown
+4,14,10,3,14,0.1,Gown
+4,14,20,1,14,0.14,Gown
+4,14,20,2,14,0.14,Gown
 4,14,20,3,14,0.15,Gown
-4,14,30,1,14,0.22,Gown
+4,14,30,1,14,0.21,Gown
 4,14,30,2,14,0.21,Gown
-4,14,30,3,14,0.2,Gown
+4,14,30,3,14,0.21,Gown
 4,21,5,1,14,0.1,Gown
 4,21,5,2,14,0.1,Gown
 4,21,5,3,14,0.1,Gown
-4,21,10,1,14,0.1,Gown
-4,21,10,2,14,0.1,Gown
-4,21,10,3,14,0.1,Gown
-4,21,20,1,14,0.16,Gown
+4,21,10,1,14,0.09,Gown
+4,21,10,2,14,0.07,Gown
+4,21,10,3,14,0.07,Gown
+4,21,20,1,14,0.15,Gown
 4,21,20,2,14,0.15,Gown
 4,21,20,3,14,0.15,Gown
 4,21,30,1,14,0.21,Gown
 4,21,30,2,14,0.21,Gown
-4,21,30,3,14,0.21,Gown
+4,21,30,3,14,0.2,Gown
 6,1,5,1,14,0.03,Gown
 6,1,5,2,14,0.03,Gown
 6,1,5,3,14,0.03,Gown
@@ -669,7 +669,7 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 6,1,20,2,14,0.02,Gown
 6,1,20,3,14,0.02,Gown
 6,1,30,1,14,0.01,Gown
-6,1,30,2,14,0.02,Gown
+6,1,30,2,14,0.01,Gown
 6,1,30,3,14,0.02,Gown
 6,3,5,1,14,0.03,Gown
 6,3,5,2,14,0.03,Gown
@@ -677,8 +677,8 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 6,3,10,1,14,0.02,Gown
 6,3,10,2,14,0.02,Gown
 6,3,10,3,14,0.02,Gown
-6,3,20,1,14,0.03,Gown
-6,3,20,2,14,0.03,Gown
+6,3,20,1,14,0.02,Gown
+6,3,20,2,14,0.02,Gown
 6,3,20,3,14,0.03,Gown
 6,3,30,1,14,0.02,Gown
 6,3,30,2,14,0.02,Gown
@@ -698,12 +698,12 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 6,14,5,1,14,0.07,Gown
 6,14,5,2,14,0.07,Gown
 6,14,5,3,14,0.07,Gown
-6,14,10,1,14,0.07,Gown
-6,14,10,2,14,0.07,Gown
+6,14,10,1,14,0.06,Gown
+6,14,10,2,14,0.06,Gown
 6,14,10,3,14,0.07,Gown
 6,14,20,1,14,0.1,Gown
 6,14,20,2,14,0.1,Gown
-6,14,20,3,14,0.1,Gown
+6,14,20,3,14,0.09,Gown
 6,14,30,1,14,0.14,Gown
 6,14,30,2,14,0.14,Gown
 6,14,30,3,14,0.14,Gown
@@ -711,8 +711,8 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 6,21,5,2,14,0.07,Gown
 6,21,5,3,14,0.07,Gown
 6,21,10,1,14,0.07,Gown
-6,21,10,2,14,0.07,Gown
-6,21,10,3,14,0.07,Gown
+6,21,10,2,14,0.05,Gown
+6,21,10,3,14,0.05,Gown
 6,21,20,1,14,0.1,Gown
 6,21,20,2,14,0.1,Gown
 6,21,20,3,14,0.1,Gown
@@ -725,7 +725,7 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 2,1,10,1,14,0.05,N95 mask
 2,1,10,2,14,,N95 mask
 2,1,10,3,14,,N95 mask
-2,1,20,1,14,0.05,N95 mask
+2,1,20,1,14,0.03,N95 mask
 2,1,20,2,14,,N95 mask
 2,1,20,3,14,,N95 mask
 2,1,30,1,14,0.03,N95 mask
@@ -737,10 +737,10 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 2,3,10,1,14,0.05,N95 mask
 2,3,10,2,14,,N95 mask
 2,3,10,3,14,,N95 mask
-2,3,20,1,14,0.05,N95 mask
+2,3,20,1,14,0.04,N95 mask
 2,3,20,2,14,,N95 mask
 2,3,20,3,14,,N95 mask
-2,3,30,1,14,0.05,N95 mask
+2,3,30,1,14,0.03,N95 mask
 2,3,30,2,14,,N95 mask
 2,3,30,3,14,,N95 mask
 2,7,5,1,14,0.1,N95 mask
@@ -758,19 +758,19 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 2,14,5,1,14,0.1,N95 mask
 2,14,5,2,14,,N95 mask
 2,14,5,3,14,,N95 mask
-2,14,10,1,14,0.1,N95 mask
+2,14,10,1,14,0.08,N95 mask
 2,14,10,2,14,,N95 mask
 2,14,10,3,14,,N95 mask
 2,14,20,1,14,0.07,N95 mask
 2,14,20,2,14,,N95 mask
 2,14,20,3,14,,N95 mask
-2,14,30,1,14,0.08,N95 mask
+2,14,30,1,14,0.1,N95 mask
 2,14,30,2,14,,N95 mask
 2,14,30,3,14,,N95 mask
 2,21,5,1,14,0.1,N95 mask
 2,21,5,2,14,,N95 mask
 2,21,5,3,14,,N95 mask
-2,21,10,1,14,0.1,N95 mask
+2,21,10,1,14,0.08,N95 mask
 2,21,10,2,14,,N95 mask
 2,21,10,3,14,,N95 mask
 2,21,20,1,14,0.07,N95 mask
@@ -788,8 +788,8 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 4,1,20,1,14,0.01,N95 mask
 4,1,20,2,14,0.01,N95 mask
 4,1,20,3,14,0.01,N95 mask
-4,1,30,1,14,0.02,N95 mask
-4,1,30,2,14,0.02,N95 mask
+4,1,30,1,14,0.01,N95 mask
+4,1,30,2,14,0.01,N95 mask
 4,1,30,3,14,0.02,N95 mask
 4,3,5,1,14,0.05,N95 mask
 4,3,5,2,14,0.05,N95 mask
@@ -798,7 +798,7 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 4,3,10,2,14,0.03,N95 mask
 4,3,10,3,14,0.03,N95 mask
 4,3,20,1,14,0.01,N95 mask
-4,3,20,2,14,0.03,N95 mask
+4,3,20,2,14,0.01,N95 mask
 4,3,20,3,14,0.01,N95 mask
 4,3,30,1,14,0.02,N95 mask
 4,3,30,2,14,0.02,N95 mask
@@ -810,35 +810,35 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 4,7,10,2,14,0.03,N95 mask
 4,7,10,3,14,0.03,N95 mask
 4,7,20,1,14,0.01,N95 mask
-4,7,20,2,14,0.03,N95 mask
-4,7,20,3,14,0.03,N95 mask
+4,7,20,2,14,0.01,N95 mask
+4,7,20,3,14,0.01,N95 mask
 4,7,30,1,14,0.02,N95 mask
 4,7,30,2,14,0.02,N95 mask
 4,7,30,3,14,0.02,N95 mask
 4,14,5,1,14,0.05,N95 mask
 4,14,5,2,14,0.05,N95 mask
 4,14,5,3,14,0.05,N95 mask
-4,14,10,1,14,0.05,N95 mask
-4,14,10,2,14,0.03,N95 mask
-4,14,10,3,14,0.05,N95 mask
+4,14,10,1,14,0.04,N95 mask
+4,14,10,2,14,0.04,N95 mask
+4,14,10,3,14,0.04,N95 mask
 4,14,20,1,14,0.04,N95 mask
 4,14,20,2,14,0.04,N95 mask
 4,14,20,3,14,0.04,N95 mask
-4,14,30,1,14,0.06,N95 mask
+4,14,30,1,14,0.05,N95 mask
 4,14,30,2,14,0.05,N95 mask
-4,14,30,3,14,0.04,N95 mask
+4,14,30,3,14,0.05,N95 mask
 4,21,5,1,14,0.05,N95 mask
 4,21,5,2,14,0.05,N95 mask
 4,21,5,3,14,0.05,N95 mask
-4,21,10,1,14,0.03,N95 mask
-4,21,10,2,14,0.05,N95 mask
+4,21,10,1,14,0.04,N95 mask
+4,21,10,2,14,0.04,N95 mask
 4,21,10,3,14,0.04,N95 mask
 4,21,20,1,14,0.04,N95 mask
 4,21,20,2,14,0.04,N95 mask
 4,21,20,3,14,0.04,N95 mask
 4,21,30,1,14,0.05,N95 mask
-4,21,30,2,14,0.04,N95 mask
-4,21,30,3,14,0.04,N95 mask
+4,21,30,2,14,0.05,N95 mask
+4,21,30,3,14,0.05,N95 mask
 6,1,5,1,14,0.03,N95 mask
 6,1,5,2,14,0.03,N95 mask
 6,1,5,3,14,0.03,N95 mask
@@ -870,11 +870,11 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 6,7,10,2,14,0.02,N95 mask
 6,7,10,3,14,0.02,N95 mask
 6,7,20,1,14,0.01,N95 mask
-6,7,20,2,14,0.02,N95 mask
-6,7,20,3,14,0.02,N95 mask
+6,7,20,2,14,0.01,N95 mask
+6,7,20,3,14,0.01,N95 mask
 6,7,30,1,14,0.01,N95 mask
 6,7,30,2,14,0.01,N95 mask
-6,7,30,3,14,0.02,N95 mask
+6,7,30,3,14,0.01,N95 mask
 6,14,5,1,14,0.03,N95 mask
 6,14,5,2,14,0.03,N95 mask
 6,14,5,3,14,0.03,N95 mask
@@ -892,10 +892,10 @@ strength,staff_change,staff_per_shift,shifts_per_day,end_of_day,prop_infected,wo
 6,21,5,3,14,0.03,N95 mask
 6,21,10,1,14,0.03,N95 mask
 6,21,10,2,14,0.03,N95 mask
-6,21,10,3,14,0.02,N95 mask
+6,21,10,3,14,0.03,N95 mask
 6,21,20,1,14,0.03,N95 mask
 6,21,20,2,14,0.03,N95 mask
 6,21,20,3,14,0.03,N95 mask
 6,21,30,1,14,0.03,N95 mask
-6,21,30,2,14,0.02,N95 mask
+6,21,30,2,14,0.03,N95 mask
 6,21,30,3,14,0.03,N95 mask
