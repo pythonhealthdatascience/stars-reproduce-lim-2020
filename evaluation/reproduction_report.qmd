@@ -103,7 +103,7 @@ eval_dict = {
   'Badges (criteria)': [3, 0, 9, 0],
   'Badges (badges)': [3, 0, 9, 0],
   'STRESS-DES': [16, 2, 3, 3],
-  'ISPOR-SDM': [11, 0, 4, 3]
+  'ISPOR-SDM': [12, 0, 4, 2]
 }
 eval_wide = pd.DataFrame(eval_dict, index=col).T
 eval = (eval_wide
