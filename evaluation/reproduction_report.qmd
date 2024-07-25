@@ -21,7 +21,12 @@ Successfully reproduced **9 out of 9 (100%)** of items from the scope in **12h 2
 
 Required troubleshooting:
 
-* [List of required changes to code]
+* **Tables** - convert to `.csv` and long format
+* **Environment** - identify appropriate versions and create environment file
+* **Model run time** - add parallel processing to help reduce it
+* **Set up model so scenarios can be run programmatically** - as function inputs rather than hard-coded values in the model script
+* **Adding parameters and scenarios** - modifying existing parameters, switching hard-coded parameters to function inputs, or modifying code (e.g. adding conditional logic to skip or change what code is run)
+* **Create figures** - from scratch as no code provided
 
 ::: {.panel-tabset}
 
