@@ -12,7 +12,7 @@ Finishing up research compendium.
 
 :::
 
-## Untimed: Research compendium
+## Untimed: Troubleshooting docker
 
 Tested local build of Docker image and running in the container but had an error:
 
@@ -206,3 +206,7 @@ Built docker image. Still failed as before. It appears it's not using the settin
 Tried switching to conda-forge again. No difference.
 
 [Based on this post](https://discourse.jupyter.org/t/running-jupyter-server-from-a-docker-container/23537), I tried adding `notebook` to the environment and then re-running. And then it worked! Tested running the model: all fine.
+
+## Untimed: Docker on container registry
+
+Activated the GitHub action to publish the docker image on GHCR. Followed my instructions to build that and test run: all fine.
