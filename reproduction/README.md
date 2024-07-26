@@ -14,6 +14,7 @@ In this assessment, we attempted to reproduce 9 items: 4 figures and 5 tables.
 
 ### Repository overview
 
+```{bash}
 ├── docker
 │   └──  ...
 ├── outputs
@@ -24,6 +25,7 @@ In this assessment, we attempted to reproduce 9 items: 4 figures and 5 tables.
 │   └──  ...
 ├── environment.yaml
 └── README.md
+```
 
 * `docker/` - Instructions for creation of Docker container.
 * `outputs/` - Output files from the model.
@@ -51,7 +53,7 @@ For this option (and option C), you'll need to ensure that `docker` is installed
 To create the docker image and then open jupyter lab:
 
 1. In the terminal, navigate to parent directory of the `reproduction/` folder
-2. Build the image: `docker build --tag lim2020 . -f ./reproduction/docker/Dockerfile`. You may require admin access on linux (i.e. `sudo docker build`...)
+2. Build the image: `sudo docker build --tag lim2020 . -f ./reproduction/docker/Dockerfile`
 3. Create a docker container from that image and open jupyter lab: `(sleep 2 && xdg-open http://localhost:8080) & sudo docker run -it -p 8080:80 --name lim2020_docker lim2020`
 
 #### Option C: Pull pre-built docker image
@@ -103,6 +105,8 @@ Example of finished tests (if both tests passed):
 This reproduction was conducted on an Intel Core i7-12700H with 32GB RAM running Ubuntu 22.04.4 Linux.
 
 On that machine, running all scenarios from scratch, the total run time is **49 minutes and 17 seconds**.
+
+Run time for the tests was **6 minutes 35 seconds**.
 
 ## Citation
 
