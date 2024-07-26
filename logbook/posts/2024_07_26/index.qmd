@@ -183,3 +183,26 @@ ERROR conda.cli.main_run:execute(125): `conda run /bin/bash -c jupyter-lab /home
 ```
 
 This was unexpected, as now the file matches exactly to the functional Dockerfile used for Shoaib et al. 2022, except for that it is `environment.yaml` and the environment name.
+
+I tried changing the environment channel back to `defaults`, rebuilt on local machine, recorded versions.
+
+```
+name: lim2020
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - numpy=1.19.1
+  - pandas=1.1.1
+  - python=3.8.5
+  - ipykernel=6.28.0
+  - matplotlib=3.5.1
+  - pytest=7.4.4
+  - jupyterlab=4.0.11
+```
+
+Built docker image. Still failed as before. It appears it's not using the settings from the `jupyter_notebook_config.py` as that sets allow root as True, but the error is that running as root is not recommended that we can use --allow-root to bypass.
+
+Tried switching to conda-forge again. No difference.
+
+[Based on this post](https://discourse.jupyter.org/t/running-jupyter-server-from-a-docker-container/23537), I tried adding `notebook` to the environment and then re-running. And then it worked! Tested running the model: all fine.
