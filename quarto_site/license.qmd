@@ -3,8 +3,7 @@ title: "Open Source License"
 bibliography: ../quarto_site/references.bib
 ---
 
-<!-- TODO: Update with appropriate license -->
-This repository is licensed under the [license].
+This repository is licensed under an MIT license.
 
 ::: {.callout-note appearance="minimal" collapse=true}
 
@@ -14,25 +13,24 @@ This repository is licensed under the [license].
 
 :::
 
-<!-- TODO: Update with appropriate license -->
-This is aligned with the original study, who shared their code under [license].
+This is aligned with the original study, who shared their code under an MIT license.
 
 ::: {.callout-note appearance="minimal" collapse=true}
 
 ## View license
 
-<!-- TODO: Provide relative path to embed license from the original study, as done above for the main repository license -->
-[Embedded license]
+{{< include  ../original_study/COVID-roster-simulation/LICENSE >}}
 
 :::
 
-<!-- TODO: Add info about the article license -->
-The original study was published in the journal "[Journal name]". They distributed the article under [Add more details about license]
+The original study was published in the journal "Clinical Biochemistry", which was shared with PubMed Central (PMC) and made free to view online at <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7486214/>.
 
 ::: {.callout-note appearance="minimal" collapse=true}
 
 ## View copyright statement from journal
 
-<!-- TODO: Add copyright statement -->
+"Copyright © 2020 The Canadian Society of Clinical Chemists. Published by Elsevier Inc. All rights reserved. Since January 2020 Elsevier has created a COVID-19 resource centre with free information in English and Mandarin on the novel coronavirus COVID-19. The COVID-19 resource centre is hosted on Elsevier Connect, the company's public news and information website. Elsevier hereby grants permission to make all its COVID-19-related research that is available on the COVID-19 resource centre - including this research content - immediately available in PubMed Central and other publicly funded repositories, such as the WHO COVID database **with rights for unrestricted research re-use and analyses in any form or by any means with acknowledgement of the original source**. These permissions are granted for free by Elsevier for as long as the COVID-19 resource centre remains active."
+
+Since the COVID-19 resource centre remains active, we understand that this means we are free to upload this article and its supplementary materials to this repository, and to use images from this article with attribution.
 
 :::
