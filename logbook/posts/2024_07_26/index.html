@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Amy Heather">
+<meta name="dcterms.date" content="2024-07-26">
 
-<title>Logbook – Reproducing Lim et al.&nbsp;2020</title>
+<title>Day 6 – Reproducing Lim et al.&nbsp;2020</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +25,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../quarto_site/stars_logo_blue.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../quarto_site/stars_logo_blue.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,65 +69,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -138,10 +80,10 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../quarto_site/stars_logo_blue.png" alt="" class="navbar-logo">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../quarto_site/stars_logo_blue.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Reproducing Lim et al.&nbsp;2020</span>
     </a>
   </div>
@@ -152,7 +94,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../quarto_site/study_publication.html"> 
+    <a class="nav-link" href="../../../quarto_site/study_publication.html"> 
 <span class="menu-text">Original study</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -161,15 +103,15 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-reproduction">    
         <li>
-    <a class="dropdown-item" href="../quarto_site/reproduction_readme.html">
+    <a class="dropdown-item" href="../../../quarto_site/reproduction_readme.html">
  <span class="dropdown-text">README</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../original_study/reformat_tables.html">
+    <a class="dropdown-item" href="../../../original_study/reformat_tables.html">
  <span class="dropdown-text">Reformat the tables</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../reproduction/scripts/reproduction.html">
+    <a class="dropdown-item" href="../../../reproduction/scripts/reproduction.html">
  <span class="dropdown-text">Reproduction</span></a>
   </li>  
     </ul>
@@ -180,37 +122,37 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-evaluation">    
         <li>
-    <a class="dropdown-item" href="../evaluation/scope.html">
+    <a class="dropdown-item" href="../../../evaluation/scope.html">
  <span class="dropdown-text">Scope</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../evaluation/reproduction_success.html">
+    <a class="dropdown-item" href="../../../evaluation/reproduction_success.html">
  <span class="dropdown-text">Reproduction success</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../evaluation/badges.html">
+    <a class="dropdown-item" href="../../../evaluation/badges.html">
  <span class="dropdown-text">Journal badges</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../evaluation/artefacts.html">
+    <a class="dropdown-item" href="../../../evaluation/artefacts.html">
  <span class="dropdown-text">STARS framework</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../evaluation/reporting.html">
+    <a class="dropdown-item" href="../../../evaluation/reporting.html">
  <span class="dropdown-text">Reporting guidelines</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="../logbook/logbook.html" aria-current="page"> 
+    <a class="nav-link" href="../../../logbook/logbook.html"> 
 <span class="menu-text">Logbook</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../evaluation/reproduction_report.html"> 
+    <a class="nav-link" href="../../../evaluation/reproduction_report.html"> 
 <span class="menu-text">Summary</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../evaluation/reflections.html"> 
+    <a class="nav-link" href="../../../evaluation/reflections.html"> 
 <span class="menu-text">Reflections</span></a>
   </li>  
 </ul>
@@ -230,258 +172,212 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Logbook</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Day 6</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">compendium</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Amy Heather </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">July 26, 2024</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="compendium">compendium <span class="quarto-category-count">(2)</span></div><div class="category" data-category="guidelines">guidelines <span class="quarto-category-count">(1)</span></div><div class="category" data-category="read">read <span class="quarto-category-count">(1)</span></div><div class="category" data-category="reproduce">reproduce <span class="quarto-category-count">(3)</span></div><div class="category" data-category="scope">scope <span class="quarto-category-count">(2)</span></div><div class="category" data-category="setup">setup <span class="quarto-category-count">(2)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#untimed-research-compendium" id="toc-untimed-research-compendium" class="nav-link active" data-scroll-target="#untimed-research-compendium">Untimed: Research compendium</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/edit/main/logbook/posts/2024_07_26/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
-<p>These diary entries record daily progress in reproduction of the study, providing a transparent and detailed record of work.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Finishing up research compendium.</p>
+</div>
+</div>
+<section id="untimed-research-compendium" class="level2">
+<h2 class="anchored" data-anchor-id="untimed-research-compendium">Untimed: Research compendium</h2>
+<p>Tested local build of Docker image and running in the container but had an error:</p>
+<pre><code>20.42 LibMambaUnsatisfiableError: Encountered problems while solving:
+20.42   - nothing provides numpy-base 1.23.3 py310h375b286_0 needed by numpy-1.23.3-py310hac523dd_0
+20.42 
+20.42 Could not solve for environment specs
+20.42 The following packages are incompatible
+20.42 ├─ matplotlib 3.5.1**  is installable with the potential options
+20.42 │  ├─ matplotlib 3.5.1 would require
+20.42 │  │  └─ python &gt;=3.10,&lt;3.11.0a0 , which can be installed;
+20.42 │  ├─ matplotlib 3.5.1 would require
+20.42 │  │  └─ python &gt;=3.7,&lt;3.8.0a0 , which can be installed;
+20.42 │  ├─ matplotlib 3.5.1 would require
+20.42 │  │  └─ matplotlib-base &gt;=3.5.1,&lt;3.5.2.0a0  with the potential options
+20.42 │  │     ├─ matplotlib-base 3.5.1 would require
+20.42 │  │     │  └─ python &gt;=3.10,&lt;3.11.0a0 , which can be installed;
+20.42 │  │     ├─ matplotlib-base 3.5.1 would require
+20.42 │  │     │  └─ python &gt;=3.7,&lt;3.8.0a0 , which can be installed;
+20.42 │  │     ├─ matplotlib-base 3.5.1 would require
+20.42 │  │     │  └─ numpy &gt;=1.19.2,&lt;2.0a0  with the potential options
+20.42 │  │     │     ├─ numpy [1.19.1|1.19.2] would require
+20.42 │  │     │     │  └─ python &gt;=3.6,&lt;3.7.0a0 , which can be installed;
+20.42 │  │     │     ├─ numpy [1.19.1|1.19.2|...|1.21.5] would require
+20.42 │  │     │     │  └─ python &gt;=3.7,&lt;3.8.0a0 , which can be installed;
+20.42 │  │     │     ├─ numpy [1.19.2|1.19.5|...|1.24.3], which can be installed;
+20.42 │  │     │     ├─ numpy [1.19.2|1.19.5|...|1.26.4] would require
+20.42 │  │     │     │  └─ python &gt;=3.9,&lt;3.10.0a0 , which can be installed;
+20.42 │  │     │     ├─ numpy [1.21.2|1.21.5|...|1.26.4] would require
+20.42 │  │     │     │  └─ python &gt;=3.10,&lt;3.11.0a0 , which can be installed;
+20.42 │  │     │     ├─ numpy [1.22.3|1.23.5|...|1.26.4] would require
+20.42 │  │     │     │  └─ python &gt;=3.11,&lt;3.12.0a0 , which can be installed;
+20.42 │  │     │     ├─ numpy 1.23.3 would require
+20.42 │  │     │     │  └─ numpy-base 1.23.3 py310h375b286_0, which does not exist (perhaps a missing channel);
+20.42 │  │     │     ├─ numpy 1.23.3 would require
+20.42 │  │     │     │  └─ numpy-base 1.23.3 py310h8e6c178_0, which does not exist (perhaps a missing channel);
+20.42 │  │     │     └─ numpy [1.26.0|1.26.2|1.26.3|1.26.4] would require
+20.42 │  │     │        └─ python &gt;=3.12,&lt;3.13.0a0 , which can be installed;
+20.42 │  │     └─ matplotlib-base 3.5.1 would require
+20.42 │  │        └─ python &gt;=3.9,&lt;3.10.0a0 , which can be installed;
+20.42 │  └─ matplotlib 3.5.1 would require
+20.42 │     └─ python &gt;=3.9,&lt;3.10.0a0 , which can be installed;
+20.42 ├─ numpy 1.19.1**  is installable with the potential options
+20.42 │  ├─ numpy [1.19.1|1.19.2], which can be installed (as previously explained);
+20.42 │  ├─ numpy [1.19.1|1.19.2|...|1.21.5], which can be installed (as previously explained);
+20.42 │  └─ numpy 1.19.1 conflicts with any installable versions previously reported;
+20.42 └─ python 3.8.5**  is not installable because it conflicts with any installable versions previously reported.
+20.42 </code></pre>
+<p>I had a look at the conda/mamba environment created from the same environment on my machine and that had numpy-base 1.19.1. I tried adding this explicitly to the environment file and then running it again, although unresolved.</p>
+<p>I tried switching to start with a mamba image, following the documentation at <a href="https://micromamba-docker.readthedocs.io/en/latest/quick_start.html" class="uri">https://micromamba-docker.readthedocs.io/en/latest/quick_start.html</a>, but got the same error.</p>
+<pre><code># Use micromamba image
+FROM mambaorg/micromamba
+
+# Copy the environment file
+COPY --chown=$MAMBA_USER:$MAMBA_USER ./reproduction/environment.yaml /tmp/environment.yaml
+
+# Create the environment
+RUN micromamba create -y -f /tmp/environment.yaml &amp;&amp; \
+    micromamba clean --all --yes</code></pre>
+<p>I tried removing my local conda environment and rebuilt it with channel conda-forge and just requiring versions for the backdated packages (and not for those I add).</p>
+<pre><code>name: lim2020
+channels:
+  - conda-forge
+dependencies:
+  - numpy=1.19.1
+  - pandas=1.1.1
+  - python=3.8.5
+  - ipykernel
+  - matplotlib
+  - pytest</code></pre>
+<p>This built without issue, so I then add the dependencies it used:</p>
+<pre><code>name: lim2020
+channels:
+  - conda-forge
+dependencies:
+  - numpy=1.19.1
+  - pandas=1.1.1
+  - python=3.8.5
+  - ipykernel=6.29.5
+  - matplotlib=3.5.1
+  - pytest=8.3.2</code></pre>
+<p>I then rebuilt the docker image, and that worked fine! For reference, this was the environment file from before:</p>
+<pre><code>name: lim2020
+channels:
+  - defaults
+dependencies:
+  - ipykernel
+  - matplotlib=3.5.1
+  - numpy=1.19.1
+  - pandas=1.1.1
+  - python=3.8.5
+  - pytest=7.4.4</code></pre>
+<p>I then add lines back to the dockerfile so it can run jupyter lab, but had error <code>/usr/local/bin/_entrypoint.sh: line 24: exec: mamba: not found</code>.</p>
+<pre><code># Use micromamba image
+FROM mambaorg/micromamba
+
+# Copy the environment file
+# COPY --chown=$MAMBA_USER:$MAMBA_USER ./reproduction/environment.yaml /tmp/environment.yaml
+
+# Create and set the working directory to the container make copy simpler
+RUN mkdir /home/code
+WORKDIR /home/code
+
+# Copy all files across to container
+COPY ./reproduction /home/code
+
+# Copy jupyter config file
+COPY ./reproduction/docker/jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
+
+# Create the environment
+RUN micromamba create -y -f /home/code/environment.yaml &amp;&amp; \
+    micromamba clean --all --yes
+
+# Make RUN commands use the new environment (not really necessary here)...
+SHELL ["mamba", "run", "-n", "shoaib2022", "/bin/bash", "-c"]
+
+# Declare port used by jupyter-lab
+EXPOSE 80
+
+# Launch JupyterLab
+CMD jupyter-lab /home/code/</code></pre>
+<p>Tried switching whole thing back to Dockerfile I had at the start.</p>
+<p>Realised I also needed to still add <code>jupyterlab</code> to environment.</p>
+<p>However, I now got a new error:</p>
+<pre><code>[I 2024-07-26 12:35:36.291 ServerApp] jupyter_lsp | extension was successfully linked.
+[I 2024-07-26 12:35:36.297 ServerApp] jupyter_server_terminals | extension was successfully linked.
+[I 2024-07-26 12:35:36.304 ServerApp] jupyterlab | extension was successfully linked.
+[I 2024-07-26 12:35:36.306 ServerApp] Writing Jupyter server cookie secret to /root/.local/share/jupyter/runtime/jupyter_cookie_secret
+[I 2024-07-26 12:35:36.617 ServerApp] notebook_shim | extension was successfully linked.
+[I 2024-07-26 12:35:36.668 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2024-07-26 12:35:36.671 ServerApp] jupyter_lsp | extension was successfully loaded.
+[I 2024-07-26 12:35:36.672 ServerApp] jupyter_server_terminals | extension was successfully loaded.
+[I 2024-07-26 12:35:36.674 LabApp] JupyterLab extension loaded from /opt/conda/envs/lim2020/lib/python3.8/site-packages/jupyterlab
+[I 2024-07-26 12:35:36.674 LabApp] JupyterLab application directory is /opt/conda/envs/lim2020/share/jupyter/lab
+[I 2024-07-26 12:35:36.674 LabApp] Extension Manager is 'pypi'.
+[I 2024-07-26 12:35:36.691 ServerApp] jupyterlab | extension was successfully loaded.
+[C 2024-07-26 12:35:36.692 ServerApp] Running as root is not recommended. Use --allow-root to bypass.
+
+ERROR conda.cli.main_run:execute(125): `conda run /bin/bash -c jupyter-lab /home/code/` failed. (See above for error)</code></pre>
+<p>This was unexpected, as now the file matches exactly to the functional Dockerfile used for Shoaib et al.&nbsp;2022, except for that it is <code>environment.yaml</code> and the environment name.</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="compendium" data-listing-date-sort="1721952000000" data-listing-file-modified-sort="1721997456467" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1149">
-<div class="thumbnail">
-<p><a href="../logbook/posts/2024_07_26/index.html" class="no-external"></a></p><a href="../logbook/posts/2024_07_26/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../logbook/posts/2024_07_26/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../logbook/posts/2024_07_26/index.html" class="no-external">Day 6</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../logbook/posts/2024_07_26/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('compendium'); return false;">
-compendium
-</div>
-</div>
-<div class="listing-description">
-<a href="../logbook/posts/2024_07_26/index.html" class="no-external">Finishing up research compendium.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../logbook/posts/2024_07_26/index.html" class="no-external">
-<div class="listing-date">
-Jul 26, 2024
-</div>
-<div class="listing-author">
-Amy Heather
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="compendium" data-listing-date-sort="1721865600000" data-listing-file-modified-sort="1721997456467" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="532">
-<div class="thumbnail">
-<p><a href="../logbook/posts/2024_07_25/index.html" class="no-external"></a></p><a href="../logbook/posts/2024_07_25/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../logbook/posts/2024_07_25/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../logbook/posts/2024_07_25/index.html" class="no-external">Day 5</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../logbook/posts/2024_07_25/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('compendium'); return false;">
-compendium
-</div>
-</div>
-<div class="listing-description">
-<a href="../logbook/posts/2024_07_25/index.html" class="no-external">Reflections, summary report and research compendium.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../logbook/posts/2024_07_25/index.html" class="no-external">
-<div class="listing-date">
-Jul 25, 2024
-</div>
-<div class="listing-author">
-Amy Heather
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="reproduce,guidelines" data-listing-date-sort="1721779200000" data-listing-file-modified-sort="1721997456467" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2015">
-<div class="thumbnail">
-<p><a href="../logbook/posts/2024_07_24/index.html" class="no-external"></a></p><a href="../logbook/posts/2024_07_24/index.html" class="no-external">
-<p class="card-img-top"><img src="../original_study/supp_tab1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="../logbook/posts/2024_07_24/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../logbook/posts/2024_07_24/index.html" class="no-external">Day 4</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../logbook/posts/2024_07_24/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('reproduce'); return false;">
-reproduce
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('guidelines'); return false;">
-guidelines
-</div>
-</div>
-<div class="listing-description">
-<a href="../logbook/posts/2024_07_24/index.html" class="no-external">Finished reproduction and completed evaluation against guidelines. Total time used for reproduction: 12h 27m (31.1%). Time used for evaluation: 1h 30m.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../logbook/posts/2024_07_24/index.html" class="no-external">
-<div class="listing-date">
-Jul 24, 2024
-</div>
-<div class="listing-author">
-Amy Heather
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="reproduce" data-listing-date-sort="1721692800000" data-listing-file-modified-sort="1721997456467" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1863">
-<div class="thumbnail">
-<p><a href="../logbook/posts/2024_07_23/index.html" class="no-external"></a></p><a href="../logbook/posts/2024_07_23/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../logbook/posts/2024_07_23/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../logbook/posts/2024_07_23/index.html" class="no-external">Day 3</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../logbook/posts/2024_07_23/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('reproduce'); return false;">
-reproduce
-</div>
-</div>
-<div class="listing-description">
-<a href="../logbook/posts/2024_07_23/index.html" class="no-external">Add parallel processing and reproduced supplementary tables 2-4 and Figure 2. Total time used: 10h 7m (25.3%)</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../logbook/posts/2024_07_23/index.html" class="no-external">
-<div class="listing-date">
-Jul 23, 2024
-</div>
-<div class="listing-author">
-Amy Heather
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="setup,scope,reproduce" data-listing-date-sort="1721606400000" data-listing-file-modified-sort="1721997456467" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="842">
-<div class="thumbnail">
-<p><a href="../logbook/posts/2024_07_22/index.html" class="no-external"></a></p><a href="../logbook/posts/2024_07_22/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../logbook/posts/2024_07_22/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../logbook/posts/2024_07_22/index.html" class="no-external">Day 2</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../logbook/posts/2024_07_22/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('setup'); return false;">
-setup
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('scope'); return false;">
-scope
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('reproduce'); return false;">
-reproduce
-</div>
-</div>
-<div class="listing-description">
-<a href="../logbook/posts/2024_07_22/index.html" class="no-external">Reformat tables, consensus on scope, setup environment, first run of model. Total time used: 4h 37m (11.5%)</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../logbook/posts/2024_07_22/index.html" class="no-external">
-<div class="listing-date">
-Jul 22, 2024
-</div>
-<div class="listing-author">
-Amy Heather
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="setup,read,scope" data-listing-date-sort="1721347200000" data-listing-file-modified-sort="1721997456467" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="415">
-<div class="thumbnail">
-<p><a href="../logbook/posts/2024_07_19/index.html" class="no-external"></a></p><a href="../logbook/posts/2024_07_19/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../logbook/posts/2024_07_19/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../logbook/posts/2024_07_19/index.html" class="no-external">Day 1</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../logbook/posts/2024_07_19/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('setup'); return false;">
-setup
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('read'); return false;">
-read
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('scope'); return false;">
-scope
-</div>
-</div>
-<div class="listing-description">
-<a href="../logbook/posts/2024_07_19/index.html" class="no-external">Set-up, read article and define scope. Total time used: 1h 22m (3.4%)</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../logbook/posts/2024_07_19/index.html" class="no-external">
-<div class="listing-date">
-Jul 19, 2024
-</div>
-<div class="listing-author">
-Amy Heather
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -911,22 +807,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../CHANGELOG.html">
+    <a class="nav-link" href="../../../CHANGELOG.html">
 <p>Changelog</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="../quarto_site/license.html">
+    <a class="nav-link" href="../../../quarto_site/license.html">
 <p>License</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="../CONTRIBUTING.html">
+    <a class="nav-link" href="../../../CONTRIBUTING.html">
 <p>Contributing</p>
 </a>
   </li>  
 </ul>
-    <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/edit/main/logbook/logbook.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/edit/main/logbook/posts/2024_07_26/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
