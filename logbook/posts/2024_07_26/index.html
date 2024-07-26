@@ -209,7 +209,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#untimed-research-compendium" id="toc-untimed-research-compendium" class="nav-link active" data-scroll-target="#untimed-research-compendium">Untimed: Research compendium</a></li>
+  <li><a href="#untimed-troubleshooting-docker" id="toc-untimed-troubleshooting-docker" class="nav-link active" data-scroll-target="#untimed-troubleshooting-docker">Untimed: Troubleshooting docker</a></li>
+  <li><a href="#untimed-docker-on-container-registry" id="toc-untimed-docker-on-container-registry" class="nav-link" data-scroll-target="#untimed-docker-on-container-registry">Untimed: Docker on container registry</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/edit/main/logbook/posts/2024_07_26/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -233,8 +234,8 @@ Note
 <p>Finishing up research compendium.</p>
 </div>
 </div>
-<section id="untimed-research-compendium" class="level2">
-<h2 class="anchored" data-anchor-id="untimed-research-compendium">Untimed: Research compendium</h2>
+<section id="untimed-troubleshooting-docker" class="level2">
+<h2 class="anchored" data-anchor-id="untimed-troubleshooting-docker">Untimed: Troubleshooting docker</h2>
 <p>Tested local build of Docker image and running in the container but had an error:</p>
 <pre><code>20.42 LibMambaUnsatisfiableError: Encountered problems while solving:
 20.42   - nothing provides numpy-base 1.23.3 py310h375b286_0 needed by numpy-1.23.3-py310hac523dd_0
@@ -389,6 +390,10 @@ dependencies:
 <p>Built docker image. Still failed as before. It appears it’s not using the settings from the <code>jupyter_notebook_config.py</code> as that sets allow root as True, but the error is that running as root is not recommended that we can use –allow-root to bypass.</p>
 <p>Tried switching to conda-forge again. No difference.</p>
 <p><a href="https://discourse.jupyter.org/t/running-jupyter-server-from-a-docker-container/23537">Based on this post</a>, I tried adding <code>notebook</code> to the environment and then re-running. And then it worked! Tested running the model: all fine.</p>
+</section>
+<section id="untimed-docker-on-container-registry" class="level2">
+<h2 class="anchored" data-anchor-id="untimed-docker-on-container-registry">Untimed: Docker on container registry</h2>
+<p>Activated the GitHub action to publish the docker image on GHCR. Followed my instructions to build that and test run: all fine.</p>
 
 
 </section>
