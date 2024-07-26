@@ -1,10 +1,10 @@
 name: lim2020
 channels:
-  - defaults
+  - conda-forge
 dependencies:
-  - ipykernel
-  - matplotlib=3.5.1
   - numpy=1.19.1
   - pandas=1.1.1
   - python=3.8.5
-  - pytest=7.4.4
+  - ipykernel=6.29.5
+  - matplotlib=3.5.1
+  - pytest=8.3.2
