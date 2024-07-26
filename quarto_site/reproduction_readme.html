@@ -233,7 +233,16 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="reproducing-these-results">Reproducing these results</h2>
 <section id="repository-overview" class="level3">
 <h3 class="anchored" data-anchor-id="repository-overview">Repository overview</h3>
-<p>├── docker │ └── … ├── outputs │ └── … ├── scripts │ └── … ├── tests │ └── … ├── environment.yaml └── README.md</p>
+<pre class="{bash}"><code>├── docker
+│   └──  ...
+├── outputs
+│   └──  ...
+├── scripts
+│   └──  ...
+├── tests
+│   └──  ...
+├── environment.yaml
+└── README.md</code></pre>
 <ul>
 <li><code>docker/</code> - Instructions for creation of Docker container.</li>
 <li><code>outputs/</code> - Output files from the model.</li>
@@ -258,7 +267,7 @@ ul.task-list li input[type="checkbox"] {
 <p>To create the docker image and then open jupyter lab:</p>
 <ol type="1">
 <li>In the terminal, navigate to parent directory of the <code>reproduction/</code> folder</li>
-<li>Build the image: <code>docker build --tag lim2020 . -f ./reproduction/docker/Dockerfile</code>. You may require admin access on linux (i.e.&nbsp;<code>sudo docker build</code>…)</li>
+<li>Build the image: <code>sudo docker build --tag lim2020 . -f ./reproduction/docker/Dockerfile</code></li>
 <li>Create a docker container from that image and open jupyter lab: <code>(sleep 2 &amp;&amp; xdg-open http://localhost:8080) &amp; sudo docker run -it -p 8080:80 --name lim2020_docker lim2020</code></li>
 </ol>
 </section>
@@ -302,6 +311,7 @@ tests/test_model.py .. </code></pre>
 <h2 class="anchored" data-anchor-id="reproduction-specs-and-runtime">Reproduction specs and runtime</h2>
 <p>This reproduction was conducted on an Intel Core i7-12700H with 32GB RAM running Ubuntu 22.04.4 Linux.</p>
 <p>On that machine, running all scenarios from scratch, the total run time is <strong>49 minutes and 17 seconds</strong>.</p>
+<p>Run time for the tests was <strong>6 minutes 35 seconds</strong>.</p>
 </section>
 <section id="citation" class="level2">
 <h2 class="anchored" data-anchor-id="citation">Citation</h2>
