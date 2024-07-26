@@ -1,0 +1,185 @@
+---
+title: "Day 6"
+author: "Amy Heather"
+date: "2024-07-26"
+categories: [compendium]
+bibliography: ../../../quarto_site/references.bib
+---
+
+::: {.callout-note}
+
+Finishing up research compendium.
+
+:::
+
+## Untimed: Research compendium
+
+Tested local build of Docker image and running in the container but had an error:
+
+```
+20.42 LibMambaUnsatisfiableError: Encountered problems while solving:
+20.42   - nothing provides numpy-base 1.23.3 py310h375b286_0 needed by numpy-1.23.3-py310hac523dd_0
+20.42 
+20.42 Could not solve for environment specs
+20.42 The following packages are incompatible
+20.42 ├─ matplotlib 3.5.1**  is installable with the potential options
+20.42 │  ├─ matplotlib 3.5.1 would require
+20.42 │  │  └─ python >=3.10,<3.11.0a0 , which can be installed;
+20.42 │  ├─ matplotlib 3.5.1 would require
+20.42 │  │  └─ python >=3.7,<3.8.0a0 , which can be installed;
+20.42 │  ├─ matplotlib 3.5.1 would require
+20.42 │  │  └─ matplotlib-base >=3.5.1,<3.5.2.0a0  with the potential options
+20.42 │  │     ├─ matplotlib-base 3.5.1 would require
+20.42 │  │     │  └─ python >=3.10,<3.11.0a0 , which can be installed;
+20.42 │  │     ├─ matplotlib-base 3.5.1 would require
+20.42 │  │     │  └─ python >=3.7,<3.8.0a0 , which can be installed;
+20.42 │  │     ├─ matplotlib-base 3.5.1 would require
+20.42 │  │     │  └─ numpy >=1.19.2,<2.0a0  with the potential options
+20.42 │  │     │     ├─ numpy [1.19.1|1.19.2] would require
+20.42 │  │     │     │  └─ python >=3.6,<3.7.0a0 , which can be installed;
+20.42 │  │     │     ├─ numpy [1.19.1|1.19.2|...|1.21.5] would require
+20.42 │  │     │     │  └─ python >=3.7,<3.8.0a0 , which can be installed;
+20.42 │  │     │     ├─ numpy [1.19.2|1.19.5|...|1.24.3], which can be installed;
+20.42 │  │     │     ├─ numpy [1.19.2|1.19.5|...|1.26.4] would require
+20.42 │  │     │     │  └─ python >=3.9,<3.10.0a0 , which can be installed;
+20.42 │  │     │     ├─ numpy [1.21.2|1.21.5|...|1.26.4] would require
+20.42 │  │     │     │  └─ python >=3.10,<3.11.0a0 , which can be installed;
+20.42 │  │     │     ├─ numpy [1.22.3|1.23.5|...|1.26.4] would require
+20.42 │  │     │     │  └─ python >=3.11,<3.12.0a0 , which can be installed;
+20.42 │  │     │     ├─ numpy 1.23.3 would require
+20.42 │  │     │     │  └─ numpy-base 1.23.3 py310h375b286_0, which does not exist (perhaps a missing channel);
+20.42 │  │     │     ├─ numpy 1.23.3 would require
+20.42 │  │     │     │  └─ numpy-base 1.23.3 py310h8e6c178_0, which does not exist (perhaps a missing channel);
+20.42 │  │     │     └─ numpy [1.26.0|1.26.2|1.26.3|1.26.4] would require
+20.42 │  │     │        └─ python >=3.12,<3.13.0a0 , which can be installed;
+20.42 │  │     └─ matplotlib-base 3.5.1 would require
+20.42 │  │        └─ python >=3.9,<3.10.0a0 , which can be installed;
+20.42 │  └─ matplotlib 3.5.1 would require
+20.42 │     └─ python >=3.9,<3.10.0a0 , which can be installed;
+20.42 ├─ numpy 1.19.1**  is installable with the potential options
+20.42 │  ├─ numpy [1.19.1|1.19.2], which can be installed (as previously explained);
+20.42 │  ├─ numpy [1.19.1|1.19.2|...|1.21.5], which can be installed (as previously explained);
+20.42 │  └─ numpy 1.19.1 conflicts with any installable versions previously reported;
+20.42 └─ python 3.8.5**  is not installable because it conflicts with any installable versions previously reported.
+20.42 
+```
+
+I had a look at the conda/mamba environment created from the same environment on my machine and that had numpy-base 1.19.1. I tried adding this explicitly to the environment file and then running it again, although unresolved.
+
+I tried switching to start with a mamba image, following the documentation at <https://micromamba-docker.readthedocs.io/en/latest/quick_start.html>, but got the same error.
+
+```
+# Use micromamba image
+FROM mambaorg/micromamba
+
+# Copy the environment file
+COPY --chown=$MAMBA_USER:$MAMBA_USER ./reproduction/environment.yaml /tmp/environment.yaml
+
+# Create the environment
+RUN micromamba create -y -f /tmp/environment.yaml && \
+    micromamba clean --all --yes
+```
+
+I tried removing my local conda environment and rebuilt it with channel conda-forge and just requiring versions for the backdated packages (and not for those I add).
+
+```
+name: lim2020
+channels:
+  - conda-forge
+dependencies:
+  - numpy=1.19.1
+  - pandas=1.1.1
+  - python=3.8.5
+  - ipykernel
+  - matplotlib
+  - pytest
+```
+
+This built without issue, so I then add the dependencies it used:
+
+```
+name: lim2020
+channels:
+  - conda-forge
+dependencies:
+  - numpy=1.19.1
+  - pandas=1.1.1
+  - python=3.8.5
+  - ipykernel=6.29.5
+  - matplotlib=3.5.1
+  - pytest=8.3.2
+```
+
+I then rebuilt the docker image, and that worked fine! For reference, this was the environment file from before:
+
+```
+name: lim2020
+channels:
+  - defaults
+dependencies:
+  - ipykernel
+  - matplotlib=3.5.1
+  - numpy=1.19.1
+  - pandas=1.1.1
+  - python=3.8.5
+  - pytest=7.4.4
+```
+
+I then add lines back to the dockerfile so it can run jupyter lab, but had error `/usr/local/bin/_entrypoint.sh: line 24: exec: mamba: not found`.
+
+```
+# Use micromamba image
+FROM mambaorg/micromamba
+
+# Copy the environment file
+# COPY --chown=$MAMBA_USER:$MAMBA_USER ./reproduction/environment.yaml /tmp/environment.yaml
+
+# Create and set the working directory to the container make copy simpler
+RUN mkdir /home/code
+WORKDIR /home/code
+
+# Copy all files across to container
+COPY ./reproduction /home/code
+
+# Copy jupyter config file
+COPY ./reproduction/docker/jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
+
+# Create the environment
+RUN micromamba create -y -f /home/code/environment.yaml && \
+    micromamba clean --all --yes
+
+# Make RUN commands use the new environment (not really necessary here)...
+SHELL ["mamba", "run", "-n", "shoaib2022", "/bin/bash", "-c"]
+
+# Declare port used by jupyter-lab
+EXPOSE 80
+
+# Launch JupyterLab
+CMD jupyter-lab /home/code/
+```
+
+Tried switching whole thing back to Dockerfile I had at the start.
+
+Realised I also needed to still add `jupyterlab` to environment.
+
+However, I now got a new error:
+
+```
+[I 2024-07-26 12:35:36.291 ServerApp] jupyter_lsp | extension was successfully linked.
+[I 2024-07-26 12:35:36.297 ServerApp] jupyter_server_terminals | extension was successfully linked.
+[I 2024-07-26 12:35:36.304 ServerApp] jupyterlab | extension was successfully linked.
+[I 2024-07-26 12:35:36.306 ServerApp] Writing Jupyter server cookie secret to /root/.local/share/jupyter/runtime/jupyter_cookie_secret
+[I 2024-07-26 12:35:36.617 ServerApp] notebook_shim | extension was successfully linked.
+[I 2024-07-26 12:35:36.668 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2024-07-26 12:35:36.671 ServerApp] jupyter_lsp | extension was successfully loaded.
+[I 2024-07-26 12:35:36.672 ServerApp] jupyter_server_terminals | extension was successfully loaded.
+[I 2024-07-26 12:35:36.674 LabApp] JupyterLab extension loaded from /opt/conda/envs/lim2020/lib/python3.8/site-packages/jupyterlab
+[I 2024-07-26 12:35:36.674 LabApp] JupyterLab application directory is /opt/conda/envs/lim2020/share/jupyter/lab
+[I 2024-07-26 12:35:36.674 LabApp] Extension Manager is 'pypi'.
+[I 2024-07-26 12:35:36.691 ServerApp] jupyterlab | extension was successfully loaded.
+[C 2024-07-26 12:35:36.692 ServerApp] Running as root is not recommended. Use --allow-root to bypass.
+
+ERROR conda.cli.main_run:execute(125): `conda run /bin/bash -c jupyter-lab /home/code/` failed. (See above for error)
+```
+
+This was unexpected, as now the file matches exactly to the functional Dockerfile used for Shoaib et al. 2022, except for that it is `environment.yaml` and the environment name.
