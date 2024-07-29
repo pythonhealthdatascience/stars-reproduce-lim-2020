@@ -38,9 +38,17 @@ In this assessment, we attempted to reproduce 9 items: 4 figures and 5 tables.
 
 #### Option A: Conda/mamba environment
 
-A `conda`/`mamba` environment has been provided. To create this environment on your machine, you should run this command in your terminal: `conda env create -f environment.yaml`.
+A `conda`/`mamba` environment has been provided. To create this environment on your machine, you should run this command in your terminal:
 
-You can then use this environment in your preferred IDE, such as VSCode (where you will be asked to select the kernel/interpreter). You can activate it in the terminal by running `conda activate lim2020`.
+```
+conda env create -f environment.yaml
+```
+
+You can then use this environment in your preferred IDE, such as VSCode (where you will be asked to select the kernel/interpreter). You can activate it in the terminal by running:
+
+```
+conda activate lim2020
+```
 
 You can run either of these commands also using `mamba` instead (e.g. `mamba activate lim2020`).
 
@@ -53,17 +61,40 @@ For this option (and option C), you'll need to ensure that `docker` is installed
 To create the docker image and then open jupyter lab:
 
 1. In the terminal, navigate to parent directory of the `reproduction/` folder
-2. Build the image: `sudo docker build --tag lim2020 . -f ./reproduction/docker/Dockerfile`
-3. Create a docker container from that image and open jupyter lab: `(sleep 2 && xdg-open http://localhost:8080) & sudo docker run -it -p 8080:80 --name lim2020_docker lim2020`
+2. Build the image:
+
+```
+sudo docker build --tag lim2020 . -f ./reproduction/docker/Dockerfile
+```
+
+3. Create a docker container from that image and open jupyter lab:
+
+```
+(sleep 2 && xdg-open http://localhost:8080) & sudo docker run -it -p 8080:80 --name lim2020_docker lim2020
+```
 
 #### Option C: Pull pre-built docker image
 
 A pre-built image is available on the GitHub container registry. To use it:
 
 1. Create a Personal Access Token (Classic) for your GitHub account with `write:packages` and `delete:packages` access
-2. On terminal, run `sudo docker login ghcr.io -u githubusername` and enter your sudo password (if prompted), followed by the token just generated (which acts as your GitHub password)
-3. Download the image: `sudo docker pull ghcr.io/pythonhealthdatascience/lim2020`
-4. Create container and open RStudio: `(sleep 2 && xdg-open http://localhost:8080) & sudo docker run -it -p 8080:80 --name lim2020_docker ghcr.io/pythonhealthdatascience/lim2020:latest`
+2. On terminal, run the following command and enter your sudo password (if prompted), followed by the token just generated (which acts as your GitHub password)
+
+```
+sudo docker login ghcr.io -u githubusername
+```
+
+3. Download the image:
+
+```
+sudo docker pull ghcr.io/pythonhealthdatascience/lim2020
+```
+
+4. Create container and open RStudio:
+
+```
+(sleep 2 && xdg-open http://localhost:8080) & sudo docker run -it -p 8080:80 --name lim2020_docker ghcr.io/pythonhealthdatascience/lim2020:latest
+```
 
 ### Step 2. Running the model
 
@@ -75,7 +106,9 @@ To run all the model scenarios, open and execute the provided `ipynb` files in `
 
 Two of the model scenarios have been included as tests within `tests/`. You can run these by executing the following command from your terminal whilst in the `reproduction/` directory with the `lim2020` environment active:
 
-`pytest`
+```
+pytest
+```
 
 This will run the two scenarios and compare the results against those we have saved. Although this will not produce any figures from the paper, and will not run all the scenarios, it will allow you to check if you are getting results consistent with our reproduction, on your own machine.
 
