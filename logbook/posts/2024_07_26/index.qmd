@@ -8,7 +8,7 @@ bibliography: ../../../quarto_site/references.bib
 
 ::: {.callout-note}
 
-Finishing up research compendium.
+Finishing up research compendium, and test-run from Tom.
 
 :::
 
@@ -210,3 +210,13 @@ Tried switching to conda-forge again. No difference.
 ## Untimed: Docker on container registry
 
 Activated the GitHub action to publish the docker image on GHCR. Followed my instructions to build that and test run: all fine.
+
+## Untimed: Test run from Tom
+
+Tom tested the scripts.
+
+The docker container built correctly and launched.
+
+Pytest ran fine and quick.
+
+`reproduction.ipynb` failed as it couldn't access `../original_study/[CSV file]`, as docker container only contains `reproduction/`. Subsequently, I'll add the required files to the container.
