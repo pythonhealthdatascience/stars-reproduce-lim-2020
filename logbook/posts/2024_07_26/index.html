@@ -211,6 +211,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#untimed-troubleshooting-docker" id="toc-untimed-troubleshooting-docker" class="nav-link active" data-scroll-target="#untimed-troubleshooting-docker">Untimed: Troubleshooting docker</a></li>
   <li><a href="#untimed-docker-on-container-registry" id="toc-untimed-docker-on-container-registry" class="nav-link" data-scroll-target="#untimed-docker-on-container-registry">Untimed: Docker on container registry</a></li>
+  <li><a href="#untimed-test-run-from-tom" id="toc-untimed-test-run-from-tom" class="nav-link" data-scroll-target="#untimed-test-run-from-tom">Untimed: Test run from Tom</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/edit/main/logbook/posts/2024_07_26/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -231,7 +232,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Finishing up research compendium.</p>
+<p>Finishing up research compendium, and test-run from Tom.</p>
 </div>
 </div>
 <section id="untimed-troubleshooting-docker" class="level2">
@@ -394,6 +395,13 @@ dependencies:
 <section id="untimed-docker-on-container-registry" class="level2">
 <h2 class="anchored" data-anchor-id="untimed-docker-on-container-registry">Untimed: Docker on container registry</h2>
 <p>Activated the GitHub action to publish the docker image on GHCR. Followed my instructions to build that and test run: all fine.</p>
+</section>
+<section id="untimed-test-run-from-tom" class="level2">
+<h2 class="anchored" data-anchor-id="untimed-test-run-from-tom">Untimed: Test run from Tom</h2>
+<p>Tom tested the scripts.</p>
+<p>The docker container built correctly and launched.</p>
+<p>Pytest ran fine and quick.</p>
+<p><code>reproduction.ipynb</code> failed as it couldn’t access <code>../original_study/[CSV file]</code>, as docker container only contains <code>reproduction/</code>. Subsequently, I’ll add the required files to the container.</p>
 
 
 </section>

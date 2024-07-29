@@ -46,7 +46,7 @@
     "href": "logbook/posts/2024_07_26/index.html",
     "title": "Day 6",
     "section": "",
-    "text": "Note\n\n\n\nFinishing up research compendium."
+    "text": "Note\n\n\n\nFinishing up research compendium, and test-run from Tom."
   },
   {
     "objectID": "logbook/posts/2024_07_26/index.html#untimed-troubleshooting-docker",
@@ -61,6 +61,13 @@
     "title": "Day 6",
     "section": "Untimed: Docker on container registry",
     "text": "Untimed: Docker on container registry\nActivated the GitHub action to publish the docker image on GHCR. Followed my instructions to build that and test run: all fine."
+  },
+  {
+    "objectID": "logbook/posts/2024_07_26/index.html#untimed-test-run-from-tom",
+    "href": "logbook/posts/2024_07_26/index.html#untimed-test-run-from-tom",
+    "title": "Day 6",
+    "section": "Untimed: Test run from Tom",
+    "text": "Untimed: Test run from Tom\nTom tested the scripts.\nThe docker container built correctly and launched.\nPytest ran fine and quick.\nreproduction.ipynb failed as it couldn’t access ../original_study/[CSV file], as docker container only contains reproduction/. Subsequently, I’ll add the required files to the container."
   },
   {
     "objectID": "logbook/posts/2024_07_23/index.html",
