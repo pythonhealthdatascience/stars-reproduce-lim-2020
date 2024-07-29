@@ -256,8 +256,10 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="step-1.-set-up-environment">Step 1. Set up environment</h3>
 <section id="option-a-condamamba-environment" class="level4">
 <h4 class="anchored" data-anchor-id="option-a-condamamba-environment">Option A: Conda/mamba environment</h4>
-<p>A <code>conda</code>/<code>mamba</code> environment has been provided. To create this environment on your machine, you should run this command in your terminal: <code>conda env create -f environment.yaml</code>.</p>
-<p>You can then use this environment in your preferred IDE, such as VSCode (where you will be asked to select the kernel/interpreter). You can activate it in the terminal by running <code>conda activate lim2020</code>.</p>
+<p>A <code>conda</code>/<code>mamba</code> environment has been provided. To create this environment on your machine, you should run this command in your terminal:</p>
+<pre><code>conda env create -f environment.yaml</code></pre>
+<p>You can then use this environment in your preferred IDE, such as VSCode (where you will be asked to select the kernel/interpreter). You can activate it in the terminal by running:</p>
+<pre><code>conda activate lim2020</code></pre>
 <p>You can run either of these commands also using <code>mamba</code> instead (e.g.&nbsp;<code>mamba activate lim2020</code>).</p>
 </section>
 <section id="option-b-build-local-docker-image" class="level4">
@@ -267,19 +269,30 @@ ul.task-list li input[type="checkbox"] {
 <p>To create the docker image and then open jupyter lab:</p>
 <ol type="1">
 <li>In the terminal, navigate to parent directory of the <code>reproduction/</code> folder</li>
-<li>Build the image: <code>sudo docker build --tag lim2020 . -f ./reproduction/docker/Dockerfile</code></li>
-<li>Create a docker container from that image and open jupyter lab: <code>(sleep 2 &amp;&amp; xdg-open http://localhost:8080) &amp; sudo docker run -it -p 8080:80 --name lim2020_docker lim2020</code></li>
+<li>Build the image:</li>
 </ol>
+<pre><code>sudo docker build --tag lim2020 . -f ./reproduction/docker/Dockerfile</code></pre>
+<ol start="3" type="1">
+<li>Create a docker container from that image and open jupyter lab:</li>
+</ol>
+<pre><code>(sleep 2 &amp;&amp; xdg-open http://localhost:8080) &amp; sudo docker run -it -p 8080:80 --name lim2020_docker lim2020</code></pre>
 </section>
 <section id="option-c-pull-pre-built-docker-image" class="level4">
 <h4 class="anchored" data-anchor-id="option-c-pull-pre-built-docker-image">Option C: Pull pre-built docker image</h4>
 <p>A pre-built image is available on the GitHub container registry. To use it:</p>
 <ol type="1">
 <li>Create a Personal Access Token (Classic) for your GitHub account with <code>write:packages</code> and <code>delete:packages</code> access</li>
-<li>On terminal, run <code>sudo docker login ghcr.io -u githubusername</code> and enter your sudo password (if prompted), followed by the token just generated (which acts as your GitHub password)</li>
-<li>Download the image: <code>sudo docker pull ghcr.io/pythonhealthdatascience/lim2020</code></li>
-<li>Create container and open RStudio: <code>(sleep 2 &amp;&amp; xdg-open http://localhost:8080) &amp; sudo docker run -it -p 8080:80 --name lim2020_docker ghcr.io/pythonhealthdatascience/lim2020:latest</code></li>
+<li>On terminal, run the following command and enter your sudo password (if prompted), followed by the token just generated (which acts as your GitHub password)</li>
 </ol>
+<pre><code>sudo docker login ghcr.io -u githubusername</code></pre>
+<ol start="3" type="1">
+<li>Download the image:</li>
+</ol>
+<pre><code>sudo docker pull ghcr.io/pythonhealthdatascience/lim2020</code></pre>
+<ol start="4" type="1">
+<li>Create container and open RStudio:</li>
+</ol>
+<pre><code>(sleep 2 &amp;&amp; xdg-open http://localhost:8080) &amp; sudo docker run -it -p 8080:80 --name lim2020_docker ghcr.io/pythonhealthdatascience/lim2020:latest</code></pre>
 </section>
 </section>
 <section id="step-2.-running-the-model" class="level3">
@@ -291,7 +304,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="option-b-pytest" class="level4">
 <h4 class="anchored" data-anchor-id="option-b-pytest">Option B: Pytest</h4>
 <p>Two of the model scenarios have been included as tests within <code>tests/</code>. You can run these by executing the following command from your terminal whilst in the <code>reproduction/</code> directory with the <code>lim2020</code> environment active:</p>
-<p><code>pytest</code></p>
+<pre><code>pytest</code></pre>
 <p>This will run the two scenarios and compare the results against those we have saved. Although this will not produce any figures from the paper, and will not run all the scenarios, it will allow you to check if you are getting results consistent with our reproduction, on your own machine.</p>
 <p>Once the tests begin to run, you should see information indicating the test has started, but then should expect to see no further updates to the screen until both tests have completed.</p>
 <p>Example of output when start tests:</p>
