@@ -214,175 +214,70 @@
     "href": "logbook/logbook.html",
     "title": "Logbook",
     "section": "",
-    "text": "These diary entries record daily progress in reproduction of the study, providing a transparent and detailed record of work.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDay 6\n\n\n\n\n\n\ncompendium\n\n\n\n\n\n\n\n\n\nJul 26, 2024\n\n\nAmy Heather\n\n\n\n\n\n\n\n\n\n\n\n\nDay 5\n\n\n\n\n\n\ncompendium\n\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\nAmy Heather\n\n\n\n\n\n\n\n\n\n\n\n\nDay 4\n\n\n\n\n\n\nreproduce\n\n\nguidelines\n\n\n\n\n\n\n\n\n\nJul 24, 2024\n\n\nAmy Heather\n\n\n\n\n\n\n\n\n\n\n\n\nDay 3\n\n\n\n\n\n\nreproduce\n\n\n\n\n\n\n\n\n\nJul 23, 2024\n\n\nAmy Heather\n\n\n\n\n\n\n\n\n\n\n\n\nDay 2\n\n\n\n\n\n\nsetup\n\n\nscope\n\n\nreproduce\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\nAmy Heather\n\n\n\n\n\n\n\n\n\n\n\n\nDay 1\n\n\n\n\n\n\nsetup\n\n\nread\n\n\nscope\n\n\n\n\n\n\n\n\n\nJul 19, 2024\n\n\nAmy Heather\n\n\n\n\n\n\nNo matching items"
+    "text": "These diary entries record daily progress in reproduction of the study, providing a transparent and detailed record of work.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDay 7\n\n\n\n\n\n\ncompendium\n\n\n\n\n\n\n\n\n\nOct 2, 2024\n\n\nAmy Heather\n\n\n\n\n\n\n\n\n\n\n\n\nDay 6\n\n\n\n\n\n\ncompendium\n\n\n\n\n\n\n\n\n\nJul 26, 2024\n\n\nAmy Heather\n\n\n\n\n\n\n\n\n\n\n\n\nDay 5\n\n\n\n\n\n\ncompendium\n\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\nAmy Heather\n\n\n\n\n\n\n\n\n\n\n\n\nDay 4\n\n\n\n\n\n\nreproduce\n\n\nguidelines\n\n\n\n\n\n\n\n\n\nJul 24, 2024\n\n\nAmy Heather\n\n\n\n\n\n\n\n\n\n\n\n\nDay 3\n\n\n\n\n\n\nreproduce\n\n\n\n\n\n\n\n\n\nJul 23, 2024\n\n\nAmy Heather\n\n\n\n\n\n\n\n\n\n\n\n\nDay 2\n\n\n\n\n\n\nsetup\n\n\nscope\n\n\nreproduce\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\nAmy Heather\n\n\n\n\n\n\n\n\n\n\n\n\nDay 1\n\n\n\n\n\n\nsetup\n\n\nread\n\n\nscope\n\n\n\n\n\n\n\n\n\nJul 19, 2024\n\n\nAmy Heather\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "logbook/posts/2024_07_26/index.html",
-    "href": "logbook/posts/2024_07_26/index.html",
-    "title": "Day 6",
+    "objectID": "logbook/posts/2024_10_02/index.html",
+    "href": "logbook/posts/2024_10_02/index.html",
+    "title": "Day 7",
     "section": "",
-    "text": "Note\n\n\n\nFinishing up research compendium, and test-run from Tom."
+    "text": "Realised I had yet to archive repository, now that reproduction is complete. Updated CITATION.cff and CHANGELOG.md then made a GitHub release."
   },
   {
-    "objectID": "logbook/posts/2024_07_26/index.html#untimed-troubleshooting-docker",
-    "href": "logbook/posts/2024_07_26/index.html#untimed-troubleshooting-docker",
-    "title": "Day 6",
-    "section": "Untimed: Troubleshooting docker",
-    "text": "Untimed: Troubleshooting docker\nTested local build of Docker image and running in the container but had an error:\n20.42 LibMambaUnsatisfiableError: Encountered problems while solving:\n20.42   - nothing provides numpy-base 1.23.3 py310h375b286_0 needed by numpy-1.23.3-py310hac523dd_0\n20.42 \n20.42 Could not solve for environment specs\n20.42 The following packages are incompatible\n20.42 ├─ matplotlib 3.5.1**  is installable with the potential options\n20.42 │  ├─ matplotlib 3.5.1 would require\n20.42 │  │  └─ python &gt;=3.10,&lt;3.11.0a0 , which can be installed;\n20.42 │  ├─ matplotlib 3.5.1 would require\n20.42 │  │  └─ python &gt;=3.7,&lt;3.8.0a0 , which can be installed;\n20.42 │  ├─ matplotlib 3.5.1 would require\n20.42 │  │  └─ matplotlib-base &gt;=3.5.1,&lt;3.5.2.0a0  with the potential options\n20.42 │  │     ├─ matplotlib-base 3.5.1 would require\n20.42 │  │     │  └─ python &gt;=3.10,&lt;3.11.0a0 , which can be installed;\n20.42 │  │     ├─ matplotlib-base 3.5.1 would require\n20.42 │  │     │  └─ python &gt;=3.7,&lt;3.8.0a0 , which can be installed;\n20.42 │  │     ├─ matplotlib-base 3.5.1 would require\n20.42 │  │     │  └─ numpy &gt;=1.19.2,&lt;2.0a0  with the potential options\n20.42 │  │     │     ├─ numpy [1.19.1|1.19.2] would require\n20.42 │  │     │     │  └─ python &gt;=3.6,&lt;3.7.0a0 , which can be installed;\n20.42 │  │     │     ├─ numpy [1.19.1|1.19.2|...|1.21.5] would require\n20.42 │  │     │     │  └─ python &gt;=3.7,&lt;3.8.0a0 , which can be installed;\n20.42 │  │     │     ├─ numpy [1.19.2|1.19.5|...|1.24.3], which can be installed;\n20.42 │  │     │     ├─ numpy [1.19.2|1.19.5|...|1.26.4] would require\n20.42 │  │     │     │  └─ python &gt;=3.9,&lt;3.10.0a0 , which can be installed;\n20.42 │  │     │     ├─ numpy [1.21.2|1.21.5|...|1.26.4] would require\n20.42 │  │     │     │  └─ python &gt;=3.10,&lt;3.11.0a0 , which can be installed;\n20.42 │  │     │     ├─ numpy [1.22.3|1.23.5|...|1.26.4] would require\n20.42 │  │     │     │  └─ python &gt;=3.11,&lt;3.12.0a0 , which can be installed;\n20.42 │  │     │     ├─ numpy 1.23.3 would require\n20.42 │  │     │     │  └─ numpy-base 1.23.3 py310h375b286_0, which does not exist (perhaps a missing channel);\n20.42 │  │     │     ├─ numpy 1.23.3 would require\n20.42 │  │     │     │  └─ numpy-base 1.23.3 py310h8e6c178_0, which does not exist (perhaps a missing channel);\n20.42 │  │     │     └─ numpy [1.26.0|1.26.2|1.26.3|1.26.4] would require\n20.42 │  │     │        └─ python &gt;=3.12,&lt;3.13.0a0 , which can be installed;\n20.42 │  │     └─ matplotlib-base 3.5.1 would require\n20.42 │  │        └─ python &gt;=3.9,&lt;3.10.0a0 , which can be installed;\n20.42 │  └─ matplotlib 3.5.1 would require\n20.42 │     └─ python &gt;=3.9,&lt;3.10.0a0 , which can be installed;\n20.42 ├─ numpy 1.19.1**  is installable with the potential options\n20.42 │  ├─ numpy [1.19.1|1.19.2], which can be installed (as previously explained);\n20.42 │  ├─ numpy [1.19.1|1.19.2|...|1.21.5], which can be installed (as previously explained);\n20.42 │  └─ numpy 1.19.1 conflicts with any installable versions previously reported;\n20.42 └─ python 3.8.5**  is not installable because it conflicts with any installable versions previously reported.\n20.42 \nI had a look at the conda/mamba environment created from the same environment on my machine and that had numpy-base 1.19.1. I tried adding this explicitly to the environment file and then running it again, although unresolved.\nI tried switching to start with a mamba image, following the documentation at https://micromamba-docker.readthedocs.io/en/latest/quick_start.html, but got the same error.\n# Use micromamba image\nFROM mambaorg/micromamba\n\n# Copy the environment file\nCOPY --chown=$MAMBA_USER:$MAMBA_USER ./reproduction/environment.yaml /tmp/environment.yaml\n\n# Create the environment\nRUN micromamba create -y -f /tmp/environment.yaml && \\\n    micromamba clean --all --yes\nI tried removing my local conda environment and rebuilt it with channel conda-forge and just requiring versions for the backdated packages (and not for those I add).\nname: lim2020\nchannels:\n  - conda-forge\ndependencies:\n  - numpy=1.19.1\n  - pandas=1.1.1\n  - python=3.8.5\n  - ipykernel\n  - matplotlib\n  - pytest\nThis built without issue, so I then add the dependencies it used:\nname: lim2020\nchannels:\n  - conda-forge\ndependencies:\n  - numpy=1.19.1\n  - pandas=1.1.1\n  - python=3.8.5\n  - ipykernel=6.29.5\n  - matplotlib=3.5.1\n  - pytest=8.3.2\nI then rebuilt the docker image, and that worked fine! For reference, this was the environment file from before:\nname: lim2020\nchannels:\n  - defaults\ndependencies:\n  - ipykernel\n  - matplotlib=3.5.1\n  - numpy=1.19.1\n  - pandas=1.1.1\n  - python=3.8.5\n  - pytest=7.4.4\nI then add lines back to the dockerfile so it can run jupyter lab, but had error /usr/local/bin/_entrypoint.sh: line 24: exec: mamba: not found.\n# Use micromamba image\nFROM mambaorg/micromamba\n\n# Copy the environment file\n# COPY --chown=$MAMBA_USER:$MAMBA_USER ./reproduction/environment.yaml /tmp/environment.yaml\n\n# Create and set the working directory to the container make copy simpler\nRUN mkdir /home/code\nWORKDIR /home/code\n\n# Copy all files across to container\nCOPY ./reproduction /home/code\n\n# Copy jupyter config file\nCOPY ./reproduction/docker/jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py\n\n# Create the environment\nRUN micromamba create -y -f /home/code/environment.yaml && \\\n    micromamba clean --all --yes\n\n# Make RUN commands use the new environment (not really necessary here)...\nSHELL [\"mamba\", \"run\", \"-n\", \"shoaib2022\", \"/bin/bash\", \"-c\"]\n\n# Declare port used by jupyter-lab\nEXPOSE 80\n\n# Launch JupyterLab\nCMD jupyter-lab /home/code/\nTried switching whole thing back to Dockerfile I had at the start.\nRealised I also needed to still add jupyterlab to environment.\nHowever, I now got a new error:\n[I 2024-07-26 12:35:36.291 ServerApp] jupyter_lsp | extension was successfully linked.\n[I 2024-07-26 12:35:36.297 ServerApp] jupyter_server_terminals | extension was successfully linked.\n[I 2024-07-26 12:35:36.304 ServerApp] jupyterlab | extension was successfully linked.\n[I 2024-07-26 12:35:36.306 ServerApp] Writing Jupyter server cookie secret to /root/.local/share/jupyter/runtime/jupyter_cookie_secret\n[I 2024-07-26 12:35:36.617 ServerApp] notebook_shim | extension was successfully linked.\n[I 2024-07-26 12:35:36.668 ServerApp] notebook_shim | extension was successfully loaded.\n[I 2024-07-26 12:35:36.671 ServerApp] jupyter_lsp | extension was successfully loaded.\n[I 2024-07-26 12:35:36.672 ServerApp] jupyter_server_terminals | extension was successfully loaded.\n[I 2024-07-26 12:35:36.674 LabApp] JupyterLab extension loaded from /opt/conda/envs/lim2020/lib/python3.8/site-packages/jupyterlab\n[I 2024-07-26 12:35:36.674 LabApp] JupyterLab application directory is /opt/conda/envs/lim2020/share/jupyter/lab\n[I 2024-07-26 12:35:36.674 LabApp] Extension Manager is 'pypi'.\n[I 2024-07-26 12:35:36.691 ServerApp] jupyterlab | extension was successfully loaded.\n[C 2024-07-26 12:35:36.692 ServerApp] Running as root is not recommended. Use --allow-root to bypass.\n\nERROR conda.cli.main_run:execute(125): `conda run /bin/bash -c jupyter-lab /home/code/` failed. (See above for error)\nThis was unexpected, as now the file matches exactly to the functional Dockerfile used for Shoaib et al. 2022, except for that it is environment.yaml and the environment name.\nI tried changing the environment channel back to defaults, rebuilt on local machine, recorded versions.\nname: lim2020\nchannels:\n  - defaults\n  - conda-forge\ndependencies:\n  - numpy=1.19.1\n  - pandas=1.1.1\n  - python=3.8.5\n  - ipykernel=6.28.0\n  - matplotlib=3.5.1\n  - pytest=7.4.4\n  - jupyterlab=4.0.11\nBuilt docker image. Still failed as before. It appears it’s not using the settings from the jupyter_notebook_config.py as that sets allow root as True, but the error is that running as root is not recommended that we can use –allow-root to bypass.\nTried switching to conda-forge again. No difference.\nBased on this post, I tried adding notebook to the environment and then re-running. And then it worked! Tested running the model: all fine."
-  },
-  {
-    "objectID": "logbook/posts/2024_07_26/index.html#untimed-docker-on-container-registry",
-    "href": "logbook/posts/2024_07_26/index.html#untimed-docker-on-container-registry",
-    "title": "Day 6",
-    "section": "Untimed: Docker on container registry",
-    "text": "Untimed: Docker on container registry\nActivated the GitHub action to publish the docker image on GHCR. Followed my instructions to build that and test run: all fine."
-  },
-  {
-    "objectID": "logbook/posts/2024_07_26/index.html#untimed-test-run-from-tom",
-    "href": "logbook/posts/2024_07_26/index.html#untimed-test-run-from-tom",
-    "title": "Day 6",
-    "section": "Untimed: Test run from Tom",
-    "text": "Untimed: Test run from Tom\nTom tested the scripts.\nThe docker container built correctly and launched.\nPytest ran fine and quick.\nreproduction.ipynb failed as it couldn’t access ../original_study/[CSV file], as docker container only contains reproduction/. Subsequently, I’ll add the required files to the container."
-  },
-  {
-    "objectID": "logbook/posts/2024_07_23/index.html",
-    "href": "logbook/posts/2024_07_23/index.html",
-    "title": "Day 3",
+    "objectID": "logbook/posts/2024_10_02/index.html#untimed-archive-repository",
+    "href": "logbook/posts/2024_10_02/index.html#untimed-archive-repository",
+    "title": "Day 7",
     "section": "",
-    "text": "Note\n\n\n\nAdd parallel processing and reproduced supplementary tables 2-4 and Figure 2. Total time used: 10h 7m (25.3%)"
+    "text": "Realised I had yet to archive repository, now that reproduction is complete. Updated CITATION.cff and CHANGELOG.md then made a GitHub release."
   },
   {
-    "objectID": "logbook/posts/2024_07_23/index.html#adding-parallel-processing",
-    "href": "logbook/posts/2024_07_23/index.html#adding-parallel-processing",
-    "title": "Day 3",
-    "section": "09.40-11.12, 11.17-11.27: Adding parallel processing",
-    "text": "09.40-11.12, 11.17-11.27: Adding parallel processing\nHaving now run the full model code that was provided, I can see that the loop produced a 10x4 table (for each of the end by day 7, 14 and 21). It varies:\n\nStaff strength (4, 6)\nFrequency of staff change (1, 3, 7, 14, 21)\nNumber of staff per shift (5, 10, 20, 30)\n\nIt doesn’t include:\n\nStaff strength 2 - should be easy to add to loop\nScenarios from paper (e.g. varying probability of secondary infection) - although that example is easy to change with p = 0.15 # secondary attack rate\n\nIt had quite a long run time (19m 8s) which will make it difficult to run all these variants. Hence, I will first try to introduce parallel processing to help speed up the reproduction.\n\nFirst, I modified model.py so the model is run by a function, that is then more easily callable from the reproduction notebook. Initially this was a single function, but then I realised I needed to divide it into a function that runs the model with a single set of parameters, and a function that loops through scenarios, to be easily compatable with parallel processing\nTo simplify/improve reusability of varying the number of staff per shift, I changed the results dataframe index from 0-4 to be based on the provided variants for staff per shift (e.g. 5, 10, 20, 30)\nWhilst running these, noted we do so fluctuation between re-runs (e.g. 0.47 to 0.54 for day 21 4-1)\nThen I introduced from multiprocessing import Pool and modified the nested for loop so that we can instead apply the function in parallel. I also had to modify how the results dataframes as created, as they were all modifying the same objects, which wouldn’t be possible in parallel.\n\nThis now ran in 2m 40s - 3m 6s. This is great, and will make running all the different scenarios much easier. By eye, the variation in results before and after parallel processing is very minimal, and all within the range I would expect due to there being no seed control.\nHid warnings and print progress message to enable cleaner output."
+    "objectID": "logbook/posts/2024_07_19/index.html",
+    "href": "logbook/posts/2024_07_19/index.html",
+    "title": "Day 1",
+    "section": "",
+    "text": "Note\n\n\n\nSet-up, read article and define scope. Total time used: 1h 22m (3.4%)"
   },
   {
-    "objectID": "logbook/posts/2024_07_23/index.html#adding-parameters",
-    "href": "logbook/posts/2024_07_23/index.html#adding-parameters",
-    "title": "Day 3",
-    "section": "11.31-11.36, 11.39-12.05: Adding parameters",
-    "text": "11.31-11.36, 11.39-12.05: Adding parameters\nModified model.py so it has staff strength [2, 4, 6] but received error:\nFile \"/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py\", line 175, in run_model\n    fillroster1(staff_pool,f,Nday,stafflist,roster)\n  File \"/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py\", line 65, in fillroster1\n    temp = random.sample(stafflist[stafflist.loc[:,'rest']==0].index.values.tolist(),k=Nday)\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/random.py\", line 363, in sample\n    raise ValueError(\"Sample larger than population or is negative\")\nValueError: Sample larger than population or is negative\nI think this is related to strength 2, which is set to NA in the paper when there are two or three shifts per day, stating that it is “not available as the number of staff per shift was too low to simulate under the required conditions”. Lim et al. (2020)\nI wasn’t certain how to alter the shifts per day from the model, but I tried commenting out shift 2 and 3 in contact(). to see if the model would run. However, I still got the error from above. I introduced error handling, to set the result to NaN if there was a Value Error. With those sections still commented, and only running strength 2, the only results it output were for 2-21.\nI tried uncommenting shifts 2 and 3 and running for strength 2. However, this again only output results for 2-21."
+    "objectID": "logbook/posts/2024_07_19/index.html#create-repository",
+    "href": "logbook/posts/2024_07_19/index.html#create-repository",
+    "title": "Day 1",
+    "section": "14.05-14.34: Create repository",
+    "text": "14.05-14.34: Create repository\n\nSet up repository using template\nModified files to refer to Lim et al. 2020\nBuilt Python environment to create the book.\nPreviously sent a detailed email to the authors on Thursday 11th and Friday 12th July to inform about the study and ask if they would be happy to add an open license. Looking over that email, I don’t think it is necessary to email again, but will double-check with someone else on STARS."
   },
   {
-    "objectID": "logbook/posts/2024_07_23/index.html#troubleshooting-staff-strength-2",
-    "href": "logbook/posts/2024_07_23/index.html#troubleshooting-staff-strength-2",
-    "title": "Day 3",
-    "section": "12.40-13.18, 13.20-13.44: Troubleshooting staff strength 2",
-    "text": "12.40-13.18, 13.20-13.44: Troubleshooting staff strength 2\nWe don’t expect it to work when there are three shifts per day, so I tried again to figure out how to successfully change it to one shift per day…\n\nCommented out shift 2 and 3 sections from contact() abd creation of shift 2 and 3 rosters in restartsim(). Got error:\n\n  File \"/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py\", line 169, in run_model\n    fillroster1(staff_pool,f,Nday,stafflist,roster)\n  File \"/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py\", line 63, in fillroster1\n    roster.iloc[f*i+j] = temp\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/indexing.py\", line 670, in __setitem__\n    iloc._setitem_with_indexer(indexer, value)\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/indexing.py\", line 1802, in _setitem_with_indexer\n    self.obj._mgr = self.obj._mgr.setitem(indexer=indexer, value=value)\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/internals/managers.py\", line 534, in setitem\n    return self.apply(\"setitem\", indexer=indexer, value=value)\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/internals/managers.py\", line 406, in apply\n    applied = getattr(b, f)(**kwargs)\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/internals/blocks.py\", line 885, in setitem\n    values[indexer] = value\nValueError: cannot copy sequence with size 18 to array axis with dimension 10\n\"\"\"\n\nThis might actually be the issue we were looking for - that we can’t fill up the roster with that staff number. I tried running with strength 4, which should work regardless, but get a similar error\n\n  File \"/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py\", line 169, in run_model\n    fillroster1(staff_pool,f,Nday,stafflist,roster)\n  File \"/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py\", line 63, in fillroster1\n    roster.iloc[f*i+j] = temp\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/indexing.py\", line 670, in __setitem__\n    iloc._setitem_with_indexer(indexer, value)\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/indexing.py\", line 1802, in _setitem_with_indexer\n    self.obj._mgr = self.obj._mgr.setitem(indexer=indexer, value=value)\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/internals/managers.py\", line 534, in setitem\n    return self.apply(\"setitem\", indexer=indexer, value=value)\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/internals/managers.py\", line 406, in apply\n    applied = getattr(b, f)(**kwargs)\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/internals/blocks.py\", line 885, in setitem\n    values[indexer] = value\nValueError: cannot copy sequence with size 9 to array axis with dimension 5\n\nTo be sure it’s not an error I’ve introduced, I went back to the original model code and made a fresh notebook, commenting out the same sections, but with the same result\nI worked through the code, trying to spot anything I should’ve also changed, and noticed that:\n\nNday = staffpershift1 + staffpershift2 + staffpershift3\nThen used in fillroster1(staff_pool,f,Nday)\nAs temp = random.sample(stafflist[stafflist.loc[:,'rest']==0].index.values.tolist(),k=Nday)\n\nI changed that to Nday = staffpershift1, and this then worked!\n\nI then add a parameter to run_scenarios() to control number of shifts per day, and made those commented out sections into conditional logic depending on whether it’s 1, 2 or 3 days.\nI had to change the results dataframe (as it was set up to only save results for one variant of shifts per day). I decided the simplest solution - that would also make creating the figures later easier - would be to save it in long format.\nI also set the results to NaN if it found that the input parameters were staff strength 2 and more than one shift per day.\nI then ran the whole model, with all the parameter variants."
+    "objectID": "logbook/posts/2024_07_19/index.html#upload-code-to-the-repository",
+    "href": "logbook/posts/2024_07_19/index.html#upload-code-to-the-repository",
+    "title": "Day 1",
+    "section": "14.36-14.38: Upload code to the repository",
+    "text": "14.36-14.38: Upload code to the repository\nThe study code is available at https://github.com/chaose5/COVID-roster-simulation and shared with an open MIT license, which was kindly added following our email. As it is MIT, we do not need to update our license."
   },
   {
-    "objectID": "logbook/posts/2024_07_23/index.html#supplementary-table-2",
-    "href": "logbook/posts/2024_07_23/index.html#supplementary-table-2",
-    "title": "Day 3",
-    "section": "13.55-14.09: Supplementary table 2",
-    "text": "13.55-14.09: Supplementary table 2\nCompared the results for supplementary table 2, and found nearly all were identical.\nThe maximum absolute difference observed was 0.07, which is within the normal variation I observed above between runs of the model without seed control.\nHence, consider this successfully reproduced at 14.09.\n\nimport sys\nsys.path.append('../')\nfrom timings import calculate_times\n\n# Minutes used prior to today\nused_to_date = 277\n\n# Times from today\ntimes = [\n    ('09.40', '11.12'),\n    ('11.17', '11.27'),\n    ('11.31', '11.36'),\n    ('11.39', '12.05'),\n    ('12.40', '13.18'),\n    ('13.20', '13.44'),\n    ('13.55', '14.09')]\n\ncalculate_times(used_to_date, times)\n\nTime spent today: 209m, or 3h 29m\nTotal used to date: 486m, or 8h 6m\nTime remaining: 1914m, or 31h 54m\nUsed 20.2% of 40 hours max"
+    "objectID": "logbook/posts/2024_07_19/index.html#upload-journal-article-to-the-repository",
+    "href": "logbook/posts/2024_07_19/index.html#upload-journal-article-to-the-repository",
+    "title": "Day 1",
+    "section": "14.39-15.00: Upload journal article to the repository",
+    "text": "14.39-15.00: Upload journal article to the repository\nThe journal article is free to view online as it is included with PubMed Central (PMC) - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7486214/. The copyright statement provided is:\n\n“Copyright © 2020 The Canadian Society of Clinical Chemists. Published by Elsevier Inc. All rights reserved. Since January 2020 Elsevier has created a COVID-19 resource centre with free information in English and Mandarin on the novel coronavirus COVID-19. The COVID-19 resource centre is hosted on Elsevier Connect, the company’s public news and information website. Elsevier hereby grants permission to make all its COVID-19-related research that is available on the COVID-19 resource centre - including this research content - immediately available in PubMed Central and other publicly funded repositories, such as the WHO COVID database with rights for unrestricted research re-use and analyses in any form or by any means with acknowledgement of the original source. These permissions are granted for free by Elsevier for as long as the COVID-19 resource centre remains active.”\n\nSince the COVID-19 resource centre remains active, I understand that this means we are free to upload this article and its supplementary materials to this repository, and to use images from this article with attribution.\nI uploaded the article, figures and supplementary materials, and then completed study_publication.qmd, converting the docx files to pdf for easy display via e.g. libreoffice --headless --convert-to pdf original_study/supp1.docx."
   },
   {
-    "objectID": "logbook/posts/2024_07_23/index.html#supplementary-table-3-and-4",
-    "href": "logbook/posts/2024_07_23/index.html#supplementary-table-3-and-4",
-    "title": "Day 3",
-    "section": "14.10-14.14, 14.25-14.28, 14.33-14.44, 14.49-14.58: Supplementary table 3 and 4",
-    "text": "14.10-14.14, 14.25-14.28, 14.33-14.44, 14.49-14.58: Supplementary table 3 and 4\nRe-ran and renamed base scenario with 15% probability of secondary infection, and then ran model again but with 5% and 30% probability. This took about 21 minutes.\nWhile that ran, I worked on speeding up the model code further, by changing the n(0,100) for loop into a map statement.\nMax difference for each was 0.1, which I feel is within normal variation observed. This was reaffirmed by looking at the few examples where the results were different by more than 0.05, which were few and not felt to be noteable.\nFurther confirmed by the fact that, upon re-run, the max difference for supplementary table 2 was now 0.12, when before it was 0.07.\nIn all cases, the overwhelming majority of points are very similar, and these could be considered normal variation within the stochasticity of the model.\nWould considered each complete at 14.58.\n\nimport sys\nsys.path.append('../')\nfrom timings import calculate_times\n\n# Minutes used prior to today\nused_to_date = 277\n\n# Times from today\ntimes = [\n    ('09.40', '11.12'),\n    ('11.17', '11.27'),\n    ('11.31', '11.36'),\n    ('11.39', '12.05'),\n    ('12.40', '13.18'),\n    ('13.20', '13.44'),\n    ('13.55', '14.09'),\n    ('14.10', '14.14'),\n    ('14.25', '14.28'),\n    ('14.33', '14.44'),\n    ('14.49', '14.58')]\n\ncalculate_times(used_to_date, times)\n\nTime spent today: 236m, or 3h 56m\nTotal used to date: 513m, or 8h 33m\nTime remaining: 1887m, or 31h 27m\nUsed 21.4% of 40 hours max"
+    "objectID": "logbook/posts/2024_07_19/index.html#read-journal-article",
+    "href": "logbook/posts/2024_07_19/index.html#read-journal-article",
+    "title": "Day 1",
+    "section": "15.16-15.34: Read journal article",
+    "text": "15.16-15.34: Read journal article"
   },
   {
-    "objectID": "logbook/posts/2024_07_23/index.html#improving-model-run-time",
-    "href": "logbook/posts/2024_07_23/index.html#improving-model-run-time",
-    "title": "Day 3",
-    "section": "15.08-15.19: Improving model run time",
-    "text": "15.08-15.19: Improving model run time\nAttempted to improve run time further, although then decided not to pursue this, as I have already add parallel processing, and as had hit an error and didn’t want to spend too much time on it as not essential to reproduciton.\n  File \"/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py\", line 275, in run_model\n    res_median = np.median(results, axis=0)\n  File \"&lt;__array_function__ internals&gt;\", line 5, in median\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/numpy/lib/function_base.py\", line 3520, in median\n    r, k = _ureduce(a, func=_median, axis=axis, out=out,\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/numpy/lib/function_base.py\", line 3429, in _ureduce\n    r = func(a, **kwargs)\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/numpy/lib/function_base.py\", line 3555, in _median\n    part = partition(a, kth, axis=axis)\n  File \"&lt;__array_function__ internals&gt;\", line 5, in partition\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/numpy/core/fromnumeric.py\", line 748, in partition\n    a.partition(kth, axis=axis, kind=kind, order=order)\nTypeError: '&lt;' not supported between instances of 'NoneType' and 'NoneType'\n\"\"\""
+    "objectID": "logbook/posts/2024_07_19/index.html#plan-scope-of-reproduction",
+    "href": "logbook/posts/2024_07_19/index.html#plan-scope-of-reproduction",
+    "title": "Day 1",
+    "section": "15.35-15.47: Plan scope of reproduction",
+    "text": "15.35-15.47: Plan scope of reproduction\nFollowing the read through, I filled out scope.qmd with my thoughts on scope of the reproduction."
   },
   {
-    "objectID": "logbook/posts/2024_07_23/index.html#figure-2",
-    "href": "logbook/posts/2024_07_23/index.html#figure-2",
-    "title": "Day 3",
-    "section": "15.25-15.42, 15.49-16.55: Figure 2",
-    "text": "15.25-15.42, 15.49-16.55: Figure 2\nThe total staff is 6, 120, or 4 * 30 staff per shift. The total number of staff is expressed as multiples of staff in the first shift, and referred to as staff strength, and discussed in section 2.1.2.\nI realised that my current runs of the model had just been outputting the results for day 7, 14 and 21, but I would need to keep all the results to produce these figures. I modified the model.py to allow this, and then re-ran the base 15 model.\nThe model varies shifts_per_day, staff_per_shift and strength.\nI was initially unsure on the frequency of staff changes. The shift arrangement is discussed in 2.1.3: “The staff was assumed to change shift after a single day (shift), as well as after working 3, 7, 14, 21 consecutive days. After each shift, the simulated staff is assumed to return and stay at home for at least the same number of days as the shift before being randomly assigned to a new shift with the other off-duty colleagues.” Lim et al. (2020) The figure 2 legend mentions that the simulated staff work non-consecutive days. From these sections, I think I am correct in assuming that the default is for it to be freq=1, and so I have set that.\nAdd matplotlib to environment but didn’t specify to older version, as appears the figures in the article are produced in excel.\nWrote code to extract the required results from the dataframe and produce the figure.\nLooks just like paper. Happy that this is reproduced at 16.55."
-  },
-  {
-    "objectID": "logbook/posts/2024_07_23/index.html#timings",
-    "href": "logbook/posts/2024_07_23/index.html#timings",
-    "title": "Day 3",
+    "objectID": "logbook/posts/2024_07_19/index.html#timings",
+    "href": "logbook/posts/2024_07_19/index.html#timings",
+    "title": "Day 1",
     "section": "Timings",
-    "text": "Timings\n\nimport sys\nsys.path.append('../')\nfrom timings import calculate_times\n\n# Minutes used prior to today\nused_to_date = 277\n\n# Times from today\ntimes = [\n    ('09.40', '11.12'),\n    ('11.17', '11.27'),\n    ('11.31', '11.36'),\n    ('11.39', '12.05'),\n    ('12.40', '13.18'),\n    ('13.20', '13.44'),\n    ('13.55', '14.09'),\n    ('14.10', '14.14'),\n    ('14.25', '14.28'),\n    ('14.33', '14.44'),\n    ('14.49', '14.58'),\n    ('15.08', '15.19'),\n    ('15.25', '15.42'),\n    ('15.49', '16.55')]\n\ncalculate_times(used_to_date, times)\n\nTime spent today: 330m, or 5h 30m\nTotal used to date: 607m, or 10h 7m\nTime remaining: 1793m, or 29h 53m\nUsed 25.3% of 40 hours max"
-  },
-  {
-    "objectID": "logbook/posts/2024_07_25/index.html",
-    "href": "logbook/posts/2024_07_25/index.html",
-    "title": "Day 5",
-    "section": "",
-    "text": "Note\n\n\n\nReflections, summary report and research compendium."
-  },
-  {
-    "objectID": "logbook/posts/2024_07_25/index.html#untimed-reflections",
-    "href": "logbook/posts/2024_07_25/index.html#untimed-reflections",
-    "title": "Day 5",
-    "section": "Untimed: Reflections",
-    "text": "Untimed: Reflections\nCompleted reflections page."
-  },
-  {
-    "objectID": "logbook/posts/2024_07_25/index.html#untimed-summary-report",
-    "href": "logbook/posts/2024_07_25/index.html#untimed-summary-report",
-    "title": "Day 5",
-    "section": "Untimed: Summary report",
-    "text": "Untimed: Summary report\nCompleted summary report."
-  },
-  {
-    "objectID": "logbook/posts/2024_07_25/index.html#untimed-consensussecond-opinion",
-    "href": "logbook/posts/2024_07_25/index.html#untimed-consensussecond-opinion",
-    "title": "Day 5",
-    "section": "Untimed: Consensus/second opinion",
-    "text": "Untimed: Consensus/second opinion\nTom agreed that all items had been successfully reproduced.\nRegarding the uncertainties from the evaluation:\n\nBadges - “Artefacts are well structured/organised (e.g. to the extent that reuse and repurposing is facilitated, adhering to norms and standards of research community)” - I have tentatively marked this as unmet. I feel that the script provided was well-structured (with functions and lots of comments throughout the script, including comments playing the role of docstrings at the start of the functions). However, I have set it as unmet as I still had to make several changes in order to easily use it and change parameters for scenarios (as parameters were often hard-coded in the for loop, or in the functions themselves)\n\nYes I agree this is unmet. Ideally there is an simple way to experiment with the model. In an ideal world the authors provide a reproducible Analytical Pipeline (RAP) for simulation where each experiment can reproduced without lots of manual setup.\n\nSTRESS-DES - “2.5.3 Components - resources” and “2.5.4 Components - queues” - as described on the page, I have marked this as non-applicable, but wanted to double-check if that sounded right to you\n\nI agree. There aren’t any to document.\n\nChecklist derived from ISPOR-SDM - “6 Is the target population described?” - I was very uncertain on whether this would be not applicable, fully met, or unmet! Uncertainty as this is not a typical scenario where you’re e.g. focusing on a disease/treatment, and have a population of patients. So I wasn’t really sure what population description would be required to meet this. It does describe the results from a survey on attributes of lab people to PPE.\n\nYes ISPOR is typically targeted at patients. But my view was that the population modelled was the lab staff. If you think they are adequately described in the paper I would mark this as met. Happy to discuss."
-  },
-  {
-    "objectID": "logbook/posts/2024_07_25/index.html#untimed-research-compendium",
-    "href": "logbook/posts/2024_07_25/index.html#untimed-research-compendium",
-    "title": "Day 5",
-    "section": "Untimed: Research compendium",
-    "text": "Untimed: Research compendium\n\nAdd seed to model.py so can reproduce own results\n\nstart_seed in run_scenarios() (default 0) and run_model(), used as first line in the replciation for loop, np.random.seed(start_seed + n)\nRan model with limited number of parameters twice to confirm I got the same results each time, but they came out with some differences\nI tried also adding random.seed(start_seed + n) (as the code samples using random and numpy), and then produced matching results\n\n\nres1 = model.run_scenarios(strength=[4], staff_change=[7], shift_day=[1])\nres2 = model.run_scenarios(strength=[4], staff_change=[7], shift_day=[1])\nres1.compare(res2)\n\nRe-ran all scenarios from scratch (with seed control now in place), and saved run times\nAdd tests\n\nAdd pytest to environment (originally also pytest-xdist and pip to environment, but then decided against this as there was already parallel processing add to the code itself)\nWrote test for two scenarios (using similar structure as did from first reproduction) - but not for all scenarios, purely due to long run time.\nRequires __init__.py in tests/ and in model scripts/\n\nAdd Dockerfile\nUpdate reproduction README"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Reproducing Lim et al. 2020",
-    "section": "",
-    "text": "This book captures the reproduction of:\n\nLim CY, Bohn MK, Lippi G, Ferrari M, Loh TP, Yuen K, Adeli K, Horvath AR Staff Rostering, Split Team Arrangement, Social Distancing (Physical Distancing) and Use of Personal Protective Equipment to Minimize Risk of Workplace Transmission During the COVID-19 Pandemic: A Simulation Study. Clinical Biochemistry 86:15-22 (2020). https://doi.org/10.1016/j.clinbiochem.2020.09.003.\n\nUse the navigation bar above to view:\n\nOriginal study - the original study article and associated artefacts.\nReproduction - code and documentation from reproduction of the model.\nEvaluation - describes model reproduction success and compares original study against guidelines for sharing research, criteria for journal reproducibility guidelines, and article reporting guidelines.\nLogbook - chronological entries detailing reproduction work.\nSummary - summary of the computational reproducibility assessment."
-  },
-  {
-    "objectID": "index.html#about",
-    "href": "index.html#about",
-    "title": "Reproducing Lim et al. 2020",
-    "section": "",
-    "text": "This book captures the reproduction of:\n\nLim CY, Bohn MK, Lippi G, Ferrari M, Loh TP, Yuen K, Adeli K, Horvath AR Staff Rostering, Split Team Arrangement, Social Distancing (Physical Distancing) and Use of Personal Protective Equipment to Minimize Risk of Workplace Transmission During the COVID-19 Pandemic: A Simulation Study. Clinical Biochemistry 86:15-22 (2020). https://doi.org/10.1016/j.clinbiochem.2020.09.003.\n\nUse the navigation bar above to view:\n\nOriginal study - the original study article and associated artefacts.\nReproduction - code and documentation from reproduction of the model.\nEvaluation - describes model reproduction success and compares original study against guidelines for sharing research, criteria for journal reproducibility guidelines, and article reporting guidelines.\nLogbook - chronological entries detailing reproduction work.\nSummary - summary of the computational reproducibility assessment."
-  },
-  {
-    "objectID": "index.html#project-team",
-    "href": "index.html#project-team",
-    "title": "Reproducing Lim et al. 2020",
-    "section": "Project team",
-    "text": "Project team\n\nConducting this reproduction:\n\nAmy Heather \n\nProviding support during the reproduction:\n\nThomas Monks \nAlison Harper \n\nOther members of the team on STARS:\n\nNavonil Mustafee \nAndrew Mayne"
-  },
-  {
-    "objectID": "index.html#protocol",
-    "href": "index.html#protocol",
-    "title": "Reproducing Lim et al. 2020",
-    "section": "Protocol",
-    "text": "Protocol\nThe protocol for this work is summarised in the diagram below and archived on Zenodo:\n\nHeather, A., Monks, T., Harper, A., Mustafee, N., & Mayne, A. (2024). Protocol for assessing the computational reproducibility of discrete-event simulation models on STARS. Zenodo. https://doi.org/10.5281/zenodo.12179846.\n\n\n\n\nWorkflow for computational reproducibility assessment"
-  },
-  {
-    "objectID": "index.html#citation",
-    "href": "index.html#citation",
-    "title": "Reproducing Lim et al. 2020",
-    "section": "Citation",
-    "text": "Citation\nAPA:\nHeather A., Monks T., Harper A. (2024). STARS: Computational reproducibility of Lim et al. 2020 (version 0.1.0). URL: https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020\nSee CITATION.cff and citation_bibtex.bib for alternative formats."
-  },
-  {
-    "objectID": "index.html#license",
-    "href": "index.html#license",
-    "title": "Reproducing Lim et al. 2020",
-    "section": "License",
-    "text": "License\nSee License page."
+    "text": "Timings\n\nimport sys\nsys.path.append('../')\nfrom timings import calculate_times\n\n# Minutes used prior to today\nused_to_date = 0\n\n# Times from today\ntimes = [\n    ('14.05', '14.34'),\n    ('14.36', '14.38'),\n    ('14.39', '15.00'),\n    ('15.16', '15.34'),\n    ('15.35', '15.47')]\n\ncalculate_times(used_to_date, times)\n\nTime spent today: 82m, or 1h 22m\nTotal used to date: 82m, or 1h 22m\nTime remaining: 2318m, or 38h 38m\nUsed 3.4% of 40 hours max"
   },
   {
     "objectID": "logbook/posts/2024_07_24/index.html",
@@ -483,53 +378,172 @@
     "text": "16.40-16.47: Wrote email to Tom and Alison sharing uncertainities from evaluation\n\nimport sys\nsys.path.append('../')\nfrom timings import calculate_times\n\n# Minutes used prior to today\nused_to_date = 0\n\n# Times from today\ntimes = [\n    ('13.57', '14.03'),\n    ('14.07', '14.16'),\n    ('14.17', '15.05'),\n    ('16.06', '16.26'),\n    ('16.40', '16.47')]\n\ncalculate_times(used_to_date, times, limit=False)\n\nTime spent today: 90m, or 1h 30m\nTotal used to date: 90m, or 1h 30m"
   },
   {
-    "objectID": "logbook/posts/2024_07_19/index.html",
-    "href": "logbook/posts/2024_07_19/index.html",
-    "title": "Day 1",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Reproducing Lim et al. 2020",
     "section": "",
-    "text": "Note\n\n\n\nSet-up, read article and define scope. Total time used: 1h 22m (3.4%)"
+    "text": "This book captures the reproduction of:\n\nLim CY, Bohn MK, Lippi G, Ferrari M, Loh TP, Yuen K, Adeli K, Horvath AR Staff Rostering, Split Team Arrangement, Social Distancing (Physical Distancing) and Use of Personal Protective Equipment to Minimize Risk of Workplace Transmission During the COVID-19 Pandemic: A Simulation Study. Clinical Biochemistry 86:15-22 (2020). https://doi.org/10.1016/j.clinbiochem.2020.09.003.\n\nUse the navigation bar above to view:\n\nOriginal study - the original study article and associated artefacts.\nReproduction - code and documentation from reproduction of the model.\nEvaluation - describes model reproduction success and compares original study against guidelines for sharing research, criteria for journal reproducibility guidelines, and article reporting guidelines.\nLogbook - chronological entries detailing reproduction work.\nSummary - summary of the computational reproducibility assessment."
   },
   {
-    "objectID": "logbook/posts/2024_07_19/index.html#create-repository",
-    "href": "logbook/posts/2024_07_19/index.html#create-repository",
-    "title": "Day 1",
-    "section": "14.05-14.34: Create repository",
-    "text": "14.05-14.34: Create repository\n\nSet up repository using template\nModified files to refer to Lim et al. 2020\nBuilt Python environment to create the book.\nPreviously sent a detailed email to the authors on Thursday 11th and Friday 12th July to inform about the study and ask if they would be happy to add an open license. Looking over that email, I don’t think it is necessary to email again, but will double-check with someone else on STARS."
+    "objectID": "index.html#about",
+    "href": "index.html#about",
+    "title": "Reproducing Lim et al. 2020",
+    "section": "",
+    "text": "This book captures the reproduction of:\n\nLim CY, Bohn MK, Lippi G, Ferrari M, Loh TP, Yuen K, Adeli K, Horvath AR Staff Rostering, Split Team Arrangement, Social Distancing (Physical Distancing) and Use of Personal Protective Equipment to Minimize Risk of Workplace Transmission During the COVID-19 Pandemic: A Simulation Study. Clinical Biochemistry 86:15-22 (2020). https://doi.org/10.1016/j.clinbiochem.2020.09.003.\n\nUse the navigation bar above to view:\n\nOriginal study - the original study article and associated artefacts.\nReproduction - code and documentation from reproduction of the model.\nEvaluation - describes model reproduction success and compares original study against guidelines for sharing research, criteria for journal reproducibility guidelines, and article reporting guidelines.\nLogbook - chronological entries detailing reproduction work.\nSummary - summary of the computational reproducibility assessment."
   },
   {
-    "objectID": "logbook/posts/2024_07_19/index.html#upload-code-to-the-repository",
-    "href": "logbook/posts/2024_07_19/index.html#upload-code-to-the-repository",
-    "title": "Day 1",
-    "section": "14.36-14.38: Upload code to the repository",
-    "text": "14.36-14.38: Upload code to the repository\nThe study code is available at https://github.com/chaose5/COVID-roster-simulation and shared with an open MIT license, which was kindly added following our email. As it is MIT, we do not need to update our license."
+    "objectID": "index.html#project-team",
+    "href": "index.html#project-team",
+    "title": "Reproducing Lim et al. 2020",
+    "section": "Project team",
+    "text": "Project team\n\nConducting this reproduction:\n\nAmy Heather \n\nProviding support during the reproduction:\n\nThomas Monks \nAlison Harper \n\nOther members of the team on STARS:\n\nNavonil Mustafee \nAndrew Mayne"
   },
   {
-    "objectID": "logbook/posts/2024_07_19/index.html#upload-journal-article-to-the-repository",
-    "href": "logbook/posts/2024_07_19/index.html#upload-journal-article-to-the-repository",
-    "title": "Day 1",
-    "section": "14.39-15.00: Upload journal article to the repository",
-    "text": "14.39-15.00: Upload journal article to the repository\nThe journal article is free to view online as it is included with PubMed Central (PMC) - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7486214/. The copyright statement provided is:\n\n“Copyright © 2020 The Canadian Society of Clinical Chemists. Published by Elsevier Inc. All rights reserved. Since January 2020 Elsevier has created a COVID-19 resource centre with free information in English and Mandarin on the novel coronavirus COVID-19. The COVID-19 resource centre is hosted on Elsevier Connect, the company’s public news and information website. Elsevier hereby grants permission to make all its COVID-19-related research that is available on the COVID-19 resource centre - including this research content - immediately available in PubMed Central and other publicly funded repositories, such as the WHO COVID database with rights for unrestricted research re-use and analyses in any form or by any means with acknowledgement of the original source. These permissions are granted for free by Elsevier for as long as the COVID-19 resource centre remains active.”\n\nSince the COVID-19 resource centre remains active, I understand that this means we are free to upload this article and its supplementary materials to this repository, and to use images from this article with attribution.\nI uploaded the article, figures and supplementary materials, and then completed study_publication.qmd, converting the docx files to pdf for easy display via e.g. libreoffice --headless --convert-to pdf original_study/supp1.docx."
+    "objectID": "index.html#protocol",
+    "href": "index.html#protocol",
+    "title": "Reproducing Lim et al. 2020",
+    "section": "Protocol",
+    "text": "Protocol\nThe protocol for this work is summarised in the diagram below and archived on Zenodo:\n\nHeather, A., Monks, T., Harper, A., Mustafee, N., & Mayne, A. (2024). Protocol for assessing the computational reproducibility of discrete-event simulation models on STARS. Zenodo. https://doi.org/10.5281/zenodo.12179846.\n\n\n\n\nWorkflow for computational reproducibility assessment"
   },
   {
-    "objectID": "logbook/posts/2024_07_19/index.html#read-journal-article",
-    "href": "logbook/posts/2024_07_19/index.html#read-journal-article",
-    "title": "Day 1",
-    "section": "15.16-15.34: Read journal article",
-    "text": "15.16-15.34: Read journal article"
+    "objectID": "index.html#citation",
+    "href": "index.html#citation",
+    "title": "Reproducing Lim et al. 2020",
+    "section": "Citation",
+    "text": "Citation\nAPA:\nHeather A., Monks T., Harper A. (2024). STARS: Computational reproducibility of Lim et al. 2020 (version 0.2.0). URL: https://github.com/pythonhealthdatascience/stars-reproduce-lim-2020\nSee CITATION.cff and citation_bibtex.bib for alternative formats."
   },
   {
-    "objectID": "logbook/posts/2024_07_19/index.html#plan-scope-of-reproduction",
-    "href": "logbook/posts/2024_07_19/index.html#plan-scope-of-reproduction",
-    "title": "Day 1",
-    "section": "15.35-15.47: Plan scope of reproduction",
-    "text": "15.35-15.47: Plan scope of reproduction\nFollowing the read through, I filled out scope.qmd with my thoughts on scope of the reproduction."
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Reproducing Lim et al. 2020",
+    "section": "License",
+    "text": "License\nSee License page."
   },
   {
-    "objectID": "logbook/posts/2024_07_19/index.html#timings",
-    "href": "logbook/posts/2024_07_19/index.html#timings",
-    "title": "Day 1",
+    "objectID": "logbook/posts/2024_07_25/index.html",
+    "href": "logbook/posts/2024_07_25/index.html",
+    "title": "Day 5",
+    "section": "",
+    "text": "Note\n\n\n\nReflections, summary report and research compendium."
+  },
+  {
+    "objectID": "logbook/posts/2024_07_25/index.html#untimed-reflections",
+    "href": "logbook/posts/2024_07_25/index.html#untimed-reflections",
+    "title": "Day 5",
+    "section": "Untimed: Reflections",
+    "text": "Untimed: Reflections\nCompleted reflections page."
+  },
+  {
+    "objectID": "logbook/posts/2024_07_25/index.html#untimed-summary-report",
+    "href": "logbook/posts/2024_07_25/index.html#untimed-summary-report",
+    "title": "Day 5",
+    "section": "Untimed: Summary report",
+    "text": "Untimed: Summary report\nCompleted summary report."
+  },
+  {
+    "objectID": "logbook/posts/2024_07_25/index.html#untimed-consensussecond-opinion",
+    "href": "logbook/posts/2024_07_25/index.html#untimed-consensussecond-opinion",
+    "title": "Day 5",
+    "section": "Untimed: Consensus/second opinion",
+    "text": "Untimed: Consensus/second opinion\nTom agreed that all items had been successfully reproduced.\nRegarding the uncertainties from the evaluation:\n\nBadges - “Artefacts are well structured/organised (e.g. to the extent that reuse and repurposing is facilitated, adhering to norms and standards of research community)” - I have tentatively marked this as unmet. I feel that the script provided was well-structured (with functions and lots of comments throughout the script, including comments playing the role of docstrings at the start of the functions). However, I have set it as unmet as I still had to make several changes in order to easily use it and change parameters for scenarios (as parameters were often hard-coded in the for loop, or in the functions themselves)\n\nYes I agree this is unmet. Ideally there is an simple way to experiment with the model. In an ideal world the authors provide a reproducible Analytical Pipeline (RAP) for simulation where each experiment can reproduced without lots of manual setup.\n\nSTRESS-DES - “2.5.3 Components - resources” and “2.5.4 Components - queues” - as described on the page, I have marked this as non-applicable, but wanted to double-check if that sounded right to you\n\nI agree. There aren’t any to document.\n\nChecklist derived from ISPOR-SDM - “6 Is the target population described?” - I was very uncertain on whether this would be not applicable, fully met, or unmet! Uncertainty as this is not a typical scenario where you’re e.g. focusing on a disease/treatment, and have a population of patients. So I wasn’t really sure what population description would be required to meet this. It does describe the results from a survey on attributes of lab people to PPE.\n\nYes ISPOR is typically targeted at patients. But my view was that the population modelled was the lab staff. If you think they are adequately described in the paper I would mark this as met. Happy to discuss."
+  },
+  {
+    "objectID": "logbook/posts/2024_07_25/index.html#untimed-research-compendium",
+    "href": "logbook/posts/2024_07_25/index.html#untimed-research-compendium",
+    "title": "Day 5",
+    "section": "Untimed: Research compendium",
+    "text": "Untimed: Research compendium\n\nAdd seed to model.py so can reproduce own results\n\nstart_seed in run_scenarios() (default 0) and run_model(), used as first line in the replciation for loop, np.random.seed(start_seed + n)\nRan model with limited number of parameters twice to confirm I got the same results each time, but they came out with some differences\nI tried also adding random.seed(start_seed + n) (as the code samples using random and numpy), and then produced matching results\n\n\nres1 = model.run_scenarios(strength=[4], staff_change=[7], shift_day=[1])\nres2 = model.run_scenarios(strength=[4], staff_change=[7], shift_day=[1])\nres1.compare(res2)\n\nRe-ran all scenarios from scratch (with seed control now in place), and saved run times\nAdd tests\n\nAdd pytest to environment (originally also pytest-xdist and pip to environment, but then decided against this as there was already parallel processing add to the code itself)\nWrote test for two scenarios (using similar structure as did from first reproduction) - but not for all scenarios, purely due to long run time.\nRequires __init__.py in tests/ and in model scripts/\n\nAdd Dockerfile\nUpdate reproduction README"
+  },
+  {
+    "objectID": "logbook/posts/2024_07_23/index.html",
+    "href": "logbook/posts/2024_07_23/index.html",
+    "title": "Day 3",
+    "section": "",
+    "text": "Note\n\n\n\nAdd parallel processing and reproduced supplementary tables 2-4 and Figure 2. Total time used: 10h 7m (25.3%)"
+  },
+  {
+    "objectID": "logbook/posts/2024_07_23/index.html#adding-parallel-processing",
+    "href": "logbook/posts/2024_07_23/index.html#adding-parallel-processing",
+    "title": "Day 3",
+    "section": "09.40-11.12, 11.17-11.27: Adding parallel processing",
+    "text": "09.40-11.12, 11.17-11.27: Adding parallel processing\nHaving now run the full model code that was provided, I can see that the loop produced a 10x4 table (for each of the end by day 7, 14 and 21). It varies:\n\nStaff strength (4, 6)\nFrequency of staff change (1, 3, 7, 14, 21)\nNumber of staff per shift (5, 10, 20, 30)\n\nIt doesn’t include:\n\nStaff strength 2 - should be easy to add to loop\nScenarios from paper (e.g. varying probability of secondary infection) - although that example is easy to change with p = 0.15 # secondary attack rate\n\nIt had quite a long run time (19m 8s) which will make it difficult to run all these variants. Hence, I will first try to introduce parallel processing to help speed up the reproduction.\n\nFirst, I modified model.py so the model is run by a function, that is then more easily callable from the reproduction notebook. Initially this was a single function, but then I realised I needed to divide it into a function that runs the model with a single set of parameters, and a function that loops through scenarios, to be easily compatable with parallel processing\nTo simplify/improve reusability of varying the number of staff per shift, I changed the results dataframe index from 0-4 to be based on the provided variants for staff per shift (e.g. 5, 10, 20, 30)\nWhilst running these, noted we do so fluctuation between re-runs (e.g. 0.47 to 0.54 for day 21 4-1)\nThen I introduced from multiprocessing import Pool and modified the nested for loop so that we can instead apply the function in parallel. I also had to modify how the results dataframes as created, as they were all modifying the same objects, which wouldn’t be possible in parallel.\n\nThis now ran in 2m 40s - 3m 6s. This is great, and will make running all the different scenarios much easier. By eye, the variation in results before and after parallel processing is very minimal, and all within the range I would expect due to there being no seed control.\nHid warnings and print progress message to enable cleaner output."
+  },
+  {
+    "objectID": "logbook/posts/2024_07_23/index.html#adding-parameters",
+    "href": "logbook/posts/2024_07_23/index.html#adding-parameters",
+    "title": "Day 3",
+    "section": "11.31-11.36, 11.39-12.05: Adding parameters",
+    "text": "11.31-11.36, 11.39-12.05: Adding parameters\nModified model.py so it has staff strength [2, 4, 6] but received error:\nFile \"/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py\", line 175, in run_model\n    fillroster1(staff_pool,f,Nday,stafflist,roster)\n  File \"/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py\", line 65, in fillroster1\n    temp = random.sample(stafflist[stafflist.loc[:,'rest']==0].index.values.tolist(),k=Nday)\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/random.py\", line 363, in sample\n    raise ValueError(\"Sample larger than population or is negative\")\nValueError: Sample larger than population or is negative\nI think this is related to strength 2, which is set to NA in the paper when there are two or three shifts per day, stating that it is “not available as the number of staff per shift was too low to simulate under the required conditions”. Lim et al. (2020)\nI wasn’t certain how to alter the shifts per day from the model, but I tried commenting out shift 2 and 3 in contact(). to see if the model would run. However, I still got the error from above. I introduced error handling, to set the result to NaN if there was a Value Error. With those sections still commented, and only running strength 2, the only results it output were for 2-21.\nI tried uncommenting shifts 2 and 3 and running for strength 2. However, this again only output results for 2-21."
+  },
+  {
+    "objectID": "logbook/posts/2024_07_23/index.html#troubleshooting-staff-strength-2",
+    "href": "logbook/posts/2024_07_23/index.html#troubleshooting-staff-strength-2",
+    "title": "Day 3",
+    "section": "12.40-13.18, 13.20-13.44: Troubleshooting staff strength 2",
+    "text": "12.40-13.18, 13.20-13.44: Troubleshooting staff strength 2\nWe don’t expect it to work when there are three shifts per day, so I tried again to figure out how to successfully change it to one shift per day…\n\nCommented out shift 2 and 3 sections from contact() abd creation of shift 2 and 3 rosters in restartsim(). Got error:\n\n  File \"/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py\", line 169, in run_model\n    fillroster1(staff_pool,f,Nday,stafflist,roster)\n  File \"/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py\", line 63, in fillroster1\n    roster.iloc[f*i+j] = temp\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/indexing.py\", line 670, in __setitem__\n    iloc._setitem_with_indexer(indexer, value)\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/indexing.py\", line 1802, in _setitem_with_indexer\n    self.obj._mgr = self.obj._mgr.setitem(indexer=indexer, value=value)\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/internals/managers.py\", line 534, in setitem\n    return self.apply(\"setitem\", indexer=indexer, value=value)\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/internals/managers.py\", line 406, in apply\n    applied = getattr(b, f)(**kwargs)\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/internals/blocks.py\", line 885, in setitem\n    values[indexer] = value\nValueError: cannot copy sequence with size 18 to array axis with dimension 10\n\"\"\"\n\nThis might actually be the issue we were looking for - that we can’t fill up the roster with that staff number. I tried running with strength 4, which should work regardless, but get a similar error\n\n  File \"/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py\", line 169, in run_model\n    fillroster1(staff_pool,f,Nday,stafflist,roster)\n  File \"/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py\", line 63, in fillroster1\n    roster.iloc[f*i+j] = temp\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/indexing.py\", line 670, in __setitem__\n    iloc._setitem_with_indexer(indexer, value)\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/indexing.py\", line 1802, in _setitem_with_indexer\n    self.obj._mgr = self.obj._mgr.setitem(indexer=indexer, value=value)\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/internals/managers.py\", line 534, in setitem\n    return self.apply(\"setitem\", indexer=indexer, value=value)\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/internals/managers.py\", line 406, in apply\n    applied = getattr(b, f)(**kwargs)\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/pandas/core/internals/blocks.py\", line 885, in setitem\n    values[indexer] = value\nValueError: cannot copy sequence with size 9 to array axis with dimension 5\n\nTo be sure it’s not an error I’ve introduced, I went back to the original model code and made a fresh notebook, commenting out the same sections, but with the same result\nI worked through the code, trying to spot anything I should’ve also changed, and noticed that:\n\nNday = staffpershift1 + staffpershift2 + staffpershift3\nThen used in fillroster1(staff_pool,f,Nday)\nAs temp = random.sample(stafflist[stafflist.loc[:,'rest']==0].index.values.tolist(),k=Nday)\n\nI changed that to Nday = staffpershift1, and this then worked!\n\nI then add a parameter to run_scenarios() to control number of shifts per day, and made those commented out sections into conditional logic depending on whether it’s 1, 2 or 3 days.\nI had to change the results dataframe (as it was set up to only save results for one variant of shifts per day). I decided the simplest solution - that would also make creating the figures later easier - would be to save it in long format.\nI also set the results to NaN if it found that the input parameters were staff strength 2 and more than one shift per day.\nI then ran the whole model, with all the parameter variants."
+  },
+  {
+    "objectID": "logbook/posts/2024_07_23/index.html#supplementary-table-2",
+    "href": "logbook/posts/2024_07_23/index.html#supplementary-table-2",
+    "title": "Day 3",
+    "section": "13.55-14.09: Supplementary table 2",
+    "text": "13.55-14.09: Supplementary table 2\nCompared the results for supplementary table 2, and found nearly all were identical.\nThe maximum absolute difference observed was 0.07, which is within the normal variation I observed above between runs of the model without seed control.\nHence, consider this successfully reproduced at 14.09.\n\nimport sys\nsys.path.append('../')\nfrom timings import calculate_times\n\n# Minutes used prior to today\nused_to_date = 277\n\n# Times from today\ntimes = [\n    ('09.40', '11.12'),\n    ('11.17', '11.27'),\n    ('11.31', '11.36'),\n    ('11.39', '12.05'),\n    ('12.40', '13.18'),\n    ('13.20', '13.44'),\n    ('13.55', '14.09')]\n\ncalculate_times(used_to_date, times)\n\nTime spent today: 209m, or 3h 29m\nTotal used to date: 486m, or 8h 6m\nTime remaining: 1914m, or 31h 54m\nUsed 20.2% of 40 hours max"
+  },
+  {
+    "objectID": "logbook/posts/2024_07_23/index.html#supplementary-table-3-and-4",
+    "href": "logbook/posts/2024_07_23/index.html#supplementary-table-3-and-4",
+    "title": "Day 3",
+    "section": "14.10-14.14, 14.25-14.28, 14.33-14.44, 14.49-14.58: Supplementary table 3 and 4",
+    "text": "14.10-14.14, 14.25-14.28, 14.33-14.44, 14.49-14.58: Supplementary table 3 and 4\nRe-ran and renamed base scenario with 15% probability of secondary infection, and then ran model again but with 5% and 30% probability. This took about 21 minutes.\nWhile that ran, I worked on speeding up the model code further, by changing the n(0,100) for loop into a map statement.\nMax difference for each was 0.1, which I feel is within normal variation observed. This was reaffirmed by looking at the few examples where the results were different by more than 0.05, which were few and not felt to be noteable.\nFurther confirmed by the fact that, upon re-run, the max difference for supplementary table 2 was now 0.12, when before it was 0.07.\nIn all cases, the overwhelming majority of points are very similar, and these could be considered normal variation within the stochasticity of the model.\nWould considered each complete at 14.58.\n\nimport sys\nsys.path.append('../')\nfrom timings import calculate_times\n\n# Minutes used prior to today\nused_to_date = 277\n\n# Times from today\ntimes = [\n    ('09.40', '11.12'),\n    ('11.17', '11.27'),\n    ('11.31', '11.36'),\n    ('11.39', '12.05'),\n    ('12.40', '13.18'),\n    ('13.20', '13.44'),\n    ('13.55', '14.09'),\n    ('14.10', '14.14'),\n    ('14.25', '14.28'),\n    ('14.33', '14.44'),\n    ('14.49', '14.58')]\n\ncalculate_times(used_to_date, times)\n\nTime spent today: 236m, or 3h 56m\nTotal used to date: 513m, or 8h 33m\nTime remaining: 1887m, or 31h 27m\nUsed 21.4% of 40 hours max"
+  },
+  {
+    "objectID": "logbook/posts/2024_07_23/index.html#improving-model-run-time",
+    "href": "logbook/posts/2024_07_23/index.html#improving-model-run-time",
+    "title": "Day 3",
+    "section": "15.08-15.19: Improving model run time",
+    "text": "15.08-15.19: Improving model run time\nAttempted to improve run time further, although then decided not to pursue this, as I have already add parallel processing, and as had hit an error and didn’t want to spend too much time on it as not essential to reproduciton.\n  File \"/home/amy/Documents/stars/stars-reproduce-lim-2020/reproduction/scripts/model.py\", line 275, in run_model\n    res_median = np.median(results, axis=0)\n  File \"&lt;__array_function__ internals&gt;\", line 5, in median\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/numpy/lib/function_base.py\", line 3520, in median\n    r, k = _ureduce(a, func=_median, axis=axis, out=out,\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/numpy/lib/function_base.py\", line 3429, in _ureduce\n    r = func(a, **kwargs)\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/numpy/lib/function_base.py\", line 3555, in _median\n    part = partition(a, kth, axis=axis)\n  File \"&lt;__array_function__ internals&gt;\", line 5, in partition\n  File \"/home/amy/mambaforge/envs/lim2020/lib/python3.8/site-packages/numpy/core/fromnumeric.py\", line 748, in partition\n    a.partition(kth, axis=axis, kind=kind, order=order)\nTypeError: '&lt;' not supported between instances of 'NoneType' and 'NoneType'\n\"\"\""
+  },
+  {
+    "objectID": "logbook/posts/2024_07_23/index.html#figure-2",
+    "href": "logbook/posts/2024_07_23/index.html#figure-2",
+    "title": "Day 3",
+    "section": "15.25-15.42, 15.49-16.55: Figure 2",
+    "text": "15.25-15.42, 15.49-16.55: Figure 2\nThe total staff is 6, 120, or 4 * 30 staff per shift. The total number of staff is expressed as multiples of staff in the first shift, and referred to as staff strength, and discussed in section 2.1.2.\nI realised that my current runs of the model had just been outputting the results for day 7, 14 and 21, but I would need to keep all the results to produce these figures. I modified the model.py to allow this, and then re-ran the base 15 model.\nThe model varies shifts_per_day, staff_per_shift and strength.\nI was initially unsure on the frequency of staff changes. The shift arrangement is discussed in 2.1.3: “The staff was assumed to change shift after a single day (shift), as well as after working 3, 7, 14, 21 consecutive days. After each shift, the simulated staff is assumed to return and stay at home for at least the same number of days as the shift before being randomly assigned to a new shift with the other off-duty colleagues.” Lim et al. (2020) The figure 2 legend mentions that the simulated staff work non-consecutive days. From these sections, I think I am correct in assuming that the default is for it to be freq=1, and so I have set that.\nAdd matplotlib to environment but didn’t specify to older version, as appears the figures in the article are produced in excel.\nWrote code to extract the required results from the dataframe and produce the figure.\nLooks just like paper. Happy that this is reproduced at 16.55."
+  },
+  {
+    "objectID": "logbook/posts/2024_07_23/index.html#timings",
+    "href": "logbook/posts/2024_07_23/index.html#timings",
+    "title": "Day 3",
     "section": "Timings",
-    "text": "Timings\n\nimport sys\nsys.path.append('../')\nfrom timings import calculate_times\n\n# Minutes used prior to today\nused_to_date = 0\n\n# Times from today\ntimes = [\n    ('14.05', '14.34'),\n    ('14.36', '14.38'),\n    ('14.39', '15.00'),\n    ('15.16', '15.34'),\n    ('15.35', '15.47')]\n\ncalculate_times(used_to_date, times)\n\nTime spent today: 82m, or 1h 22m\nTotal used to date: 82m, or 1h 22m\nTime remaining: 2318m, or 38h 38m\nUsed 3.4% of 40 hours max"
+    "text": "Timings\n\nimport sys\nsys.path.append('../')\nfrom timings import calculate_times\n\n# Minutes used prior to today\nused_to_date = 277\n\n# Times from today\ntimes = [\n    ('09.40', '11.12'),\n    ('11.17', '11.27'),\n    ('11.31', '11.36'),\n    ('11.39', '12.05'),\n    ('12.40', '13.18'),\n    ('13.20', '13.44'),\n    ('13.55', '14.09'),\n    ('14.10', '14.14'),\n    ('14.25', '14.28'),\n    ('14.33', '14.44'),\n    ('14.49', '14.58'),\n    ('15.08', '15.19'),\n    ('15.25', '15.42'),\n    ('15.49', '16.55')]\n\ncalculate_times(used_to_date, times)\n\nTime spent today: 330m, or 5h 30m\nTotal used to date: 607m, or 10h 7m\nTime remaining: 1793m, or 29h 53m\nUsed 25.3% of 40 hours max"
+  },
+  {
+    "objectID": "logbook/posts/2024_07_26/index.html",
+    "href": "logbook/posts/2024_07_26/index.html",
+    "title": "Day 6",
+    "section": "",
+    "text": "Note\n\n\n\nFinishing up research compendium, and test-run from Tom."
+  },
+  {
+    "objectID": "logbook/posts/2024_07_26/index.html#untimed-troubleshooting-docker",
+    "href": "logbook/posts/2024_07_26/index.html#untimed-troubleshooting-docker",
+    "title": "Day 6",
+    "section": "Untimed: Troubleshooting docker",
+    "text": "Untimed: Troubleshooting docker\nTested local build of Docker image and running in the container but had an error:\n20.42 LibMambaUnsatisfiableError: Encountered problems while solving:\n20.42   - nothing provides numpy-base 1.23.3 py310h375b286_0 needed by numpy-1.23.3-py310hac523dd_0\n20.42 \n20.42 Could not solve for environment specs\n20.42 The following packages are incompatible\n20.42 ├─ matplotlib 3.5.1**  is installable with the potential options\n20.42 │  ├─ matplotlib 3.5.1 would require\n20.42 │  │  └─ python &gt;=3.10,&lt;3.11.0a0 , which can be installed;\n20.42 │  ├─ matplotlib 3.5.1 would require\n20.42 │  │  └─ python &gt;=3.7,&lt;3.8.0a0 , which can be installed;\n20.42 │  ├─ matplotlib 3.5.1 would require\n20.42 │  │  └─ matplotlib-base &gt;=3.5.1,&lt;3.5.2.0a0  with the potential options\n20.42 │  │     ├─ matplotlib-base 3.5.1 would require\n20.42 │  │     │  └─ python &gt;=3.10,&lt;3.11.0a0 , which can be installed;\n20.42 │  │     ├─ matplotlib-base 3.5.1 would require\n20.42 │  │     │  └─ python &gt;=3.7,&lt;3.8.0a0 , which can be installed;\n20.42 │  │     ├─ matplotlib-base 3.5.1 would require\n20.42 │  │     │  └─ numpy &gt;=1.19.2,&lt;2.0a0  with the potential options\n20.42 │  │     │     ├─ numpy [1.19.1|1.19.2] would require\n20.42 │  │     │     │  └─ python &gt;=3.6,&lt;3.7.0a0 , which can be installed;\n20.42 │  │     │     ├─ numpy [1.19.1|1.19.2|...|1.21.5] would require\n20.42 │  │     │     │  └─ python &gt;=3.7,&lt;3.8.0a0 , which can be installed;\n20.42 │  │     │     ├─ numpy [1.19.2|1.19.5|...|1.24.3], which can be installed;\n20.42 │  │     │     ├─ numpy [1.19.2|1.19.5|...|1.26.4] would require\n20.42 │  │     │     │  └─ python &gt;=3.9,&lt;3.10.0a0 , which can be installed;\n20.42 │  │     │     ├─ numpy [1.21.2|1.21.5|...|1.26.4] would require\n20.42 │  │     │     │  └─ python &gt;=3.10,&lt;3.11.0a0 , which can be installed;\n20.42 │  │     │     ├─ numpy [1.22.3|1.23.5|...|1.26.4] would require\n20.42 │  │     │     │  └─ python &gt;=3.11,&lt;3.12.0a0 , which can be installed;\n20.42 │  │     │     ├─ numpy 1.23.3 would require\n20.42 │  │     │     │  └─ numpy-base 1.23.3 py310h375b286_0, which does not exist (perhaps a missing channel);\n20.42 │  │     │     ├─ numpy 1.23.3 would require\n20.42 │  │     │     │  └─ numpy-base 1.23.3 py310h8e6c178_0, which does not exist (perhaps a missing channel);\n20.42 │  │     │     └─ numpy [1.26.0|1.26.2|1.26.3|1.26.4] would require\n20.42 │  │     │        └─ python &gt;=3.12,&lt;3.13.0a0 , which can be installed;\n20.42 │  │     └─ matplotlib-base 3.5.1 would require\n20.42 │  │        └─ python &gt;=3.9,&lt;3.10.0a0 , which can be installed;\n20.42 │  └─ matplotlib 3.5.1 would require\n20.42 │     └─ python &gt;=3.9,&lt;3.10.0a0 , which can be installed;\n20.42 ├─ numpy 1.19.1**  is installable with the potential options\n20.42 │  ├─ numpy [1.19.1|1.19.2], which can be installed (as previously explained);\n20.42 │  ├─ numpy [1.19.1|1.19.2|...|1.21.5], which can be installed (as previously explained);\n20.42 │  └─ numpy 1.19.1 conflicts with any installable versions previously reported;\n20.42 └─ python 3.8.5**  is not installable because it conflicts with any installable versions previously reported.\n20.42 \nI had a look at the conda/mamba environment created from the same environment on my machine and that had numpy-base 1.19.1. I tried adding this explicitly to the environment file and then running it again, although unresolved.\nI tried switching to start with a mamba image, following the documentation at https://micromamba-docker.readthedocs.io/en/latest/quick_start.html, but got the same error.\n# Use micromamba image\nFROM mambaorg/micromamba\n\n# Copy the environment file\nCOPY --chown=$MAMBA_USER:$MAMBA_USER ./reproduction/environment.yaml /tmp/environment.yaml\n\n# Create the environment\nRUN micromamba create -y -f /tmp/environment.yaml && \\\n    micromamba clean --all --yes\nI tried removing my local conda environment and rebuilt it with channel conda-forge and just requiring versions for the backdated packages (and not for those I add).\nname: lim2020\nchannels:\n  - conda-forge\ndependencies:\n  - numpy=1.19.1\n  - pandas=1.1.1\n  - python=3.8.5\n  - ipykernel\n  - matplotlib\n  - pytest\nThis built without issue, so I then add the dependencies it used:\nname: lim2020\nchannels:\n  - conda-forge\ndependencies:\n  - numpy=1.19.1\n  - pandas=1.1.1\n  - python=3.8.5\n  - ipykernel=6.29.5\n  - matplotlib=3.5.1\n  - pytest=8.3.2\nI then rebuilt the docker image, and that worked fine! For reference, this was the environment file from before:\nname: lim2020\nchannels:\n  - defaults\ndependencies:\n  - ipykernel\n  - matplotlib=3.5.1\n  - numpy=1.19.1\n  - pandas=1.1.1\n  - python=3.8.5\n  - pytest=7.4.4\nI then add lines back to the dockerfile so it can run jupyter lab, but had error /usr/local/bin/_entrypoint.sh: line 24: exec: mamba: not found.\n# Use micromamba image\nFROM mambaorg/micromamba\n\n# Copy the environment file\n# COPY --chown=$MAMBA_USER:$MAMBA_USER ./reproduction/environment.yaml /tmp/environment.yaml\n\n# Create and set the working directory to the container make copy simpler\nRUN mkdir /home/code\nWORKDIR /home/code\n\n# Copy all files across to container\nCOPY ./reproduction /home/code\n\n# Copy jupyter config file\nCOPY ./reproduction/docker/jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py\n\n# Create the environment\nRUN micromamba create -y -f /home/code/environment.yaml && \\\n    micromamba clean --all --yes\n\n# Make RUN commands use the new environment (not really necessary here)...\nSHELL [\"mamba\", \"run\", \"-n\", \"shoaib2022\", \"/bin/bash\", \"-c\"]\n\n# Declare port used by jupyter-lab\nEXPOSE 80\n\n# Launch JupyterLab\nCMD jupyter-lab /home/code/\nTried switching whole thing back to Dockerfile I had at the start.\nRealised I also needed to still add jupyterlab to environment.\nHowever, I now got a new error:\n[I 2024-07-26 12:35:36.291 ServerApp] jupyter_lsp | extension was successfully linked.\n[I 2024-07-26 12:35:36.297 ServerApp] jupyter_server_terminals | extension was successfully linked.\n[I 2024-07-26 12:35:36.304 ServerApp] jupyterlab | extension was successfully linked.\n[I 2024-07-26 12:35:36.306 ServerApp] Writing Jupyter server cookie secret to /root/.local/share/jupyter/runtime/jupyter_cookie_secret\n[I 2024-07-26 12:35:36.617 ServerApp] notebook_shim | extension was successfully linked.\n[I 2024-07-26 12:35:36.668 ServerApp] notebook_shim | extension was successfully loaded.\n[I 2024-07-26 12:35:36.671 ServerApp] jupyter_lsp | extension was successfully loaded.\n[I 2024-07-26 12:35:36.672 ServerApp] jupyter_server_terminals | extension was successfully loaded.\n[I 2024-07-26 12:35:36.674 LabApp] JupyterLab extension loaded from /opt/conda/envs/lim2020/lib/python3.8/site-packages/jupyterlab\n[I 2024-07-26 12:35:36.674 LabApp] JupyterLab application directory is /opt/conda/envs/lim2020/share/jupyter/lab\n[I 2024-07-26 12:35:36.674 LabApp] Extension Manager is 'pypi'.\n[I 2024-07-26 12:35:36.691 ServerApp] jupyterlab | extension was successfully loaded.\n[C 2024-07-26 12:35:36.692 ServerApp] Running as root is not recommended. Use --allow-root to bypass.\n\nERROR conda.cli.main_run:execute(125): `conda run /bin/bash -c jupyter-lab /home/code/` failed. (See above for error)\nThis was unexpected, as now the file matches exactly to the functional Dockerfile used for Shoaib et al. 2022, except for that it is environment.yaml and the environment name.\nI tried changing the environment channel back to defaults, rebuilt on local machine, recorded versions.\nname: lim2020\nchannels:\n  - defaults\n  - conda-forge\ndependencies:\n  - numpy=1.19.1\n  - pandas=1.1.1\n  - python=3.8.5\n  - ipykernel=6.28.0\n  - matplotlib=3.5.1\n  - pytest=7.4.4\n  - jupyterlab=4.0.11\nBuilt docker image. Still failed as before. It appears it’s not using the settings from the jupyter_notebook_config.py as that sets allow root as True, but the error is that running as root is not recommended that we can use –allow-root to bypass.\nTried switching to conda-forge again. No difference.\nBased on this post, I tried adding notebook to the environment and then re-running. And then it worked! Tested running the model: all fine."
+  },
+  {
+    "objectID": "logbook/posts/2024_07_26/index.html#untimed-docker-on-container-registry",
+    "href": "logbook/posts/2024_07_26/index.html#untimed-docker-on-container-registry",
+    "title": "Day 6",
+    "section": "Untimed: Docker on container registry",
+    "text": "Untimed: Docker on container registry\nActivated the GitHub action to publish the docker image on GHCR. Followed my instructions to build that and test run: all fine."
+  },
+  {
+    "objectID": "logbook/posts/2024_07_26/index.html#untimed-test-run-from-tom",
+    "href": "logbook/posts/2024_07_26/index.html#untimed-test-run-from-tom",
+    "title": "Day 6",
+    "section": "Untimed: Test run from Tom",
+    "text": "Untimed: Test run from Tom\nTom tested the scripts.\nThe docker container built correctly and launched.\nPytest ran fine and quick.\nreproduction.ipynb failed as it couldn’t access ../original_study/[CSV file], as docker container only contains reproduction/. Subsequently, I’ll add the required files to the container."
   },
   {
     "objectID": "logbook/posts/2024_07_22/index.html",
