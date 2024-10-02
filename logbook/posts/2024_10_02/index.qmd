@@ -1,0 +1,11 @@
+---
+title: "Day 7"
+author: "Amy Heather"
+date: "2024-10-02"
+categories: [compendium]
+bibliography: ../../../quarto_site/references.bib
+---
+
+## Untimed: Archive repository
+
+Realised I had yet to archive repository, now that reproduction is complete. Updated `CITATION.cff` and `CHANGELOG.md` then made a GitHub release.
