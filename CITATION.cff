@@ -36,5 +36,5 @@ abstract: >-
   https://doi.org/10.1016/j.clinbiochem.2020.09.003
 license: MIT
 # TODO: Manually update with each GitHub release (start with 0.1.0)
-version: '0.1.0'
-date-released: '2024-07-22'
+version: '0.2.0'
+date-released: '2024-10-02'
