@@ -15,8 +15,8 @@ This page evaluates the extent to which the journal article meets the criteria f
 
 Of the **24** items in the checklist:
 
-* **16** were met fully (✅)
-* **2** were partially met (🟡)
+* **15** were met fully (✅)
+* **3** were partially met (🟡)
 * **3** were not met (❌)
 * **3** were not applicable (N/A)
 
@@ -44,7 +44,7 @@ Of the **24** items in the checklist:
 | **Experimentation** |
 | 4.1 Initialisation | Report if the system modelled is terminating or non-terminating.  State if a warm-up period has been used, its length and the analysis method used to select it.  For terminating systems state the stopping condition.<br>State what if any initial model conditions have been included, e.g., pre-loaded queues and activities.  Report whether initialisation of these variables is deterministic or stochastic. | ❌ Not met | Not described. |
 | 4.2 Run length | Detail the run length of the simulation model and time units. | ✅ Fully | Time unit is days (1, 2 or 3 shifts per day), and runs for 21 days. Described in article, e.g. `2.2 Transmission assumptions` - "duration of simulation (i.e. 21 days)"<br><br>@lim_staff_2020 |
-| 4.3 Estimation approach | State the method used to account for the stochasticity: For example, two common methods are multiple replications or batch means. Where multiple replications have been used, state the number of replications and for batch means, indicate the batch length and whether the batch means procedure is standard, spaced or overlapping. For both procedures provide a justification for the methods used and the number of replications/size of batches. | ✅ Fully | `2.2 Transmission assumptions` - "In view of the stochastic nature of virus transmission and roster allocation, simulations with the same parameters are repeated 100 times and the median of the proportion of staff infected are recorded."<br><br>@lim_staff_2020 |
+| 4.3 Estimation approach | State the method used to account for the stochasticity: For example, two common methods are multiple replications or batch means. Where multiple replications have been used, state the number of replications and for batch means, indicate the batch length and whether the batch means procedure is standard, spaced or overlapping. For both procedures provide a justification for the methods used and the number of replications/size of batches. | 🟡 Partially | States number of replications but does not provide justification<br><br>`2.2 Transmission assumptions` - "In view of the stochastic nature of virus transmission and roster allocation, simulations with the same parameters are repeated 100 times and the median of the proportion of staff infected are recorded."<br><br>@lim_staff_2020 |
 | **Implementation** |
 | 5.1 Software or programming language | State the operating system and version and build number.<br>State the name, version and build number of commercial or open source DES software that the model is implemented in.<br>State the name and version of general-purpose programming languages used (e.g. Python 3.5).<br>Where frameworks and libraries have been used provide all details including version numbers. | 🟡 Partially | `2.7 Simulation package` - "This simulation was performed with codes written in Python 3 on a desktop computer (Intel Core i5 3.5 GHz, 8 GB RAM). Standard libraries such as NumPy and pandas are employed."<br><br>Does not mention operating system, or version of the packages used.<br><br>@lim_staff_2020 |
 | 5.2 Random sampling | State the algorithm used to generate random samples in the software/programming language used e.g. Mersenne Twister.<br>If common random numbers are used, state how seeds (or random number streams) are distributed among sampling processes. | ❌ Not met | Not described in the paper. Know from the code that they used common random numbers without seed control. |

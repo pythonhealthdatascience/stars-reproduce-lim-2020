@@ -1,0 +1,11 @@
+---
+title: "Day 8"
+author: "Amy Heather"
+date: "2024-11-04"
+categories: [evaluation]
+bibliography: ../../../quarto_site/references.bib
+---
+
+## Untimed: Correction to STRESS-DES evaluation
+
+Changed `4.3 Estimation approach` from fully met to partially met, as they did not provide justification for the number of replications.
