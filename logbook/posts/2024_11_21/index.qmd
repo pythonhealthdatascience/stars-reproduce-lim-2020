@@ -11,7 +11,7 @@ Redid badge evaluation.
 
 :::
 
-## 10.34-X: Revisit evaluation
+## 10.34-10.36: Revisit evaluation
 
 Revisited and revised the badge criteria to (a) make them up-to-date, and (b) make sure they are *specific* to the descriptions from each badge. Hence, redoing evaluations for all eight studies.
 
