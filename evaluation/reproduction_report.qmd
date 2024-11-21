@@ -100,8 +100,8 @@ col = ['fully', 'partially', 'not', 'na']
 eval_dict = {
   'STARS (essential)': [2, 0, 6, 0],
   'STARS (optional)': [0, 0, 5, 0],
-  'Badges (criteria)': [3, 0, 9, 0],
-  'Badges (badges)': [3, 0, 9, 0],
+  'Badges (criteria)': [2, 0, 10, 0],
+  'Badges (badges)': [0, 0, 12, 0],
   'STRESS-DES': [15, 3, 3, 3],
   'ISPOR-SDM': [12, 0, 4, 2]
 }

@@ -1,0 +1,24 @@
+---
+title: "Day 9"
+author: "Amy Heather"
+date: "2024-11-21"
+categories: [evaluation]
+---
+
+::: {.callout-note}
+
+Redid badge evaluation.
+
+:::
+
+## 10.34-X: Revisit evaluation
+
+Revisited and revised the badge criteria to (a) make them up-to-date, and (b) make sure they are *specific* to the descriptions from each badge. Hence, redoing evaluations for all eight studies.
+
+Notes:
+
+* Reproduction - no, as added reasonable assumption that would expect this within a reasonable time (e.g. a few hours) and with only minor troubleshooting - but this reproduction required a large time investment and extensive troubleshooting (e.g. writing code) to reproduce
+
+## Untimed: Update summary report
+
+With new badge evaluation results.
