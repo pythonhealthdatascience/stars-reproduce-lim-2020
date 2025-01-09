@@ -2,7 +2,7 @@
 # Visit https://bit.ly/cffinit to generate yours today!
 
 cff-version: 1.2.0
-title: 'STARS: Computational reproducibility of Lim et al. 2020'
+title: 'Lim et al. 2020 computational reproducibility assessment'
 message: >-
   If you use this software, please cite it using the
   metadata from this file.
@@ -36,5 +36,5 @@ abstract: >-
   https://doi.org/10.1016/j.clinbiochem.2020.09.003
 license: MIT
 # TODO: Manually update with each GitHub release (start with 0.1.0)
-version: '0.2.0'
-date-released: '2024-10-02'
+version: '1.0.0'
+date-released: '2025-01-09'
